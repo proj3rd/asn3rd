@@ -26,5 +26,5 @@ if (error) {
 ### CLI
 
 ```sh
-npx proj3rd:asn3rd extract <path> > <outpath>
+npx github:proj3rd/asn3rd extract <path> > <outpath>
 ```
