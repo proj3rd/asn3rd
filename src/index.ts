@@ -2,21 +2,41 @@
 
 import { Command } from "commander";
 import { readFile } from "fs";
+import { parse } from "path";
+import WordExtractor from 'word-extractor';
 import { extract } from "./extractor";
 
 export { extract };
 
 function commandExtract(path: string) {
-  readFile(path, { encoding: "utf8" }, (err, data) => {
-    if (err) {
-      throw err;
-    }
-    const [error, extracted] = extract(data);
+  function extractAndWrite(text: string) {
+    const [error, extracted] = extract(text);
     if (error) {
       throw error;
     }
     process.stdout.write(extracted);
-  });
+  }
+
+  const { ext } = parse(path);
+  switch (ext.toLocaleLowerCase()) {
+    case '.doc':
+    case '.docx':
+      const extractor = new WordExtractor();
+      extractor.extract(path).then((doc) => {
+        const text = doc.getBody();
+        extractAndWrite(text);
+      }).catch((reason) => {
+        throw reason;
+      });
+      break;
+    default:
+      readFile(path, { encoding: "utf8" }, (err, text) => {
+        if (err) {
+          throw err;
+        }
+        extractAndWrite(text);
+      });
+  }
 }
 
 if (require.main === module) {
