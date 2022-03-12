@@ -8,7 +8,6 @@ ASN.1 utilities
 
 ## Extractor
 
-![](https://img.shields.io/badge/support-TXT-brightgreen)  
 ![](https://img.shields.io/badge/support-NR_RRC-brightgreen)
 ![](https://img.shields.io/badge/support-NGAP-brightgreen)
 ![](https://img.shields.io/badge/support-XnAP-brightgreen)
@@ -40,6 +39,10 @@ if (error) {
 ```
 
 ### CLI
+
+![](https://img.shields.io/badge/support-TXT-brightgreen)
+![](https://img.shields.io/badge/support-DOC-brightgreen)
+![](https://img.shields.io/badge/support-DOCX-brightgreen)
 
 ```sh
 npx github:proj3rd/asn3rd extract <path> > <outpath>
