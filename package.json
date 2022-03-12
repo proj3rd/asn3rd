@@ -1,0 +1,30 @@
+{
+  "name": "asn3rd",
+  "private": true,
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "asn3rd": "dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proj3rd/asn3rd.git"
+  },
+  "author": "Seokseong Jeon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/proj3rd/asn3rd/issues"
+  },
+  "homepage": "https://github.com/proj3rd/asn3rd#readme",
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "commander": "^9.0.0"
+  }
+}
