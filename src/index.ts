@@ -60,7 +60,6 @@ function commandValidate(path: string) {
       process.exit(error.errors.length);
     }
     process.stdout.write("✅ ASN.1 definition looks well formed.\n");
-    process.stdout.write("🤔 grammar3rd has some limitations. See https://github.com/proj3rd/grammar3rd#limitations");
   });
 }
 

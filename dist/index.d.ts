@@ -1,4 +1,5 @@
 #!/usr/bin/env node
 import { extract } from "./extractor";
-export { extract };
+import { parse as parseAsn1 } from "./parser";
+export { extract, parseAsn1 as parse };
 //# sourceMappingURL=index.d.ts.map

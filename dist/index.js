@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.extract = void 0;
+exports.parse = exports.extract = void 0;
 const commander_1 = require("commander");
 const fs_1 = require("fs");
 const path_1 = require("path");
@@ -12,6 +12,7 @@ const word_extractor_1 = __importDefault(require("word-extractor"));
 const extractor_1 = require("./extractor");
 Object.defineProperty(exports, "extract", { enumerable: true, get: function () { return extractor_1.extract; } });
 const parser_1 = require("./parser");
+Object.defineProperty(exports, "parse", { enumerable: true, get: function () { return parser_1.parse; } });
 function commandExtract(path) {
     function extractAndWrite(text) {
         const [error, extracted] = (0, extractor_1.extract)(text);
@@ -61,7 +62,6 @@ function commandValidate(path) {
             process.exit(error.errors.length);
         }
         process.stdout.write("✅ ASN.1 definition looks well formed.\n");
-        process.stdout.write("🤔 grammar3rd has some limitations. See https://github.com/proj3rd/grammar3rd#limitations");
     });
 }
 if (require.main === module) {
