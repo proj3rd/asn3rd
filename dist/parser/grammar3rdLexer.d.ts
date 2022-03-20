@@ -142,7 +142,9 @@ declare namespace grammar3rdLexer {
     const WS: number;
     const Tag: number;
     const Comment: number;
-    const IdentifierU: number;
+    const Word: number;
+    const ObjectClassReference: number;
+    const TypeReference: number;
     const IdentifierL: number;
     const Number: number;
     const Bstring: number;

@@ -125,11 +125,11 @@ declare class grammar3rdParser extends antlr4.Parser {
     presenceConstraint(): PresenceConstraintContext;
     exceptionSpec(): ExceptionSpecContext;
     exceptionIdentification(): ExceptionIdentificationContext;
-    objectClassReferenceUnsafe(): ObjectClassReferenceUnsafeContext;
+    objectClassReference(): ObjectClassReferenceContext;
     objectSetReference(): ObjectSetReferenceContext;
     objectReference(): ObjectReferenceContext;
     valueFieldReference(): ValueFieldReferenceContext;
-    wordUnsafe(): WordUnsafeContext;
+    word(): WordContext;
     typeFieldReference(): TypeFieldReferenceContext;
     definedObjectClass(): DefinedObjectClassContext;
     definedObjectSet(): DefinedObjectSetContext;
@@ -341,7 +341,9 @@ declare namespace grammar3rdParser {
     export const WS: number;
     export const Tag: number;
     export const Comment: number;
-    export const IdentifierU: number;
+    export const Word: number;
+    export const ObjectClassReference: number;
+    export const TypeReference: number;
     export const IdentifierL: number;
     export const Number: number;
     export const Bstring: number;
@@ -461,11 +463,11 @@ declare namespace grammar3rdParser {
     export const RULE_presenceConstraint: number;
     export const RULE_exceptionSpec: number;
     export const RULE_exceptionIdentification: number;
-    export const RULE_objectClassReferenceUnsafe: number;
+    export const RULE_objectClassReference: number;
     export const RULE_objectSetReference: number;
     export const RULE_objectReference: number;
     export const RULE_valueFieldReference: number;
-    export const RULE_wordUnsafe: number;
+    export const RULE_word: number;
     export const RULE_typeFieldReference: number;
     export const RULE_definedObjectClass: number;
     export const RULE_definedObjectSet: number;
@@ -661,11 +663,11 @@ declare namespace grammar3rdParser {
     export { PresenceConstraintContext };
     export { ExceptionSpecContext };
     export { ExceptionIdentificationContext };
-    export { ObjectClassReferenceUnsafeContext };
+    export { ObjectClassReferenceContext };
     export { ObjectSetReferenceContext };
     export { ObjectReferenceContext };
     export { ValueFieldReferenceContext };
-    export { WordUnsafeContext };
+    export { WordContext };
     export { TypeFieldReferenceContext };
     export { DefinedObjectClassContext };
     export { DefinedObjectSetContext };
@@ -762,7 +764,9 @@ declare class TypeReferenceContext extends antlr4.ParserRuleContext {
     constructor(parser: any, parent: any, invokingState: any);
     parser: any;
     ruleIndex: number;
-    IdentifierU(): antlr4.Token;
+    Word(): antlr4.Token;
+    ObjectClassReference(): antlr4.Token;
+    TypeReference(): antlr4.Token;
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }
@@ -786,7 +790,7 @@ declare class ModuleReferenceContext extends antlr4.ParserRuleContext {
     constructor(parser: any, parent: any, invokingState: any);
     parser: any;
     ruleIndex: number;
-    IdentifierU(): antlr4.Token;
+    typeReference(): any;
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }
@@ -1861,11 +1865,12 @@ declare class ExceptionIdentificationContext extends antlr4.ParserRuleContext {
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }
-declare class ObjectClassReferenceUnsafeContext extends antlr4.ParserRuleContext {
+declare class ObjectClassReferenceContext extends antlr4.ParserRuleContext {
     constructor(parser: any, parent: any, invokingState: any);
     parser: any;
     ruleIndex: number;
-    IdentifierU(): antlr4.Token;
+    Word(): antlr4.Token;
+    ObjectClassReference(): antlr4.Token;
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }
@@ -1873,7 +1878,7 @@ declare class ObjectSetReferenceContext extends antlr4.ParserRuleContext {
     constructor(parser: any, parent: any, invokingState: any);
     parser: any;
     ruleIndex: number;
-    IdentifierU(): antlr4.Token;
+    typeReference(): any;
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }
@@ -1894,11 +1899,11 @@ declare class ValueFieldReferenceContext extends antlr4.ParserRuleContext {
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }
-declare class WordUnsafeContext extends antlr4.ParserRuleContext {
+declare class WordContext extends antlr4.ParserRuleContext {
     constructor(parser: any, parent: any, invokingState: any);
     parser: any;
     ruleIndex: number;
-    IdentifierU(): antlr4.Token;
+    Word(): antlr4.Token;
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }
@@ -1907,7 +1912,7 @@ declare class TypeFieldReferenceContext extends antlr4.ParserRuleContext {
     parser: any;
     ruleIndex: number;
     AMP(): antlr4.Token;
-    IdentifierU(): antlr4.Token;
+    typeReference(): any;
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }
@@ -1915,7 +1920,7 @@ declare class DefinedObjectClassContext extends antlr4.ParserRuleContext {
     constructor(parser: any, parent: any, invokingState: any);
     parser: any;
     ruleIndex: number;
-    objectClassReferenceUnsafe(): any;
+    objectClassReference(): any;
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }
@@ -1931,7 +1936,7 @@ declare class ObjectClassAssignmentContext extends antlr4.ParserRuleContext {
     constructor(parser: any, parent: any, invokingState: any);
     parser: any;
     ruleIndex: number;
-    objectClassReferenceUnsafe(): any;
+    objectClassReference(): any;
     ASSIGNMENT(): antlr4.Token;
     objectClass(): any;
     enterRule(listener: any): void;
@@ -2077,7 +2082,7 @@ declare class LiteralContext extends antlr4.ParserRuleContext {
     constructor(parser: any, parent: any, invokingState: any);
     parser: any;
     ruleIndex: number;
-    wordUnsafe(): any;
+    word(): any;
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }
@@ -2377,7 +2382,7 @@ declare class EncodingObjectSetReferenceContext extends antlr4.ParserRuleContext
     constructor(parser: any, parent: any, invokingState: any);
     parser: any;
     ruleIndex: number;
-    IdentifierU(): antlr4.Token;
+    typeReference(): any;
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }
@@ -2386,7 +2391,7 @@ declare class EncodingClassReferenceVariantContext extends antlr4.ParserRuleCont
     parser: any;
     ruleIndex: number;
     NUMBER_SIGN(): antlr4.Token;
-    IdentifierU(): antlr4.Token;
+    typeReference(): any;
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }

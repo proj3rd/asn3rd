@@ -704,11 +704,11 @@ class grammar3rdListener extends antlr4_1.default.tree.ParseTreeListener {
     // Exit a parse tree produced by grammar3rdParser#exceptionIdentification.
     exitExceptionIdentification(ctx) {
     }
-    // Enter a parse tree produced by grammar3rdParser#objectClassReferenceUnsafe.
-    enterObjectClassReferenceUnsafe(ctx) {
+    // Enter a parse tree produced by grammar3rdParser#objectClassReference.
+    enterObjectClassReference(ctx) {
     }
-    // Exit a parse tree produced by grammar3rdParser#objectClassReferenceUnsafe.
-    exitObjectClassReferenceUnsafe(ctx) {
+    // Exit a parse tree produced by grammar3rdParser#objectClassReference.
+    exitObjectClassReference(ctx) {
     }
     // Enter a parse tree produced by grammar3rdParser#objectSetReference.
     enterObjectSetReference(ctx) {
@@ -728,11 +728,11 @@ class grammar3rdListener extends antlr4_1.default.tree.ParseTreeListener {
     // Exit a parse tree produced by grammar3rdParser#valueFieldReference.
     exitValueFieldReference(ctx) {
     }
-    // Enter a parse tree produced by grammar3rdParser#wordUnsafe.
-    enterWordUnsafe(ctx) {
+    // Enter a parse tree produced by grammar3rdParser#word.
+    enterWord(ctx) {
     }
-    // Exit a parse tree produced by grammar3rdParser#wordUnsafe.
-    exitWordUnsafe(ctx) {
+    // Exit a parse tree produced by grammar3rdParser#word.
+    exitWord(ctx) {
     }
     // Enter a parse tree produced by grammar3rdParser#typeFieldReference.
     enterTypeFieldReference(ctx) {
