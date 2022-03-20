@@ -61,7 +61,9 @@ npx github:proj3rd/asn3rd extract <path> > <outpath>
 ![](https://img.shields.io/badge/support-LTE_RRC-brightgreen)
 ![](https://img.shields.io/badge/support-S1AP-brightgreen)
 ![](https://img.shields.io/badge/support-X2AP-brightgreen)
-![](https://img.shields.io/badge/support-W1AP-brightgreen)
+![](https://img.shields.io/badge/support-W1AP-brightgreen)  
+![](https://img.shields.io/badge/support-UTRA_RRC-brightgreen)
+![](https://img.shields.io/badge/support-RANAP-brightgreen)
 
 Parse (and validate) ASN.1 definition in the form of 3GPP standard specifications.
 
