@@ -1,3 +1,5 @@
+import { Result } from "./types";
+
 /**
  * - `start`: Regular expression for matching start token.
  * - `end`: Regular expression for matching end token.
@@ -16,8 +18,6 @@ const regExpSet2: RegExpSet = {
   start: /^--\s+?\*+?.*?$/gm, // -- *****
   end: /^\bEND\b.*?$/gm, // END (end of module definition)
 };
-
-type Result<T> = [Error, undefined] | [null, T];
 
 /**
  * Clone {@link RegExpSet} set with resetting their `lastIndex` to 0.
