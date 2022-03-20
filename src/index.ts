@@ -7,7 +7,7 @@ import WordExtractor from "word-extractor";
 import { extract } from "./extractor";
 import { parse as parseAsn1 } from "./parser";
 
-export { extract };
+export { extract, parseAsn1 as parse };
 
 function commandExtract(path: string) {
   function extractAndWrite(text: string) {
