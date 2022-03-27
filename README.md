@@ -3,11 +3,10 @@
 ASN.1 utilities
 
 - [Extractor](#extractor)
-  - [API](#api)
-  - [CLI](#cli)
+  - [Usage](#usage)
 - [Parser / Validator](#parser--validator)
-  - [API](#api-1)
-  - [CLI](#cli-1)
+  - [Usage](#usage-1)
+- [CLI](#cli)
 
 ## Extractor
 
@@ -23,7 +22,7 @@ ASN.1 utilities
 
 Extract ASN.1 definition from 3GPP standard specifications.
 
-### API
+### Usage
 
 
 ```sh
@@ -39,16 +38,6 @@ if (error) {
 } else {
   // Play with the extracted ASN.1 definition
 }
-```
-
-### CLI
-
-![](https://img.shields.io/badge/support-TXT-brightgreen)
-![](https://img.shields.io/badge/support-DOC-brightgreen)
-![](https://img.shields.io/badge/support-DOCX-brightgreen)
-
-```sh
-npx github:proj3rd/asn3rd extract <path> > <outpath>
 ```
 
 ## Parser / Validator
@@ -67,7 +56,7 @@ npx github:proj3rd/asn3rd extract <path> > <outpath>
 
 Parse (and validate) ASN.1 definition in the form of 3GPP standard specifications.
 
-### API
+### Usage
 
 
 ```sh
@@ -85,10 +74,8 @@ if (error) {
 }
 ```
 
-### CLI
+## CLI
 
-![](https://img.shields.io/badge/support-TXT-brightgreen)
+See [asn3rd-cli].
 
-```sh
-npx github:proj3rd/asn3rd validate <path>
-```
+[asn3rd-cli]: https://github.com/proj3rd/asn3rd-cli
