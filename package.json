@@ -1,12 +1,13 @@
 {
   "name": "asn3rd",
   "private": true,
-  "version": "4.0.1",
+  "version": "4.1.0",
   "main": "dist/index.js",
   "scripts": {
     "generate-parser": "antlr4 -Dlanguage=JavaScript -o src/parser ./grammar3rd.g4",
     "get-grammar": "curl https://raw.githubusercontent.com/proj3rd/grammar3rd/master/grammar3rd.g4 > grammar3rd.g4",
-    "grammar": "npm run get-grammar && npm run generate-parser",
+    "grammar": "npm run get-grammar && npm run generate-parser && npm run predicate",
+    "predicate": "node scripts/predicate.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
