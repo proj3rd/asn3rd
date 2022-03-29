@@ -749,8 +749,7 @@ declare namespace grammar3rdParser {
     export { SimpleDefinedEncodingClassContext };
 }
 export default grammar3rdParser;
-import antlr4 from "antlr4";
-declare class ModuleDefinitionsContext extends antlr4.ParserRuleContext {
+export class ModuleDefinitionsContext extends antlr4.ParserRuleContext {
     constructor(parser: any, parent: any, invokingState: any);
     parser: any;
     ruleIndex: number;
@@ -760,6 +759,7 @@ declare class ModuleDefinitionsContext extends antlr4.ParserRuleContext {
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }
+import antlr4 from "antlr4";
 declare class TypeReferenceContext extends antlr4.ParserRuleContext {
     constructor(parser: any, parent: any, invokingState: any);
     parser: any;

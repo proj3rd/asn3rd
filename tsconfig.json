@@ -101,6 +101,6 @@
   "exclude": [
     "dist/**/*",
     "src/**/*.spec.ts",
-    "scripts/predicate.js",
+    "scripts/**/*",
   ]
 }

@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ModuleDefinitionsContext = void 0;
 // Generated from ./grammar3rd.g4 by ANTLR 4.9.3
 // jshint ignore: start
 const antlr4_1 = __importDefault(require("antlr4"));
@@ -8031,6 +8032,7 @@ class ModuleDefinitionsContext extends antlr4_1.default.ParserRuleContext {
         }
     }
 }
+exports.ModuleDefinitionsContext = ModuleDefinitionsContext;
 class TypeReferenceContext extends antlr4_1.default.ParserRuleContext {
     constructor(parser, parent, invokingState) {
         if (parent === undefined) {
