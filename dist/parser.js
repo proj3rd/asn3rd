@@ -42,12 +42,12 @@ function parse(text) {
     parser.buildParseTrees = true;
     const errorListener = new ParserErrorListener();
     parser.addErrorListener(errorListener);
-    parser.moduleDefinitions();
+    const moduleDefinitionsContext = parser.moduleDefinitions();
     const { errors } = errorListener;
     if (errors.length) {
         return [new ParserError(errors), undefined];
     }
-    return [null, parser];
+    return [null, moduleDefinitionsContext];
 }
 exports.parse = parse;
 //# sourceMappingURL=parser.js.map
