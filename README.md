@@ -66,7 +66,7 @@ npm install proj3rd/asn3rd
 ```ts
 import { parse } from 'asn3rd';
 
-const [error, parser] = parse(text);
+const [error, moduleDefinitionsContext] = parse(text);
 if (error) {
   // Error handling
 } else {
