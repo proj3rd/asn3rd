@@ -1,4 +1,4 @@
-import { Result } from "./types";
+import { Result } from "./types.js";
 
 /**
  * - `start`: Regular expression for matching start token.

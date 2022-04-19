@@ -1,13 +1,8 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-// Generated from ./grammar3rd.g4 by ANTLR 4.9.3
+// Generated from ./grammar3rd.g4 by ANTLR 4.10.1
 // jshint ignore: start
-const antlr4_1 = __importDefault(require("antlr4"));
+import antlr4 from 'antlr4';
 // This class defines a complete listener for a parse tree produced by grammar3rdParser.
-class grammar3rdListener extends antlr4_1.default.tree.ParseTreeListener {
+export default class grammar3rdListener extends antlr4.tree.ParseTreeListener {
     // Enter a parse tree produced by grammar3rdParser#moduleDefinitions.
     enterModuleDefinitions(ctx) {
     }
@@ -1209,5 +1204,4 @@ class grammar3rdListener extends antlr4_1.default.tree.ParseTreeListener {
     exitSimpleDefinedEncodingClass(ctx) {
     }
 }
-exports.default = grammar3rdListener;
 //# sourceMappingURL=grammar3rdListener.js.map

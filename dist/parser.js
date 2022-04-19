@@ -1,12 +1,6 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.parse = void 0;
-const antlr4_1 = __importDefault(require("antlr4"));
-const grammar3rdLexer_js_1 = __importDefault(require("./parser/grammar3rdLexer.js"));
-const grammar3rdParser_js_1 = __importDefault(require("./parser/grammar3rdParser.js"));
+import antlr4 from "antlr4";
+import grammar3rdLexer from "./parser/grammar3rdLexer.js";
+import grammar3rdParser from "./parser/grammar3rdParser.js";
 /**
  * Listener to store syntax errors to variables
  */
@@ -34,11 +28,11 @@ class ParserError extends Error {
  * Parse ASN.1 definitino
  * @param text ASN.1 definition
  */
-function parse(text) {
-    const chars = new antlr4_1.default.InputStream(text);
-    const lexer = new grammar3rdLexer_js_1.default(chars);
-    const tokens = new antlr4_1.default.CommonTokenStream(lexer);
-    const parser = new grammar3rdParser_js_1.default(tokens);
+export function parse(text) {
+    const chars = new antlr4.InputStream(text);
+    const lexer = new grammar3rdLexer(chars);
+    const tokens = new antlr4.CommonTokenStream(lexer);
+    const parser = new grammar3rdParser(tokens);
     parser.buildParseTrees = true;
     const errorListener = new ParserErrorListener();
     parser.addErrorListener(errorListener);
@@ -49,5 +43,4 @@ function parse(text) {
     }
     return [null, moduleDefinitionsContext];
 }
-exports.parse = parse;
 //# sourceMappingURL=parser.js.map

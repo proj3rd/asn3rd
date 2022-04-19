@@ -1,7 +1,7 @@
 import antlr4 from "antlr4";
 import grammar3rdLexer from "./parser/grammar3rdLexer.js";
 import grammar3rdParser, { ModuleDefinitionsContext } from "./parser/grammar3rdParser.js";
-import { Result } from "./types";
+import { Result } from "./types.js";
 
 /**
  * Data structure to store syntax error reported from parsre
