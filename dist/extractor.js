@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.extract = void 0;
 const regExpSet1 = {
     start: /^--\s+?ASN1START.*?$/gm,
     end: /^--\s+?ASN1STOP.*?$/gm, // -- ASN1STOP
@@ -39,7 +36,7 @@ function selectRegExpSet(text) {
  * Extract ASN.1 definition.
  * @param text Text containing ASN.1 definition and others.
  */
-function extract(text) {
+export function extract(text) {
     const [error, regExpSet] = selectRegExpSet(text);
     if (error) {
         return [error, undefined];
@@ -62,5 +59,4 @@ function extract(text) {
     }
     return [null, extractedList.join('\n')];
 }
-exports.extract = extract;
 //# sourceMappingURL=extractor.js.map

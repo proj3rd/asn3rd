@@ -1,5 +1,5 @@
 import { ModuleDefinitionsContext } from "./parser/grammar3rdParser.js";
-import { Result } from "./types";
+import { Result } from "./types.js";
 /**
  * Data structure to store syntax error reported from parsre
  */

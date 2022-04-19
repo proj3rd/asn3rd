@@ -1,4 +1,4 @@
-import { Result } from "./types";
+import { Result } from "./types.js";
 /**
  * Extract ASN.1 definition.
  * @param text Text containing ASN.1 definition and others.
