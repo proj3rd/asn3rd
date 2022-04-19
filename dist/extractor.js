@@ -36,7 +36,8 @@ function selectRegExpSet(text) {
  * Extract ASN.1 definition.
  * @param text Text containing ASN.1 definition and others.
  */
-export function extract(text) {
+export function extract(text, options = {}) {
+    const { excludeNonTagComment } = options;
     const [error, regExpSet] = selectRegExpSet(text);
     if (error) {
         return [error, undefined];
@@ -57,6 +58,13 @@ export function extract(text) {
         extractedList.push(text.substring(resultStart.index, resultEnd.index + resultEnd[0].length));
         start.lastIndex = resultEnd.index + resultEnd[0].length;
     }
-    return [null, extractedList.join('\n')];
+    const joined = extractedList.join("\n");
+    const result = !excludeNonTagComment
+        ? joined
+        : joined
+            .replace(/--.*?--/g, "") // inline comment
+            .replace(/^[ \t]*?--[ \t]*?.*$/gm, "") // whole line comment
+            .replace(/--[ \t]*?((?!need|cond).)*?$/gim, ""); // need or cond tags
+    return [null, result];
 }
 //# sourceMappingURL=extractor.js.map
