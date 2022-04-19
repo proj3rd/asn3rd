@@ -11,9 +11,6 @@
     "predicate": "node scripts/predicate.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": {
-    "asn3rd": "dist/cli.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/proj3rd/asn3rd.git"
