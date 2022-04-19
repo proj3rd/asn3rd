@@ -1,5 +1,9 @@
 import { Result } from "./types.js";
 
+export type ExtractorOptions = {
+  excludeNonTagComment?: boolean;
+};
+
 /**
  * - `start`: Regular expression for matching start token.
  * - `end`: Regular expression for matching end token.
@@ -53,7 +57,11 @@ function selectRegExpSet(text: string): Result<RegExpSet> {
  * Extract ASN.1 definition.
  * @param text Text containing ASN.1 definition and others.
  */
-export function extract(text: string): Result<string> {
+export function extract(
+  text: string,
+  options: ExtractorOptions = {}
+): Result<string> {
+  const { excludeNonTagComment } = options;
   const [error, regExpSet] = selectRegExpSet(text);
   if (error) {
     return [error, undefined];
@@ -81,5 +89,12 @@ export function extract(text: string): Result<string> {
 
     start.lastIndex = resultEnd.index + resultEnd[0].length;
   }
-  return [null, extractedList.join('\n')];
+  const joined = extractedList.join("\n");
+  const result = !excludeNonTagComment
+    ? joined
+    : joined
+        .replace(/--.*?--/g, "") // inline comment
+        .replace(/^[ \t]*?--[ \t]*?.*$/gm, "") // whole line comment
+        .replace(/--[ \t]*?((?!need|cond).)*?$/gim, ""); // need or cond tags
+  return [null, result];
 }
