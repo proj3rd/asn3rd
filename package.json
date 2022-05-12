@@ -5,10 +5,10 @@
   "version": "4.4.1",
   "main": "dist/index.js",
   "scripts": {
-    "export": "node scripts/export.js",
+    "export": "node scripts/export.cjs",
     "generate-parser": "antlr4 -Dlanguage=JavaScript -o src/parser src/asn1.g4",
     "grammar": "npm run generate-parser && npm run predicate && npm run export",
-    "predicate": "node scripts/predicate.js",
+    "predicate": "node scripts/predicate.cjs",
     "test": "pwsh ./test.ps1"
   },
   "repository": {
