@@ -1,5 +1,3 @@
-import { Result } from "./types.js";
-
 export type ExtractorOptions = {
   excludeNonTagComment?: boolean;
 };
@@ -38,34 +36,30 @@ function cloneRegExpSet(regExpSet: RegExpSet): RegExpSet {
  * Test text and select {@link RegExpSet} for extracting ASN.1 definition.
  * @param text Text to be tested.
  */
-function selectRegExpSet(text: string): Result<RegExpSet> {
+async function selectRegExpSet(text: string): Promise<RegExpSet> {
   if (regExpSet1.start.test(text) && regExpSet1.end.test(text)) {
-    return [null, cloneRegExpSet(regExpSet1)];
+    return Promise.resolve(cloneRegExpSet(regExpSet1));
   }
   if (regExpSet2.start.test(text) && regExpSet2.end.test(text)) {
-    return [null, cloneRegExpSet(regExpSet2)];
+    return Promise.resolve(cloneRegExpSet(regExpSet2));
   }
-  return [
-    Error(
+  return Promise.reject(
+    new Error(
       "Seems text not containing start and/or end tokens for ASN.1 definition."
-    ),
-    undefined,
-  ];
+    )
+  );
 }
 
 /**
  * Extract ASN.1 definition.
  * @param text Text containing ASN.1 definition and others.
  */
-export function extract(
+export async function extract(
   text: string,
   options: ExtractorOptions = {}
-): Result<string> {
+): Promise<string> {
   const { excludeNonTagComment } = options;
-  const [error, regExpSet] = selectRegExpSet(text);
-  if (error) {
-    return [error, undefined];
-  }
+  const regExpSet = await selectRegExpSet(text);
   const { start, end } = regExpSet;
   const extractedList = [];
   while (true) {
@@ -96,5 +90,5 @@ export function extract(
         .replace(/--.*?--/g, "") // inline comment
         .replace(/^[ \t]*?--[ \t]*?.*$/gm, "") // whole line comment
         .replace(/--[ \t]*?((?!need|cond).)*?$/gim, ""); // need or cond tags
-  return [null, result];
+  return Promise.resolve(result);
 }
