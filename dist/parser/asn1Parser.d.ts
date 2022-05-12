@@ -1,4 +1,4 @@
-declare class grammar3rdParser extends antlr4.Parser {
+declare class asn1Parser extends antlr4.Parser {
     static grammarFileName: string;
     static literalNames: (string | null)[];
     static symbolicNames: (string | null)[];
@@ -210,7 +210,7 @@ declare class grammar3rdParser extends antlr4.Parser {
     builtinEncodingObjectSetReference(): BuiltinEncodingObjectSetReferenceContext;
     simpleDefinedEncodingClass(): SimpleDefinedEncodingClassContext;
 }
-declare namespace grammar3rdParser {
+declare namespace asn1Parser {
     export const EOF: number;
     export const ASSIGNMENT: number;
     export const ELLIPSIS: number;
@@ -748,7 +748,7 @@ declare namespace grammar3rdParser {
     export { BuiltinEncodingObjectSetReferenceContext };
     export { SimpleDefinedEncodingClassContext };
 }
-export default grammar3rdParser;
+export default asn1Parser;
 export class ModuleDefinitionsContext extends antlr4.ParserRuleContext {
     constructor(parser: any, parent: any, invokingState: any);
     parser: any;
@@ -2645,4 +2645,4 @@ declare class SimpleDefinedEncodingClassContext extends antlr4.ParserRuleContext
     enterRule(listener: any): void;
     exitRule(listener: any): void;
 }
-//# sourceMappingURL=grammar3rdParser.d.ts.map
+//# sourceMappingURL=asn1Parser.d.ts.map

@@ -1,4 +1,3 @@
-import { Result } from "./types.js";
 export declare type ExtractorOptions = {
     excludeNonTagComment?: boolean;
 };
@@ -6,5 +5,5 @@ export declare type ExtractorOptions = {
  * Extract ASN.1 definition.
  * @param text Text containing ASN.1 definition and others.
  */
-export declare function extract(text: string, options?: ExtractorOptions): Result<string>;
+export declare function extract(text: string, options?: ExtractorOptions): Promise<string>;
 //# sourceMappingURL=extractor.d.ts.map

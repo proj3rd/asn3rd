@@ -1,4 +1,4 @@
-export default class grammar3rdListener {
+export default class asn1Listener {
     enterModuleDefinitions(ctx: any): void;
     exitModuleDefinitions(ctx: any): void;
     enterTypeReference(ctx: any): void;
@@ -400,4 +400,4 @@ export default class grammar3rdListener {
     enterSimpleDefinedEncodingClass(ctx: any): void;
     exitSimpleDefinedEncodingClass(ctx: any): void;
 }
-//# sourceMappingURL=grammar3rdListener.d.ts.map
+//# sourceMappingURL=asn1Listener.d.ts.map

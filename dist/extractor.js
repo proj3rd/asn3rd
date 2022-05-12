@@ -1,3 +1,12 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 const regExpSet1 = {
     start: /^--\s+?ASN1START.*?$/gm,
     end: /^--\s+?ASN1STOP.*?$/gm, // -- ASN1STOP
@@ -21,50 +30,48 @@ function cloneRegExpSet(regExpSet) {
  * @param text Text to be tested.
  */
 function selectRegExpSet(text) {
-    if (regExpSet1.start.test(text) && regExpSet1.end.test(text)) {
-        return [null, cloneRegExpSet(regExpSet1)];
-    }
-    if (regExpSet2.start.test(text) && regExpSet2.end.test(text)) {
-        return [null, cloneRegExpSet(regExpSet2)];
-    }
-    return [
-        Error("Seems text not containing start and/or end tokens for ASN.1 definition."),
-        undefined,
-    ];
+    return __awaiter(this, void 0, void 0, function* () {
+        if (regExpSet1.start.test(text) && regExpSet1.end.test(text)) {
+            return Promise.resolve(cloneRegExpSet(regExpSet1));
+        }
+        if (regExpSet2.start.test(text) && regExpSet2.end.test(text)) {
+            return Promise.resolve(cloneRegExpSet(regExpSet2));
+        }
+        return Promise.reject(new Error("Seems text not containing start and/or end tokens for ASN.1 definition."));
+    });
 }
 /**
  * Extract ASN.1 definition.
  * @param text Text containing ASN.1 definition and others.
  */
 export function extract(text, options = {}) {
-    const { excludeNonTagComment } = options;
-    const [error, regExpSet] = selectRegExpSet(text);
-    if (error) {
-        return [error, undefined];
-    }
-    const { start, end } = regExpSet;
-    const extractedList = [];
-    while (true) {
-        const resultStart = start.exec(text);
-        if (!resultStart) {
-            break;
+    return __awaiter(this, void 0, void 0, function* () {
+        const { excludeNonTagComment } = options;
+        const regExpSet = yield selectRegExpSet(text);
+        const { start, end } = regExpSet;
+        const extractedList = [];
+        while (true) {
+            const resultStart = start.exec(text);
+            if (!resultStart) {
+                break;
+            }
+            end.lastIndex = resultStart.index + resultStart[0].length;
+            const resultEnd = end.exec(text);
+            if (!resultEnd) {
+                console.warn("Seems text not containing end token after start token. Stop here.");
+                break;
+            }
+            extractedList.push(text.substring(resultStart.index, resultEnd.index + resultEnd[0].length));
+            start.lastIndex = resultEnd.index + resultEnd[0].length;
         }
-        end.lastIndex = resultStart.index + resultStart[0].length;
-        const resultEnd = end.exec(text);
-        if (!resultEnd) {
-            console.warn("Seems text not containing end token after start token. Stop here.");
-            break;
-        }
-        extractedList.push(text.substring(resultStart.index, resultEnd.index + resultEnd[0].length));
-        start.lastIndex = resultEnd.index + resultEnd[0].length;
-    }
-    const joined = extractedList.join("\n");
-    const result = !excludeNonTagComment
-        ? joined
-        : joined
-            .replace(/--.*?--/g, "") // inline comment
-            .replace(/^[ \t]*?--[ \t]*?.*$/gm, "") // whole line comment
-            .replace(/--[ \t]*?((?!need|cond).)*?$/gim, ""); // need or cond tags
-    return [null, result];
+        const joined = extractedList.join("\n");
+        const result = !excludeNonTagComment
+            ? joined
+            : joined
+                .replace(/--.*?--/g, "") // inline comment
+                .replace(/^[ \t]*?--[ \t]*?.*$/gm, "") // whole line comment
+                .replace(/--[ \t]*?((?!need|cond).)*?$/gim, ""); // need or cond tags
+        return Promise.resolve(result);
+    });
 }
 //# sourceMappingURL=extractor.js.map
