@@ -1,0 +1,1954 @@
+-- **************************************************************
+--
+-- Elementary Procedure definitions
+--
+-- **************************************************************
+
+LPPA-PDU-Descriptions {
+itu-t (0) identified-organization (4) etsi (0) mobileDomain (0)
+eps-Access (21) modules (3) lppa (6) version1 (1) lppa-PDU-Descriptions (0) }
+
+DEFINITIONS AUTOMATIC TAGS ::= 
+
+BEGIN
+
+-- **************************************************************
+--
+-- IE parameter types from other modules.
+--
+-- **************************************************************
+
+IMPORTS
+	Criticality,
+	ProcedureCode,
+	LPPATransactionID
+
+FROM LPPA-CommonDataTypes
+
+
+	ErrorIndication,
+	PrivateMessage,
+	E-CIDMeasurementInitiationRequest,
+	E-CIDMeasurementInitiationResponse,
+	E-CIDMeasurementInitiationFailure,
+	E-CIDMeasurementFailureIndication,
+	E-CIDMeasurementReport,
+	E-CIDMeasurementTerminationCommand,
+	OTDOAInformationRequest,
+	OTDOAInformationResponse,
+	OTDOAInformationFailure,
+	UTDOAInformationRequest,
+	UTDOAInformationResponse,
+	UTDOAInformationFailure,
+	UTDOAInformationUpdate,
+	AssistanceInformationControl,
+	AssistanceInformationFeedback
+
+
+FROM LPPA-PDU-Contents
+
+	id-errorIndication,
+	id-privateMessage,
+	id-e-CIDMeasurementInitiation,
+	id-e-CIDMeasurementFailureIndication,
+	id-e-CIDMeasurementReport,
+	id-e-CIDMeasurementTermination,
+	id-oTDOAInformationExchange,
+	id-uTDOAInformationExchange,
+	id-uTDOAInformationUpdate,
+	id-assistanceInformationControl,
+	id-assistanceInformationFeedback
+
+
+FROM LPPA-Constants;
+
+-- **************************************************************
+--
+-- Interface Elementary Procedure Class
+--
+-- **************************************************************
+
+LPPA-ELEMENTARY-PROCEDURE ::= CLASS {
+	&InitiatingMessage				,
+	&SuccessfulOutcome				OPTIONAL,
+	&UnsuccessfulOutcome				OPTIONAL,
+	&procedureCode			ProcedureCode	UNIQUE,
+	&criticality			Criticality		DEFAULT ignore
+}
+WITH SYNTAX {
+	INITIATING MESSAGE		&InitiatingMessage
+	[SUCCESSFUL OUTCOME		&SuccessfulOutcome]
+	[UNSUCCESSFUL OUTCOME	&UnsuccessfulOutcome]
+	PROCEDURE CODE			&procedureCode
+	[CRITICALITY			&criticality]
+}
+
+-- **************************************************************
+--
+-- Interface PDU Definition
+--
+-- **************************************************************
+
+LPPA-PDU ::= CHOICE {
+	initiatingMessage	InitiatingMessage,
+	successfulOutcome	SuccessfulOutcome,
+	unsuccessfulOutcome	UnsuccessfulOutcome,
+	...
+}
+
+InitiatingMessage ::= SEQUENCE {
+	procedureCode		LPPA-ELEMENTARY-PROCEDURE.&procedureCode		({LPPA-ELEMENTARY-PROCEDURES}),
+	criticality			LPPA-ELEMENTARY-PROCEDURE.&criticality			({LPPA-ELEMENTARY-PROCEDURES}{@procedureCode}),
+	lppatransactionID	LPPATransactionID,
+	value				LPPA-ELEMENTARY-PROCEDURE.&InitiatingMessage	({LPPA-ELEMENTARY-PROCEDURES}{@procedureCode})
+}
+
+SuccessfulOutcome ::= SEQUENCE {
+	procedureCode		LPPA-ELEMENTARY-PROCEDURE.&procedureCode		({LPPA-ELEMENTARY-PROCEDURES}),
+	criticality			LPPA-ELEMENTARY-PROCEDURE.&criticality			({LPPA-ELEMENTARY-PROCEDURES}{@procedureCode}),
+	lppatransactionID	LPPATransactionID,
+	value				LPPA-ELEMENTARY-PROCEDURE.&SuccessfulOutcome	({LPPA-ELEMENTARY-PROCEDURES}{@procedureCode})
+}
+
+UnsuccessfulOutcome ::= SEQUENCE {
+	procedureCode		LPPA-ELEMENTARY-PROCEDURE.&procedureCode		({LPPA-ELEMENTARY-PROCEDURES}),
+	criticality			LPPA-ELEMENTARY-PROCEDURE.&criticality			({LPPA-ELEMENTARY-PROCEDURES}{@procedureCode}),
+	lppatransactionID	LPPATransactionID,
+	value				LPPA-ELEMENTARY-PROCEDURE.&UnsuccessfulOutcome	({LPPA-ELEMENTARY-PROCEDURES}{@procedureCode})
+}
+
+
+-- **************************************************************
+--
+-- Interface Elementary Procedure List
+--
+-- **************************************************************
+
+LPPA-ELEMENTARY-PROCEDURES LPPA-ELEMENTARY-PROCEDURE ::= {
+	LPPA-ELEMENTARY-PROCEDURES-CLASS-1			|
+	LPPA-ELEMENTARY-PROCEDURES-CLASS-2			,
+	...
+}
+
+LPPA-ELEMENTARY-PROCEDURES-CLASS-1 LPPA-ELEMENTARY-PROCEDURE ::= {
+	e-CIDMeasurementInitiation		|
+	oTDOAInformationExchange		,
+	...,
+	uTDOAInformationExchange
+}
+
+LPPA-ELEMENTARY-PROCEDURES-CLASS-2 LPPA-ELEMENTARY-PROCEDURE ::= {
+	e-CIDMeasurementFailureIndication		|
+	e-CIDMeasurementReport					|
+	e-CIDMeasurementTermination				|
+	errorIndication							|
+	privateMessage							,
+	...,
+	uTDOAInformationUpdate					|
+	assistanceInformationControl			|
+	assistanceInformationFeedback
+}
+
+
+-- **************************************************************
+--
+-- Interface Elementary Procedures
+--
+-- **************************************************************
+
+e-CIDMeasurementInitiation LPPA-ELEMENTARY-PROCEDURE ::= {
+	INITIATING MESSAGE		E-CIDMeasurementInitiationRequest
+	SUCCESSFUL OUTCOME		E-CIDMeasurementInitiationResponse
+	UNSUCCESSFUL OUTCOME	E-CIDMeasurementInitiationFailure
+	PROCEDURE CODE			id-e-CIDMeasurementInitiation
+	CRITICALITY				reject
+}
+
+e-CIDMeasurementFailureIndication LPPA-ELEMENTARY-PROCEDURE ::= {
+	INITIATING MESSAGE		E-CIDMeasurementFailureIndication
+	PROCEDURE CODE			id-e-CIDMeasurementFailureIndication
+	CRITICALITY				ignore
+}
+
+e-CIDMeasurementReport LPPA-ELEMENTARY-PROCEDURE ::= {
+	INITIATING MESSAGE		E-CIDMeasurementReport
+	PROCEDURE CODE			id-e-CIDMeasurementReport
+	CRITICALITY				ignore
+}
+
+e-CIDMeasurementTermination LPPA-ELEMENTARY-PROCEDURE ::= {
+	INITIATING MESSAGE		E-CIDMeasurementTerminationCommand
+	PROCEDURE CODE			id-e-CIDMeasurementTermination
+	CRITICALITY				reject
+}
+
+oTDOAInformationExchange LPPA-ELEMENTARY-PROCEDURE ::= {
+	INITIATING MESSAGE		OTDOAInformationRequest
+	SUCCESSFUL OUTCOME		OTDOAInformationResponse
+	UNSUCCESSFUL OUTCOME	OTDOAInformationFailure
+	PROCEDURE CODE			id-oTDOAInformationExchange
+	CRITICALITY				reject
+}
+
+uTDOAInformationExchange LPPA-ELEMENTARY-PROCEDURE ::= {
+	INITIATING MESSAGE		UTDOAInformationRequest
+	SUCCESSFUL OUTCOME		UTDOAInformationResponse
+	UNSUCCESSFUL OUTCOME	UTDOAInformationFailure
+	PROCEDURE CODE			id-uTDOAInformationExchange
+	CRITICALITY				reject
+}
+
+uTDOAInformationUpdate LPPA-ELEMENTARY-PROCEDURE ::= {
+	INITIATING MESSAGE		UTDOAInformationUpdate
+	PROCEDURE CODE			id-uTDOAInformationUpdate
+	CRITICALITY				ignore
+}
+
+assistanceInformationControl LPPA-ELEMENTARY-PROCEDURE ::= {
+	INITIATING MESSAGE		AssistanceInformationControl
+	PROCEDURE CODE			id-assistanceInformationControl
+	CRITICALITY				reject
+}
+
+assistanceInformationFeedback LPPA-ELEMENTARY-PROCEDURE ::= {
+	INITIATING MESSAGE		AssistanceInformationFeedback
+	PROCEDURE CODE			id-assistanceInformationFeedback
+	CRITICALITY				reject
+}
+
+errorIndication LPPA-ELEMENTARY-PROCEDURE ::= {
+	INITIATING MESSAGE		ErrorIndication
+	PROCEDURE CODE			id-errorIndication
+	CRITICALITY				ignore
+}
+
+
+privateMessage			LPPA-ELEMENTARY-PROCEDURE ::= {
+	INITIATING MESSAGE		PrivateMessage
+	PROCEDURE CODE			id-privateMessage
+	CRITICALITY				ignore
+}
+
+END
+-- **************************************************************
+--
+-- PDU definitions for LPPa.
+--
+-- **************************************************************
+
+LPPA-PDU-Contents {
+itu-t (0) identified-organization (4) etsi (0) mobileDomain (0) 
+eps-Access (21) modules (3) lppa (6) version1 (1) lppa-PDU-Contents (1) }
+
+DEFINITIONS AUTOMATIC TAGS ::= 
+
+BEGIN
+
+-- **************************************************************
+--
+-- IE parameter types from other modules.
+--
+-- **************************************************************
+
+IMPORTS
+	
+	Cause,
+	CriticalityDiagnostics,
+	E-CID-MeasurementResult,
+	OTDOACells,
+	OTDOA-Information-Item,
+	Measurement-ID,
+	MeasurementPeriodicity,
+	MeasurementQuantities,
+	ReportCharacteristics,
+	RequestedSRSTransmissionCharacteristics,
+	ULConfiguration,
+	Cell-Portion-ID,
+	InterRATMeasurementQuantities,
+	InterRATMeasurementResult,
+	Add-OTDOACells,
+	WLANMeasurementQuantities,
+	WLANMeasurementResult,
+	Assistance-Information,
+	Broadcast,
+	AssistanceInformationFailureList
+	
+FROM LPPA-IEs
+
+	PrivateIE-Container{},
+	ProtocolExtensionContainer{},
+	ProtocolIE-Container{},
+	ProtocolIE-ContainerList{},
+	ProtocolIE-ContainerPair{},
+	ProtocolIE-ContainerPairList{},
+	ProtocolIE-Single-Container{},
+	LPPA-PRIVATE-IES,
+	LPPA-PROTOCOL-EXTENSION,
+	LPPA-PROTOCOL-IES,
+	LPPA-PROTOCOL-IES-PAIR
+FROM LPPA-Containers
+	maxnoOTDOAtypes,
+	id-Cause,
+	id-CriticalityDiagnostics,
+	id-E-SMLC-UE-Measurement-ID,
+	id-OTDOACells,
+	id-OTDOA-Information-Type-Group,
+	id-OTDOA-Information-Type-Item,
+	id-ReportCharacteristics,
+	id-MeasurementPeriodicity,
+	id-MeasurementQuantities,
+	id-eNB-UE-Measurement-ID,
+	id-E-CID-MeasurementResult,
+	id-RequestedSRSTransmissionCharacteristics,
+	id-ULConfiguration,
+	id-Cell-Portion-ID,
+	id-InterRATMeasurementQuantities,
+	id-InterRATMeasurementResult,
+	id-AddOTDOACells,
+	id-WLANMeasurementQuantities,
+	id-WLANMeasurementResult,
+	id-Assistance-Information,
+	id-Broadcast,
+	id-AssistanceInformationFailureList
+	
+FROM LPPA-Constants;
+
+-- **************************************************************
+--
+-- E-CID MEASUREMENT INITIATION REQUEST
+--
+-- **************************************************************
+
+E-CIDMeasurementInitiationRequest ::= SEQUENCE {
+	protocolIEs		ProtocolIE-Container	{{E-CIDMeasurementInitiationRequest-IEs}},
+	...
+}
+
+E-CIDMeasurementInitiationRequest-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-E-SMLC-UE-Measurement-ID		CRITICALITY reject	TYPE Measurement-ID						PRESENCE mandatory}|
+	{ ID id-ReportCharacteristics			CRITICALITY reject	TYPE ReportCharacteristics				PRESENCE mandatory}|
+	{ ID id-MeasurementPeriodicity			CRITICALITY reject	TYPE MeasurementPeriodicity				PRESENCE conditional}|
+-- The IE shall be present if the Report Characteritics IE is set to "periodic" --
+	{ ID id-MeasurementQuantities			CRITICALITY reject	TYPE MeasurementQuantities				PRESENCE mandatory}|
+	{ ID id-InterRATMeasurementQuantities	CRITICALITY ignore	TYPE InterRATMeasurementQuantities	PRESENCE optional}|
+	{ ID id-WLANMeasurementQuantities		CRITICALITY ignore	TYPE WLANMeasurementQuantities			PRESENCE optional},
+	...
+}
+
+
+-- **************************************************************
+--
+-- E-CID MEASUREMENT INITIATION RESPONSE
+--
+-- **************************************************************
+
+E-CIDMeasurementInitiationResponse ::= SEQUENCE {
+	protocolIEs		ProtocolIE-Container	{{E-CIDMeasurementInitiationResponse-IEs}},
+	...
+}
+
+E-CIDMeasurementInitiationResponse-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-E-SMLC-UE-Measurement-ID	CRITICALITY reject	TYPE Measurement-ID					PRESENCE mandatory}|
+	{ ID id-eNB-UE-Measurement-ID		CRITICALITY reject	TYPE Measurement-ID					PRESENCE mandatory}|
+	{ ID id-E-CID-MeasurementResult		CRITICALITY ignore	TYPE E-CID-MeasurementResult		PRESENCE optional}|
+	{ ID id-CriticalityDiagnostics		CRITICALITY ignore	TYPE CriticalityDiagnostics			PRESENCE optional}|
+	{ ID id-Cell-Portion-ID				CRITICALITY ignore	TYPE Cell-Portion-ID				PRESENCE optional}|
+	{ ID id-InterRATMeasurementResult	CRITICALITY ignore	TYPE InterRATMeasurementResult		PRESENCE optional}|
+	{ ID id-WLANMeasurementResult		CRITICALITY ignore	TYPE WLANMeasurementResult			PRESENCE optional},
+	...
+}
+
+
+
+-- **************************************************************
+--
+-- E-CID MEASUREMENT INITIATION FAILURE
+--
+-- **************************************************************
+
+E-CIDMeasurementInitiationFailure ::= SEQUENCE {
+	protocolIEs						ProtocolIE-Container		{{E-CIDMeasurementInitiationFailure-IEs}},
+	...
+}
+
+
+E-CIDMeasurementInitiationFailure-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-E-SMLC-UE-Measurement-ID		CRITICALITY reject	TYPE Measurement-ID				PRESENCE mandatory}|
+	{ ID id-Cause							CRITICALITY ignore	TYPE Cause						PRESENCE mandatory}|
+	{ ID id-CriticalityDiagnostics			CRITICALITY ignore	TYPE CriticalityDiagnostics		PRESENCE optional},
+	...
+}
+
+
+-- **************************************************************
+--
+-- E-CID MEASUREMENT FAILURE INDICATION
+--
+-- **************************************************************
+
+E-CIDMeasurementFailureIndication ::= SEQUENCE {
+	protocolIEs						ProtocolIE-Container		{{E-CIDMeasurementFailureIndication-IEs}},
+	...
+}
+
+
+E-CIDMeasurementFailureIndication-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-E-SMLC-UE-Measurement-ID		CRITICALITY reject	TYPE Measurement-ID				PRESENCE mandatory}|
+	{ ID id-eNB-UE-Measurement-ID			CRITICALITY reject	TYPE Measurement-ID				PRESENCE mandatory}|
+	{ ID id-Cause							CRITICALITY ignore	TYPE Cause						PRESENCE mandatory},
+	...
+}
+
+-- **************************************************************
+--
+-- E-CID MEASUREMENT REPORT
+--
+-- **************************************************************
+
+E-CIDMeasurementReport ::= SEQUENCE {
+	protocolIEs						ProtocolIE-Container		{{E-CIDMeasurementReport-IEs}},
+	...
+}
+
+
+E-CIDMeasurementReport-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-E-SMLC-UE-Measurement-ID		CRITICALITY reject	TYPE Measurement-ID				PRESENCE mandatory}|
+	{ ID id-eNB-UE-Measurement-ID			CRITICALITY reject	TYPE Measurement-ID				PRESENCE mandatory}|
+	{ ID id-E-CID-MeasurementResult			CRITICALITY ignore	TYPE E-CID-MeasurementResult	PRESENCE mandatory}|
+	{ ID id-Cell-Portion-ID					CRITICALITY ignore	TYPE Cell-Portion-ID			PRESENCE optional},
+	...
+}
+
+-- **************************************************************
+--
+-- E-CID MEASUREMENT TERMINATION 
+--
+-- **************************************************************
+
+E-CIDMeasurementTerminationCommand ::= SEQUENCE {
+	protocolIEs						ProtocolIE-Container		{{E-CIDMeasurementTerminationCommand-IEs}},
+	...
+}
+
+
+E-CIDMeasurementTerminationCommand-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-E-SMLC-UE-Measurement-ID		CRITICALITY reject	TYPE Measurement-ID				PRESENCE mandatory}|
+	{ ID id-eNB-UE-Measurement-ID			CRITICALITY reject	TYPE Measurement-ID				PRESENCE mandatory},
+	...
+}
+
+
+-- **************************************************************
+--
+-- OTDOA INFORMATION REQUEST
+--
+-- **************************************************************
+
+OTDOAInformationRequest ::= SEQUENCE {
+	protocolIEs		ProtocolIE-Container	{{OTDOAInformationRequest-IEs}},
+	...
+}
+
+OTDOAInformationRequest-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-OTDOA-Information-Type-Group		CRITICALITY reject	TYPE OTDOA-Information-Type			PRESENCE mandatory},
+	...
+}
+
+OTDOA-Information-Type ::= SEQUENCE (SIZE(1..maxnoOTDOAtypes)) OF ProtocolIE-Single-Container { { OTDOA-Information-TypeIEs} }
+
+OTDOA-Information-TypeIEs	LPPA-PROTOCOL-IES ::= {
+	{ ID id-OTDOA-Information-Type-Item		CRITICALITY reject	TYPE OTDOA-Information-Type-Item	PRESENCE mandatory},
+	...
+}
+
+OTDOA-Information-Type-Item ::= SEQUENCE {
+	oTDOA-Information-Type-Item		OTDOA-Information-Item,
+	iE-Extensions					ProtocolExtensionContainer { { OTDOA-Information-Type-ItemExtIEs} } OPTIONAL,
+	...
+}
+
+OTDOA-Information-Type-ItemExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+-- **************************************************************
+--
+-- OTDOA INFORMATION RESPONSE
+--
+-- **************************************************************
+
+OTDOAInformationResponse ::= SEQUENCE {
+	protocolIEs		ProtocolIE-Container	{{OTDOAInformationResponse-IEs}},
+	...
+}
+
+OTDOAInformationResponse-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-OTDOACells						CRITICALITY ignore	TYPE OTDOACells					PRESENCE mandatory}|
+	{ ID id-CriticalityDiagnostics			CRITICALITY ignore	TYPE CriticalityDiagnostics		PRESENCE optional}|
+	{ ID id-AddOTDOACells					CRITICALITY ignore	TYPE Add-OTDOACells				PRESENCE optional},
+	...
+}
+
+-- **************************************************************
+--
+-- OTDOA INFORMATION FAILURE
+--
+-- **************************************************************
+
+OTDOAInformationFailure ::= SEQUENCE {
+	protocolIEs						ProtocolIE-Container		{{OTDOAInformationFailure-IEs}},
+	...
+}
+
+
+OTDOAInformationFailure-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-Cause							CRITICALITY ignore	TYPE Cause						PRESENCE mandatory}|
+	{ ID id-CriticalityDiagnostics			CRITICALITY ignore	TYPE CriticalityDiagnostics		PRESENCE optional},
+	...
+}
+
+-- **************************************************************
+--
+-- UTDOA INFORMATION REQUEST
+--
+-- **************************************************************
+
+UTDOAInformationRequest ::= SEQUENCE {
+	protocolIEs				ProtocolIE-Container		{{UTDOAInformationRequest-IEs}},
+	...
+}
+
+UTDOAInformationRequest-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-RequestedSRSTransmissionCharacteristics		CRITICALITY ignore	TYPE RequestedSRSTransmissionCharacteristics	PRESENCE optional},
+	...
+}
+
+-- **************************************************************
+--
+-- UTDOA INFORMATION RESPONSE
+--
+-- **************************************************************
+
+UTDOAInformationResponse ::= SEQUENCE {
+	protocolIEs				ProtocolIE-Container		{{UTDOAInformationResponse-IEs}},
+	...
+}
+
+UTDOAInformationResponse-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-ULConfiguration					CRITICALITY reject	TYPE ULConfiguration			PRESENCE mandatory}|
+	{ ID id-CriticalityDiagnostics			CRITICALITY ignore	TYPE CriticalityDiagnostics		PRESENCE optional},
+	...
+}
+
+-- **************************************************************
+--
+-- UTDOA INFORMATION FAILURE
+--
+-- **************************************************************
+
+UTDOAInformationFailure ::= SEQUENCE {
+	protocolIEs				ProtocolIE-Container		{{UTDOAInformationFailure-IEs}},
+	...
+}
+
+
+UTDOAInformationFailure-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-Cause							CRITICALITY ignore	TYPE Cause						PRESENCE mandatory}|
+	{ ID id-CriticalityDiagnostics			CRITICALITY ignore	TYPE CriticalityDiagnostics		PRESENCE optional},
+	...
+}
+
+-- **************************************************************
+--
+-- UTDOA INFORMATION UPDATE
+--
+-- **************************************************************
+
+UTDOAInformationUpdate ::= SEQUENCE {
+	protocolIEs					ProtocolIE-Container		{{UTDOAInformationUpdate-IEs}},
+	...
+}
+
+UTDOAInformationUpdate-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-ULConfiguration		CRITICALITY ignore	TYPE ULConfiguration	PRESENCE optional},
+	...
+}
+
+-- **************************************************************
+--
+-- ASSISTANCE INFORMATION CONTROL
+--
+-- **************************************************************
+
+AssistanceInformationControl ::= SEQUENCE {
+	protocolIEs		ProtocolIE-Container	{{AssistanceInformationControl-IEs}},
+	...
+}
+
+AssistanceInformationControl-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-Assistance-Information	CRITICALITY reject	TYPE Assistance-Information		PRESENCE optional}|
+	{ ID id-Broadcast				CRITICALITY reject	TYPE Broadcast					PRESENCE optional},
+	...
+}
+
+-- **************************************************************
+--
+-- ASSISTANCE INFORMATION FEEDBACK
+--
+-- **************************************************************
+
+AssistanceInformationFeedback ::= SEQUENCE {
+	protocolIEs		ProtocolIE-Container	{{AssistanceInformationFeedback-IEs}},
+	...
+}
+
+AssistanceInformationFeedback-IEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-AssistanceInformationFailureList	CRITICALITY reject	TYPE AssistanceInformationFailureList	PRESENCE optional}|
+	{ ID id-CriticalityDiagnostics				CRITICALITY ignore	TYPE CriticalityDiagnostics					PRESENCE optional},
+	...
+}
+
+-- **************************************************************
+--
+-- ERROR INDICATION
+--
+-- **************************************************************
+
+ErrorIndication ::= SEQUENCE {
+	protocolIEs		ProtocolIE-Container	{{ErrorIndication-IEs}},
+	...
+}
+
+ErrorIndication-IEs LPPA-PROTOCOL-IES ::= {
+	
+	{ ID id-Cause						CRITICALITY ignore	TYPE Cause						PRESENCE optional}|
+	{ ID id-CriticalityDiagnostics		CRITICALITY ignore	TYPE CriticalityDiagnostics		PRESENCE optional},
+	...
+}
+
+-- **************************************************************
+--
+-- PRIVATE MESSAGE
+--
+-- **************************************************************
+
+PrivateMessage ::= SEQUENCE {
+	privateIEs		PrivateIE-Container	{{PrivateMessage-IEs}},
+	...
+}
+
+PrivateMessage-IEs LPPA-PRIVATE-IES ::= {
+	...
+}
+
+END
+-- **************************************************************
+--
+-- Information Element Definitions
+--
+-- **************************************************************
+
+LPPA-IEs {
+itu-t (0) identified-organization (4) etsi (0) mobileDomain (0) 
+eps-Access (21) modules (3) lppa (6) version1 (1) lppa-IEs (2) }
+
+DEFINITIONS AUTOMATIC TAGS ::= 
+
+BEGIN
+
+IMPORTS	
+	
+	id-MeasurementQuantities-Item,
+	id-ResultsPerSSB-Index-List,
+	id-ResultsPerSSB-Index-Item,
+	id-NR-CGI,
+	maxCellineNB,
+	maxCellReport,
+	maxNrOfErrors,
+	maxNoMeas,
+	maxnoOTDOAtypes,
+	maxServCell,
+	id-InterRATMeasurementQuantities-Item,
+	id-WLANMeasurementQuantities-Item,
+	maxGERANMeas,
+	maxUTRANMeas,
+	maxNRmeas,
+	maxResultsPerSSBIndex,
+	maxCellineNB-ext,
+	maxWLANchannels,
+	maxMBSFN-Allocations,
+	maxnoFreqHoppingBandsMinusOne,
+	maxNrOfPosSImessage,
+	maxnoAssistInfoFailureListItems,
+	maxNrOfSegments,
+	maxNrOfPosSIBs
+
+FROM LPPA-Constants
+
+	Criticality,
+	LPPATransactionID,
+	ProcedureCode,
+	ProtocolIE-ID,
+	TriggeringMessage
+
+FROM LPPA-CommonDataTypes
+
+	ProtocolExtensionContainer{},
+	ProtocolIE-Single-Container{},
+	
+	LPPA-PROTOCOL-EXTENSION,
+	LPPA-PROTOCOL-IES
+FROM LPPA-Containers;
+
+-- A
+
+Add-OTDOACells ::= SEQUENCE (SIZE (1.. maxCellineNB-ext)) OF SEQUENCE {
+	add-OTDOACellInfo				Add-OTDOACell-Information,
+	iE-Extensions					ProtocolExtensionContainer { {Add-OTDOACells-ExtIEs} } OPTIONAL,
+	...
+}
+
+Add-OTDOACells-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+Add-OTDOACell-Information ::= SEQUENCE (SIZE (1..maxnoOTDOAtypes)) OF OTDOACell-Information-Item
+
+Assistance-Information ::= SEQUENCE {
+	systemInformation				SystemInformation,
+	iE-Extensions					ProtocolExtensionContainer { { Assistance-Information-ExtIEs} } OPTIONAL,
+	...
+}
+
+Assistance-Information-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+AssistanceInformationFailureList ::= SEQUENCE (SIZE (1..maxnoAssistInfoFailureListItems)) OF SEQUENCE {
+	posSIB-Type						PosSIB-Type,
+	outcome							Outcome,
+	iE-Extensions					ProtocolExtensionContainer { {AssistanceInformationFailureList-ExtIEs} }	OPTIONAL,
+	...
+}
+
+AssistanceInformationFailureList-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+AssistanceInformationMetaData ::= SEQUENCE {
+	encrypted			ENUMERATED {true, ...}	OPTIONAL,
+	gNSSID				ENUMERATED {gps, sbas, gzss, galileo, glonass, bds, ..., navic}	OPTIONAL,
+	sBASID				ENUMERATED {waas, egnos, msas, gagan, ...}				OPTIONAL,
+	iE-Extensions						ProtocolExtensionContainer { { AssistanceInformationMetaData-ExtIEs} }	OPTIONAL,
+	...
+}
+
+AssistanceInformationMetaData-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+-- B
+
+BCCH ::= INTEGER (0..1023, ...)
+
+BitmapsforNPRS	::= CHOICE {
+	ten			BIT STRING(SIZE (10)),
+	forty		BIT STRING(SIZE (40)),
+	...,
+	ten-tdd		BIT STRING(SIZE (8)),
+	forty-tdd	BIT STRING(SIZE (32))}
+
+Broadcast ::= ENUMERATED {
+	start,
+	stop,
+	...
+}
+
+BroadcastPeriodicity ::= ENUMERATED {
+	ms80,
+	ms160,
+	ms320,
+	ms640,
+	ms1280,
+	ms2560,
+	ms5120,
+	...
+}
+
+BSSID ::= OCTET STRING (SIZE(6))
+
+
+-- C
+
+Cause ::= CHOICE {
+	radioNetwork		CauseRadioNetwork,
+	protocol			CauseProtocol,
+	misc				CauseMisc,
+	...
+}
+
+CauseMisc ::= ENUMERATED {
+	unspecified,
+	...
+}
+
+CauseProtocol ::= ENUMERATED {
+	transfer-syntax-error,
+	abstract-syntax-error-reject,
+	abstract-syntax-error-ignore-and-notify,
+	message-not-compatible-with-receiver-state,
+	semantic-error,
+	unspecified,
+	abstract-syntax-error-falsely-constructed-message,
+	...
+}
+
+CauseRadioNetwork ::= ENUMERATED {
+	unspecified,
+	requested-item-not-supported,
+	requested-item-temporarily-not-available,
+	...
+
+}
+
+Cell-Portion-ID ::= INTEGER (0..255,... , 256..4095)
+
+CPLength ::= ENUMERATED {
+	normal,
+	extended,
+	...
+}
+
+CriticalityDiagnostics ::= SEQUENCE {
+	procedureCode					ProcedureCode					OPTIONAL,
+	triggeringMessage				TriggeringMessage				OPTIONAL,
+	procedureCriticality			Criticality						OPTIONAL,
+	lppatransactionID				LPPATransactionID				OPTIONAL,
+	iEsCriticalityDiagnostics		CriticalityDiagnostics-IE-List	OPTIONAL,
+	iE-Extensions					ProtocolExtensionContainer { {CriticalityDiagnostics-ExtIEs} }	OPTIONAL,
+	...
+}
+
+
+CriticalityDiagnostics-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+CriticalityDiagnostics-IE-List ::= SEQUENCE (SIZE (1..maxNrOfErrors)) OF
+	SEQUENCE {
+		iECriticality			Criticality,
+		iE-ID					ProtocolIE-ID,
+		typeOfError				TypeOfError,
+		iE-Extensions			ProtocolExtensionContainer { {CriticalityDiagnostics-IE-List-ExtIEs} } OPTIONAL,
+		...
+}
+
+CriticalityDiagnostics-IE-List-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+-- D
+
+DL-Bandwidth ::= ENUMERATED {
+	bw6,
+	bw15,
+	bw25,
+	bw50,
+	bw75,
+	bw100,
+	...
+}
+
+-- E
+
+E-CID-MeasurementResult ::= SEQUENCE {
+	servingCell-ID					ECGI,
+	servingCellTAC					TAC,
+	e-UTRANAccessPointPosition		E-UTRANAccessPointPosition	OPTIONAL,
+	measuredResults					MeasuredResults				OPTIONAL,
+	...
+}
+
+ECGI ::= SEQUENCE {
+	pLMN-Identity				PLMN-Identity,
+	eUTRANcellIdentifier		EUTRANCellIdentifier,
+	iE-Extensions				ProtocolExtensionContainer { {ECGI-ExtIEs} } OPTIONAL,
+	...
+}
+
+ECGI-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+EUTRANCellIdentifier ::= BIT STRING (SIZE (28))
+
+EARFCN ::= INTEGER (0..65535, ..., 65536..262143)
+
+E-UTRANAccessPointPosition ::= SEQUENCE {
+	latitudeSign				ENUMERATED {north, south},
+	latitude					INTEGER (0..8388607),
+	longitude					INTEGER (-8388608..8388607),
+	directionOfAltitude			ENUMERATED {height, depth},
+	altitude					INTEGER (0..32767),
+	uncertaintySemi-major		INTEGER (0..127),
+	uncertaintySemi-minor		INTEGER (0..127),
+	orientationOfMajorAxis		INTEGER (0..179),
+	uncertaintyAltitude			INTEGER (0..127),
+	confidence					INTEGER (0..100),
+	...
+}
+
+-- F
+-- G
+-- H
+
+HESSID ::= OCTET STRING (SIZE(6))
+
+
+-- I
+
+InterRATMeasurementQuantities ::= SEQUENCE (SIZE (0.. maxNoMeas)) OF ProtocolIE-Single-Container { {InterRATMeasurementQuantities-ItemIEs} }
+
+InterRATMeasurementQuantities-ItemIEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-InterRATMeasurementQuantities-Item	CRITICALITY reject	TYPE InterRATMeasurementQuantities-Item PRESENCE mandatory}}
+
+InterRATMeasurementQuantities-Item ::= SEQUENCE {
+	interRATMeasurementQuantitiesValue			InterRATMeasurementQuantitiesValue,
+	iE-Extensions								ProtocolExtensionContainer { { InterRATMeasurementQuantitiesValue-ExtIEs} } OPTIONAL,
+	...
+}
+
+InterRATMeasurementQuantitiesValue-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+InterRATMeasurementQuantitiesValue ::= ENUMERATED {
+	geran,
+	utran,
+	...,
+	nr
+}
+
+InterRATMeasurementResult ::= SEQUENCE (SIZE (1.. maxNoMeas)) OF InterRATMeasuredResultsValue
+
+InterRATMeasuredResultsValue ::= CHOICE {
+	resultGERAN			ResultGERAN,
+	resultUTRAN			ResultUTRAN,
+	...,
+	resultNR			ResultNR
+}
+
+-- J
+-- K
+-- L
+-- M
+
+Measurement-ID ::= INTEGER (1..15, ...)
+
+MeasurementPeriodicity ::= ENUMERATED {
+	ms120,
+	ms240,
+	ms480,
+	ms640,
+	ms1024,
+	ms2048,
+	ms5120,
+	ms10240,
+	min1,
+	min6,
+	min12,
+	min30,
+	min60,
+	...
+}
+
+MeasurementQuantities ::= SEQUENCE (SIZE (1.. maxNoMeas)) OF ProtocolIE-Single-Container { {MeasurementQuantities-ItemIEs} }
+
+MeasurementQuantities-ItemIEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-MeasurementQuantities-Item	CRITICALITY reject	TYPE MeasurementQuantities-Item		PRESENCE mandatory}
+}
+
+MeasurementQuantities-Item ::= SEQUENCE {
+	measurementQuantitiesValue							MeasurementQuantitiesValue,
+	iE-Extensions										ProtocolExtensionContainer { { MeasurementQuantitiesValue-ExtIEs} } OPTIONAL,
+	...
+}
+
+MeasurementQuantitiesValue-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+MeasurementQuantitiesValue ::= ENUMERATED {
+	cell-ID,
+	angleOfArrival,
+	timingAdvanceType1,
+	timingAdvanceType2,
+	rSRP,
+	rSRQ,
+	...
+}
+
+MeasuredResults ::= SEQUENCE (SIZE (1.. maxNoMeas)) OF MeasuredResultsValue
+
+
+MeasuredResultsValue ::= CHOICE { 
+	valueAngleOfArrival				INTEGER (0..719),
+	valueTimingAdvanceType1			INTEGER (0..7690),
+	valueTimingAdvanceType2			INTEGER (0..7690),
+	resultRSRP						ResultRSRP,
+	resultRSRQ						ResultRSRQ,
+	...
+}
+
+MBSFNsubframeConfiguration ::= SEQUENCE (SIZE (1.. maxMBSFN-Allocations)) OF MBSFNsubframeConfigurationValue
+
+MBSFNsubframeConfigurationValue ::=			SEQUENCE {
+	radioframeAllocationPeriod			ENUMERATED {n1, n2, n4, n8, n16, n32},
+	radioframeAllocationOffset			INTEGER (0..7),
+	subframeAllocation					Subframeallocation
+}
+
+
+-- N
+
+NarrowBandIndex ::= INTEGER (0..15,...)
+
+NRCellIdentity ::= BIT STRING (SIZE(36))
+
+NR-CGI ::= SEQUENCE {
+	pLMN-Identity		PLMN-Identity,
+	nRCellIdentity		NRCellIdentity,
+	iE-Extensions		ProtocolExtensionContainer { {NR-CGI-ExtIEs} } OPTIONAL,
+	...
+}
+
+NR-CGI-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+NPRSConfiguration ::=			SEQUENCE {
+	nPRSSubframePartA			NPRSSubframePartA 		OPTIONAL,
+	nPRSSubframePartB			NPRSSubframePartB 		OPTIONAL,
+	...
+}
+
+NPRSMutingConfiguration ::= CHOICE {
+	two 				BIT STRING (SIZE (2)),
+	four 				BIT STRING (SIZE (4)),
+	eight 				BIT STRING (SIZE (8)),
+	sixteen 			BIT STRING (SIZE (16)),
+	...
+}
+
+NPRSSubframePartA ::=			SEQUENCE {
+	bitmapsforNPRS				BitmapsforNPRS,
+	nPRSMutingConfiguration		NPRSMutingConfiguration 		OPTIONAL,
+	...
+}
+
+NPRSSubframePartB ::=			SEQUENCE {
+	numberofNPRSOneOccasion		ENUMERATED {sf10, sf20, sf40, sf80, sf160, sf320, sf640, sf1280, ..., sf2560},
+	periodicityofNPRS			ENUMERATED {sf160, sf320, sf640, sf1280, ..., sf2560},
+	startingsubframeoffset		ENUMERATED {zero, one-Eighth, two-Eighths, three-Eighths, four-Eighths, five-Eighths, six-Eighths, seven-Eighths, ...},
+	nPRSMutingConfiguration		NPRSMutingConfiguration 		OPTIONAL,
+	...,
+	sIB1-NB-Subframe-TDD			ENUMERATED {	sf0, sf4, sf0and5, ...} 		OPTIONAL	
+
+}
+
+NumberOfAntennaPorts ::= ENUMERATED {
+		n1-or-n2,
+		n4,
+		...
+}
+
+NumberOfDlFrames ::= ENUMERATED {
+		sf1,
+		sf2,
+		sf4,
+		sf6,
+		...
+}
+
+
+NumberOfDlFrames-Extended ::= INTEGER (1..160,...)
+
+NumberOfFrequencyHoppingBands ::= ENUMERATED {
+	twobands,
+	fourbands,
+	...
+}
+
+NPRSSequenceInfo ::= INTEGER (0..174,...)
+
+
+NRARFCN ::= INTEGER (0.. 3279165)
+
+NRPCI ::= INTEGER (0..1007)
+
+-- O
+
+OffsetNBChanneltoEARFCN ::= ENUMERATED {
+		minusTen,
+		minusNine,
+		minusEight,
+		minusSeven,
+		minusSix,
+		minusFive,
+		minusFour,
+		minusThree,
+		minusTwo,
+		minusOne,
+		minusZeroDotFive,
+		zero,
+		one,
+		two,
+		three,
+		four,
+		five,
+		six,
+		seven,
+		eight,
+		nine,
+		...
+}
+
+OperationModeInfo ::= ENUMERATED {
+		inband,
+		guardband,
+		standalone,
+		...
+}
+
+OTDOACells ::= SEQUENCE (SIZE (1.. maxCellineNB)) OF SEQUENCE {
+	oTDOACellInfo					OTDOACell-Information,
+	iE-Extensions					ProtocolExtensionContainer { {OTDOACells-ExtIEs} } OPTIONAL,
+	...
+}
+
+OTDOACells-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+OTDOACell-Information ::= SEQUENCE (SIZE (1..maxnoOTDOAtypes)) OF OTDOACell-Information-Item
+
+OTDOACell-Information-Item ::= CHOICE {
+	pCI							PCI,
+	cellId						ECGI,
+	tAC							TAC,
+	eARFCN						EARFCN,
+	pRS-Bandwidth				PRS-Bandwidth,
+	pRS-ConfigurationIndex		PRS-Configuration-Index, 
+	cPLength					CPLength,
+	numberOfDlFrames			NumberOfDlFrames,
+	numberOfAntennaPorts		NumberOfAntennaPorts,
+	sFNInitialisationTime		SFNInitialisationTime,
+	e-UTRANAccessPointPosition	E-UTRANAccessPointPosition,
+	...,
+	pRSMutingConfiguration		PRSMutingConfiguration,
+	prsid						PRS-ID,
+	tpid						TP-ID,
+	tpType						TP-Type,
+	numberOfDlFrames-Extended	NumberOfDlFrames-Extended,
+	crsCPlength					CPLength,
+	mBSFNsubframeConfiguration	MBSFNsubframeConfiguration,
+	nPRSConfiguration			NPRSConfiguration,
+	offsetNBChanneltoEARFCN		OffsetNBChanneltoEARFCN,
+	operationModeInfo			OperationModeInfo,
+	nPRS-ID						INTEGER (0..4095, ...), 
+	dL-Bandwidth				DL-Bandwidth,
+	pRSOccasionGroup			PRSOccasionGroup,
+	pRSFreqHoppingConfig		PRSFrequencyHoppingConfiguration,
+	repetitionNumberofSIB1-NB	RepetitionNumberofSIB1-NB,
+	nPRSSequenceInfo			NPRSSequenceInfo,
+	nPRSType2					NPRSConfiguration,
+	tddConfiguration			TDDConfiguration
+}
+
+OTDOA-Information-Item ::= ENUMERATED {
+		pci,
+		cellid,
+		tac,
+		earfcn,
+		prsBandwidth,
+		prsConfigIndex,
+		cpLength,
+		noDlFrames,
+		noAntennaPorts,
+		sFNInitTime,
+		...,
+		e-UTRANAccessPointPosition,
+		prsmutingconfiguration,
+		prsid,
+		tpid,
+		tpType,
+		crsCPlength,
+		mBSFNsubframeConfiguration,
+		nPRSConfiguration,
+		offsetNBChannelNumbertoEARFCN,
+		operationModeInfo,
+		nPRS-ID,
+		dlBandwidth,
+		multipleprsConfigurationsperCell,
+		prsOccasionGroup,
+		prsFrequencyHoppingConfiguration,
+		repetitionNumberofSIB1-NB,
+		nPRSSequenceInfo,
+		nPRSType2,
+		tddConfig
+}
+
+Outcome ::= ENUMERATED {
+		failed,
+		...
+}
+
+-- P
+
+PCI ::= INTEGER (0..503, ...)
+
+PhysCellIDGERAN ::= INTEGER (0..63, ...)
+
+PhysCellIDUTRA-FDD ::= INTEGER (0..511, ...)
+
+PhysCellIDUTRA-TDD ::= INTEGER (0..127, ...)
+
+PLMN-Identity ::= OCTET STRING (SIZE(3))
+
+PosSIBs ::= SEQUENCE (SIZE (1.. maxNrOfPosSIBs)) OF SEQUENCE {
+	posSIB-Type						PosSIB-Type,
+	posSIB-Segments					PosSIB-Segments,
+	assistanceInformationMetaData	AssistanceInformationMetaData		OPTIONAL,
+	broadcastPriority				INTEGER (1..16,...)				OPTIONAL,
+	iE-Extensions					ProtocolExtensionContainer { { PosSIBs-ExtIEs} }	OPTIONAL,
+	...
+}
+
+PosSIBs-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+PosSIB-Segments ::= SEQUENCE (SIZE (1.. maxNrOfSegments)) OF SEQUENCE {
+	assistanceDataSIBelement			OCTET STRING,
+	iE-Extensions						ProtocolExtensionContainer { { PosSIB-Segments-ExtIEs} }	OPTIONAL,
+	...
+}
+
+PosSIB-Segments-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+
+PosSIB-Type ::= ENUMERATED {
+	posSibType1-1, 
+	posSibType1-2, 
+	posSibType1-3, 
+	posSibType1-4, 
+	posSibType1-5,
+	posSibType1-6, 
+	posSibType1-7, 
+	posSibType2-1, 
+	posSibType2-2, 
+	posSibType2-3,
+	posSibType2-4, 
+	posSibType2-5, 
+	posSibType2-6, 
+	posSibType2-7, 
+	posSibType2-8,
+	posSibType2-9, 
+	posSibType2-10, 
+	posSibType2-11, 
+	posSibType2-12, 
+	posSibType2-13, 
+	posSibType2-14, 
+	posSibType2-15, 
+	posSibType2-16,
+	posSibType2-17, 
+	posSibType2-18, 
+	posSibType2-19,
+	posSibType3-1,
+	...,
+	posSibType4-1,
+	posSibType5-1,
+	posSibType2-24,
+	posSibType2-25
+}
+
+PRS-Bandwidth ::= ENUMERATED {
+		bw6,
+		bw15,
+		bw25,
+		bw50,
+		bw75,
+		bw100,
+		...
+}
+
+PRS-Configuration-Index ::= INTEGER (0..4095, ...)
+
+PRS-ID	::= INTEGER (0..4095, ...)
+
+PRSMutingConfiguration ::= CHOICE {
+	two 			BIT STRING (SIZE (2)),
+	four 			BIT STRING (SIZE (4)),
+	eight 			BIT STRING (SIZE (8)),
+	sixteen 		BIT STRING (SIZE (16)),
+	...,
+	thirty-two						BIT STRING (SIZE (32)),
+	sixty-four						BIT STRING (SIZE (64)),
+	one-hundred-and-twenty-eight	BIT STRING (SIZE (128)),
+	two-hundred-and-fifty-six		BIT STRING (SIZE (256)),
+	five-hundred-and-twelve			BIT STRING (SIZE (512)),
+	one-thousand-and-twenty-four	BIT STRING (SIZE (1024))
+}
+
+PRSOccasionGroup ::= ENUMERATED {
+	og2,
+	og4,
+	og8,
+	og16,
+	og32,
+	og64,
+	og128,
+	...
+}
+
+PRSFrequencyHoppingConfiguration ::= SEQUENCE {
+	noOfFreqHoppingBands		NumberOfFrequencyHoppingBands,
+	bandPositions				SEQUENCE(SIZE (1..maxnoFreqHoppingBandsMinusOne)) OF NarrowBandIndex,
+	iE-Extensions				ProtocolExtensionContainer { { PRSFrequencyHoppingConfiguration-Item-IEs} } OPTIONAL,
+	...
+}
+
+PRSFrequencyHoppingConfiguration-Item-IEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+-- Q
+-- R
+
+RepetitionNumberofSIB1-NB ::= ENUMERATED {
+	r4,
+	r8,
+	r16,
+	...
+}
+
+ReportCharacteristics ::= ENUMERATED {
+	onDemand,
+	periodic,
+	...
+}
+
+RequestedSRSTransmissionCharacteristics ::= SEQUENCE {
+	numberOfTransmissions	INTEGER (0..500, ...),
+	bandwidth				INTEGER (1..100, ...),
+	...
+}
+
+ResultRSRP ::= SEQUENCE (SIZE (1.. maxCellReport)) OF ResultRSRP-Item
+
+ResultRSRP-Item ::= SEQUENCE {
+	pCI				PCI,
+	eARFCN			EARFCN,
+	eCGI			ECGI OPTIONAL,
+	valueRSRP		ValueRSRP,
+	iE-Extensions	ProtocolExtensionContainer { { ResultRSRP-Item-ExtIEs} } OPTIONAL,
+	...
+}
+
+ResultRSRP-Item-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+ResultRSRQ ::= SEQUENCE (SIZE (1.. maxCellReport)) OF ResultRSRQ-Item
+
+ResultRSRQ-Item ::= SEQUENCE {
+	pCI				PCI,
+	eARFCN			EARFCN,
+	eCGI			ECGI OPTIONAL,
+	valueRSRQ		ValueRSRQ,
+	iE-Extensions	ProtocolExtensionContainer { { ResultRSRQ-Item-ExtIEs} } OPTIONAL,
+	...
+}
+
+ResultRSRQ-Item-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+ResultGERAN ::= SEQUENCE (SIZE (1.. maxGERANMeas)) OF ResultGERAN-Item
+
+ResultGERAN-Item ::= SEQUENCE {
+	bCCH				BCCH,
+	physCellIDGERAN		PhysCellIDGERAN,
+	rSSI				RSSI,
+	iE-Extensions		ProtocolExtensionContainer { { ResultGERAN-Item-ExtIEs} } OPTIONAL,
+	...
+}
+
+ResultGERAN-Item-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+ResultUTRAN ::= SEQUENCE (SIZE (1.. maxUTRANMeas)) OF ResultUTRAN-Item
+
+ResultUTRAN-Item ::= SEQUENCE {
+	uARFCN				UARFCN,
+	physCellIDUTRAN		CHOICE {
+		physCellIDUTRA-FDD		PhysCellIDUTRA-FDD,
+		physCellIDUTRA-TDD		PhysCellIDUTRA-TDD
+	},
+	uTRA-RSCP			UTRA-RSCP OPTIONAL,
+	uTRA-EcN0			UTRA-EcN0 OPTIONAL,
+	iE-Extensions		ProtocolExtensionContainer { { ResultUTRAN-Item-ExtIEs} } OPTIONAL,
+	...
+}
+
+ResultUTRAN-Item-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+ResultNR ::= SEQUENCE (SIZE (1.. maxNRmeas)) OF ResultNR-Item
+
+ResultNR-Item ::= SEQUENCE {
+	nRARFCN				NRARFCN,
+	nRPCI				NRPCI,
+	sS-NRRSRP			SS-NRRSRP	OPTIONAL,
+	sS-NRRSRQ			SS-NRRSRQ	OPTIONAL,
+	iE-Extensions		ProtocolExtensionContainer { { ResultNR-Item-ExtIEs} } OPTIONAL,
+	...
+}
+
+ResultNR-Item-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	{ ID id-ResultsPerSSB-Index-List							CRITICALITY ignore	EXTENSION ResultsPerSSB-Index-List					PRESENCE optional}|
+	{ ID id-NR-CGI												CRITICALITY ignore	EXTENSION NR-CGI											PRESENCE optional},
+	...
+}
+
+
+ResultsPerSSB-Index-List ::= SEQUENCE (SIZE(1..maxResultsPerSSBIndex)) OF ResultsPerSSB-Index-Item
+
+ResultsPerSSB-Index-Item ::=SEQUENCE {
+	sSB-Index					SSB-Index,
+	sS-NRRSRPBeamValue			SS-NRRSRP			OPTIONAL,
+	sS-NRRSRQBeamValue			SS-NRRSRQ 				OPTIONAL,
+	iE-Extensions				ProtocolExtensionContainer { { ResultsPerSSB-Index-Item-ExtIEs} }	OPTIONAL,
+	...
+}
+
+ResultsPerSSB-Index-Item-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+RSSI ::= INTEGER (0..63, ...)
+
+
+-- S
+
+SFNInitialisationTime ::= BIT STRING (SIZE (64))
+
+SRSConfigurationForAllCells ::= SEQUENCE (SIZE (1.. maxServCell)) OF SRSConfigurationForOneCell
+
+SRSConfigurationForOneCell ::= SEQUENCE {
+	pci							PCI,
+	ul-earfcn					EARFCN,
+	ul-bandwidth				ENUMERATED {n6, n15, n25, n50, n75, n100},
+	ul-cyclicPrefixLength		CPLength,
+	srs-BandwidthConfig			ENUMERATED {bw0, bw1, bw2, bw3, bw4, bw5, bw6, bw7},
+	srs-Bandwidth				ENUMERATED {bw0, bw1, bw2, bw3},
+	srs-AntennaPort				ENUMERATED {an1, an2, an4, ...},
+	srs-HoppingBandwidth		ENUMERATED {hbw0, hbw1, hbw2, hbw3},
+	srs-cyclicShift				ENUMERATED {cs0, cs1, cs2, cs3, cs4, cs5, cs6, cs7},
+	srs-ConfigIndex				INTEGER (0..1023),
+	maxUpPts					ENUMERATED {true}			OPTIONAL,	-- Cond ifTDD
+	transmissionComb			INTEGER (0..1),
+	freqDomainPosition			INTEGER (0..23),
+	groupHoppingEnabled			BOOLEAN,
+	deltaSS						INTEGER (0..29)				OPTIONAL,
+	sfnInitialisationTime		SFNInitialisationTime,
+	...
+}
+
+
+Subframeallocation ::= CHOICE {
+	oneFrame						BIT STRING (SIZE(6)),
+	fourFrames						BIT STRING (SIZE(24))
+}
+
+SS-NRRSRP ::= INTEGER (0..127)
+
+SS-NRRSRQ ::= INTEGER (0..127)
+
+SSB-Index ::= INTEGER (0..63)
+
+SSID ::= OCTET STRING (SIZE(1..32))
+
+SystemInformation ::= SEQUENCE (SIZE (1.. maxNrOfPosSImessage)) OF SEQUENCE {
+	broadcastPeriodicity				BroadcastPeriodicity,
+	posSIBs								PosSIBs,
+	iE-Extensions						ProtocolExtensionContainer { { SystemInformation-ExtIEs} }	OPTIONAL,
+	...
+}
+
+SystemInformation-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+-- T
+
+TAC ::= OCTET STRING (SIZE(2))
+
+TDDConfiguration ::= SEQUENCE {
+	subframeAssignment				ENUMERATED { sa0, sa1, sa2, sa3, sa4, sa5, sa6, ... },
+	iE-Extensions					ProtocolExtensionContainer { { TDDConfiguration-ExtIEs} }	OPTIONAL,
+	...
+}
+
+TDDConfiguration-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+
+TP-ID ::= INTEGER (0..4095, ...)
+
+TP-Type ::= ENUMERATED { prs-only-tp, ... }
+
+TypeOfError ::= ENUMERATED {
+	not-understood,
+	missing,
+	...
+}
+
+
+
+-- U
+
+ULConfiguration ::= SEQUENCE {
+	pci							PCI,
+	ul-earfcn					EARFCN,
+	timingAdvanceType1			INTEGER (0..7690) 			OPTIONAL,
+	timingAdvanceType2			INTEGER (0..7690)			OPTIONAL,
+	numberOfTransmissions		INTEGER (0..500,...),
+	srsConfiguration			SRSConfigurationForAllCells,
+	...
+}
+
+UARFCN ::= INTEGER (0..16383, ...)
+
+UTRA-EcN0 ::= INTEGER (0..49, ...)
+
+UTRA-RSCP ::= INTEGER (-5..91, ...)
+
+-- V
+
+ValueRSRP ::= INTEGER (0..97, ...)
+
+ValueRSRQ ::= INTEGER (0..34, ...)
+
+-- W
+
+WLANMeasurementQuantities ::= SEQUENCE (SIZE (0.. maxNoMeas)) OF ProtocolIE-Single-Container { {WLANMeasurementQuantities-ItemIEs} }
+
+WLANMeasurementQuantities-ItemIEs LPPA-PROTOCOL-IES ::= {
+	{ ID id-WLANMeasurementQuantities-Item	CRITICALITY reject	TYPE WLANMeasurementQuantities-Item PRESENCE mandatory}}
+
+WLANMeasurementQuantities-Item ::= SEQUENCE {
+	wLANMeasurementQuantitiesValue			WLANMeasurementQuantitiesValue,
+	iE-Extensions							ProtocolExtensionContainer { { WLANMeasurementQuantitiesValue-ExtIEs} } OPTIONAL,
+	...
+}
+
+WLANMeasurementQuantitiesValue-ExtIEs LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+WLANMeasurementQuantitiesValue ::= ENUMERATED {
+	wlan,
+	...
+}
+
+
+WLANMeasurementResult ::= SEQUENCE (SIZE (1..maxNoMeas)) OF WLANMeasurementResult-Item
+
+WLANMeasurementResult-Item ::= SEQUENCE {
+	wLAN-RSSI			WLAN-RSSI,
+	sSID				SSID					OPTIONAL,
+	bSSID				BSSID					OPTIONAL,
+	hESSID				HESSID					OPTIONAL,
+	operatingClass		WLANOperatingClass		OPTIONAL,
+	countryCode			WLANCountryCode			OPTIONAL,
+	wLANChannelList		WLANChannelList			OPTIONAL,
+	wLANBand			WLANBand				OPTIONAL,
+	iE-Extensions		ProtocolExtensionContainer { { WLANMeasurementResult-Item-ExtIEs } }	OPTIONAL,
+	...
+}
+
+WLANMeasurementResult-Item-ExtIEs	LPPA-PROTOCOL-EXTENSION ::= {
+	...
+}
+
+WLAN-RSSI ::= INTEGER (0..141, ...)
+
+WLANBand ::= ENUMERATED {band2dot4, band5, ...}
+
+WLANChannelList ::= SEQUENCE (SIZE (1..maxWLANchannels)) OF WLANChannel
+
+WLANChannel ::= INTEGER (0..255)
+
+WLANCountryCode ::= ENUMERATED {
+	unitedStates,
+	europe,
+	japan,
+	global,
+	...
+}
+
+WLANOperatingClass ::= INTEGER (0..255)
+
+-- X
+-- Y
+-- Z
+
+END
+-- **************************************************************
+--
+-- Common definitions
+--
+-- **************************************************************
+
+LPPA-CommonDataTypes {
+itu-t (0) identified-organization (4) etsi (0) mobileDomain (0) 
+eps-Access (21) modules (3) lppa (6) version1 (1) lppa-CommonDataTypes (3)}
+
+DEFINITIONS AUTOMATIC TAGS ::= 
+
+BEGIN
+
+-- **************************************************************
+--
+-- Extension constants
+--
+-- **************************************************************
+
+maxPrivateIEs 									INTEGER ::= 65535
+maxProtocolExtensions 							INTEGER ::= 65535
+maxProtocolIEs									INTEGER ::= 65535
+
+-- **************************************************************
+--
+-- Common Data Types
+--
+-- **************************************************************
+
+Criticality		::= ENUMERATED { reject, ignore, notify }
+
+LPPATransactionID		::= INTEGER (0..32767)
+
+
+Presence		::= ENUMERATED { optional, conditional, mandatory }
+
+PrivateIE-ID	::= CHOICE {
+	local				INTEGER (0.. maxPrivateIEs),
+	global				OBJECT IDENTIFIER
+}
+
+ProcedureCode		::= INTEGER (0..255)
+
+
+ProtocolIE-ID		::= INTEGER (0..maxProtocolIEs)
+
+TriggeringMessage	::= ENUMERATED { initiating-message, successful-outcome, unsuccessful-outcome}
+
+END
+-- **************************************************************
+--
+-- Constant definitions
+--
+-- **************************************************************
+
+LPPA-Constants {
+itu-t (0) identified-organization (4) etsi (0) mobileDomain (0) 
+eps-Access (21) modules (3) lppa (6) version1 (1) lppa-Constants (4) }
+
+DEFINITIONS AUTOMATIC TAGS ::= 
+
+BEGIN
+
+IMPORTS
+	ProcedureCode,
+	ProtocolIE-ID
+FROM LPPA-CommonDataTypes;
+
+-- **************************************************************
+--
+-- Elementary Procedures
+--
+-- **************************************************************
+
+id-errorIndication												ProcedureCode ::= 0
+id-privateMessage												ProcedureCode ::= 1
+id-e-CIDMeasurementInitiation									ProcedureCode ::= 2
+id-e-CIDMeasurementFailureIndication							ProcedureCode ::= 3
+id-e-CIDMeasurementReport										ProcedureCode ::= 4
+id-e-CIDMeasurementTermination									ProcedureCode ::= 5
+id-oTDOAInformationExchange										ProcedureCode ::= 6
+id-uTDOAInformationExchange										ProcedureCode ::= 7
+id-uTDOAInformationUpdate										ProcedureCode ::= 8
+id-assistanceInformationControl									ProcedureCode ::= 9
+id-assistanceInformationFeedback								ProcedureCode ::= 10
+
+-- **************************************************************
+--
+-- Lists
+--
+-- **************************************************************
+
+maxNrOfErrors								INTEGER ::= 256
+maxCellineNB								INTEGER ::= 256
+maxNoMeas									INTEGER ::= 63
+maxCellReport								INTEGER ::= 9
+maxnoOTDOAtypes								INTEGER ::= 63
+maxServCell									INTEGER ::= 5
+maxGERANMeas								INTEGER ::= 8
+maxUTRANMeas								INTEGER ::= 8
+maxCellineNB-ext							INTEGER ::= 3840
+maxMBSFN-Allocations						INTEGER ::= 8
+maxWLANchannels								INTEGER ::= 16 
+maxnoFreqHoppingBandsMinusOne				INTEGER ::= 7
+maxNrOfPosSImessage							INTEGER ::= 32
+maxnoAssistInfoFailureListItems				INTEGER ::= 32
+maxNrOfSegments								INTEGER ::= 64
+maxNrOfPosSIBs								INTEGER ::= 32
+maxNRmeas									INTEGER ::= 32
+maxResultsPerSSBIndex						INTEGER	::=	64
+
+-- **************************************************************
+--
+-- IEs
+--
+-- **************************************************************
+
+id-Cause																	ProtocolIE-ID ::= 0
+id-CriticalityDiagnostics													ProtocolIE-ID ::= 1
+id-E-SMLC-UE-Measurement-ID													ProtocolIE-ID ::= 2
+id-ReportCharacteristics													ProtocolIE-ID ::= 3
+id-MeasurementPeriodicity													ProtocolIE-ID ::= 4
+id-MeasurementQuantities													ProtocolIE-ID ::= 5
+id-eNB-UE-Measurement-ID													ProtocolIE-ID ::= 6
+id-E-CID-MeasurementResult													ProtocolIE-ID ::= 7
+id-OTDOACells																ProtocolIE-ID ::= 8
+id-OTDOA-Information-Type-Group												ProtocolIE-ID ::= 9
+id-OTDOA-Information-Type-Item												ProtocolIE-ID ::= 10
+id-MeasurementQuantities-Item												ProtocolIE-ID ::= 11
+id-RequestedSRSTransmissionCharacteristics									ProtocolIE-ID ::= 12
+id-ULConfiguration															ProtocolIE-ID ::= 13
+id-Cell-Portion-ID															ProtocolIE-ID ::= 14
+id-InterRATMeasurementQuantities											ProtocolIE-ID ::= 15
+id-InterRATMeasurementQuantities-Item										ProtocolIE-ID ::= 16
+id-InterRATMeasurementResult												ProtocolIE-ID ::= 17
+id-AddOTDOACells															ProtocolIE-ID ::= 18
+id-WLANMeasurementQuantities												ProtocolIE-ID ::= 19
+id-WLANMeasurementQuantities-Item											ProtocolIE-ID ::= 20
+id-WLANMeasurementResult													ProtocolIE-ID ::= 21
+id-Assistance-Information													ProtocolIE-ID ::= 22
+id-Broadcast																ProtocolIE-ID ::= 23
+id-AssistanceInformationFailureList											ProtocolIE-ID ::= 24
+id-ResultsPerSSB-Index-List													ProtocolIE-ID ::= 25
+id-ResultsPerSSB-Index-Item													ProtocolIE-ID ::= 26
+id-NR-CGI																	ProtocolIE-ID ::= 27
+
+END
+-- **************************************************************
+--
+-- Container definitions
+--
+-- **************************************************************
+
+LPPA-Containers {
+itu-t (0) identified-organization (4) etsi (0) mobileDomain (0) 
+eps-Access (21) modules (3) lppa (6) version1 (1) lppa-Containers (5)}
+
+DEFINITIONS AUTOMATIC TAGS ::= 
+
+BEGIN
+
+-- **************************************************************
+--
+-- IE parameter types from other modules.
+--
+-- **************************************************************
+
+IMPORTS
+	maxPrivateIEs,
+	maxProtocolExtensions,
+	maxProtocolIEs,
+	Criticality,
+	Presence,
+	PrivateIE-ID,
+	ProtocolIE-ID	
+FROM LPPA-CommonDataTypes;
+
+-- **************************************************************
+--
+-- Class Definition for Protocol IEs
+--
+-- **************************************************************
+
+LPPA-PROTOCOL-IES ::= CLASS {
+	&id				ProtocolIE-ID			UNIQUE,
+	&criticality	Criticality,
+	&Value,
+	&presence		Presence
+}
+WITH SYNTAX {
+	ID				&id
+	CRITICALITY		&criticality
+	TYPE			&Value
+	PRESENCE		&presence
+}
+
+-- **************************************************************
+--
+-- Class Definition for Protocol IEs
+--
+-- **************************************************************
+
+LPPA-PROTOCOL-IES-PAIR ::= CLASS {
+	&id						ProtocolIE-ID		UNIQUE,
+	&firstCriticality		Criticality,
+	&FirstValue,
+	&secondCriticality		Criticality,
+	&SecondValue,
+	&presence				Presence
+}
+WITH SYNTAX {
+	ID						&id
+	FIRST CRITICALITY 		&firstCriticality
+	FIRST TYPE				&FirstValue
+	SECOND CRITICALITY 		&secondCriticality
+	SECOND TYPE				&SecondValue
+	PRESENCE				&presence
+}
+
+-- **************************************************************
+--
+-- Class Definition for Protocol Extensions
+--
+-- **************************************************************
+
+LPPA-PROTOCOL-EXTENSION ::= CLASS {
+	&id					ProtocolIE-ID		UNIQUE,
+	&criticality		Criticality,
+	&Extension,
+	&presence			Presence
+}
+WITH SYNTAX {
+	ID					&id
+	CRITICALITY			&criticality
+	EXTENSION			&Extension
+	PRESENCE			&presence
+}
+
+-- **************************************************************
+--
+-- Class Definition for Private IEs
+--
+-- **************************************************************
+
+LPPA-PRIVATE-IES ::= CLASS {
+	&id					PrivateIE-ID,
+	&criticality		Criticality,
+	&Value,
+	&presence			Presence
+}
+WITH SYNTAX {
+	ID					&id
+	CRITICALITY			&criticality
+	TYPE				&Value
+	PRESENCE			&presence
+}
+
+-- **************************************************************
+--
+-- Container for Protocol IEs
+--
+-- **************************************************************
+
+ProtocolIE-Container { LPPA-PROTOCOL-IES : IEsSetParam} ::= 
+	SEQUENCE (SIZE (0..maxProtocolIEs)) OF
+	ProtocolIE-Field {{IEsSetParam}}
+
+ProtocolIE-Single-Container { LPPA-PROTOCOL-IES : IEsSetParam} ::= 
+	ProtocolIE-Field {{IEsSetParam}}
+
+ProtocolIE-Field { LPPA-PROTOCOL-IES : IEsSetParam} ::= SEQUENCE {
+	id				LPPA-PROTOCOL-IES.&id					({IEsSetParam}),
+	criticality		LPPA-PROTOCOL-IES.&criticality			({IEsSetParam}{@id}),
+	value			LPPA-PROTOCOL-IES.&Value				({IEsSetParam}{@id})
+}
+
+-- **************************************************************
+--
+-- Container for Protocol IE Pairs
+--
+-- **************************************************************
+
+ProtocolIE-ContainerPair { LPPA-PROTOCOL-IES-PAIR : IEsSetParam} ::= 
+	SEQUENCE (SIZE (0..maxProtocolIEs)) OF
+	ProtocolIE-FieldPair {{IEsSetParam}}
+
+ProtocolIE-FieldPair { LPPA-PROTOCOL-IES-PAIR : IEsSetParam} ::= SEQUENCE {
+	id					LPPA-PROTOCOL-IES-PAIR.&id					({IEsSetParam}),
+	firstCriticality	LPPA-PROTOCOL-IES-PAIR.&firstCriticality	({IEsSetParam}{@id}),
+	firstValue			LPPA-PROTOCOL-IES-PAIR.&FirstValue			({IEsSetParam}{@id}),
+	secondCriticality	LPPA-PROTOCOL-IES-PAIR.&secondCriticality	({IEsSetParam}{@id}),
+	secondValue			LPPA-PROTOCOL-IES-PAIR.&SecondValue			({IEsSetParam}{@id})
+}
+
+-- **************************************************************
+--
+-- Container Lists for Protocol IE Containers
+--
+-- **************************************************************
+
+ProtocolIE-ContainerList {INTEGER : lowerBound, INTEGER : upperBound, LPPA-PROTOCOL-IES : IEsSetParam} ::=
+	SEQUENCE (SIZE (lowerBound..upperBound)) OF
+	ProtocolIE-Container {{IEsSetParam}}
+
+ProtocolIE-ContainerPairList {INTEGER : lowerBound, INTEGER : upperBound, LPPA-PROTOCOL-IES-PAIR : IEsSetParam} ::=
+	SEQUENCE (SIZE (lowerBound..upperBound)) OF
+	ProtocolIE-ContainerPair {{IEsSetParam}}
+
+-- **************************************************************
+--
+-- Container for Protocol Extensions
+--
+-- **************************************************************
+
+ProtocolExtensionContainer { LPPA-PROTOCOL-EXTENSION : ExtensionSetParam} ::= 
+	SEQUENCE (SIZE (1..maxProtocolExtensions)) OF
+	ProtocolExtensionField {{ExtensionSetParam}}
+
+ProtocolExtensionField { LPPA-PROTOCOL-EXTENSION : ExtensionSetParam} ::= SEQUENCE {
+	id					LPPA-PROTOCOL-EXTENSION.&id				({ExtensionSetParam}),
+	criticality			LPPA-PROTOCOL-EXTENSION.&criticality	({ExtensionSetParam}{@id}),
+	extensionValue		LPPA-PROTOCOL-EXTENSION.&Extension		({ExtensionSetParam}{@id})
+}
+
+-- **************************************************************
+--
+-- Container for Private IEs
+--
+-- **************************************************************
+
+PrivateIE-Container { LPPA-PRIVATE-IES : IEsSetParam} ::= 
+	SEQUENCE (SIZE (1..maxPrivateIEs)) OF
+	PrivateIE-Field {{IEsSetParam}}
+
+PrivateIE-Field { LPPA-PRIVATE-IES : IEsSetParam} ::= SEQUENCE {
+	id				LPPA-PRIVATE-IES.&id			({IEsSetParam}),
+	criticality		LPPA-PRIVATE-IES.&criticality	({IEsSetParam}{@id}),
+	value			LPPA-PRIVATE-IES.&Value			({IEsSetParam}{@id})
+}
+
+END
