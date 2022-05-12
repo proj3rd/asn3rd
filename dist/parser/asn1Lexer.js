@@ -1,4 +1,4 @@
-// Generated from ./grammar3rd.g4 by ANTLR 4.10.1
+// Generated from src/asn1.g4 by ANTLR 4.10.1
 // jshint ignore: start
 import antlr4 from 'antlr4';
 const serializedATN = [4, 0, 135, 1450, 6, -1, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3,
@@ -472,7 +472,7 @@ const serializedATN = [4, 0, 135, 1450, 6, -1, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 
     1426, 1428, 1434, 1438, 1, 6, 0, 0];
 const atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
 const decisionsToDFA = atn.decisionToState.map((ds, index) => new antlr4.dfa.DFA(ds, index));
-export default class grammar3rdLexer extends antlr4.Lexer {
+export default class asn1Lexer extends antlr4.Lexer {
     constructor(input) {
         super(input);
         this._interp = new antlr4.atn.LexerATNSimulator(this, atn, decisionsToDFA, new antlr4.PredictionContextCache());
@@ -481,10 +481,10 @@ export default class grammar3rdLexer extends antlr4.Lexer {
         return atn;
     }
 }
-grammar3rdLexer.grammarFileName = "grammar3rd.g4";
-grammar3rdLexer.channelNames = ["DEFAULT_TOKEN_CHANNEL", "HIDDEN"];
-grammar3rdLexer.modeNames = ["DEFAULT_MODE"];
-grammar3rdLexer.literalNames = [null, "'::='", "'...'", "'..'", "'[['", "']]'",
+asn1Lexer.grammarFileName = "asn1.g4";
+asn1Lexer.channelNames = ["DEFAULT_TOKEN_CHANNEL", "HIDDEN"];
+asn1Lexer.modeNames = ["DEFAULT_MODE"];
+asn1Lexer.literalNames = [null, "'::='", "'...'", "'..'", "'[['", "']]'",
     "'{'", "'}'", "','", "'.'", "'('", "')'", "'['",
     "']'", "'-'", "':'", "';'", "'@'", "'|'", "'!'",
     "'&'", "'#'", "'ABSENT'", "'ENCODED'", "'INTERSECTION'",
@@ -515,7 +515,7 @@ grammar3rdLexer.literalNames = [null, "'::='", "'...'", "'..'", "'[['", "']]'",
     "'DECODE'", "'DECODER'", "'ENCODING-DEFINITIONS'",
     "'ENCODINGS'", "'IF'", "'LINK-DEFINITIONS'", "'PER-BASIC-UNALIGNED'",
     "'OUTER'"];
-grammar3rdLexer.symbolicNames = [null, "ASSIGNMENT", "ELLIPSIS", "RANGE_SEPARATOR",
+asn1Lexer.symbolicNames = [null, "ASSIGNMENT", "ELLIPSIS", "RANGE_SEPARATOR",
     "L_VERSION_BRACKET", "R_VERSION_BRACKET", "L_BRACE",
     "R_BRACE", "COMMA", "PERIOD", "L_PAREN", "R_PAREN",
     "L_BRACKET", "R_BRACKET", "HYPHEN_MINUS", "COLON",
@@ -560,7 +560,7 @@ grammar3rdLexer.symbolicNames = [null, "ASSIGNMENT", "ELLIPSIS", "RANGE_SEPARATO
     "OUTER_LITERAL", "WS", "Tag", "Comment", "Word",
     "ObjectClassReference", "TypeReference", "IdentifierL",
     "Number", "Bstring"];
-grammar3rdLexer.ruleNames = ["ASSIGNMENT", "ELLIPSIS", "RANGE_SEPARATOR", "L_VERSION_BRACKET",
+asn1Lexer.ruleNames = ["ASSIGNMENT", "ELLIPSIS", "RANGE_SEPARATOR", "L_VERSION_BRACKET",
     "R_VERSION_BRACKET", "L_BRACE", "R_BRACE", "COMMA",
     "PERIOD", "L_PAREN", "R_PAREN", "L_BRACKET", "R_BRACKET",
     "HYPHEN_MINUS", "COLON", "SEMICOLON_LITERAL", "AT",
@@ -604,143 +604,143 @@ grammar3rdLexer.ruleNames = ["ASSIGNMENT", "ELLIPSIS", "RANGE_SEPARATOR", "L_VER
     "Tag", "Comment", "Word", "ObjectClassReference",
     "TypeReference", "IdentifierL", "Number", "Bstring",
     "C", "D", "E", "N", "O"];
-grammar3rdLexer.EOF = antlr4.Token.EOF;
-grammar3rdLexer.ASSIGNMENT = 1;
-grammar3rdLexer.ELLIPSIS = 2;
-grammar3rdLexer.RANGE_SEPARATOR = 3;
-grammar3rdLexer.L_VERSION_BRACKET = 4;
-grammar3rdLexer.R_VERSION_BRACKET = 5;
-grammar3rdLexer.L_BRACE = 6;
-grammar3rdLexer.R_BRACE = 7;
-grammar3rdLexer.COMMA = 8;
-grammar3rdLexer.PERIOD = 9;
-grammar3rdLexer.L_PAREN = 10;
-grammar3rdLexer.R_PAREN = 11;
-grammar3rdLexer.L_BRACKET = 12;
-grammar3rdLexer.R_BRACKET = 13;
-grammar3rdLexer.HYPHEN_MINUS = 14;
-grammar3rdLexer.COLON = 15;
-grammar3rdLexer.SEMICOLON_LITERAL = 16;
-grammar3rdLexer.AT = 17;
-grammar3rdLexer.PIPE = 18;
-grammar3rdLexer.EXCLAM = 19;
-grammar3rdLexer.AMP = 20;
-grammar3rdLexer.NUMBER_SIGN = 21;
-grammar3rdLexer.ABSENT_LITERAL = 22;
-grammar3rdLexer.ENCODED_LITERAL = 23;
-grammar3rdLexer.INTERSECTION_LITERAL = 24;
-grammar3rdLexer.SEQUENCE_LITERAL = 25;
-grammar3rdLexer.ABSTRACT_SYNTAX_LITERAL = 26;
-grammar3rdLexer.ENCODING_CONTROL_LITERAL = 27;
-grammar3rdLexer.ISO646String_LITERAL = 28;
-grammar3rdLexer.SET_LITERAL = 29;
-grammar3rdLexer.ALL_LITERAL = 30;
-grammar3rdLexer.END_LITERAL = 31;
-grammar3rdLexer.MAX_LITERAL = 32;
-grammar3rdLexer.SETTINGS_LITERAL = 33;
-grammar3rdLexer.APPLICATION_LITERAL = 34;
-grammar3rdLexer.ENUMERATED_LITERAL = 35;
-grammar3rdLexer.MIN_LITERAL = 36;
-grammar3rdLexer.SIZE_LITERAL = 37;
-grammar3rdLexer.AUTOMATIC_LITERAL = 38;
-grammar3rdLexer.EXCEPT_LITERAL = 39;
-grammar3rdLexer.MINUS_INFINITY_LITERAL = 40;
-grammar3rdLexer.STRING_LITERAL = 41;
-grammar3rdLexer.BEGIN_LITERAL = 42;
-grammar3rdLexer.EXPLICIT_LITERAL = 43;
-grammar3rdLexer.NOT_A_NUMBER_LITERAL = 44;
-grammar3rdLexer.SYNTAX_LITERAL = 45;
-grammar3rdLexer.BIT_LITERAL = 46;
-grammar3rdLexer.EXPORTS_LITERAL = 47;
-grammar3rdLexer.NULL_LITERAL = 48;
-grammar3rdLexer.T61String_LITERAL = 49;
-grammar3rdLexer.BMPString_LITERAL = 50;
-grammar3rdLexer.EXTENSIBILITY_LITERAL = 51;
-grammar3rdLexer.NumericString_LITERAL = 52;
-grammar3rdLexer.TAGS_LITERAL = 53;
-grammar3rdLexer.BOOLEAN_LITERAL = 54;
-grammar3rdLexer.EXTERNAL_LITERAL = 55;
-grammar3rdLexer.OBJECT_LITERAL = 56;
-grammar3rdLexer.TeletexString_LITERAL = 57;
-grammar3rdLexer.BY_LITERAL = 58;
-grammar3rdLexer.FALSE_LITERAL = 59;
-grammar3rdLexer.ObjectDescriptor_LITERAL = 60;
-grammar3rdLexer.TIME_LITERAL = 61;
-grammar3rdLexer.CHARACTER_LITERAL = 62;
-grammar3rdLexer.FROM_LITERAL = 63;
-grammar3rdLexer.OCTET_LITERAL = 64;
-grammar3rdLexer.TIME_OF_DAY_LITERAL = 65;
-grammar3rdLexer.CHOICE_LITERAL = 66;
-grammar3rdLexer.GeneralizedTime_LITERAL = 67;
-grammar3rdLexer.OF_LITERAL = 68;
-grammar3rdLexer.TRUE_LITERAL = 69;
-grammar3rdLexer.CLASS_LITERAL = 70;
-grammar3rdLexer.GeneralString_LITERAL = 71;
-grammar3rdLexer.OID_IRI_LITERAL = 72;
-grammar3rdLexer.TYPE_IDENTIFIER_LITERAL = 73;
-grammar3rdLexer.COMPONENT_LITERAL = 74;
-grammar3rdLexer.GraphicString_LITERAL = 75;
-grammar3rdLexer.OPTIONAL_LITERAL = 76;
-grammar3rdLexer.UNION_LITERAL = 77;
-grammar3rdLexer.COMPONENTS_LITERAL = 78;
-grammar3rdLexer.IA5String_LITERAL = 79;
-grammar3rdLexer.PATTERN_LITERAL = 80;
-grammar3rdLexer.UNIQUE_LITERAL = 81;
-grammar3rdLexer.CONSTRAINED_LITERAL = 82;
-grammar3rdLexer.IDENTIFIER_LITERAL = 83;
-grammar3rdLexer.PDV_LITERAL = 84;
-grammar3rdLexer.UNIVERSAL_LITERAL = 85;
-grammar3rdLexer.CONTAINING_LITERAL = 86;
-grammar3rdLexer.IMPLICIT_LITERAL = 87;
-grammar3rdLexer.PLUS_INFINITY_LITERAL = 88;
-grammar3rdLexer.UniversalString_LITERAL = 89;
-grammar3rdLexer.DATE_LITERAL = 90;
-grammar3rdLexer.IMPLIED_LITERAL = 91;
-grammar3rdLexer.PRESENT_LITERAL = 92;
-grammar3rdLexer.UTCTime_LITERAL = 93;
-grammar3rdLexer.DATE_TIME_LITERAL = 94;
-grammar3rdLexer.IMPORTS_LITERAL = 95;
-grammar3rdLexer.PrintableString_LITERAL = 96;
-grammar3rdLexer.UTF8String_LITERAL = 97;
-grammar3rdLexer.DEFAULT_LITERAL = 98;
-grammar3rdLexer.INCLUDES_LITERAL = 99;
-grammar3rdLexer.PRIVATE_LITERAL = 100;
-grammar3rdLexer.VideotexString_LITERAL = 101;
-grammar3rdLexer.DEFINITIONS_LITERAL = 102;
-grammar3rdLexer.INSTANCE_LITERAL = 103;
-grammar3rdLexer.REAL_LITERAL = 104;
-grammar3rdLexer.VisibleString_LITERAL = 105;
-grammar3rdLexer.DURATION_LITERAL = 106;
-grammar3rdLexer.INSTRUCTIONS_LITERAL = 107;
-grammar3rdLexer.RELATIVE_OID_LITERAL = 108;
-grammar3rdLexer.WITH_LITERAL = 109;
-grammar3rdLexer.EMBEDDED_LITERAL = 110;
-grammar3rdLexer.INTEGER_LITERAL = 111;
-grammar3rdLexer.RELATIVE_OID_IRI_LITERAL = 112;
-grammar3rdLexer.AS_LITERAL = 113;
-grammar3rdLexer.COMPLETED_LITERAL = 114;
-grammar3rdLexer.ENCODE_LITERAL = 115;
-grammar3rdLexer.ENCODE_DECODE_LITERAL = 116;
-grammar3rdLexer.ENCODER_LITERAL = 117;
-grammar3rdLexer.ENCODER_DECODER_LITERAL = 118;
-grammar3rdLexer.DECODE_LITERAL = 119;
-grammar3rdLexer.DECODER_LITERAL = 120;
-grammar3rdLexer.ENCODING_DEFINITIONS_LITERAL = 121;
-grammar3rdLexer.ENCODINGS_LITERAL = 122;
-grammar3rdLexer.IF_LITERAL = 123;
-grammar3rdLexer.LINK_DEFINITIONS_LITERAL = 124;
-grammar3rdLexer.PER_BASIC_UNALIGNED_LITERAL = 125;
-grammar3rdLexer.OUTER_LITERAL = 126;
-grammar3rdLexer.WS = 127;
-grammar3rdLexer.Tag = 128;
-grammar3rdLexer.Comment = 129;
-grammar3rdLexer.Word = 130;
-grammar3rdLexer.ObjectClassReference = 131;
-grammar3rdLexer.TypeReference = 132;
-grammar3rdLexer.IdentifierL = 133;
-grammar3rdLexer.Number = 134;
-grammar3rdLexer.Bstring = 135;
-grammar3rdLexer.prototype.sempred = function (localctx, ruleIndex, predIndex) {
+asn1Lexer.EOF = antlr4.Token.EOF;
+asn1Lexer.ASSIGNMENT = 1;
+asn1Lexer.ELLIPSIS = 2;
+asn1Lexer.RANGE_SEPARATOR = 3;
+asn1Lexer.L_VERSION_BRACKET = 4;
+asn1Lexer.R_VERSION_BRACKET = 5;
+asn1Lexer.L_BRACE = 6;
+asn1Lexer.R_BRACE = 7;
+asn1Lexer.COMMA = 8;
+asn1Lexer.PERIOD = 9;
+asn1Lexer.L_PAREN = 10;
+asn1Lexer.R_PAREN = 11;
+asn1Lexer.L_BRACKET = 12;
+asn1Lexer.R_BRACKET = 13;
+asn1Lexer.HYPHEN_MINUS = 14;
+asn1Lexer.COLON = 15;
+asn1Lexer.SEMICOLON_LITERAL = 16;
+asn1Lexer.AT = 17;
+asn1Lexer.PIPE = 18;
+asn1Lexer.EXCLAM = 19;
+asn1Lexer.AMP = 20;
+asn1Lexer.NUMBER_SIGN = 21;
+asn1Lexer.ABSENT_LITERAL = 22;
+asn1Lexer.ENCODED_LITERAL = 23;
+asn1Lexer.INTERSECTION_LITERAL = 24;
+asn1Lexer.SEQUENCE_LITERAL = 25;
+asn1Lexer.ABSTRACT_SYNTAX_LITERAL = 26;
+asn1Lexer.ENCODING_CONTROL_LITERAL = 27;
+asn1Lexer.ISO646String_LITERAL = 28;
+asn1Lexer.SET_LITERAL = 29;
+asn1Lexer.ALL_LITERAL = 30;
+asn1Lexer.END_LITERAL = 31;
+asn1Lexer.MAX_LITERAL = 32;
+asn1Lexer.SETTINGS_LITERAL = 33;
+asn1Lexer.APPLICATION_LITERAL = 34;
+asn1Lexer.ENUMERATED_LITERAL = 35;
+asn1Lexer.MIN_LITERAL = 36;
+asn1Lexer.SIZE_LITERAL = 37;
+asn1Lexer.AUTOMATIC_LITERAL = 38;
+asn1Lexer.EXCEPT_LITERAL = 39;
+asn1Lexer.MINUS_INFINITY_LITERAL = 40;
+asn1Lexer.STRING_LITERAL = 41;
+asn1Lexer.BEGIN_LITERAL = 42;
+asn1Lexer.EXPLICIT_LITERAL = 43;
+asn1Lexer.NOT_A_NUMBER_LITERAL = 44;
+asn1Lexer.SYNTAX_LITERAL = 45;
+asn1Lexer.BIT_LITERAL = 46;
+asn1Lexer.EXPORTS_LITERAL = 47;
+asn1Lexer.NULL_LITERAL = 48;
+asn1Lexer.T61String_LITERAL = 49;
+asn1Lexer.BMPString_LITERAL = 50;
+asn1Lexer.EXTENSIBILITY_LITERAL = 51;
+asn1Lexer.NumericString_LITERAL = 52;
+asn1Lexer.TAGS_LITERAL = 53;
+asn1Lexer.BOOLEAN_LITERAL = 54;
+asn1Lexer.EXTERNAL_LITERAL = 55;
+asn1Lexer.OBJECT_LITERAL = 56;
+asn1Lexer.TeletexString_LITERAL = 57;
+asn1Lexer.BY_LITERAL = 58;
+asn1Lexer.FALSE_LITERAL = 59;
+asn1Lexer.ObjectDescriptor_LITERAL = 60;
+asn1Lexer.TIME_LITERAL = 61;
+asn1Lexer.CHARACTER_LITERAL = 62;
+asn1Lexer.FROM_LITERAL = 63;
+asn1Lexer.OCTET_LITERAL = 64;
+asn1Lexer.TIME_OF_DAY_LITERAL = 65;
+asn1Lexer.CHOICE_LITERAL = 66;
+asn1Lexer.GeneralizedTime_LITERAL = 67;
+asn1Lexer.OF_LITERAL = 68;
+asn1Lexer.TRUE_LITERAL = 69;
+asn1Lexer.CLASS_LITERAL = 70;
+asn1Lexer.GeneralString_LITERAL = 71;
+asn1Lexer.OID_IRI_LITERAL = 72;
+asn1Lexer.TYPE_IDENTIFIER_LITERAL = 73;
+asn1Lexer.COMPONENT_LITERAL = 74;
+asn1Lexer.GraphicString_LITERAL = 75;
+asn1Lexer.OPTIONAL_LITERAL = 76;
+asn1Lexer.UNION_LITERAL = 77;
+asn1Lexer.COMPONENTS_LITERAL = 78;
+asn1Lexer.IA5String_LITERAL = 79;
+asn1Lexer.PATTERN_LITERAL = 80;
+asn1Lexer.UNIQUE_LITERAL = 81;
+asn1Lexer.CONSTRAINED_LITERAL = 82;
+asn1Lexer.IDENTIFIER_LITERAL = 83;
+asn1Lexer.PDV_LITERAL = 84;
+asn1Lexer.UNIVERSAL_LITERAL = 85;
+asn1Lexer.CONTAINING_LITERAL = 86;
+asn1Lexer.IMPLICIT_LITERAL = 87;
+asn1Lexer.PLUS_INFINITY_LITERAL = 88;
+asn1Lexer.UniversalString_LITERAL = 89;
+asn1Lexer.DATE_LITERAL = 90;
+asn1Lexer.IMPLIED_LITERAL = 91;
+asn1Lexer.PRESENT_LITERAL = 92;
+asn1Lexer.UTCTime_LITERAL = 93;
+asn1Lexer.DATE_TIME_LITERAL = 94;
+asn1Lexer.IMPORTS_LITERAL = 95;
+asn1Lexer.PrintableString_LITERAL = 96;
+asn1Lexer.UTF8String_LITERAL = 97;
+asn1Lexer.DEFAULT_LITERAL = 98;
+asn1Lexer.INCLUDES_LITERAL = 99;
+asn1Lexer.PRIVATE_LITERAL = 100;
+asn1Lexer.VideotexString_LITERAL = 101;
+asn1Lexer.DEFINITIONS_LITERAL = 102;
+asn1Lexer.INSTANCE_LITERAL = 103;
+asn1Lexer.REAL_LITERAL = 104;
+asn1Lexer.VisibleString_LITERAL = 105;
+asn1Lexer.DURATION_LITERAL = 106;
+asn1Lexer.INSTRUCTIONS_LITERAL = 107;
+asn1Lexer.RELATIVE_OID_LITERAL = 108;
+asn1Lexer.WITH_LITERAL = 109;
+asn1Lexer.EMBEDDED_LITERAL = 110;
+asn1Lexer.INTEGER_LITERAL = 111;
+asn1Lexer.RELATIVE_OID_IRI_LITERAL = 112;
+asn1Lexer.AS_LITERAL = 113;
+asn1Lexer.COMPLETED_LITERAL = 114;
+asn1Lexer.ENCODE_LITERAL = 115;
+asn1Lexer.ENCODE_DECODE_LITERAL = 116;
+asn1Lexer.ENCODER_LITERAL = 117;
+asn1Lexer.ENCODER_DECODER_LITERAL = 118;
+asn1Lexer.DECODE_LITERAL = 119;
+asn1Lexer.DECODER_LITERAL = 120;
+asn1Lexer.ENCODING_DEFINITIONS_LITERAL = 121;
+asn1Lexer.ENCODINGS_LITERAL = 122;
+asn1Lexer.IF_LITERAL = 123;
+asn1Lexer.LINK_DEFINITIONS_LITERAL = 124;
+asn1Lexer.PER_BASIC_UNALIGNED_LITERAL = 125;
+asn1Lexer.OUTER_LITERAL = 126;
+asn1Lexer.WS = 127;
+asn1Lexer.Tag = 128;
+asn1Lexer.Comment = 129;
+asn1Lexer.Word = 130;
+asn1Lexer.ObjectClassReference = 131;
+asn1Lexer.TypeReference = 132;
+asn1Lexer.IdentifierL = 133;
+asn1Lexer.Number = 134;
+asn1Lexer.Bstring = 135;
+asn1Lexer.prototype.sempred = function (localctx, ruleIndex, predIndex) {
     switch (ruleIndex) {
         case 127:
             return this.Tag_sempred(localctx, predIndex);
@@ -748,7 +748,7 @@ grammar3rdLexer.prototype.sempred = function (localctx, ruleIndex, predIndex) {
             throw "No registered predicate for:" + ruleIndex;
     }
 };
-grammar3rdLexer.prototype.Tag_sempred = function (localctx, predIndex) {
+asn1Lexer.prototype.Tag_sempred = function (localctx, predIndex) {
     switch (predIndex) {
         case 0:
             return this.charPositionInLine != 0;
@@ -756,4 +756,4 @@ grammar3rdLexer.prototype.Tag_sempred = function (localctx, predIndex) {
             throw "No predicate with index:" + predIndex;
     }
 };
-//# sourceMappingURL=grammar3rdLexer.js.map
+//# sourceMappingURL=asn1Lexer.js.map

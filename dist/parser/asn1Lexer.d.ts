@@ -1,4 +1,4 @@
-declare class grammar3rdLexer extends antlr4.Lexer {
+declare class asn1Lexer extends antlr4.Lexer {
     static grammarFileName: string;
     static channelNames: string[];
     static modeNames: string[];
@@ -11,7 +11,7 @@ declare class grammar3rdLexer extends antlr4.Lexer {
     sempred(localctx: any, ruleIndex: any, predIndex: any): boolean;
     Tag_sempred(localctx: any, predIndex: any): boolean;
 }
-declare namespace grammar3rdLexer {
+declare namespace asn1Lexer {
     const EOF: number;
     const ASSIGNMENT: number;
     const ELLIPSIS: number;
@@ -149,6 +149,6 @@ declare namespace grammar3rdLexer {
     const Number: number;
     const Bstring: number;
 }
-export default grammar3rdLexer;
+export default asn1Lexer;
 import antlr4 from "antlr4";
-//# sourceMappingURL=grammar3rdLexer.d.ts.map
+//# sourceMappingURL=asn1Lexer.d.ts.map
