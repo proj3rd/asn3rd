@@ -31,8 +31,17 @@ npm install proj3rd/asn3rd
 ```ts
 import { extract } from 'asn3rd';
 
-const extracted = await extract(text);
+const options = {
+  excludeNonTagComment: true,
+};
+const extracted = await extract(text, options);
 ```
+
+- `text`: A string containing ASN.1 definition.
+- `options`: Options for extraction. Optional.
+  - `excludeNonTagComment`: Whether to exclude non-tag comment.
+A tag is either a need code or a conditional tag, e.g. `-- Need R` or `-- Cond HO-toEPC`.
+Optional. Default `false`.
 
 ## Parser / Validator
 
