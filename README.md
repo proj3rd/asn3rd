@@ -6,7 +6,6 @@ ASN.1 utilities
   - [Usage](#usage)
 - [Parser / Validator](#parser--validator)
   - [Usage](#usage-1)
-- [CLI](#cli)
 
 ## Extractor
 
@@ -32,12 +31,7 @@ npm install proj3rd/asn3rd
 ```ts
 import { extract } from 'asn3rd';
 
-const [error, extracted] = extract(text);
-if (error) {
-  // Error handling
-} else {
-  // Play with the extracted ASN.1 definition
-}
+const extracted = await extract(text);
 ```
 
 ## Parser / Validator
@@ -73,9 +67,3 @@ if (error) {
   // Play with the parser
 }
 ```
-
-## CLI
-
-See [asn3rd-cli].
-
-[asn3rd-cli]: https://github.com/proj3rd/asn3rd-cli
