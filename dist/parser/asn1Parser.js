@@ -1,7 +1,7 @@
-// Generated from ./grammar3rd.g4 by ANTLR 4.10.1
+// Generated from src/asn1.g4 by ANTLR 4.10.1
 // jshint ignore: start
 import antlr4 from 'antlr4';
-import grammar3rdListener from './grammar3rdListener.js';
+import asn1Listener from './asn1Listener.js';
 const serializedATN = [4, 1, 135, 1424, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4,
     7, 4, 2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 2, 8, 7, 8, 2, 9, 7, 9, 2, 10, 7, 10, 2, 11, 7, 11, 2, 12, 7, 12,
     2, 13, 7, 13, 2, 14, 7, 14, 2, 15, 7, 15, 2, 16, 7, 16, 2, 17, 7, 17, 2, 18, 7, 18, 2, 19, 7, 19, 2,
@@ -469,20 +469,20 @@ const serializedATN = [4, 1, 135, 1424, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3
 const atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
 const decisionsToDFA = atn.decisionToState.map((ds, index) => new antlr4.dfa.DFA(ds, index));
 const sharedContextCache = new antlr4.PredictionContextCache();
-export default class grammar3rdParser extends antlr4.Parser {
+export default class asn1Parser extends antlr4.Parser {
     constructor(input) {
         super(input);
         this._interp = new antlr4.atn.ParserATNSimulator(this, atn, decisionsToDFA, sharedContextCache);
-        this.ruleNames = grammar3rdParser.ruleNames;
-        this.literalNames = grammar3rdParser.literalNames;
-        this.symbolicNames = grammar3rdParser.symbolicNames;
+        this.ruleNames = asn1Parser.ruleNames;
+        this.literalNames = asn1Parser.literalNames;
+        this.symbolicNames = asn1Parser.symbolicNames;
     }
     get atn() {
         return atn;
     }
     moduleDefinitions() {
         let localctx = new ModuleDefinitionsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 0, grammar3rdParser.RULE_moduleDefinitions);
+        this.enterRule(localctx, 0, asn1Parser.RULE_moduleDefinitions);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -510,7 +510,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                 this.state = 405;
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-            } while (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (grammar3rdParser.Word - 130)) | (1 << (grammar3rdParser.ObjectClassReference - 130)) | (1 << (grammar3rdParser.TypeReference - 130)))) !== 0));
+            } while (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (asn1Parser.Word - 130)) | (1 << (asn1Parser.ObjectClassReference - 130)) | (1 << (asn1Parser.TypeReference - 130)))) !== 0));
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -529,13 +529,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     typeReference() {
         let localctx = new TypeReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 2, grammar3rdParser.RULE_typeReference);
+        this.enterRule(localctx, 2, asn1Parser.RULE_typeReference);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 407;
             _la = this._input.LA(1);
-            if (!(((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (grammar3rdParser.Word - 130)) | (1 << (grammar3rdParser.ObjectClassReference - 130)) | (1 << (grammar3rdParser.TypeReference - 130)))) !== 0))) {
+            if (!(((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (asn1Parser.Word - 130)) | (1 << (asn1Parser.ObjectClassReference - 130)) | (1 << (asn1Parser.TypeReference - 130)))) !== 0))) {
                 this._errHandler.recoverInline(this);
             }
             else {
@@ -560,11 +560,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     identifier() {
         let localctx = new IdentifierContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 4, grammar3rdParser.RULE_identifier);
+        this.enterRule(localctx, 4, asn1Parser.RULE_identifier);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 409;
-            this.match(grammar3rdParser.IdentifierL);
+            this.match(asn1Parser.IdentifierL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -583,11 +583,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     valueReference() {
         let localctx = new ValueReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 6, grammar3rdParser.RULE_valueReference);
+        this.enterRule(localctx, 6, asn1Parser.RULE_valueReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 411;
-            this.match(grammar3rdParser.IdentifierL);
+            this.match(asn1Parser.IdentifierL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -606,7 +606,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     moduleReference() {
         let localctx = new ModuleReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 8, grammar3rdParser.RULE_moduleReference);
+        this.enterRule(localctx, 8, asn1Parser.RULE_moduleReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 413;
@@ -629,34 +629,34 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     moduleDefinition() {
         let localctx = new ModuleDefinitionContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 10, grammar3rdParser.RULE_moduleDefinition);
+        this.enterRule(localctx, 10, asn1Parser.RULE_moduleDefinition);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 415;
             this.moduleIdentifier();
             this.state = 416;
-            this.match(grammar3rdParser.DEFINITIONS_LITERAL);
+            this.match(asn1Parser.DEFINITIONS_LITERAL);
             this.state = 418;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.AUTOMATIC_LITERAL || _la === grammar3rdParser.EXPLICIT_LITERAL || _la === grammar3rdParser.IMPLICIT_LITERAL) {
+            if (_la === asn1Parser.AUTOMATIC_LITERAL || _la === asn1Parser.EXPLICIT_LITERAL || _la === asn1Parser.IMPLICIT_LITERAL) {
                 this.state = 417;
                 this.tagDefault();
             }
             this.state = 420;
-            this.match(grammar3rdParser.ASSIGNMENT);
+            this.match(asn1Parser.ASSIGNMENT);
             this.state = 421;
-            this.match(grammar3rdParser.BEGIN_LITERAL);
+            this.match(asn1Parser.BEGIN_LITERAL);
             this.state = 423;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.EXPORTS_LITERAL || _la === grammar3rdParser.IMPORTS_LITERAL || ((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (grammar3rdParser.Word - 130)) | (1 << (grammar3rdParser.ObjectClassReference - 130)) | (1 << (grammar3rdParser.TypeReference - 130)) | (1 << (grammar3rdParser.IdentifierL - 130)))) !== 0)) {
+            if (_la === asn1Parser.EXPORTS_LITERAL || _la === asn1Parser.IMPORTS_LITERAL || ((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (asn1Parser.Word - 130)) | (1 << (asn1Parser.ObjectClassReference - 130)) | (1 << (asn1Parser.TypeReference - 130)) | (1 << (asn1Parser.IdentifierL - 130)))) !== 0)) {
                 this.state = 422;
                 this.moduleBody();
             }
             this.state = 425;
-            this.match(grammar3rdParser.END_LITERAL);
+            this.match(asn1Parser.END_LITERAL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -675,21 +675,21 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     elmDefinition() {
         let localctx = new ElmDefinitionContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 12, grammar3rdParser.RULE_elmDefinition);
+        this.enterRule(localctx, 12, asn1Parser.RULE_elmDefinition);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 427;
             this.moduleIdentifier();
             this.state = 428;
-            this.match(grammar3rdParser.LINK_DEFINITIONS_LITERAL);
+            this.match(asn1Parser.LINK_DEFINITIONS_LITERAL);
             this.state = 429;
-            this.match(grammar3rdParser.ASSIGNMENT);
+            this.match(asn1Parser.ASSIGNMENT);
             this.state = 430;
-            this.match(grammar3rdParser.BEGIN_LITERAL);
+            this.match(asn1Parser.BEGIN_LITERAL);
             this.state = 431;
             this.elmModuleBody();
             this.state = 432;
-            this.match(grammar3rdParser.END_LITERAL);
+            this.match(asn1Parser.END_LITERAL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -708,21 +708,21 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     edmDefinition() {
         let localctx = new EdmDefinitionContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 14, grammar3rdParser.RULE_edmDefinition);
+        this.enterRule(localctx, 14, asn1Parser.RULE_edmDefinition);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 434;
             this.moduleIdentifier();
             this.state = 435;
-            this.match(grammar3rdParser.ENCODING_DEFINITIONS_LITERAL);
+            this.match(asn1Parser.ENCODING_DEFINITIONS_LITERAL);
             this.state = 436;
-            this.match(grammar3rdParser.ASSIGNMENT);
+            this.match(asn1Parser.ASSIGNMENT);
             this.state = 437;
-            this.match(grammar3rdParser.BEGIN_LITERAL);
+            this.match(asn1Parser.BEGIN_LITERAL);
             this.state = 438;
             this.edmModuleBody();
             this.state = 439;
-            this.match(grammar3rdParser.END_LITERAL);
+            this.match(asn1Parser.END_LITERAL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -741,7 +741,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     moduleIdentifier() {
         let localctx = new ModuleIdentifierContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 16, grammar3rdParser.RULE_moduleIdentifier);
+        this.enterRule(localctx, 16, asn1Parser.RULE_moduleIdentifier);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -750,7 +750,7 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 443;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.L_BRACE) {
+            if (_la === asn1Parser.L_BRACE) {
                 this.state = 442;
                 this.definitiveIdentification();
             }
@@ -772,7 +772,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definitiveIdentification() {
         let localctx = new DefinitiveIdentificationContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 18, grammar3rdParser.RULE_definitiveIdentification);
+        this.enterRule(localctx, 18, asn1Parser.RULE_definitiveIdentification);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 445;
@@ -795,15 +795,15 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definitiveOid() {
         let localctx = new DefinitiveOidContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 20, grammar3rdParser.RULE_definitiveOid);
+        this.enterRule(localctx, 20, asn1Parser.RULE_definitiveOid);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 447;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 448;
             this.definitiveObjIdComponentList();
             this.state = 449;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -822,7 +822,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definitiveObjIdComponentList() {
         let localctx = new DefinitiveObjIdComponentListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 22, grammar3rdParser.RULE_definitiveObjIdComponentList);
+        this.enterRule(localctx, 22, asn1Parser.RULE_definitiveObjIdComponentList);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -835,7 +835,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                 this.state = 454;
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-            } while (_la === grammar3rdParser.IdentifierL);
+            } while (_la === asn1Parser.IdentifierL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -854,7 +854,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definitiveObjIdComponent() {
         let localctx = new DefinitiveObjIdComponentContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 24, grammar3rdParser.RULE_definitiveObjIdComponent);
+        this.enterRule(localctx, 24, asn1Parser.RULE_definitiveObjIdComponent);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 456;
@@ -877,17 +877,17 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definitiveNameAndNumberForm() {
         let localctx = new DefinitiveNameAndNumberFormContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 26, grammar3rdParser.RULE_definitiveNameAndNumberForm);
+        this.enterRule(localctx, 26, asn1Parser.RULE_definitiveNameAndNumberForm);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 458;
             this.identifier();
             this.state = 459;
-            this.match(grammar3rdParser.L_PAREN);
+            this.match(asn1Parser.L_PAREN);
             this.state = 460;
             this.definitiveNumberForm();
             this.state = 461;
-            this.match(grammar3rdParser.R_PAREN);
+            this.match(asn1Parser.R_PAREN);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -906,11 +906,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definitiveNumberForm() {
         let localctx = new DefinitiveNumberFormContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 28, grammar3rdParser.RULE_definitiveNumberForm);
+        this.enterRule(localctx, 28, asn1Parser.RULE_definitiveNumberForm);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 463;
-            this.match(grammar3rdParser.Number);
+            this.match(asn1Parser.Number);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -929,31 +929,31 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     tagDefault() {
         let localctx = new TagDefaultContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 30, grammar3rdParser.RULE_tagDefault);
+        this.enterRule(localctx, 30, asn1Parser.RULE_tagDefault);
         try {
             this.state = 471;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.EXPLICIT_LITERAL:
+                case asn1Parser.EXPLICIT_LITERAL:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 465;
-                    this.match(grammar3rdParser.EXPLICIT_LITERAL);
+                    this.match(asn1Parser.EXPLICIT_LITERAL);
                     this.state = 466;
-                    this.match(grammar3rdParser.TAGS_LITERAL);
+                    this.match(asn1Parser.TAGS_LITERAL);
                     break;
-                case grammar3rdParser.IMPLICIT_LITERAL:
+                case asn1Parser.IMPLICIT_LITERAL:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 467;
-                    this.match(grammar3rdParser.IMPLICIT_LITERAL);
+                    this.match(asn1Parser.IMPLICIT_LITERAL);
                     this.state = 468;
-                    this.match(grammar3rdParser.TAGS_LITERAL);
+                    this.match(asn1Parser.TAGS_LITERAL);
                     break;
-                case grammar3rdParser.AUTOMATIC_LITERAL:
+                case asn1Parser.AUTOMATIC_LITERAL:
                     this.enterOuterAlt(localctx, 3);
                     this.state = 469;
-                    this.match(grammar3rdParser.AUTOMATIC_LITERAL);
+                    this.match(asn1Parser.AUTOMATIC_LITERAL);
                     this.state = 470;
-                    this.match(grammar3rdParser.TAGS_LITERAL);
+                    this.match(asn1Parser.TAGS_LITERAL);
                     break;
                 default:
                     throw new antlr4.error.NoViableAltException(this);
@@ -976,21 +976,21 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     moduleBody() {
         let localctx = new ModuleBodyContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 32, grammar3rdParser.RULE_moduleBody);
+        this.enterRule(localctx, 32, asn1Parser.RULE_moduleBody);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 474;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.EXPORTS_LITERAL) {
+            if (_la === asn1Parser.EXPORTS_LITERAL) {
                 this.state = 473;
                 this.exports();
             }
             this.state = 477;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.IMPORTS_LITERAL) {
+            if (_la === asn1Parser.IMPORTS_LITERAL) {
                 this.state = 476;
                 this.imports();
             }
@@ -1014,21 +1014,21 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     exports() {
         let localctx = new ExportsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 34, grammar3rdParser.RULE_exports);
+        this.enterRule(localctx, 34, asn1Parser.RULE_exports);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 481;
-            this.match(grammar3rdParser.EXPORTS_LITERAL);
+            this.match(asn1Parser.EXPORTS_LITERAL);
             this.state = 483;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (grammar3rdParser.Word - 130)) | (1 << (grammar3rdParser.ObjectClassReference - 130)) | (1 << (grammar3rdParser.TypeReference - 130)) | (1 << (grammar3rdParser.IdentifierL - 130)))) !== 0)) {
+            if (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (asn1Parser.Word - 130)) | (1 << (asn1Parser.ObjectClassReference - 130)) | (1 << (asn1Parser.TypeReference - 130)) | (1 << (asn1Parser.IdentifierL - 130)))) !== 0)) {
                 this.state = 482;
                 this.symbolsExported();
             }
             this.state = 485;
-            this.match(grammar3rdParser.SEMICOLON_LITERAL);
+            this.match(asn1Parser.SEMICOLON_LITERAL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -1047,7 +1047,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     symbolsExported() {
         let localctx = new SymbolsExportedContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 36, grammar3rdParser.RULE_symbolsExported);
+        this.enterRule(localctx, 36, asn1Parser.RULE_symbolsExported);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 487;
@@ -1070,21 +1070,21 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     imports() {
         let localctx = new ImportsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 38, grammar3rdParser.RULE_imports);
+        this.enterRule(localctx, 38, asn1Parser.RULE_imports);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 489;
-            this.match(grammar3rdParser.IMPORTS_LITERAL);
+            this.match(asn1Parser.IMPORTS_LITERAL);
             this.state = 491;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (grammar3rdParser.Word - 130)) | (1 << (grammar3rdParser.ObjectClassReference - 130)) | (1 << (grammar3rdParser.TypeReference - 130)) | (1 << (grammar3rdParser.IdentifierL - 130)))) !== 0)) {
+            if (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (asn1Parser.Word - 130)) | (1 << (asn1Parser.ObjectClassReference - 130)) | (1 << (asn1Parser.TypeReference - 130)) | (1 << (asn1Parser.IdentifierL - 130)))) !== 0)) {
                 this.state = 490;
                 this.symbolsImported();
             }
             this.state = 493;
-            this.match(grammar3rdParser.SEMICOLON_LITERAL);
+            this.match(asn1Parser.SEMICOLON_LITERAL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -1103,7 +1103,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     symbolsImported() {
         let localctx = new SymbolsImportedContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 40, grammar3rdParser.RULE_symbolsImported);
+        this.enterRule(localctx, 40, asn1Parser.RULE_symbolsImported);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 495;
@@ -1126,7 +1126,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     symbolsFromModuleList() {
         let localctx = new SymbolsFromModuleListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 42, grammar3rdParser.RULE_symbolsFromModuleList);
+        this.enterRule(localctx, 42, asn1Parser.RULE_symbolsFromModuleList);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -1139,7 +1139,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                 this.state = 500;
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-            } while (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (grammar3rdParser.Word - 130)) | (1 << (grammar3rdParser.ObjectClassReference - 130)) | (1 << (grammar3rdParser.TypeReference - 130)) | (1 << (grammar3rdParser.IdentifierL - 130)))) !== 0));
+            } while (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (asn1Parser.Word - 130)) | (1 << (asn1Parser.ObjectClassReference - 130)) | (1 << (asn1Parser.TypeReference - 130)) | (1 << (asn1Parser.IdentifierL - 130)))) !== 0));
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -1158,13 +1158,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     symbolsFromModule() {
         let localctx = new SymbolsFromModuleContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 44, grammar3rdParser.RULE_symbolsFromModule);
+        this.enterRule(localctx, 44, asn1Parser.RULE_symbolsFromModule);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 502;
             this.symbolList();
             this.state = 503;
-            this.match(grammar3rdParser.FROM_LITERAL);
+            this.match(asn1Parser.FROM_LITERAL);
             this.state = 504;
             this.globalModuleReference();
         }
@@ -1185,7 +1185,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     globalModuleReference() {
         let localctx = new GlobalModuleReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 46, grammar3rdParser.RULE_globalModuleReference);
+        this.enterRule(localctx, 46, asn1Parser.RULE_globalModuleReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 506;
@@ -1208,7 +1208,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     symbolList() {
         let localctx = new SymbolListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 48, grammar3rdParser.RULE_symbolList);
+        this.enterRule(localctx, 48, asn1Parser.RULE_symbolList);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -1217,9 +1217,9 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 513;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.COMMA) {
+            while (_la === asn1Parser.COMMA) {
                 this.state = 509;
-                this.match(grammar3rdParser.COMMA);
+                this.match(asn1Parser.COMMA);
                 this.state = 510;
                 this.symbol();
                 this.state = 515;
@@ -1244,7 +1244,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     symbol() {
         let localctx = new SymbolContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 50, grammar3rdParser.RULE_symbol);
+        this.enterRule(localctx, 50, asn1Parser.RULE_symbol);
         try {
             this.state = 518;
             this._errHandler.sync(this);
@@ -1279,19 +1279,19 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     reference() {
         let localctx = new ReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 52, grammar3rdParser.RULE_reference);
+        this.enterRule(localctx, 52, asn1Parser.RULE_reference);
         try {
             this.state = 522;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.Word:
-                case grammar3rdParser.ObjectClassReference:
-                case grammar3rdParser.TypeReference:
+                case asn1Parser.Word:
+                case asn1Parser.ObjectClassReference:
+                case asn1Parser.TypeReference:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 520;
                     this.typeReference();
                     break;
-                case grammar3rdParser.IdentifierL:
+                case asn1Parser.IdentifierL:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 521;
                     this.valueReference();
@@ -1317,7 +1317,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     assignmentList() {
         let localctx = new AssignmentListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 54, grammar3rdParser.RULE_assignmentList);
+        this.enterRule(localctx, 54, asn1Parser.RULE_assignmentList);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -1330,7 +1330,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                 this.state = 527;
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-            } while (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (grammar3rdParser.Word - 130)) | (1 << (grammar3rdParser.ObjectClassReference - 130)) | (1 << (grammar3rdParser.TypeReference - 130)) | (1 << (grammar3rdParser.IdentifierL - 130)))) !== 0));
+            } while (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (asn1Parser.Word - 130)) | (1 << (asn1Parser.ObjectClassReference - 130)) | (1 << (asn1Parser.TypeReference - 130)) | (1 << (asn1Parser.IdentifierL - 130)))) !== 0));
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -1349,7 +1349,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     assignment() {
         let localctx = new AssignmentContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 56, grammar3rdParser.RULE_assignment);
+        this.enterRule(localctx, 56, asn1Parser.RULE_assignment);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -1385,9 +1385,9 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 538;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.Tag) {
+            if (_la === asn1Parser.Tag) {
                 this.state = 537;
-                this.match(grammar3rdParser.Tag);
+                this.match(asn1Parser.Tag);
             }
         }
         catch (re) {
@@ -1407,7 +1407,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definedType() {
         let localctx = new DefinedTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 58, grammar3rdParser.RULE_definedType);
+        this.enterRule(localctx, 58, asn1Parser.RULE_definedType);
         try {
             this.state = 543;
             this._errHandler.sync(this);
@@ -1447,19 +1447,19 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definedValue() {
         let localctx = new DefinedValueContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 60, grammar3rdParser.RULE_definedValue);
+        this.enterRule(localctx, 60, asn1Parser.RULE_definedValue);
         try {
             this.state = 547;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.Word:
-                case grammar3rdParser.ObjectClassReference:
-                case grammar3rdParser.TypeReference:
+                case asn1Parser.Word:
+                case asn1Parser.ObjectClassReference:
+                case asn1Parser.TypeReference:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 545;
                     this.externalValueReference();
                     break;
-                case grammar3rdParser.IdentifierL:
+                case asn1Parser.IdentifierL:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 546;
                     this.valueReference();
@@ -1485,13 +1485,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     externalTypeReference() {
         let localctx = new ExternalTypeReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 62, grammar3rdParser.RULE_externalTypeReference);
+        this.enterRule(localctx, 62, asn1Parser.RULE_externalTypeReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 549;
             this.moduleReference();
             this.state = 550;
-            this.match(grammar3rdParser.PERIOD);
+            this.match(asn1Parser.PERIOD);
             this.state = 551;
             this.typeReference();
         }
@@ -1512,13 +1512,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     externalValueReference() {
         let localctx = new ExternalValueReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 64, grammar3rdParser.RULE_externalValueReference);
+        this.enterRule(localctx, 64, asn1Parser.RULE_externalValueReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 553;
             this.moduleReference();
             this.state = 554;
-            this.match(grammar3rdParser.PERIOD);
+            this.match(asn1Parser.PERIOD);
             this.state = 555;
             this.valueReference();
         }
@@ -1539,13 +1539,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     typeAssignment() {
         let localctx = new TypeAssignmentContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 66, grammar3rdParser.RULE_typeAssignment);
+        this.enterRule(localctx, 66, asn1Parser.RULE_typeAssignment);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 557;
             this.typeReference();
             this.state = 558;
-            this.match(grammar3rdParser.ASSIGNMENT);
+            this.match(asn1Parser.ASSIGNMENT);
             this.state = 559;
             this.type();
         }
@@ -1566,7 +1566,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     valueAssignment() {
         let localctx = new ValueAssignmentContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 68, grammar3rdParser.RULE_valueAssignment);
+        this.enterRule(localctx, 68, asn1Parser.RULE_valueAssignment);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 561;
@@ -1574,7 +1574,7 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 562;
             this.type();
             this.state = 563;
-            this.match(grammar3rdParser.ASSIGNMENT);
+            this.match(asn1Parser.ASSIGNMENT);
             this.state = 564;
             this.value();
         }
@@ -1595,7 +1595,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     type() {
         let localctx = new TypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 70, grammar3rdParser.RULE_type);
+        this.enterRule(localctx, 70, asn1Parser.RULE_type);
         try {
             this.state = 569;
             this._errHandler.sync(this);
@@ -1635,7 +1635,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     builtinType() {
         let localctx = new BuiltinTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 72, grammar3rdParser.RULE_builtinType);
+        this.enterRule(localctx, 72, asn1Parser.RULE_builtinType);
         try {
             this.state = 583;
             this._errHandler.sync(this);
@@ -1720,19 +1720,19 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     referencedType() {
         let localctx = new ReferencedTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 74, grammar3rdParser.RULE_referencedType);
+        this.enterRule(localctx, 74, asn1Parser.RULE_referencedType);
         try {
             this.state = 587;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.Word:
-                case grammar3rdParser.ObjectClassReference:
-                case grammar3rdParser.TypeReference:
+                case asn1Parser.Word:
+                case asn1Parser.ObjectClassReference:
+                case asn1Parser.TypeReference:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 585;
                     this.definedType();
                     break;
-                case grammar3rdParser.UTCTime_LITERAL:
+                case asn1Parser.UTCTime_LITERAL:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 586;
                     this.usefulType();
@@ -1758,7 +1758,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     namedType() {
         let localctx = new NamedTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 76, grammar3rdParser.RULE_namedType);
+        this.enterRule(localctx, 76, asn1Parser.RULE_namedType);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 589;
@@ -1783,7 +1783,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     value() {
         let localctx = new ValueContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 78, grammar3rdParser.RULE_value);
+        this.enterRule(localctx, 78, asn1Parser.RULE_value);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 592;
@@ -1806,19 +1806,19 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     builtinValue() {
         let localctx = new BuiltinValueContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 80, grammar3rdParser.RULE_builtinValue);
+        this.enterRule(localctx, 80, asn1Parser.RULE_builtinValue);
         try {
             this.state = 596;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.Bstring:
+                case asn1Parser.Bstring:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 594;
                     this.bitStringValue();
                     break;
-                case grammar3rdParser.HYPHEN_MINUS:
-                case grammar3rdParser.IdentifierL:
-                case grammar3rdParser.Number:
+                case asn1Parser.HYPHEN_MINUS:
+                case asn1Parser.IdentifierL:
+                case asn1Parser.Number:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 595;
                     this.integerValue();
@@ -1844,11 +1844,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     booleanType() {
         let localctx = new BooleanTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 82, grammar3rdParser.RULE_booleanType);
+        this.enterRule(localctx, 82, asn1Parser.RULE_booleanType);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 598;
-            this.match(grammar3rdParser.BOOLEAN_LITERAL);
+            this.match(asn1Parser.BOOLEAN_LITERAL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -1867,7 +1867,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     integerType() {
         let localctx = new IntegerTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 84, grammar3rdParser.RULE_integerType);
+        this.enterRule(localctx, 84, asn1Parser.RULE_integerType);
         try {
             this.state = 606;
             this._errHandler.sync(this);
@@ -1876,18 +1876,18 @@ export default class grammar3rdParser extends antlr4.Parser {
                 case 1:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 600;
-                    this.match(grammar3rdParser.INTEGER_LITERAL);
+                    this.match(asn1Parser.INTEGER_LITERAL);
                     break;
                 case 2:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 601;
-                    this.match(grammar3rdParser.INTEGER_LITERAL);
+                    this.match(asn1Parser.INTEGER_LITERAL);
                     this.state = 602;
-                    this.match(grammar3rdParser.L_BRACE);
+                    this.match(asn1Parser.L_BRACE);
                     this.state = 603;
                     this.namedNumberList();
                     this.state = 604;
-                    this.match(grammar3rdParser.R_BRACE);
+                    this.match(asn1Parser.R_BRACE);
                     break;
             }
         }
@@ -1908,7 +1908,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     namedNumberList() {
         let localctx = new NamedNumberListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 86, grammar3rdParser.RULE_namedNumberList);
+        this.enterRule(localctx, 86, asn1Parser.RULE_namedNumberList);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -1917,9 +1917,9 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 613;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.COMMA) {
+            while (_la === asn1Parser.COMMA) {
                 this.state = 609;
-                this.match(grammar3rdParser.COMMA);
+                this.match(asn1Parser.COMMA);
                 this.state = 610;
                 this.namedNumber();
                 this.state = 615;
@@ -1944,17 +1944,17 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     namedNumber() {
         let localctx = new NamedNumberContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 88, grammar3rdParser.RULE_namedNumber);
+        this.enterRule(localctx, 88, asn1Parser.RULE_namedNumber);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 616;
             this.identifier();
             this.state = 617;
-            this.match(grammar3rdParser.L_PAREN);
+            this.match(asn1Parser.L_PAREN);
             this.state = 618;
             this.signedNumber();
             this.state = 619;
-            this.match(grammar3rdParser.R_PAREN);
+            this.match(asn1Parser.R_PAREN);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -1973,22 +1973,22 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     signedNumber() {
         let localctx = new SignedNumberContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 90, grammar3rdParser.RULE_signedNumber);
+        this.enterRule(localctx, 90, asn1Parser.RULE_signedNumber);
         try {
             this.state = 624;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.Number:
+                case asn1Parser.Number:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 621;
-                    this.match(grammar3rdParser.Number);
+                    this.match(asn1Parser.Number);
                     break;
-                case grammar3rdParser.HYPHEN_MINUS:
+                case asn1Parser.HYPHEN_MINUS:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 622;
-                    this.match(grammar3rdParser.HYPHEN_MINUS);
+                    this.match(asn1Parser.HYPHEN_MINUS);
                     this.state = 623;
-                    this.match(grammar3rdParser.Number);
+                    this.match(asn1Parser.Number);
                     break;
                 default:
                     throw new antlr4.error.NoViableAltException(this);
@@ -2011,18 +2011,18 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     integerValue() {
         let localctx = new IntegerValueContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 92, grammar3rdParser.RULE_integerValue);
+        this.enterRule(localctx, 92, asn1Parser.RULE_integerValue);
         try {
             this.state = 628;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.HYPHEN_MINUS:
-                case grammar3rdParser.Number:
+                case asn1Parser.HYPHEN_MINUS:
+                case asn1Parser.Number:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 626;
                     this.signedNumber();
                     break;
-                case grammar3rdParser.IdentifierL:
+                case asn1Parser.IdentifierL:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 627;
                     this.valueReference();
@@ -2048,17 +2048,17 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     enumeratedType() {
         let localctx = new EnumeratedTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 94, grammar3rdParser.RULE_enumeratedType);
+        this.enterRule(localctx, 94, asn1Parser.RULE_enumeratedType);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 630;
-            this.match(grammar3rdParser.ENUMERATED_LITERAL);
+            this.match(asn1Parser.ENUMERATED_LITERAL);
             this.state = 631;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 632;
             this.enumerations();
             this.state = 633;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -2077,7 +2077,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     enumerations() {
         let localctx = new EnumerationsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 96, grammar3rdParser.RULE_enumerations);
+        this.enterRule(localctx, 96, asn1Parser.RULE_enumerations);
         var _la = 0; // Token type
         try {
             this.state = 651;
@@ -2094,13 +2094,13 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 636;
                     this.rootEnumeration();
                     this.state = 637;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 638;
-                    this.match(grammar3rdParser.ELLIPSIS);
+                    this.match(asn1Parser.ELLIPSIS);
                     this.state = 640;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
-                    if (_la === grammar3rdParser.EXCLAM) {
+                    if (_la === asn1Parser.EXCLAM) {
                         this.state = 639;
                         this.exceptionSpec();
                     }
@@ -2110,18 +2110,18 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 642;
                     this.rootEnumeration();
                     this.state = 643;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 644;
-                    this.match(grammar3rdParser.ELLIPSIS);
+                    this.match(asn1Parser.ELLIPSIS);
                     this.state = 646;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
-                    if (_la === grammar3rdParser.EXCLAM) {
+                    if (_la === asn1Parser.EXCLAM) {
                         this.state = 645;
                         this.exceptionSpec();
                     }
                     this.state = 648;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 649;
                     this.additionalEnumeration();
                     break;
@@ -2144,7 +2144,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     rootEnumeration() {
         let localctx = new RootEnumerationContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 98, grammar3rdParser.RULE_rootEnumeration);
+        this.enterRule(localctx, 98, asn1Parser.RULE_rootEnumeration);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 653;
@@ -2167,7 +2167,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     additionalEnumeration() {
         let localctx = new AdditionalEnumerationContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 100, grammar3rdParser.RULE_additionalEnumeration);
+        this.enterRule(localctx, 100, asn1Parser.RULE_additionalEnumeration);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 655;
@@ -2190,7 +2190,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     enumeration() {
         let localctx = new EnumerationContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 102, grammar3rdParser.RULE_enumeration);
+        this.enterRule(localctx, 102, asn1Parser.RULE_enumeration);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 657;
@@ -2201,7 +2201,7 @@ export default class grammar3rdParser extends antlr4.Parser {
             while (_alt != 2 && _alt != antlr4.atn.ATN.INVALID_ALT_NUMBER) {
                 if (_alt === 1) {
                     this.state = 658;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 659;
                     this.enumerationItem();
                 }
@@ -2227,7 +2227,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     enumerationItem() {
         let localctx = new EnumerationItemContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 104, grammar3rdParser.RULE_enumerationItem);
+        this.enterRule(localctx, 104, asn1Parser.RULE_enumerationItem);
         try {
             this.state = 667;
             this._errHandler.sync(this);
@@ -2262,7 +2262,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     bitStringType() {
         let localctx = new BitStringTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 106, grammar3rdParser.RULE_bitStringType);
+        this.enterRule(localctx, 106, asn1Parser.RULE_bitStringType);
         try {
             this.state = 677;
             this._errHandler.sync(this);
@@ -2271,22 +2271,22 @@ export default class grammar3rdParser extends antlr4.Parser {
                 case 1:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 669;
-                    this.match(grammar3rdParser.BIT_LITERAL);
+                    this.match(asn1Parser.BIT_LITERAL);
                     this.state = 670;
-                    this.match(grammar3rdParser.STRING_LITERAL);
+                    this.match(asn1Parser.STRING_LITERAL);
                     break;
                 case 2:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 671;
-                    this.match(grammar3rdParser.BIT_LITERAL);
+                    this.match(asn1Parser.BIT_LITERAL);
                     this.state = 672;
-                    this.match(grammar3rdParser.STRING_LITERAL);
+                    this.match(asn1Parser.STRING_LITERAL);
                     this.state = 673;
-                    this.match(grammar3rdParser.L_BRACE);
+                    this.match(asn1Parser.L_BRACE);
                     this.state = 674;
                     this.namedBitList();
                     this.state = 675;
-                    this.match(grammar3rdParser.R_BRACE);
+                    this.match(asn1Parser.R_BRACE);
                     break;
             }
         }
@@ -2307,7 +2307,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     namedBitList() {
         let localctx = new NamedBitListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 108, grammar3rdParser.RULE_namedBitList);
+        this.enterRule(localctx, 108, asn1Parser.RULE_namedBitList);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -2316,9 +2316,9 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 684;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.COMMA) {
+            while (_la === asn1Parser.COMMA) {
                 this.state = 680;
-                this.match(grammar3rdParser.COMMA);
+                this.match(asn1Parser.COMMA);
                 this.state = 681;
                 this.namedBit();
                 this.state = 686;
@@ -2343,17 +2343,17 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     namedBit() {
         let localctx = new NamedBitContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 110, grammar3rdParser.RULE_namedBit);
+        this.enterRule(localctx, 110, asn1Parser.RULE_namedBit);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 687;
             this.identifier();
             this.state = 688;
-            this.match(grammar3rdParser.L_PAREN);
+            this.match(asn1Parser.L_PAREN);
             this.state = 689;
-            this.match(grammar3rdParser.Number);
+            this.match(asn1Parser.Number);
             this.state = 690;
-            this.match(grammar3rdParser.R_PAREN);
+            this.match(asn1Parser.R_PAREN);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -2372,11 +2372,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     bitStringValue() {
         let localctx = new BitStringValueContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 112, grammar3rdParser.RULE_bitStringValue);
+        this.enterRule(localctx, 112, asn1Parser.RULE_bitStringValue);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 692;
-            this.match(grammar3rdParser.Bstring);
+            this.match(asn1Parser.Bstring);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -2395,13 +2395,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     octetStringType() {
         let localctx = new OctetStringTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 114, grammar3rdParser.RULE_octetStringType);
+        this.enterRule(localctx, 114, asn1Parser.RULE_octetStringType);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 694;
-            this.match(grammar3rdParser.OCTET_LITERAL);
+            this.match(asn1Parser.OCTET_LITERAL);
             this.state = 695;
-            this.match(grammar3rdParser.STRING_LITERAL);
+            this.match(asn1Parser.STRING_LITERAL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -2420,11 +2420,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     nullType() {
         let localctx = new NullTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 116, grammar3rdParser.RULE_nullType);
+        this.enterRule(localctx, 116, asn1Parser.RULE_nullType);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 697;
-            this.match(grammar3rdParser.NULL_LITERAL);
+            this.match(asn1Parser.NULL_LITERAL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -2443,7 +2443,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     sequenceType() {
         let localctx = new SequenceTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 118, grammar3rdParser.RULE_sequenceType);
+        this.enterRule(localctx, 118, asn1Parser.RULE_sequenceType);
         var _la = 0; // Token type
         try {
             this.state = 715;
@@ -2453,40 +2453,40 @@ export default class grammar3rdParser extends antlr4.Parser {
                 case 1:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 699;
-                    this.match(grammar3rdParser.SEQUENCE_LITERAL);
+                    this.match(asn1Parser.SEQUENCE_LITERAL);
                     this.state = 700;
-                    this.match(grammar3rdParser.L_BRACE);
+                    this.match(asn1Parser.L_BRACE);
                     this.state = 701;
-                    this.match(grammar3rdParser.R_BRACE);
+                    this.match(asn1Parser.R_BRACE);
                     break;
                 case 2:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 702;
-                    this.match(grammar3rdParser.SEQUENCE_LITERAL);
+                    this.match(asn1Parser.SEQUENCE_LITERAL);
                     this.state = 703;
-                    this.match(grammar3rdParser.L_BRACE);
+                    this.match(asn1Parser.L_BRACE);
                     this.state = 704;
                     this.extensionAndException();
                     this.state = 706;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
-                    if (_la === grammar3rdParser.COMMA) {
+                    if (_la === asn1Parser.COMMA) {
                         this.state = 705;
                         this.optionalExtensionMarker();
                     }
                     this.state = 708;
-                    this.match(grammar3rdParser.R_BRACE);
+                    this.match(asn1Parser.R_BRACE);
                     break;
                 case 3:
                     this.enterOuterAlt(localctx, 3);
                     this.state = 710;
-                    this.match(grammar3rdParser.SEQUENCE_LITERAL);
+                    this.match(asn1Parser.SEQUENCE_LITERAL);
                     this.state = 711;
-                    this.match(grammar3rdParser.L_BRACE);
+                    this.match(asn1Parser.L_BRACE);
                     this.state = 712;
                     this.componentTypeLists();
                     this.state = 713;
-                    this.match(grammar3rdParser.R_BRACE);
+                    this.match(asn1Parser.R_BRACE);
                     break;
             }
         }
@@ -2507,7 +2507,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     extensionAndException() {
         let localctx = new ExtensionAndExceptionContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 120, grammar3rdParser.RULE_extensionAndException);
+        this.enterRule(localctx, 120, asn1Parser.RULE_extensionAndException);
         var _la = 0; // Token type
         try {
             this.state = 722;
@@ -2517,16 +2517,16 @@ export default class grammar3rdParser extends antlr4.Parser {
                 case 1:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 717;
-                    this.match(grammar3rdParser.ELLIPSIS);
+                    this.match(asn1Parser.ELLIPSIS);
                     break;
                 case 2:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 718;
-                    this.match(grammar3rdParser.ELLIPSIS);
+                    this.match(asn1Parser.ELLIPSIS);
                     this.state = 720;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
-                    if (_la === grammar3rdParser.EXCLAM) {
+                    if (_la === asn1Parser.EXCLAM) {
                         this.state = 719;
                         this.exceptionSpec();
                     }
@@ -2550,13 +2550,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     optionalExtensionMarker() {
         let localctx = new OptionalExtensionMarkerContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 122, grammar3rdParser.RULE_optionalExtensionMarker);
+        this.enterRule(localctx, 122, asn1Parser.RULE_optionalExtensionMarker);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 724;
-            this.match(grammar3rdParser.COMMA);
+            this.match(asn1Parser.COMMA);
             this.state = 725;
-            this.match(grammar3rdParser.ELLIPSIS);
+            this.match(asn1Parser.ELLIPSIS);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -2575,7 +2575,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     componentTypeLists() {
         let localctx = new ComponentTypeListsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 124, grammar3rdParser.RULE_componentTypeLists);
+        this.enterRule(localctx, 124, asn1Parser.RULE_componentTypeLists);
         var _la = 0; // Token type
         try {
             this.state = 771;
@@ -2589,9 +2589,9 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 729;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
-                    if (_la === grammar3rdParser.Tag) {
+                    if (_la === asn1Parser.Tag) {
                         this.state = 728;
-                        this.match(grammar3rdParser.Tag);
+                        this.match(asn1Parser.Tag);
                     }
                     break;
                 case 2:
@@ -2599,13 +2599,13 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 731;
                     this.rootComponentTypeList();
                     this.state = 732;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 734;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
-                    if (_la === grammar3rdParser.Tag) {
+                    if (_la === asn1Parser.Tag) {
                         this.state = 733;
-                        this.match(grammar3rdParser.Tag);
+                        this.match(asn1Parser.Tag);
                     }
                     this.state = 736;
                     this.extensionAndException();
@@ -2619,7 +2619,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 741;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
-                    if (_la === grammar3rdParser.COMMA) {
+                    if (_la === asn1Parser.COMMA) {
                         this.state = 740;
                         this.optionalExtensionMarker();
                     }
@@ -2629,13 +2629,13 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 743;
                     this.rootComponentTypeList();
                     this.state = 744;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 746;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
-                    if (_la === grammar3rdParser.Tag) {
+                    if (_la === asn1Parser.Tag) {
                         this.state = 745;
-                        this.match(grammar3rdParser.Tag);
+                        this.match(asn1Parser.Tag);
                     }
                     this.state = 748;
                     this.extensionAndException();
@@ -2649,7 +2649,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 752;
                     this.extensionEndMarker();
                     this.state = 753;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 754;
                     this.rootComponentTypeList();
                     break;
@@ -2667,7 +2667,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 760;
                     this.extensionEndMarker();
                     this.state = 761;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 762;
                     this.rootComponentTypeList();
                     break;
@@ -2685,7 +2685,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 769;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
-                    if (_la === grammar3rdParser.COMMA) {
+                    if (_la === asn1Parser.COMMA) {
                         this.state = 768;
                         this.optionalExtensionMarker();
                     }
@@ -2709,7 +2709,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     rootComponentTypeList() {
         let localctx = new RootComponentTypeListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 126, grammar3rdParser.RULE_rootComponentTypeList);
+        this.enterRule(localctx, 126, asn1Parser.RULE_rootComponentTypeList);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 773;
@@ -2732,13 +2732,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     extensionEndMarker() {
         let localctx = new ExtensionEndMarkerContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 128, grammar3rdParser.RULE_extensionEndMarker);
+        this.enterRule(localctx, 128, asn1Parser.RULE_extensionEndMarker);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 775;
-            this.match(grammar3rdParser.COMMA);
+            this.match(asn1Parser.COMMA);
             this.state = 776;
-            this.match(grammar3rdParser.ELLIPSIS);
+            this.match(asn1Parser.ELLIPSIS);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -2757,11 +2757,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     extensionAdditions() {
         let localctx = new ExtensionAdditionsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 130, grammar3rdParser.RULE_extensionAdditions);
+        this.enterRule(localctx, 130, asn1Parser.RULE_extensionAdditions);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 778;
-            this.match(grammar3rdParser.COMMA);
+            this.match(asn1Parser.COMMA);
             this.state = 779;
             this.extensionAdditionList();
         }
@@ -2782,7 +2782,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     extensionAdditionList() {
         let localctx = new ExtensionAdditionListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 132, grammar3rdParser.RULE_extensionAdditionList);
+        this.enterRule(localctx, 132, asn1Parser.RULE_extensionAdditionList);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 781;
@@ -2793,7 +2793,7 @@ export default class grammar3rdParser extends antlr4.Parser {
             while (_alt != 2 && _alt != antlr4.atn.ATN.INVALID_ALT_NUMBER) {
                 if (_alt === 1) {
                     this.state = 782;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 783;
                     this.extensionAddition();
                 }
@@ -2819,17 +2819,17 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     extensionAddition() {
         let localctx = new ExtensionAdditionContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 134, grammar3rdParser.RULE_extensionAddition);
+        this.enterRule(localctx, 134, asn1Parser.RULE_extensionAddition);
         try {
             this.state = 791;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.IdentifierL:
+                case asn1Parser.IdentifierL:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 789;
                     this.componentType();
                     break;
-                case grammar3rdParser.L_VERSION_BRACKET:
+                case asn1Parser.L_VERSION_BRACKET:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 790;
                     this.extensionAdditionGroup();
@@ -2855,23 +2855,23 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     extensionAdditionGroup() {
         let localctx = new ExtensionAdditionGroupContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 136, grammar3rdParser.RULE_extensionAdditionGroup);
+        this.enterRule(localctx, 136, asn1Parser.RULE_extensionAdditionGroup);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 793;
-            this.match(grammar3rdParser.L_VERSION_BRACKET);
+            this.match(asn1Parser.L_VERSION_BRACKET);
             this.state = 794;
             this.componentTypeList();
             this.state = 796;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.Tag) {
+            if (_la === asn1Parser.Tag) {
                 this.state = 795;
-                this.match(grammar3rdParser.Tag);
+                this.match(asn1Parser.Tag);
             }
             this.state = 798;
-            this.match(grammar3rdParser.R_VERSION_BRACKET);
+            this.match(asn1Parser.R_VERSION_BRACKET);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -2890,7 +2890,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     componentTypeList() {
         let localctx = new ComponentTypeListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 138, grammar3rdParser.RULE_componentTypeList);
+        this.enterRule(localctx, 138, asn1Parser.RULE_componentTypeList);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -2902,13 +2902,13 @@ export default class grammar3rdParser extends antlr4.Parser {
             while (_alt != 2 && _alt != antlr4.atn.ATN.INVALID_ALT_NUMBER) {
                 if (_alt === 1) {
                     this.state = 801;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 803;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
-                    if (_la === grammar3rdParser.Tag) {
+                    if (_la === asn1Parser.Tag) {
                         this.state = 802;
-                        this.match(grammar3rdParser.Tag);
+                        this.match(asn1Parser.Tag);
                     }
                     this.state = 805;
                     this.componentType();
@@ -2935,7 +2935,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     componentType() {
         let localctx = new ComponentTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 140, grammar3rdParser.RULE_componentType);
+        this.enterRule(localctx, 140, asn1Parser.RULE_componentType);
         try {
             this.state = 819;
             this._errHandler.sync(this);
@@ -2951,14 +2951,14 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 812;
                     this.namedType();
                     this.state = 813;
-                    this.match(grammar3rdParser.OPTIONAL_LITERAL);
+                    this.match(asn1Parser.OPTIONAL_LITERAL);
                     break;
                 case 3:
                     this.enterOuterAlt(localctx, 3);
                     this.state = 815;
                     this.namedType();
                     this.state = 816;
-                    this.match(grammar3rdParser.DEFAULT_LITERAL);
+                    this.match(asn1Parser.DEFAULT_LITERAL);
                     this.state = 817;
                     this.value();
                     break;
@@ -2981,7 +2981,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     sequenceOfType() {
         let localctx = new SequenceOfTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 142, grammar3rdParser.RULE_sequenceOfType);
+        this.enterRule(localctx, 142, asn1Parser.RULE_sequenceOfType);
         try {
             this.state = 827;
             this._errHandler.sync(this);
@@ -2990,18 +2990,18 @@ export default class grammar3rdParser extends antlr4.Parser {
                 case 1:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 821;
-                    this.match(grammar3rdParser.SEQUENCE_LITERAL);
+                    this.match(asn1Parser.SEQUENCE_LITERAL);
                     this.state = 822;
-                    this.match(grammar3rdParser.OF_LITERAL);
+                    this.match(asn1Parser.OF_LITERAL);
                     this.state = 823;
                     this.type();
                     break;
                 case 2:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 824;
-                    this.match(grammar3rdParser.SEQUENCE_LITERAL);
+                    this.match(asn1Parser.SEQUENCE_LITERAL);
                     this.state = 825;
-                    this.match(grammar3rdParser.OF_LITERAL);
+                    this.match(asn1Parser.OF_LITERAL);
                     this.state = 826;
                     this.namedType();
                     break;
@@ -3024,17 +3024,17 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     choiceType() {
         let localctx = new ChoiceTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 144, grammar3rdParser.RULE_choiceType);
+        this.enterRule(localctx, 144, asn1Parser.RULE_choiceType);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 829;
-            this.match(grammar3rdParser.CHOICE_LITERAL);
+            this.match(asn1Parser.CHOICE_LITERAL);
             this.state = 830;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 831;
             this.alternativeTypeLists();
             this.state = 832;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -3053,7 +3053,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     alternativeTypeLists() {
         let localctx = new AlternativeTypeListsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 146, grammar3rdParser.RULE_alternativeTypeLists);
+        this.enterRule(localctx, 146, asn1Parser.RULE_alternativeTypeLists);
         var _la = 0; // Token type
         try {
             this.state = 844;
@@ -3070,7 +3070,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 835;
                     this.rootAlternativeTypeList();
                     this.state = 836;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 837;
                     this.extensionAndException();
                     this.state = 839;
@@ -3083,7 +3083,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 842;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
-                    if (_la === grammar3rdParser.COMMA) {
+                    if (_la === asn1Parser.COMMA) {
                         this.state = 841;
                         this.optionalExtensionMarker();
                     }
@@ -3107,7 +3107,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     rootAlternativeTypeList() {
         let localctx = new RootAlternativeTypeListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 148, grammar3rdParser.RULE_rootAlternativeTypeList);
+        this.enterRule(localctx, 148, asn1Parser.RULE_rootAlternativeTypeList);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 846;
@@ -3130,11 +3130,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     extensionAdditionAlternatives() {
         let localctx = new ExtensionAdditionAlternativesContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 150, grammar3rdParser.RULE_extensionAdditionAlternatives);
+        this.enterRule(localctx, 150, asn1Parser.RULE_extensionAdditionAlternatives);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 848;
-            this.match(grammar3rdParser.COMMA);
+            this.match(asn1Parser.COMMA);
             this.state = 849;
             this.extensionAdditionAlternativesList();
         }
@@ -3155,7 +3155,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     extensionAdditionAlternativesList() {
         let localctx = new ExtensionAdditionAlternativesListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 152, grammar3rdParser.RULE_extensionAdditionAlternativesList);
+        this.enterRule(localctx, 152, asn1Parser.RULE_extensionAdditionAlternativesList);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 851;
@@ -3166,7 +3166,7 @@ export default class grammar3rdParser extends antlr4.Parser {
             while (_alt != 2 && _alt != antlr4.atn.ATN.INVALID_ALT_NUMBER) {
                 if (_alt === 1) {
                     this.state = 852;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 853;
                     this.extensionAdditionAlternative();
                 }
@@ -3192,17 +3192,17 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     extensionAdditionAlternative() {
         let localctx = new ExtensionAdditionAlternativeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 154, grammar3rdParser.RULE_extensionAdditionAlternative);
+        this.enterRule(localctx, 154, asn1Parser.RULE_extensionAdditionAlternative);
         try {
             this.state = 861;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.L_VERSION_BRACKET:
+                case asn1Parser.L_VERSION_BRACKET:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 859;
                     this.extensionAdditionAlternativesGroup();
                     break;
-                case grammar3rdParser.IdentifierL:
+                case asn1Parser.IdentifierL:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 860;
                     this.namedType();
@@ -3228,15 +3228,15 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     extensionAdditionAlternativesGroup() {
         let localctx = new ExtensionAdditionAlternativesGroupContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 156, grammar3rdParser.RULE_extensionAdditionAlternativesGroup);
+        this.enterRule(localctx, 156, asn1Parser.RULE_extensionAdditionAlternativesGroup);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 863;
-            this.match(grammar3rdParser.L_VERSION_BRACKET);
+            this.match(asn1Parser.L_VERSION_BRACKET);
             this.state = 864;
             this.alternativeTypeList();
             this.state = 865;
-            this.match(grammar3rdParser.R_VERSION_BRACKET);
+            this.match(asn1Parser.R_VERSION_BRACKET);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -3255,7 +3255,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     alternativeTypeList() {
         let localctx = new AlternativeTypeListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 158, grammar3rdParser.RULE_alternativeTypeList);
+        this.enterRule(localctx, 158, asn1Parser.RULE_alternativeTypeList);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 867;
@@ -3266,7 +3266,7 @@ export default class grammar3rdParser extends antlr4.Parser {
             while (_alt != 2 && _alt != antlr4.atn.ATN.INVALID_ALT_NUMBER) {
                 if (_alt === 1) {
                     this.state = 868;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 869;
                     this.namedType();
                 }
@@ -3292,13 +3292,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectIdentifierType() {
         let localctx = new ObjectIdentifierTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 160, grammar3rdParser.RULE_objectIdentifierType);
+        this.enterRule(localctx, 160, asn1Parser.RULE_objectIdentifierType);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 875;
-            this.match(grammar3rdParser.OBJECT_LITERAL);
+            this.match(asn1Parser.OBJECT_LITERAL);
             this.state = 876;
-            this.match(grammar3rdParser.IDENTIFIER_LITERAL);
+            this.match(asn1Parser.IDENTIFIER_LITERAL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -3317,7 +3317,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     characterStringType() {
         let localctx = new CharacterStringTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 162, grammar3rdParser.RULE_characterStringType);
+        this.enterRule(localctx, 162, asn1Parser.RULE_characterStringType);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 878;
@@ -3340,13 +3340,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     restrictedCharacterStringType() {
         let localctx = new RestrictedCharacterStringTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 164, grammar3rdParser.RULE_restrictedCharacterStringType);
+        this.enterRule(localctx, 164, asn1Parser.RULE_restrictedCharacterStringType);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 880;
             _la = this._input.LA(1);
-            if (!(((((_la - 96)) & ~0x1f) == 0 && ((1 << (_la - 96)) & ((1 << (grammar3rdParser.PrintableString_LITERAL - 96)) | (1 << (grammar3rdParser.UTF8String_LITERAL - 96)) | (1 << (grammar3rdParser.VisibleString_LITERAL - 96)))) !== 0))) {
+            if (!(((((_la - 96)) & ~0x1f) == 0 && ((1 << (_la - 96)) & ((1 << (asn1Parser.PrintableString_LITERAL - 96)) | (1 << (asn1Parser.UTF8String_LITERAL - 96)) | (1 << (asn1Parser.VisibleString_LITERAL - 96)))) !== 0))) {
                 this._errHandler.recoverInline(this);
             }
             else {
@@ -3371,11 +3371,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     usefulType() {
         let localctx = new UsefulTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 166, grammar3rdParser.RULE_usefulType);
+        this.enterRule(localctx, 166, asn1Parser.RULE_usefulType);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 882;
-            this.match(grammar3rdParser.UTCTime_LITERAL);
+            this.match(asn1Parser.UTCTime_LITERAL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -3394,7 +3394,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     constrainedType() {
         let localctx = new ConstrainedTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 168, grammar3rdParser.RULE_constrainedType);
+        this.enterRule(localctx, 168, asn1Parser.RULE_constrainedType);
         try {
             this.state = 903;
             this._errHandler.sync(this);
@@ -3478,15 +3478,15 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     typeWithConstraint() {
         let localctx = new TypeWithConstraintContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 170, grammar3rdParser.RULE_typeWithConstraint);
+        this.enterRule(localctx, 170, asn1Parser.RULE_typeWithConstraint);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 905;
-            this.match(grammar3rdParser.SEQUENCE_LITERAL);
+            this.match(asn1Parser.SEQUENCE_LITERAL);
             this.state = 906;
             this.constraint();
             this.state = 907;
-            this.match(grammar3rdParser.OF_LITERAL);
+            this.match(asn1Parser.OF_LITERAL);
             this.state = 908;
             this.type();
         }
@@ -3507,23 +3507,23 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     constraint() {
         let localctx = new ConstraintContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 172, grammar3rdParser.RULE_constraint);
+        this.enterRule(localctx, 172, asn1Parser.RULE_constraint);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 910;
-            this.match(grammar3rdParser.L_PAREN);
+            this.match(asn1Parser.L_PAREN);
             this.state = 911;
             this.constraintSpec();
             this.state = 913;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.EXCLAM) {
+            if (_la === asn1Parser.EXCLAM) {
                 this.state = 912;
                 this.exceptionSpec();
             }
             this.state = 915;
-            this.match(grammar3rdParser.R_PAREN);
+            this.match(asn1Parser.R_PAREN);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -3542,7 +3542,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     constraintSpec() {
         let localctx = new ConstraintSpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 174, grammar3rdParser.RULE_constraintSpec);
+        this.enterRule(localctx, 174, asn1Parser.RULE_constraintSpec);
         try {
             this.state = 919;
             this._errHandler.sync(this);
@@ -3577,7 +3577,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     subtypeConstraint() {
         let localctx = new SubtypeConstraintContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 176, grammar3rdParser.RULE_subtypeConstraint);
+        this.enterRule(localctx, 176, asn1Parser.RULE_subtypeConstraint);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 921;
@@ -3600,7 +3600,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     elementSetSpecs() {
         let localctx = new ElementSetSpecsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 178, grammar3rdParser.RULE_elementSetSpecs);
+        this.enterRule(localctx, 178, asn1Parser.RULE_elementSetSpecs);
         try {
             this.state = 934;
             this._errHandler.sync(this);
@@ -3616,20 +3616,20 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 924;
                     this.rootElementSetSpec();
                     this.state = 925;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 926;
-                    this.match(grammar3rdParser.ELLIPSIS);
+                    this.match(asn1Parser.ELLIPSIS);
                     break;
                 case 3:
                     this.enterOuterAlt(localctx, 3);
                     this.state = 928;
                     this.rootElementSetSpec();
                     this.state = 929;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 930;
-                    this.match(grammar3rdParser.ELLIPSIS);
+                    this.match(asn1Parser.ELLIPSIS);
                     this.state = 931;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 932;
                     this.additionalElementSetSpec();
                     break;
@@ -3652,7 +3652,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     rootElementSetSpec() {
         let localctx = new RootElementSetSpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 180, grammar3rdParser.RULE_rootElementSetSpec);
+        this.enterRule(localctx, 180, asn1Parser.RULE_rootElementSetSpec);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 936;
@@ -3675,7 +3675,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     additionalElementSetSpec() {
         let localctx = new AdditionalElementSetSpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 182, grammar3rdParser.RULE_additionalElementSetSpec);
+        this.enterRule(localctx, 182, asn1Parser.RULE_additionalElementSetSpec);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 938;
@@ -3698,7 +3698,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     elementSetSpec() {
         let localctx = new ElementSetSpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 184, grammar3rdParser.RULE_elementSetSpec);
+        this.enterRule(localctx, 184, asn1Parser.RULE_elementSetSpec);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 940;
@@ -3721,7 +3721,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     unions() {
         let localctx = new UnionsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 186, grammar3rdParser.RULE_unions);
+        this.enterRule(localctx, 186, asn1Parser.RULE_unions);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -3730,7 +3730,7 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 948;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.PIPE) {
+            while (_la === asn1Parser.PIPE) {
                 this.state = 943;
                 this.unionMark();
                 this.state = 944;
@@ -3757,7 +3757,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     intersections() {
         let localctx = new IntersectionsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 188, grammar3rdParser.RULE_intersections);
+        this.enterRule(localctx, 188, asn1Parser.RULE_intersections);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 951;
@@ -3780,7 +3780,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     intersectionElements() {
         let localctx = new IntersectionElementsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 190, grammar3rdParser.RULE_intersectionElements);
+        this.enterRule(localctx, 190, asn1Parser.RULE_intersectionElements);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 953;
@@ -3803,11 +3803,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     unionMark() {
         let localctx = new UnionMarkContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 192, grammar3rdParser.RULE_unionMark);
+        this.enterRule(localctx, 192, asn1Parser.RULE_unionMark);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 955;
-            this.match(grammar3rdParser.PIPE);
+            this.match(asn1Parser.PIPE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -3826,38 +3826,38 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     elements() {
         let localctx = new ElementsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 194, grammar3rdParser.RULE_elements);
+        this.enterRule(localctx, 194, asn1Parser.RULE_elements);
         try {
             this.state = 963;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.HYPHEN_MINUS:
-                case grammar3rdParser.MIN_LITERAL:
-                case grammar3rdParser.SIZE_LITERAL:
-                case grammar3rdParser.WITH_LITERAL:
-                case grammar3rdParser.IdentifierL:
-                case grammar3rdParser.Number:
-                case grammar3rdParser.Bstring:
+                case asn1Parser.HYPHEN_MINUS:
+                case asn1Parser.MIN_LITERAL:
+                case asn1Parser.SIZE_LITERAL:
+                case asn1Parser.WITH_LITERAL:
+                case asn1Parser.IdentifierL:
+                case asn1Parser.Number:
+                case asn1Parser.Bstring:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 957;
                     this.subtypeElements();
                     break;
-                case grammar3rdParser.L_BRACE:
-                case grammar3rdParser.Word:
-                case grammar3rdParser.ObjectClassReference:
-                case grammar3rdParser.TypeReference:
+                case asn1Parser.L_BRACE:
+                case asn1Parser.Word:
+                case asn1Parser.ObjectClassReference:
+                case asn1Parser.TypeReference:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 958;
                     this.objectSetElements();
                     break;
-                case grammar3rdParser.L_PAREN:
+                case asn1Parser.L_PAREN:
                     this.enterOuterAlt(localctx, 3);
                     this.state = 959;
-                    this.match(grammar3rdParser.L_PAREN);
+                    this.match(asn1Parser.L_PAREN);
                     this.state = 960;
                     this.elementSetSpec();
                     this.state = 961;
-                    this.match(grammar3rdParser.R_PAREN);
+                    this.match(asn1Parser.R_PAREN);
                     break;
                 default:
                     throw new antlr4.error.NoViableAltException(this);
@@ -3880,7 +3880,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     subtypeElements() {
         let localctx = new SubtypeElementsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 196, grammar3rdParser.RULE_subtypeElements);
+        this.enterRule(localctx, 196, asn1Parser.RULE_subtypeElements);
         try {
             this.state = 969;
             this._errHandler.sync(this);
@@ -3925,7 +3925,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     singleValue() {
         let localctx = new SingleValueContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 198, grammar3rdParser.RULE_singleValue);
+        this.enterRule(localctx, 198, asn1Parser.RULE_singleValue);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 971;
@@ -3948,13 +3948,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     valueRange() {
         let localctx = new ValueRangeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 200, grammar3rdParser.RULE_valueRange);
+        this.enterRule(localctx, 200, asn1Parser.RULE_valueRange);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 973;
             this.lowerEndpoint();
             this.state = 974;
-            this.match(grammar3rdParser.RANGE_SEPARATOR);
+            this.match(asn1Parser.RANGE_SEPARATOR);
             this.state = 975;
             this.upperEndpoint();
         }
@@ -3975,7 +3975,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     lowerEndpoint() {
         let localctx = new LowerEndpointContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 202, grammar3rdParser.RULE_lowerEndpoint);
+        this.enterRule(localctx, 202, asn1Parser.RULE_lowerEndpoint);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 977;
@@ -3998,7 +3998,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     upperEndpoint() {
         let localctx = new UpperEndpointContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 204, grammar3rdParser.RULE_upperEndpoint);
+        this.enterRule(localctx, 204, asn1Parser.RULE_upperEndpoint);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 979;
@@ -4021,23 +4021,23 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     lowerEndValue() {
         let localctx = new LowerEndValueContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 206, grammar3rdParser.RULE_lowerEndValue);
+        this.enterRule(localctx, 206, asn1Parser.RULE_lowerEndValue);
         try {
             this.state = 983;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.HYPHEN_MINUS:
-                case grammar3rdParser.IdentifierL:
-                case grammar3rdParser.Number:
-                case grammar3rdParser.Bstring:
+                case asn1Parser.HYPHEN_MINUS:
+                case asn1Parser.IdentifierL:
+                case asn1Parser.Number:
+                case asn1Parser.Bstring:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 981;
                     this.value();
                     break;
-                case grammar3rdParser.MIN_LITERAL:
+                case asn1Parser.MIN_LITERAL:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 982;
-                    this.match(grammar3rdParser.MIN_LITERAL);
+                    this.match(asn1Parser.MIN_LITERAL);
                     break;
                 default:
                     throw new antlr4.error.NoViableAltException(this);
@@ -4060,23 +4060,23 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     upperEndValue() {
         let localctx = new UpperEndValueContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 208, grammar3rdParser.RULE_upperEndValue);
+        this.enterRule(localctx, 208, asn1Parser.RULE_upperEndValue);
         try {
             this.state = 987;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.HYPHEN_MINUS:
-                case grammar3rdParser.IdentifierL:
-                case grammar3rdParser.Number:
-                case grammar3rdParser.Bstring:
+                case asn1Parser.HYPHEN_MINUS:
+                case asn1Parser.IdentifierL:
+                case asn1Parser.Number:
+                case asn1Parser.Bstring:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 985;
                     this.value();
                     break;
-                case grammar3rdParser.MAX_LITERAL:
+                case asn1Parser.MAX_LITERAL:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 986;
-                    this.match(grammar3rdParser.MAX_LITERAL);
+                    this.match(asn1Parser.MAX_LITERAL);
                     break;
                 default:
                     throw new antlr4.error.NoViableAltException(this);
@@ -4099,11 +4099,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     sizeConstraint() {
         let localctx = new SizeConstraintContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 210, grammar3rdParser.RULE_sizeConstraint);
+        this.enterRule(localctx, 210, asn1Parser.RULE_sizeConstraint);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 989;
-            this.match(grammar3rdParser.SIZE_LITERAL);
+            this.match(asn1Parser.SIZE_LITERAL);
             this.state = 990;
             this.constraint();
         }
@@ -4124,13 +4124,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     innerTypeConstraints() {
         let localctx = new InnerTypeConstraintsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 212, grammar3rdParser.RULE_innerTypeConstraints);
+        this.enterRule(localctx, 212, asn1Parser.RULE_innerTypeConstraints);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 992;
-            this.match(grammar3rdParser.WITH_LITERAL);
+            this.match(asn1Parser.WITH_LITERAL);
             this.state = 993;
-            this.match(grammar3rdParser.COMPONENTS_LITERAL);
+            this.match(asn1Parser.COMPONENTS_LITERAL);
             this.state = 994;
             this.multipleTypeConstraints();
         }
@@ -4151,7 +4151,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     multipleTypeConstraints() {
         let localctx = new MultipleTypeConstraintsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 214, grammar3rdParser.RULE_multipleTypeConstraints);
+        this.enterRule(localctx, 214, asn1Parser.RULE_multipleTypeConstraints);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 996;
@@ -4174,19 +4174,19 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     partialSpecification() {
         let localctx = new PartialSpecificationContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 216, grammar3rdParser.RULE_partialSpecification);
+        this.enterRule(localctx, 216, asn1Parser.RULE_partialSpecification);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 998;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 999;
-            this.match(grammar3rdParser.ELLIPSIS);
+            this.match(asn1Parser.ELLIPSIS);
             this.state = 1000;
-            this.match(grammar3rdParser.COMMA);
+            this.match(asn1Parser.COMMA);
             this.state = 1001;
             this.typeConstraints();
             this.state = 1002;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -4205,7 +4205,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     typeConstraints() {
         let localctx = new TypeConstraintsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 218, grammar3rdParser.RULE_typeConstraints);
+        this.enterRule(localctx, 218, asn1Parser.RULE_typeConstraints);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -4214,9 +4214,9 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 1009;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.COMMA) {
+            while (_la === asn1Parser.COMMA) {
                 this.state = 1005;
-                this.match(grammar3rdParser.COMMA);
+                this.match(asn1Parser.COMMA);
                 this.state = 1006;
                 this.namedConstraint();
                 this.state = 1011;
@@ -4241,7 +4241,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     namedConstraint() {
         let localctx = new NamedConstraintContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 220, grammar3rdParser.RULE_namedConstraint);
+        this.enterRule(localctx, 220, asn1Parser.RULE_namedConstraint);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1012;
@@ -4266,21 +4266,21 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     componentConstraint() {
         let localctx = new ComponentConstraintContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 222, grammar3rdParser.RULE_componentConstraint);
+        this.enterRule(localctx, 222, asn1Parser.RULE_componentConstraint);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1016;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.L_PAREN) {
+            if (_la === asn1Parser.L_PAREN) {
                 this.state = 1015;
                 this.valueConstraint();
             }
             this.state = 1019;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.ABSENT_LITERAL || _la === grammar3rdParser.OPTIONAL_LITERAL || _la === grammar3rdParser.PRESENT_LITERAL) {
+            if (_la === asn1Parser.ABSENT_LITERAL || _la === asn1Parser.OPTIONAL_LITERAL || _la === asn1Parser.PRESENT_LITERAL) {
                 this.state = 1018;
                 this.presenceConstraint();
             }
@@ -4302,7 +4302,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     valueConstraint() {
         let localctx = new ValueConstraintContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 224, grammar3rdParser.RULE_valueConstraint);
+        this.enterRule(localctx, 224, asn1Parser.RULE_valueConstraint);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1021;
@@ -4325,13 +4325,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     presenceConstraint() {
         let localctx = new PresenceConstraintContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 226, grammar3rdParser.RULE_presenceConstraint);
+        this.enterRule(localctx, 226, asn1Parser.RULE_presenceConstraint);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1023;
             _la = this._input.LA(1);
-            if (!(_la === grammar3rdParser.ABSENT_LITERAL || _la === grammar3rdParser.OPTIONAL_LITERAL || _la === grammar3rdParser.PRESENT_LITERAL)) {
+            if (!(_la === asn1Parser.ABSENT_LITERAL || _la === asn1Parser.OPTIONAL_LITERAL || _la === asn1Parser.PRESENT_LITERAL)) {
                 this._errHandler.recoverInline(this);
             }
             else {
@@ -4356,11 +4356,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     exceptionSpec() {
         let localctx = new ExceptionSpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 228, grammar3rdParser.RULE_exceptionSpec);
+        this.enterRule(localctx, 228, asn1Parser.RULE_exceptionSpec);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1025;
-            this.match(grammar3rdParser.EXCLAM);
+            this.match(asn1Parser.EXCLAM);
             this.state = 1026;
             this.exceptionIdentification();
         }
@@ -4381,7 +4381,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     exceptionIdentification() {
         let localctx = new ExceptionIdentificationContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 230, grammar3rdParser.RULE_exceptionIdentification);
+        this.enterRule(localctx, 230, asn1Parser.RULE_exceptionIdentification);
         try {
             this.state = 1034;
             this._errHandler.sync(this);
@@ -4402,7 +4402,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 1030;
                     this.type();
                     this.state = 1031;
-                    this.match(grammar3rdParser.COLON);
+                    this.match(asn1Parser.COLON);
                     this.state = 1032;
                     this.value();
                     break;
@@ -4425,13 +4425,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectClassReference() {
         let localctx = new ObjectClassReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 232, grammar3rdParser.RULE_objectClassReference);
+        this.enterRule(localctx, 232, asn1Parser.RULE_objectClassReference);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1036;
             _la = this._input.LA(1);
-            if (!(_la === grammar3rdParser.Word || _la === grammar3rdParser.ObjectClassReference)) {
+            if (!(_la === asn1Parser.Word || _la === asn1Parser.ObjectClassReference)) {
                 this._errHandler.recoverInline(this);
             }
             else {
@@ -4456,7 +4456,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectSetReference() {
         let localctx = new ObjectSetReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 234, grammar3rdParser.RULE_objectSetReference);
+        this.enterRule(localctx, 234, asn1Parser.RULE_objectSetReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1038;
@@ -4479,11 +4479,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectReference() {
         let localctx = new ObjectReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 236, grammar3rdParser.RULE_objectReference);
+        this.enterRule(localctx, 236, asn1Parser.RULE_objectReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1040;
-            this.match(grammar3rdParser.IdentifierL);
+            this.match(asn1Parser.IdentifierL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -4502,13 +4502,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     valueFieldReference() {
         let localctx = new ValueFieldReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 238, grammar3rdParser.RULE_valueFieldReference);
+        this.enterRule(localctx, 238, asn1Parser.RULE_valueFieldReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1042;
-            this.match(grammar3rdParser.AMP);
+            this.match(asn1Parser.AMP);
             this.state = 1043;
-            this.match(grammar3rdParser.IdentifierL);
+            this.match(asn1Parser.IdentifierL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -4527,11 +4527,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     word() {
         let localctx = new WordContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 240, grammar3rdParser.RULE_word);
+        this.enterRule(localctx, 240, asn1Parser.RULE_word);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1045;
-            this.match(grammar3rdParser.Word);
+            this.match(asn1Parser.Word);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -4550,11 +4550,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     typeFieldReference() {
         let localctx = new TypeFieldReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 242, grammar3rdParser.RULE_typeFieldReference);
+        this.enterRule(localctx, 242, asn1Parser.RULE_typeFieldReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1047;
-            this.match(grammar3rdParser.AMP);
+            this.match(asn1Parser.AMP);
             this.state = 1048;
             this.typeReference();
         }
@@ -4575,7 +4575,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definedObjectClass() {
         let localctx = new DefinedObjectClassContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 244, grammar3rdParser.RULE_definedObjectClass);
+        this.enterRule(localctx, 244, asn1Parser.RULE_definedObjectClass);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1050;
@@ -4598,7 +4598,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definedObjectSet() {
         let localctx = new DefinedObjectSetContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 246, grammar3rdParser.RULE_definedObjectSet);
+        this.enterRule(localctx, 246, asn1Parser.RULE_definedObjectSet);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1052;
@@ -4621,13 +4621,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectClassAssignment() {
         let localctx = new ObjectClassAssignmentContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 248, grammar3rdParser.RULE_objectClassAssignment);
+        this.enterRule(localctx, 248, asn1Parser.RULE_objectClassAssignment);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1054;
             this.objectClassReference();
             this.state = 1055;
-            this.match(grammar3rdParser.ASSIGNMENT);
+            this.match(asn1Parser.ASSIGNMENT);
             this.state = 1056;
             this.objectClass();
         }
@@ -4648,7 +4648,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectClass() {
         let localctx = new ObjectClassContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 250, grammar3rdParser.RULE_objectClass);
+        this.enterRule(localctx, 250, asn1Parser.RULE_objectClass);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1058;
@@ -4671,22 +4671,22 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectClassDefn() {
         let localctx = new ObjectClassDefnContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 252, grammar3rdParser.RULE_objectClassDefn);
+        this.enterRule(localctx, 252, asn1Parser.RULE_objectClassDefn);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1060;
-            this.match(grammar3rdParser.CLASS_LITERAL);
+            this.match(asn1Parser.CLASS_LITERAL);
             this.state = 1061;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 1062;
             this.fieldSpec();
             this.state = 1067;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.COMMA) {
+            while (_la === asn1Parser.COMMA) {
                 this.state = 1063;
-                this.match(grammar3rdParser.COMMA);
+                this.match(asn1Parser.COMMA);
                 this.state = 1064;
                 this.fieldSpec();
                 this.state = 1069;
@@ -4694,11 +4694,11 @@ export default class grammar3rdParser extends antlr4.Parser {
                 _la = this._input.LA(1);
             }
             this.state = 1070;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
             this.state = 1072;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.WITH_LITERAL) {
+            if (_la === asn1Parser.WITH_LITERAL) {
                 this.state = 1071;
                 this.withSyntaxSpec();
             }
@@ -4720,13 +4720,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     withSyntaxSpec() {
         let localctx = new WithSyntaxSpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 254, grammar3rdParser.RULE_withSyntaxSpec);
+        this.enterRule(localctx, 254, asn1Parser.RULE_withSyntaxSpec);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1074;
-            this.match(grammar3rdParser.WITH_LITERAL);
+            this.match(asn1Parser.WITH_LITERAL);
             this.state = 1075;
-            this.match(grammar3rdParser.SYNTAX_LITERAL);
+            this.match(asn1Parser.SYNTAX_LITERAL);
             this.state = 1076;
             this.syntaxList();
         }
@@ -4747,7 +4747,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     fieldSpec() {
         let localctx = new FieldSpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 256, grammar3rdParser.RULE_fieldSpec);
+        this.enterRule(localctx, 256, asn1Parser.RULE_fieldSpec);
         try {
             this.state = 1080;
             this._errHandler.sync(this);
@@ -4782,7 +4782,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     typeFieldSpec() {
         let localctx = new TypeFieldSpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 258, grammar3rdParser.RULE_typeFieldSpec);
+        this.enterRule(localctx, 258, asn1Parser.RULE_typeFieldSpec);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -4791,7 +4791,7 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 1084;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.OPTIONAL_LITERAL || _la === grammar3rdParser.DEFAULT_LITERAL) {
+            if (_la === asn1Parser.OPTIONAL_LITERAL || _la === asn1Parser.DEFAULT_LITERAL) {
                 this.state = 1083;
                 this.typeOptionalitySpec();
             }
@@ -4813,20 +4813,20 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     typeOptionalitySpec() {
         let localctx = new TypeOptionalitySpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 260, grammar3rdParser.RULE_typeOptionalitySpec);
+        this.enterRule(localctx, 260, asn1Parser.RULE_typeOptionalitySpec);
         try {
             this.state = 1089;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.OPTIONAL_LITERAL:
+                case asn1Parser.OPTIONAL_LITERAL:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 1086;
-                    this.match(grammar3rdParser.OPTIONAL_LITERAL);
+                    this.match(asn1Parser.OPTIONAL_LITERAL);
                     break;
-                case grammar3rdParser.DEFAULT_LITERAL:
+                case asn1Parser.DEFAULT_LITERAL:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 1087;
-                    this.match(grammar3rdParser.DEFAULT_LITERAL);
+                    this.match(asn1Parser.DEFAULT_LITERAL);
                     this.state = 1088;
                     this.type();
                     break;
@@ -4851,7 +4851,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     fixedTypeValueFieldSpec() {
         let localctx = new FixedTypeValueFieldSpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 262, grammar3rdParser.RULE_fixedTypeValueFieldSpec);
+        this.enterRule(localctx, 262, asn1Parser.RULE_fixedTypeValueFieldSpec);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -4862,14 +4862,14 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 1094;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.UNIQUE_LITERAL) {
+            if (_la === asn1Parser.UNIQUE_LITERAL) {
                 this.state = 1093;
-                this.match(grammar3rdParser.UNIQUE_LITERAL);
+                this.match(asn1Parser.UNIQUE_LITERAL);
             }
             this.state = 1097;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.OPTIONAL_LITERAL || _la === grammar3rdParser.DEFAULT_LITERAL) {
+            if (_la === asn1Parser.OPTIONAL_LITERAL || _la === asn1Parser.DEFAULT_LITERAL) {
                 this.state = 1096;
                 this.valueOptionalitySpec();
             }
@@ -4891,20 +4891,20 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     valueOptionalitySpec() {
         let localctx = new ValueOptionalitySpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 264, grammar3rdParser.RULE_valueOptionalitySpec);
+        this.enterRule(localctx, 264, asn1Parser.RULE_valueOptionalitySpec);
         try {
             this.state = 1102;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.OPTIONAL_LITERAL:
+                case asn1Parser.OPTIONAL_LITERAL:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 1099;
-                    this.match(grammar3rdParser.OPTIONAL_LITERAL);
+                    this.match(asn1Parser.OPTIONAL_LITERAL);
                     break;
-                case grammar3rdParser.DEFAULT_LITERAL:
+                case asn1Parser.DEFAULT_LITERAL:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 1100;
-                    this.match(grammar3rdParser.DEFAULT_LITERAL);
+                    this.match(asn1Parser.DEFAULT_LITERAL);
                     this.state = 1101;
                     this.value();
                     break;
@@ -4929,7 +4929,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     primitiveFieldName() {
         let localctx = new PrimitiveFieldNameContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 266, grammar3rdParser.RULE_primitiveFieldName);
+        this.enterRule(localctx, 266, asn1Parser.RULE_primitiveFieldName);
         try {
             this.state = 1106;
             this._errHandler.sync(this);
@@ -4964,7 +4964,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     fieldName() {
         let localctx = new FieldNameContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 268, grammar3rdParser.RULE_fieldName);
+        this.enterRule(localctx, 268, asn1Parser.RULE_fieldName);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -4973,9 +4973,9 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 1113;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.PERIOD) {
+            while (_la === asn1Parser.PERIOD) {
                 this.state = 1109;
-                this.match(grammar3rdParser.PERIOD);
+                this.match(asn1Parser.PERIOD);
                 this.state = 1110;
                 this.primitiveFieldName();
                 this.state = 1115;
@@ -5000,12 +5000,12 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     syntaxList() {
         let localctx = new SyntaxListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 270, grammar3rdParser.RULE_syntaxList);
+        this.enterRule(localctx, 270, asn1Parser.RULE_syntaxList);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1116;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 1118;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
@@ -5015,9 +5015,9 @@ export default class grammar3rdParser extends antlr4.Parser {
                 this.state = 1120;
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-            } while (_la === grammar3rdParser.L_BRACKET || _la === grammar3rdParser.AMP || _la === grammar3rdParser.Word);
+            } while (_la === asn1Parser.L_BRACKET || _la === asn1Parser.AMP || _la === asn1Parser.Word);
             this.state = 1122;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -5036,18 +5036,18 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     tokenOrGroupSpec() {
         let localctx = new TokenOrGroupSpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 272, grammar3rdParser.RULE_tokenOrGroupSpec);
+        this.enterRule(localctx, 272, asn1Parser.RULE_tokenOrGroupSpec);
         try {
             this.state = 1126;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.AMP:
-                case grammar3rdParser.Word:
+                case asn1Parser.AMP:
+                case asn1Parser.Word:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 1124;
                     this.requiredToken();
                     break;
-                case grammar3rdParser.L_BRACKET:
+                case asn1Parser.L_BRACKET:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 1125;
                     this.optionalGroup();
@@ -5073,12 +5073,12 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     optionalGroup() {
         let localctx = new OptionalGroupContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 274, grammar3rdParser.RULE_optionalGroup);
+        this.enterRule(localctx, 274, asn1Parser.RULE_optionalGroup);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1128;
-            this.match(grammar3rdParser.L_BRACKET);
+            this.match(asn1Parser.L_BRACKET);
             this.state = 1130;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
@@ -5088,9 +5088,9 @@ export default class grammar3rdParser extends antlr4.Parser {
                 this.state = 1132;
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-            } while (_la === grammar3rdParser.L_BRACKET || _la === grammar3rdParser.AMP || _la === grammar3rdParser.Word);
+            } while (_la === asn1Parser.L_BRACKET || _la === asn1Parser.AMP || _la === asn1Parser.Word);
             this.state = 1134;
-            this.match(grammar3rdParser.R_BRACKET);
+            this.match(asn1Parser.R_BRACKET);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -5109,17 +5109,17 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     requiredToken() {
         let localctx = new RequiredTokenContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 276, grammar3rdParser.RULE_requiredToken);
+        this.enterRule(localctx, 276, asn1Parser.RULE_requiredToken);
         try {
             this.state = 1138;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.Word:
+                case asn1Parser.Word:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 1136;
                     this.literal();
                     break;
-                case grammar3rdParser.AMP:
+                case asn1Parser.AMP:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 1137;
                     this.primitiveFieldName();
@@ -5145,7 +5145,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     literal() {
         let localctx = new LiteralContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 278, grammar3rdParser.RULE_literal);
+        this.enterRule(localctx, 278, asn1Parser.RULE_literal);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1140;
@@ -5168,7 +5168,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectAssignment() {
         let localctx = new ObjectAssignmentContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 280, grammar3rdParser.RULE_objectAssignment);
+        this.enterRule(localctx, 280, asn1Parser.RULE_objectAssignment);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1142;
@@ -5176,7 +5176,7 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 1143;
             this.definedObjectClass();
             this.state = 1144;
-            this.match(grammar3rdParser.ASSIGNMENT);
+            this.match(asn1Parser.ASSIGNMENT);
             this.state = 1145;
             this.object();
         }
@@ -5197,7 +5197,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     object() {
         let localctx = new ObjectContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 282, grammar3rdParser.RULE_object);
+        this.enterRule(localctx, 282, asn1Parser.RULE_object);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1147;
@@ -5220,7 +5220,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectDefn() {
         let localctx = new ObjectDefnContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 284, grammar3rdParser.RULE_objectDefn);
+        this.enterRule(localctx, 284, asn1Parser.RULE_objectDefn);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1149;
@@ -5243,16 +5243,16 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definedSyntax() {
         let localctx = new DefinedSyntaxContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 286, grammar3rdParser.RULE_definedSyntax);
+        this.enterRule(localctx, 286, asn1Parser.RULE_definedSyntax);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1151;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 1155;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.HYPHEN_MINUS || _la === grammar3rdParser.SEQUENCE_LITERAL || ((((_la - 35)) & ~0x1f) == 0 && ((1 << (_la - 35)) & ((1 << (grammar3rdParser.ENUMERATED_LITERAL - 35)) | (1 << (grammar3rdParser.BIT_LITERAL - 35)) | (1 << (grammar3rdParser.NULL_LITERAL - 35)) | (1 << (grammar3rdParser.BOOLEAN_LITERAL - 35)) | (1 << (grammar3rdParser.OBJECT_LITERAL - 35)) | (1 << (grammar3rdParser.OCTET_LITERAL - 35)) | (1 << (grammar3rdParser.CHOICE_LITERAL - 35)))) !== 0) || ((((_la - 93)) & ~0x1f) == 0 && ((1 << (_la - 93)) & ((1 << (grammar3rdParser.UTCTime_LITERAL - 93)) | (1 << (grammar3rdParser.PrintableString_LITERAL - 93)) | (1 << (grammar3rdParser.UTF8String_LITERAL - 93)) | (1 << (grammar3rdParser.VisibleString_LITERAL - 93)) | (1 << (grammar3rdParser.INTEGER_LITERAL - 93)))) !== 0) || ((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (grammar3rdParser.Word - 130)) | (1 << (grammar3rdParser.ObjectClassReference - 130)) | (1 << (grammar3rdParser.TypeReference - 130)) | (1 << (grammar3rdParser.IdentifierL - 130)) | (1 << (grammar3rdParser.Number - 130)) | (1 << (grammar3rdParser.Bstring - 130)))) !== 0)) {
+            while (_la === asn1Parser.HYPHEN_MINUS || _la === asn1Parser.SEQUENCE_LITERAL || ((((_la - 35)) & ~0x1f) == 0 && ((1 << (_la - 35)) & ((1 << (asn1Parser.ENUMERATED_LITERAL - 35)) | (1 << (asn1Parser.BIT_LITERAL - 35)) | (1 << (asn1Parser.NULL_LITERAL - 35)) | (1 << (asn1Parser.BOOLEAN_LITERAL - 35)) | (1 << (asn1Parser.OBJECT_LITERAL - 35)) | (1 << (asn1Parser.OCTET_LITERAL - 35)) | (1 << (asn1Parser.CHOICE_LITERAL - 35)))) !== 0) || ((((_la - 93)) & ~0x1f) == 0 && ((1 << (_la - 93)) & ((1 << (asn1Parser.UTCTime_LITERAL - 93)) | (1 << (asn1Parser.PrintableString_LITERAL - 93)) | (1 << (asn1Parser.UTF8String_LITERAL - 93)) | (1 << (asn1Parser.VisibleString_LITERAL - 93)) | (1 << (asn1Parser.INTEGER_LITERAL - 93)))) !== 0) || ((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (asn1Parser.Word - 130)) | (1 << (asn1Parser.ObjectClassReference - 130)) | (1 << (asn1Parser.TypeReference - 130)) | (1 << (asn1Parser.IdentifierL - 130)) | (1 << (asn1Parser.Number - 130)) | (1 << (asn1Parser.Bstring - 130)))) !== 0)) {
                 this.state = 1152;
                 this.definedSyntaxToken();
                 this.state = 1157;
@@ -5260,7 +5260,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                 _la = this._input.LA(1);
             }
             this.state = 1158;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -5279,7 +5279,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definedSyntaxToken() {
         let localctx = new DefinedSyntaxTokenContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 288, grammar3rdParser.RULE_definedSyntaxToken);
+        this.enterRule(localctx, 288, asn1Parser.RULE_definedSyntaxToken);
         try {
             this.state = 1162;
             this._errHandler.sync(this);
@@ -5314,35 +5314,35 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     setting() {
         let localctx = new SettingContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 290, grammar3rdParser.RULE_setting);
+        this.enterRule(localctx, 290, asn1Parser.RULE_setting);
         try {
             this.state = 1166;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.SEQUENCE_LITERAL:
-                case grammar3rdParser.ENUMERATED_LITERAL:
-                case grammar3rdParser.BIT_LITERAL:
-                case grammar3rdParser.NULL_LITERAL:
-                case grammar3rdParser.BOOLEAN_LITERAL:
-                case grammar3rdParser.OBJECT_LITERAL:
-                case grammar3rdParser.OCTET_LITERAL:
-                case grammar3rdParser.CHOICE_LITERAL:
-                case grammar3rdParser.UTCTime_LITERAL:
-                case grammar3rdParser.PrintableString_LITERAL:
-                case grammar3rdParser.UTF8String_LITERAL:
-                case grammar3rdParser.VisibleString_LITERAL:
-                case grammar3rdParser.INTEGER_LITERAL:
-                case grammar3rdParser.Word:
-                case grammar3rdParser.ObjectClassReference:
-                case grammar3rdParser.TypeReference:
+                case asn1Parser.SEQUENCE_LITERAL:
+                case asn1Parser.ENUMERATED_LITERAL:
+                case asn1Parser.BIT_LITERAL:
+                case asn1Parser.NULL_LITERAL:
+                case asn1Parser.BOOLEAN_LITERAL:
+                case asn1Parser.OBJECT_LITERAL:
+                case asn1Parser.OCTET_LITERAL:
+                case asn1Parser.CHOICE_LITERAL:
+                case asn1Parser.UTCTime_LITERAL:
+                case asn1Parser.PrintableString_LITERAL:
+                case asn1Parser.UTF8String_LITERAL:
+                case asn1Parser.VisibleString_LITERAL:
+                case asn1Parser.INTEGER_LITERAL:
+                case asn1Parser.Word:
+                case asn1Parser.ObjectClassReference:
+                case asn1Parser.TypeReference:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 1164;
                     this.type();
                     break;
-                case grammar3rdParser.HYPHEN_MINUS:
-                case grammar3rdParser.IdentifierL:
-                case grammar3rdParser.Number:
-                case grammar3rdParser.Bstring:
+                case asn1Parser.HYPHEN_MINUS:
+                case asn1Parser.IdentifierL:
+                case asn1Parser.Number:
+                case asn1Parser.Bstring:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 1165;
                     this.value();
@@ -5368,7 +5368,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectSetAssignment() {
         let localctx = new ObjectSetAssignmentContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 292, grammar3rdParser.RULE_objectSetAssignment);
+        this.enterRule(localctx, 292, asn1Parser.RULE_objectSetAssignment);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1168;
@@ -5376,7 +5376,7 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 1169;
             this.definedObjectClass();
             this.state = 1170;
-            this.match(grammar3rdParser.ASSIGNMENT);
+            this.match(asn1Parser.ASSIGNMENT);
             this.state = 1171;
             this.objectSet();
         }
@@ -5397,15 +5397,15 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectSet() {
         let localctx = new ObjectSetContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 294, grammar3rdParser.RULE_objectSet);
+        this.enterRule(localctx, 294, asn1Parser.RULE_objectSet);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1173;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 1174;
             this.objectSetSpec();
             this.state = 1175;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -5424,7 +5424,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectSetSpec() {
         let localctx = new ObjectSetSpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 296, grammar3rdParser.RULE_objectSetSpec);
+        this.enterRule(localctx, 296, asn1Parser.RULE_objectSetSpec);
         try {
             this.state = 1189;
             this._errHandler.sync(this);
@@ -5440,25 +5440,25 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 1178;
                     this.rootElementSetSpec();
                     this.state = 1179;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 1180;
-                    this.match(grammar3rdParser.ELLIPSIS);
+                    this.match(asn1Parser.ELLIPSIS);
                     break;
                 case 3:
                     this.enterOuterAlt(localctx, 3);
                     this.state = 1182;
-                    this.match(grammar3rdParser.ELLIPSIS);
+                    this.match(asn1Parser.ELLIPSIS);
                     break;
                 case 4:
                     this.enterOuterAlt(localctx, 4);
                     this.state = 1183;
                     this.rootElementSetSpec();
                     this.state = 1184;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 1185;
-                    this.match(grammar3rdParser.ELLIPSIS);
+                    this.match(asn1Parser.ELLIPSIS);
                     this.state = 1186;
-                    this.match(grammar3rdParser.COMMA);
+                    this.match(asn1Parser.COMMA);
                     this.state = 1187;
                     this.additionalElementSetSpec();
                     break;
@@ -5481,19 +5481,19 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectSetElements() {
         let localctx = new ObjectSetElementsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 298, grammar3rdParser.RULE_objectSetElements);
+        this.enterRule(localctx, 298, asn1Parser.RULE_objectSetElements);
         try {
             this.state = 1193;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.L_BRACE:
+                case asn1Parser.L_BRACE:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 1191;
                     this.object();
                     break;
-                case grammar3rdParser.Word:
-                case grammar3rdParser.ObjectClassReference:
-                case grammar3rdParser.TypeReference:
+                case asn1Parser.Word:
+                case asn1Parser.ObjectClassReference:
+                case asn1Parser.TypeReference:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 1192;
                     this.definedObjectSet();
@@ -5519,13 +5519,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     objectClassFieldType() {
         let localctx = new ObjectClassFieldTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 300, grammar3rdParser.RULE_objectClassFieldType);
+        this.enterRule(localctx, 300, asn1Parser.RULE_objectClassFieldType);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1195;
             this.definedObjectClass();
             this.state = 1196;
-            this.match(grammar3rdParser.PERIOD);
+            this.match(asn1Parser.PERIOD);
             this.state = 1197;
             this.fieldName();
         }
@@ -5546,17 +5546,17 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     generalConstraint() {
         let localctx = new GeneralConstraintContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 302, grammar3rdParser.RULE_generalConstraint);
+        this.enterRule(localctx, 302, asn1Parser.RULE_generalConstraint);
         try {
             this.state = 1201;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.L_BRACE:
+                case asn1Parser.L_BRACE:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 1199;
                     this.tableConstraint();
                     break;
-                case grammar3rdParser.CONTAINING_LITERAL:
+                case asn1Parser.CONTAINING_LITERAL:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 1200;
                     this.contentsConstraint();
@@ -5582,7 +5582,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     tableConstraint() {
         let localctx = new TableConstraintContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 304, grammar3rdParser.RULE_tableConstraint);
+        this.enterRule(localctx, 304, asn1Parser.RULE_tableConstraint);
         try {
             this.state = 1205;
             this._errHandler.sync(this);
@@ -5617,7 +5617,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     simpleTableConstraint() {
         let localctx = new SimpleTableConstraintContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 306, grammar3rdParser.RULE_simpleTableConstraint);
+        this.enterRule(localctx, 306, asn1Parser.RULE_simpleTableConstraint);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1207;
@@ -5640,26 +5640,26 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     componentRelationConstraint() {
         let localctx = new ComponentRelationConstraintContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 308, grammar3rdParser.RULE_componentRelationConstraint);
+        this.enterRule(localctx, 308, asn1Parser.RULE_componentRelationConstraint);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1209;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 1210;
             this.definedObjectSet();
             this.state = 1211;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
             this.state = 1212;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 1213;
             this.atNotation();
             this.state = 1218;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.COMMA) {
+            while (_la === asn1Parser.COMMA) {
                 this.state = 1214;
-                this.match(grammar3rdParser.COMMA);
+                this.match(asn1Parser.COMMA);
                 this.state = 1215;
                 this.atNotation();
                 this.state = 1220;
@@ -5667,7 +5667,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                 _la = this._input.LA(1);
             }
             this.state = 1221;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -5686,11 +5686,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     atNotation() {
         let localctx = new AtNotationContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 310, grammar3rdParser.RULE_atNotation);
+        this.enterRule(localctx, 310, asn1Parser.RULE_atNotation);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1223;
-            this.match(grammar3rdParser.AT);
+            this.match(asn1Parser.AT);
             this.state = 1224;
             this.componentIdList();
         }
@@ -5711,7 +5711,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     componentIdList() {
         let localctx = new ComponentIdListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 312, grammar3rdParser.RULE_componentIdList);
+        this.enterRule(localctx, 312, asn1Parser.RULE_componentIdList);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -5720,9 +5720,9 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 1231;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.PERIOD) {
+            while (_la === asn1Parser.PERIOD) {
                 this.state = 1227;
-                this.match(grammar3rdParser.PERIOD);
+                this.match(asn1Parser.PERIOD);
                 this.state = 1228;
                 this.identifier();
                 this.state = 1233;
@@ -5747,11 +5747,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     contentsConstraint() {
         let localctx = new ContentsConstraintContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 314, grammar3rdParser.RULE_contentsConstraint);
+        this.enterRule(localctx, 314, asn1Parser.RULE_contentsConstraint);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1234;
-            this.match(grammar3rdParser.CONTAINING_LITERAL);
+            this.match(asn1Parser.CONTAINING_LITERAL);
             this.state = 1235;
             this.type();
         }
@@ -5772,7 +5772,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     parameterizedAssignment() {
         let localctx = new ParameterizedAssignmentContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 316, grammar3rdParser.RULE_parameterizedAssignment);
+        this.enterRule(localctx, 316, asn1Parser.RULE_parameterizedAssignment);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1237;
@@ -5795,7 +5795,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     parameterizedTypeAssignment() {
         let localctx = new ParameterizedTypeAssignmentContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 318, grammar3rdParser.RULE_parameterizedTypeAssignment);
+        this.enterRule(localctx, 318, asn1Parser.RULE_parameterizedTypeAssignment);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1239;
@@ -5803,7 +5803,7 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 1240;
             this.parameterList();
             this.state = 1241;
-            this.match(grammar3rdParser.ASSIGNMENT);
+            this.match(asn1Parser.ASSIGNMENT);
             this.state = 1242;
             this.type();
         }
@@ -5824,20 +5824,20 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     parameterList() {
         let localctx = new ParameterListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 320, grammar3rdParser.RULE_parameterList);
+        this.enterRule(localctx, 320, asn1Parser.RULE_parameterList);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1244;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 1245;
             this.parameter();
             this.state = 1250;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.COMMA) {
+            while (_la === asn1Parser.COMMA) {
                 this.state = 1246;
-                this.match(grammar3rdParser.COMMA);
+                this.match(asn1Parser.COMMA);
                 this.state = 1247;
                 this.parameter();
                 this.state = 1252;
@@ -5845,7 +5845,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                 _la = this._input.LA(1);
             }
             this.state = 1253;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -5864,7 +5864,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     parameter() {
         let localctx = new ParameterContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 322, grammar3rdParser.RULE_parameter);
+        this.enterRule(localctx, 322, asn1Parser.RULE_parameter);
         try {
             this.state = 1260;
             this._errHandler.sync(this);
@@ -5875,7 +5875,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                     this.state = 1255;
                     this.paramGovernor();
                     this.state = 1256;
-                    this.match(grammar3rdParser.COLON);
+                    this.match(asn1Parser.COLON);
                     this.state = 1257;
                     this.dummyReference();
                     break;
@@ -5903,7 +5903,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     paramGovernor() {
         let localctx = new ParamGovernorContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 324, grammar3rdParser.RULE_paramGovernor);
+        this.enterRule(localctx, 324, asn1Parser.RULE_paramGovernor);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1262;
@@ -5926,7 +5926,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     governor() {
         let localctx = new GovernorContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 326, grammar3rdParser.RULE_governor);
+        this.enterRule(localctx, 326, asn1Parser.RULE_governor);
         try {
             this.state = 1266;
             this._errHandler.sync(this);
@@ -5961,7 +5961,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     dummyReference() {
         let localctx = new DummyReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 328, grammar3rdParser.RULE_dummyReference);
+        this.enterRule(localctx, 328, asn1Parser.RULE_dummyReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1268;
@@ -5984,15 +5984,15 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     parameterizedReference() {
         let localctx = new ParameterizedReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 330, grammar3rdParser.RULE_parameterizedReference);
+        this.enterRule(localctx, 330, asn1Parser.RULE_parameterizedReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1270;
             this.reference();
             this.state = 1271;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 1272;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -6011,7 +6011,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     parameterizedTypeAmbiguous() {
         let localctx = new ParameterizedTypeAmbiguousContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 332, grammar3rdParser.RULE_parameterizedTypeAmbiguous);
+        this.enterRule(localctx, 332, asn1Parser.RULE_parameterizedTypeAmbiguous);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1274;
@@ -6036,7 +6036,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     simpleDefinedType() {
         let localctx = new SimpleDefinedTypeContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 334, grammar3rdParser.RULE_simpleDefinedType);
+        this.enterRule(localctx, 334, asn1Parser.RULE_simpleDefinedType);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1277;
@@ -6059,20 +6059,20 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     actualParameterList() {
         let localctx = new ActualParameterListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 336, grammar3rdParser.RULE_actualParameterList);
+        this.enterRule(localctx, 336, asn1Parser.RULE_actualParameterList);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1279;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 1280;
             this.actualParameter();
             this.state = 1285;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.COMMA) {
+            while (_la === asn1Parser.COMMA) {
                 this.state = 1281;
-                this.match(grammar3rdParser.COMMA);
+                this.match(asn1Parser.COMMA);
                 this.state = 1282;
                 this.actualParameter();
                 this.state = 1287;
@@ -6080,7 +6080,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                 _la = this._input.LA(1);
             }
             this.state = 1288;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -6099,40 +6099,40 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     actualParameter() {
         let localctx = new ActualParameterContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 338, grammar3rdParser.RULE_actualParameter);
+        this.enterRule(localctx, 338, asn1Parser.RULE_actualParameter);
         try {
             this.state = 1293;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.SEQUENCE_LITERAL:
-                case grammar3rdParser.ENUMERATED_LITERAL:
-                case grammar3rdParser.BIT_LITERAL:
-                case grammar3rdParser.NULL_LITERAL:
-                case grammar3rdParser.BOOLEAN_LITERAL:
-                case grammar3rdParser.OBJECT_LITERAL:
-                case grammar3rdParser.OCTET_LITERAL:
-                case grammar3rdParser.CHOICE_LITERAL:
-                case grammar3rdParser.UTCTime_LITERAL:
-                case grammar3rdParser.PrintableString_LITERAL:
-                case grammar3rdParser.UTF8String_LITERAL:
-                case grammar3rdParser.VisibleString_LITERAL:
-                case grammar3rdParser.INTEGER_LITERAL:
-                case grammar3rdParser.Word:
-                case grammar3rdParser.ObjectClassReference:
-                case grammar3rdParser.TypeReference:
+                case asn1Parser.SEQUENCE_LITERAL:
+                case asn1Parser.ENUMERATED_LITERAL:
+                case asn1Parser.BIT_LITERAL:
+                case asn1Parser.NULL_LITERAL:
+                case asn1Parser.BOOLEAN_LITERAL:
+                case asn1Parser.OBJECT_LITERAL:
+                case asn1Parser.OCTET_LITERAL:
+                case asn1Parser.CHOICE_LITERAL:
+                case asn1Parser.UTCTime_LITERAL:
+                case asn1Parser.PrintableString_LITERAL:
+                case asn1Parser.UTF8String_LITERAL:
+                case asn1Parser.VisibleString_LITERAL:
+                case asn1Parser.INTEGER_LITERAL:
+                case asn1Parser.Word:
+                case asn1Parser.ObjectClassReference:
+                case asn1Parser.TypeReference:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 1290;
                     this.type();
                     break;
-                case grammar3rdParser.HYPHEN_MINUS:
-                case grammar3rdParser.IdentifierL:
-                case grammar3rdParser.Number:
-                case grammar3rdParser.Bstring:
+                case asn1Parser.HYPHEN_MINUS:
+                case asn1Parser.IdentifierL:
+                case asn1Parser.Number:
+                case asn1Parser.Bstring:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 1291;
                     this.value();
                     break;
-                case grammar3rdParser.L_BRACE:
+                case asn1Parser.L_BRACE:
                     this.enterOuterAlt(localctx, 3);
                     this.state = 1292;
                     this.objectSet();
@@ -6158,11 +6158,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     encodingObjectReference() {
         let localctx = new EncodingObjectReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 340, grammar3rdParser.RULE_encodingObjectReference);
+        this.enterRule(localctx, 340, asn1Parser.RULE_encodingObjectReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1295;
-            this.match(grammar3rdParser.IdentifierL);
+            this.match(asn1Parser.IdentifierL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -6181,7 +6181,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     encodingObjectSetReference() {
         let localctx = new EncodingObjectSetReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 342, grammar3rdParser.RULE_encodingObjectSetReference);
+        this.enterRule(localctx, 342, asn1Parser.RULE_encodingObjectSetReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1297;
@@ -6204,21 +6204,21 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     encodingClassReferenceVariant() {
         let localctx = new EncodingClassReferenceVariantContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 344, grammar3rdParser.RULE_encodingClassReferenceVariant);
+        this.enterRule(localctx, 344, asn1Parser.RULE_encodingClassReferenceVariant);
         try {
             this.state = 1302;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.NUMBER_SIGN:
+                case asn1Parser.NUMBER_SIGN:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 1299;
-                    this.match(grammar3rdParser.NUMBER_SIGN);
+                    this.match(asn1Parser.NUMBER_SIGN);
                     this.state = 1300;
                     this.typeReference();
                     break;
-                case grammar3rdParser.Word:
-                case grammar3rdParser.ObjectClassReference:
-                case grammar3rdParser.TypeReference:
+                case asn1Parser.Word:
+                case asn1Parser.ObjectClassReference:
+                case asn1Parser.TypeReference:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 1301;
                     this.typeReference();
@@ -6244,7 +6244,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definedOrBuiltinEncodingClass() {
         let localctx = new DefinedOrBuiltinEncodingClassContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 346, grammar3rdParser.RULE_definedOrBuiltinEncodingClass);
+        this.enterRule(localctx, 346, asn1Parser.RULE_definedOrBuiltinEncodingClass);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1304;
@@ -6267,7 +6267,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definedEncodingObject() {
         let localctx = new DefinedEncodingObjectContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 348, grammar3rdParser.RULE_definedEncodingObject);
+        this.enterRule(localctx, 348, asn1Parser.RULE_definedEncodingObject);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1306;
@@ -6290,7 +6290,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definedEncodingObjectSet() {
         let localctx = new DefinedEncodingObjectSetContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 350, grammar3rdParser.RULE_definedEncodingObjectSet);
+        this.enterRule(localctx, 350, asn1Parser.RULE_definedEncodingObjectSet);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1308;
@@ -6313,19 +6313,19 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     definedOrBuiltinEncodingObjectSet() {
         let localctx = new DefinedOrBuiltinEncodingObjectSetContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 352, grammar3rdParser.RULE_definedOrBuiltinEncodingObjectSet);
+        this.enterRule(localctx, 352, asn1Parser.RULE_definedOrBuiltinEncodingObjectSet);
         try {
             this.state = 1312;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.Word:
-                case grammar3rdParser.ObjectClassReference:
-                case grammar3rdParser.TypeReference:
+                case asn1Parser.Word:
+                case asn1Parser.ObjectClassReference:
+                case asn1Parser.TypeReference:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 1310;
                     this.definedEncodingObjectSet();
                     break;
-                case grammar3rdParser.PER_BASIC_UNALIGNED_LITERAL:
+                case asn1Parser.PER_BASIC_UNALIGNED_LITERAL:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 1311;
                     this.builtinEncodingObjectSetReference();
@@ -6351,14 +6351,14 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     elmModuleBody() {
         let localctx = new ElmModuleBodyContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 354, grammar3rdParser.RULE_elmModuleBody);
+        this.enterRule(localctx, 354, asn1Parser.RULE_elmModuleBody);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1315;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.IMPORTS_LITERAL) {
+            if (_la === asn1Parser.IMPORTS_LITERAL) {
                 this.state = 1314;
                 this.imports();
             }
@@ -6382,7 +6382,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     encodingApplicationList() {
         let localctx = new EncodingApplicationListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 356, grammar3rdParser.RULE_encodingApplicationList);
+        this.enterRule(localctx, 356, asn1Parser.RULE_encodingApplicationList);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -6395,7 +6395,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                 this.state = 1322;
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-            } while (_la === grammar3rdParser.ENCODE_LITERAL);
+            } while (_la === asn1Parser.ENCODE_LITERAL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -6414,20 +6414,20 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     encodingApplication() {
         let localctx = new EncodingApplicationContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 358, grammar3rdParser.RULE_encodingApplication);
+        this.enterRule(localctx, 358, asn1Parser.RULE_encodingApplication);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1324;
-            this.match(grammar3rdParser.ENCODE_LITERAL);
+            this.match(asn1Parser.ENCODE_LITERAL);
             this.state = 1325;
             this.simpleDefinedEncodingClass();
             this.state = 1330;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.COMMA) {
+            while (_la === asn1Parser.COMMA) {
                 this.state = 1326;
-                this.match(grammar3rdParser.COMMA);
+                this.match(asn1Parser.COMMA);
                 this.state = 1327;
                 this.simpleDefinedEncodingClass();
                 this.state = 1332;
@@ -6454,18 +6454,18 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     combinedEncodings() {
         let localctx = new CombinedEncodingsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 360, grammar3rdParser.RULE_combinedEncodings);
+        this.enterRule(localctx, 360, asn1Parser.RULE_combinedEncodings);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1335;
-            this.match(grammar3rdParser.WITH_LITERAL);
+            this.match(asn1Parser.WITH_LITERAL);
             this.state = 1336;
             this.primaryEncodings();
             this.state = 1338;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.COMPLETED_LITERAL) {
+            if (_la === asn1Parser.COMPLETED_LITERAL) {
                 this.state = 1337;
                 this.completionClause();
             }
@@ -6487,13 +6487,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     completionClause() {
         let localctx = new CompletionClauseContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 362, grammar3rdParser.RULE_completionClause);
+        this.enterRule(localctx, 362, asn1Parser.RULE_completionClause);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1340;
-            this.match(grammar3rdParser.COMPLETED_LITERAL);
+            this.match(asn1Parser.COMPLETED_LITERAL);
             this.state = 1341;
-            this.match(grammar3rdParser.BY_LITERAL);
+            this.match(asn1Parser.BY_LITERAL);
             this.state = 1342;
             this.secondaryEncodings();
         }
@@ -6514,7 +6514,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     primaryEncodings() {
         let localctx = new PrimaryEncodingsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 364, grammar3rdParser.RULE_primaryEncodings);
+        this.enterRule(localctx, 364, asn1Parser.RULE_primaryEncodings);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1344;
@@ -6537,7 +6537,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     secondaryEncodings() {
         let localctx = new SecondaryEncodingsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 366, grammar3rdParser.RULE_secondaryEncodings);
+        this.enterRule(localctx, 366, asn1Parser.RULE_secondaryEncodings);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1346;
@@ -6560,28 +6560,28 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     edmModuleBody() {
         let localctx = new EdmModuleBodyContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 368, grammar3rdParser.RULE_edmModuleBody);
+        this.enterRule(localctx, 368, asn1Parser.RULE_edmModuleBody);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1349;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.EXPORTS_LITERAL) {
+            if (_la === asn1Parser.EXPORTS_LITERAL) {
                 this.state = 1348;
                 this.exports();
             }
             this.state = 1352;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.IMPORTS_LITERAL) {
+            if (_la === asn1Parser.IMPORTS_LITERAL) {
                 this.state = 1351;
                 this.imports();
             }
             this.state = 1355;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (grammar3rdParser.Word - 130)) | (1 << (grammar3rdParser.ObjectClassReference - 130)) | (1 << (grammar3rdParser.TypeReference - 130)) | (1 << (grammar3rdParser.IdentifierL - 130)))) !== 0)) {
+            if (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (asn1Parser.Word - 130)) | (1 << (asn1Parser.ObjectClassReference - 130)) | (1 << (asn1Parser.TypeReference - 130)) | (1 << (asn1Parser.IdentifierL - 130)))) !== 0)) {
                 this.state = 1354;
                 this.edmAssignmentList();
             }
@@ -6603,7 +6603,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     edmAssignmentList() {
         let localctx = new EdmAssignmentListContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 370, grammar3rdParser.RULE_edmAssignmentList);
+        this.enterRule(localctx, 370, asn1Parser.RULE_edmAssignmentList);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
@@ -6616,7 +6616,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                 this.state = 1360;
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-            } while (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (grammar3rdParser.Word - 130)) | (1 << (grammar3rdParser.ObjectClassReference - 130)) | (1 << (grammar3rdParser.TypeReference - 130)) | (1 << (grammar3rdParser.IdentifierL - 130)))) !== 0));
+            } while (((((_la - 130)) & ~0x1f) == 0 && ((1 << (_la - 130)) & ((1 << (asn1Parser.Word - 130)) | (1 << (asn1Parser.ObjectClassReference - 130)) | (1 << (asn1Parser.TypeReference - 130)) | (1 << (asn1Parser.IdentifierL - 130)))) !== 0));
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -6635,19 +6635,19 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     edmAssignment() {
         let localctx = new EdmAssignmentContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 372, grammar3rdParser.RULE_edmAssignment);
+        this.enterRule(localctx, 372, asn1Parser.RULE_edmAssignment);
         try {
             this.state = 1364;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.IdentifierL:
+                case asn1Parser.IdentifierL:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 1362;
                     this.encodingObjectAssignment();
                     break;
-                case grammar3rdParser.Word:
-                case grammar3rdParser.ObjectClassReference:
-                case grammar3rdParser.TypeReference:
+                case asn1Parser.Word:
+                case asn1Parser.ObjectClassReference:
+                case asn1Parser.TypeReference:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 1363;
                     this.encodingObjectSetAssignment();
@@ -6673,7 +6673,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     builtinEncodingClassReference() {
         let localctx = new BuiltinEncodingClassReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 374, grammar3rdParser.RULE_builtinEncodingClassReference);
+        this.enterRule(localctx, 374, asn1Parser.RULE_builtinEncodingClassReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1366;
@@ -6696,13 +6696,13 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     encodingProcedureClassReference() {
         let localctx = new EncodingProcedureClassReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 376, grammar3rdParser.RULE_encodingProcedureClassReference);
+        this.enterRule(localctx, 376, asn1Parser.RULE_encodingProcedureClassReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1368;
-            this.match(grammar3rdParser.NUMBER_SIGN);
+            this.match(asn1Parser.NUMBER_SIGN);
             this.state = 1369;
-            this.match(grammar3rdParser.OUTER_LITERAL);
+            this.match(asn1Parser.OUTER_LITERAL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -6721,7 +6721,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     encodingObjectAssignment() {
         let localctx = new EncodingObjectAssignmentContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 378, grammar3rdParser.RULE_encodingObjectAssignment);
+        this.enterRule(localctx, 378, asn1Parser.RULE_encodingObjectAssignment);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1371;
@@ -6729,7 +6729,7 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 1372;
             this.definedOrBuiltinEncodingClass();
             this.state = 1373;
-            this.match(grammar3rdParser.ASSIGNMENT);
+            this.match(asn1Parser.ASSIGNMENT);
             this.state = 1374;
             this.encodingObject();
         }
@@ -6750,7 +6750,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     encodingObject() {
         let localctx = new EncodingObjectContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 380, grammar3rdParser.RULE_encodingObject);
+        this.enterRule(localctx, 380, asn1Parser.RULE_encodingObject);
         try {
             this.state = 1378;
             this._errHandler.sync(this);
@@ -6785,15 +6785,15 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     differentialEncodeDecodeObjectVariant() {
         let localctx = new DifferentialEncodeDecodeObjectVariantContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 382, grammar3rdParser.RULE_differentialEncodeDecodeObjectVariant);
+        this.enterRule(localctx, 382, asn1Parser.RULE_differentialEncodeDecodeObjectVariant);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1380;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 1381;
             _la = this._input.LA(1);
-            if (!(_la === grammar3rdParser.ENCODE_DECODE_LITERAL || _la === grammar3rdParser.ENCODER_DECODER_LITERAL)) {
+            if (!(_la === asn1Parser.ENCODE_DECODE_LITERAL || _la === asn1Parser.ENCODER_DECODER_LITERAL)) {
                 this._errHandler.recoverInline(this);
             }
             else {
@@ -6803,15 +6803,15 @@ export default class grammar3rdParser extends antlr4.Parser {
             this.state = 1382;
             this.specForEncoding();
             this.state = 1383;
-            this.match(grammar3rdParser.DECODE_LITERAL);
+            this.match(asn1Parser.DECODE_LITERAL);
             this.state = 1384;
-            this.match(grammar3rdParser.AS_LITERAL);
+            this.match(asn1Parser.AS_LITERAL);
             this.state = 1385;
-            this.match(grammar3rdParser.IF_LITERAL);
+            this.match(asn1Parser.IF_LITERAL);
             this.state = 1386;
             this.specForDecoders();
             this.state = 1387;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -6830,7 +6830,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     specForEncoding() {
         let localctx = new SpecForEncodingContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 384, grammar3rdParser.RULE_specForEncoding);
+        this.enterRule(localctx, 384, asn1Parser.RULE_specForEncoding);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1389;
@@ -6853,7 +6853,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     specForDecoders() {
         let localctx = new SpecForDecodersContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 386, grammar3rdParser.RULE_specForDecoders);
+        this.enterRule(localctx, 386, asn1Parser.RULE_specForDecoders);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1391;
@@ -6876,24 +6876,24 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     encodingObjectSetAssignment() {
         let localctx = new EncodingObjectSetAssignmentContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 388, grammar3rdParser.RULE_encodingObjectSetAssignment);
+        this.enterRule(localctx, 388, asn1Parser.RULE_encodingObjectSetAssignment);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1393;
             this.encodingObjectSetReference();
             this.state = 1394;
-            this.match(grammar3rdParser.NUMBER_SIGN);
+            this.match(asn1Parser.NUMBER_SIGN);
             this.state = 1395;
-            this.match(grammar3rdParser.ENCODINGS_LITERAL);
+            this.match(asn1Parser.ENCODINGS_LITERAL);
             this.state = 1396;
-            this.match(grammar3rdParser.ASSIGNMENT);
+            this.match(asn1Parser.ASSIGNMENT);
             this.state = 1397;
             this.encodingObjectSet();
             this.state = 1399;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if (_la === grammar3rdParser.COMPLETED_LITERAL) {
+            if (_la === asn1Parser.COMPLETED_LITERAL) {
                 this.state = 1398;
                 this.completionClause();
             }
@@ -6915,20 +6915,20 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     encodingObjectSet() {
         let localctx = new EncodingObjectSetContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 390, grammar3rdParser.RULE_encodingObjectSet);
+        this.enterRule(localctx, 390, asn1Parser.RULE_encodingObjectSet);
         try {
             this.state = 1403;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
-                case grammar3rdParser.PER_BASIC_UNALIGNED_LITERAL:
-                case grammar3rdParser.Word:
-                case grammar3rdParser.ObjectClassReference:
-                case grammar3rdParser.TypeReference:
+                case asn1Parser.PER_BASIC_UNALIGNED_LITERAL:
+                case asn1Parser.Word:
+                case asn1Parser.ObjectClassReference:
+                case asn1Parser.TypeReference:
                     this.enterOuterAlt(localctx, 1);
                     this.state = 1401;
                     this.definedOrBuiltinEncodingObjectSet();
                     break;
-                case grammar3rdParser.L_BRACE:
+                case asn1Parser.L_BRACE:
                     this.enterOuterAlt(localctx, 2);
                     this.state = 1402;
                     this.encodingObjectSetSpec();
@@ -6954,18 +6954,18 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     encodingObjectSetSpec() {
         let localctx = new EncodingObjectSetSpecContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 392, grammar3rdParser.RULE_encodingObjectSetSpec);
+        this.enterRule(localctx, 392, asn1Parser.RULE_encodingObjectSetSpec);
         var _la = 0; // Token type
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1405;
-            this.match(grammar3rdParser.L_BRACE);
+            this.match(asn1Parser.L_BRACE);
             this.state = 1406;
             this.encodingObjects();
             this.state = 1412;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while (_la === grammar3rdParser.PIPE) {
+            while (_la === asn1Parser.PIPE) {
                 this.state = 1407;
                 this.unionMark();
                 this.state = 1408;
@@ -6975,7 +6975,7 @@ export default class grammar3rdParser extends antlr4.Parser {
                 _la = this._input.LA(1);
             }
             this.state = 1415;
-            this.match(grammar3rdParser.R_BRACE);
+            this.match(asn1Parser.R_BRACE);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -6994,7 +6994,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     encodingObjects() {
         let localctx = new EncodingObjectsContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 394, grammar3rdParser.RULE_encodingObjects);
+        this.enterRule(localctx, 394, asn1Parser.RULE_encodingObjects);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1417;
@@ -7017,11 +7017,11 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     builtinEncodingObjectSetReference() {
         let localctx = new BuiltinEncodingObjectSetReferenceContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 396, grammar3rdParser.RULE_builtinEncodingObjectSetReference);
+        this.enterRule(localctx, 396, asn1Parser.RULE_builtinEncodingObjectSetReference);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1419;
-            this.match(grammar3rdParser.PER_BASIC_UNALIGNED_LITERAL);
+            this.match(asn1Parser.PER_BASIC_UNALIGNED_LITERAL);
         }
         catch (re) {
             if (re instanceof antlr4.error.RecognitionException) {
@@ -7040,7 +7040,7 @@ export default class grammar3rdParser extends antlr4.Parser {
     }
     simpleDefinedEncodingClass() {
         let localctx = new SimpleDefinedEncodingClassContext(this, this._ctx, this.state);
-        this.enterRule(localctx, 398, grammar3rdParser.RULE_simpleDefinedEncodingClass);
+        this.enterRule(localctx, 398, asn1Parser.RULE_simpleDefinedEncodingClass);
         try {
             this.enterOuterAlt(localctx, 1);
             this.state = 1421;
@@ -7062,8 +7062,8 @@ export default class grammar3rdParser extends antlr4.Parser {
         return localctx;
     }
 }
-grammar3rdParser.grammarFileName = "grammar3rd.g4";
-grammar3rdParser.literalNames = [null, "'::='", "'...'", "'..'", "'[['", "']]'",
+asn1Parser.grammarFileName = "asn1.g4";
+asn1Parser.literalNames = [null, "'::='", "'...'", "'..'", "'[['", "']]'",
     "'{'", "'}'", "','", "'.'", "'('", "')'", "'['",
     "']'", "'-'", "':'", "';'", "'@'", "'|'", "'!'",
     "'&'", "'#'", "'ABSENT'", "'ENCODED'", "'INTERSECTION'",
@@ -7096,7 +7096,7 @@ grammar3rdParser.literalNames = [null, "'::='", "'...'", "'..'", "'[['", "']]'",
     "'DECODER'", "'ENCODING-DEFINITIONS'", "'ENCODINGS'",
     "'IF'", "'LINK-DEFINITIONS'", "'PER-BASIC-UNALIGNED'",
     "'OUTER'"];
-grammar3rdParser.symbolicNames = [null, "ASSIGNMENT", "ELLIPSIS", "RANGE_SEPARATOR",
+asn1Parser.symbolicNames = [null, "ASSIGNMENT", "ELLIPSIS", "RANGE_SEPARATOR",
     "L_VERSION_BRACKET", "R_VERSION_BRACKET", "L_BRACE",
     "R_BRACE", "COMMA", "PERIOD", "L_PAREN", "R_PAREN",
     "L_BRACKET", "R_BRACKET", "HYPHEN_MINUS", "COLON",
@@ -7143,7 +7143,7 @@ grammar3rdParser.symbolicNames = [null, "ASSIGNMENT", "ELLIPSIS", "RANGE_SEPARAT
     "PER_BASIC_UNALIGNED_LITERAL", "OUTER_LITERAL",
     "WS", "Tag", "Comment", "Word", "ObjectClassReference",
     "TypeReference", "IdentifierL", "Number", "Bstring"];
-grammar3rdParser.ruleNames = ["moduleDefinitions", "typeReference", "identifier",
+asn1Parser.ruleNames = ["moduleDefinitions", "typeReference", "identifier",
     "valueReference", "moduleReference", "moduleDefinition",
     "elmDefinition", "edmDefinition", "moduleIdentifier",
     "definitiveIdentification", "definitiveOid", "definitiveObjIdComponentList",
@@ -7214,342 +7214,342 @@ grammar3rdParser.ruleNames = ["moduleDefinitions", "typeReference", "identifier"
     "specForEncoding", "specForDecoders", "encodingObjectSetAssignment",
     "encodingObjectSet", "encodingObjectSetSpec", "encodingObjects",
     "builtinEncodingObjectSetReference", "simpleDefinedEncodingClass"];
-grammar3rdParser.EOF = antlr4.Token.EOF;
-grammar3rdParser.ASSIGNMENT = 1;
-grammar3rdParser.ELLIPSIS = 2;
-grammar3rdParser.RANGE_SEPARATOR = 3;
-grammar3rdParser.L_VERSION_BRACKET = 4;
-grammar3rdParser.R_VERSION_BRACKET = 5;
-grammar3rdParser.L_BRACE = 6;
-grammar3rdParser.R_BRACE = 7;
-grammar3rdParser.COMMA = 8;
-grammar3rdParser.PERIOD = 9;
-grammar3rdParser.L_PAREN = 10;
-grammar3rdParser.R_PAREN = 11;
-grammar3rdParser.L_BRACKET = 12;
-grammar3rdParser.R_BRACKET = 13;
-grammar3rdParser.HYPHEN_MINUS = 14;
-grammar3rdParser.COLON = 15;
-grammar3rdParser.SEMICOLON_LITERAL = 16;
-grammar3rdParser.AT = 17;
-grammar3rdParser.PIPE = 18;
-grammar3rdParser.EXCLAM = 19;
-grammar3rdParser.AMP = 20;
-grammar3rdParser.NUMBER_SIGN = 21;
-grammar3rdParser.ABSENT_LITERAL = 22;
-grammar3rdParser.ENCODED_LITERAL = 23;
-grammar3rdParser.INTERSECTION_LITERAL = 24;
-grammar3rdParser.SEQUENCE_LITERAL = 25;
-grammar3rdParser.ABSTRACT_SYNTAX_LITERAL = 26;
-grammar3rdParser.ENCODING_CONTROL_LITERAL = 27;
-grammar3rdParser.ISO646String_LITERAL = 28;
-grammar3rdParser.SET_LITERAL = 29;
-grammar3rdParser.ALL_LITERAL = 30;
-grammar3rdParser.END_LITERAL = 31;
-grammar3rdParser.MAX_LITERAL = 32;
-grammar3rdParser.SETTINGS_LITERAL = 33;
-grammar3rdParser.APPLICATION_LITERAL = 34;
-grammar3rdParser.ENUMERATED_LITERAL = 35;
-grammar3rdParser.MIN_LITERAL = 36;
-grammar3rdParser.SIZE_LITERAL = 37;
-grammar3rdParser.AUTOMATIC_LITERAL = 38;
-grammar3rdParser.EXCEPT_LITERAL = 39;
-grammar3rdParser.MINUS_INFINITY_LITERAL = 40;
-grammar3rdParser.STRING_LITERAL = 41;
-grammar3rdParser.BEGIN_LITERAL = 42;
-grammar3rdParser.EXPLICIT_LITERAL = 43;
-grammar3rdParser.NOT_A_NUMBER_LITERAL = 44;
-grammar3rdParser.SYNTAX_LITERAL = 45;
-grammar3rdParser.BIT_LITERAL = 46;
-grammar3rdParser.EXPORTS_LITERAL = 47;
-grammar3rdParser.NULL_LITERAL = 48;
-grammar3rdParser.T61String_LITERAL = 49;
-grammar3rdParser.BMPString_LITERAL = 50;
-grammar3rdParser.EXTENSIBILITY_LITERAL = 51;
-grammar3rdParser.NumericString_LITERAL = 52;
-grammar3rdParser.TAGS_LITERAL = 53;
-grammar3rdParser.BOOLEAN_LITERAL = 54;
-grammar3rdParser.EXTERNAL_LITERAL = 55;
-grammar3rdParser.OBJECT_LITERAL = 56;
-grammar3rdParser.TeletexString_LITERAL = 57;
-grammar3rdParser.BY_LITERAL = 58;
-grammar3rdParser.FALSE_LITERAL = 59;
-grammar3rdParser.ObjectDescriptor_LITERAL = 60;
-grammar3rdParser.TIME_LITERAL = 61;
-grammar3rdParser.CHARACTER_LITERAL = 62;
-grammar3rdParser.FROM_LITERAL = 63;
-grammar3rdParser.OCTET_LITERAL = 64;
-grammar3rdParser.TIME_OF_DAY_LITERAL = 65;
-grammar3rdParser.CHOICE_LITERAL = 66;
-grammar3rdParser.GeneralizedTime_LITERAL = 67;
-grammar3rdParser.OF_LITERAL = 68;
-grammar3rdParser.TRUE_LITERAL = 69;
-grammar3rdParser.CLASS_LITERAL = 70;
-grammar3rdParser.GeneralString_LITERAL = 71;
-grammar3rdParser.OID_IRI_LITERAL = 72;
-grammar3rdParser.TYPE_IDENTIFIER_LITERAL = 73;
-grammar3rdParser.COMPONENT_LITERAL = 74;
-grammar3rdParser.GraphicString_LITERAL = 75;
-grammar3rdParser.OPTIONAL_LITERAL = 76;
-grammar3rdParser.UNION_LITERAL = 77;
-grammar3rdParser.COMPONENTS_LITERAL = 78;
-grammar3rdParser.IA5String_LITERAL = 79;
-grammar3rdParser.PATTERN_LITERAL = 80;
-grammar3rdParser.UNIQUE_LITERAL = 81;
-grammar3rdParser.CONSTRAINED_LITERAL = 82;
-grammar3rdParser.IDENTIFIER_LITERAL = 83;
-grammar3rdParser.PDV_LITERAL = 84;
-grammar3rdParser.UNIVERSAL_LITERAL = 85;
-grammar3rdParser.CONTAINING_LITERAL = 86;
-grammar3rdParser.IMPLICIT_LITERAL = 87;
-grammar3rdParser.PLUS_INFINITY_LITERAL = 88;
-grammar3rdParser.UniversalString_LITERAL = 89;
-grammar3rdParser.DATE_LITERAL = 90;
-grammar3rdParser.IMPLIED_LITERAL = 91;
-grammar3rdParser.PRESENT_LITERAL = 92;
-grammar3rdParser.UTCTime_LITERAL = 93;
-grammar3rdParser.DATE_TIME_LITERAL = 94;
-grammar3rdParser.IMPORTS_LITERAL = 95;
-grammar3rdParser.PrintableString_LITERAL = 96;
-grammar3rdParser.UTF8String_LITERAL = 97;
-grammar3rdParser.DEFAULT_LITERAL = 98;
-grammar3rdParser.INCLUDES_LITERAL = 99;
-grammar3rdParser.PRIVATE_LITERAL = 100;
-grammar3rdParser.VideotexString_LITERAL = 101;
-grammar3rdParser.DEFINITIONS_LITERAL = 102;
-grammar3rdParser.INSTANCE_LITERAL = 103;
-grammar3rdParser.REAL_LITERAL = 104;
-grammar3rdParser.VisibleString_LITERAL = 105;
-grammar3rdParser.DURATION_LITERAL = 106;
-grammar3rdParser.INSTRUCTIONS_LITERAL = 107;
-grammar3rdParser.RELATIVE_OID_LITERAL = 108;
-grammar3rdParser.WITH_LITERAL = 109;
-grammar3rdParser.EMBEDDED_LITERAL = 110;
-grammar3rdParser.INTEGER_LITERAL = 111;
-grammar3rdParser.RELATIVE_OID_IRI_LITERAL = 112;
-grammar3rdParser.AS_LITERAL = 113;
-grammar3rdParser.COMPLETED_LITERAL = 114;
-grammar3rdParser.ENCODE_LITERAL = 115;
-grammar3rdParser.ENCODE_DECODE_LITERAL = 116;
-grammar3rdParser.ENCODER_LITERAL = 117;
-grammar3rdParser.ENCODER_DECODER_LITERAL = 118;
-grammar3rdParser.DECODE_LITERAL = 119;
-grammar3rdParser.DECODER_LITERAL = 120;
-grammar3rdParser.ENCODING_DEFINITIONS_LITERAL = 121;
-grammar3rdParser.ENCODINGS_LITERAL = 122;
-grammar3rdParser.IF_LITERAL = 123;
-grammar3rdParser.LINK_DEFINITIONS_LITERAL = 124;
-grammar3rdParser.PER_BASIC_UNALIGNED_LITERAL = 125;
-grammar3rdParser.OUTER_LITERAL = 126;
-grammar3rdParser.WS = 127;
-grammar3rdParser.Tag = 128;
-grammar3rdParser.Comment = 129;
-grammar3rdParser.Word = 130;
-grammar3rdParser.ObjectClassReference = 131;
-grammar3rdParser.TypeReference = 132;
-grammar3rdParser.IdentifierL = 133;
-grammar3rdParser.Number = 134;
-grammar3rdParser.Bstring = 135;
-grammar3rdParser.RULE_moduleDefinitions = 0;
-grammar3rdParser.RULE_typeReference = 1;
-grammar3rdParser.RULE_identifier = 2;
-grammar3rdParser.RULE_valueReference = 3;
-grammar3rdParser.RULE_moduleReference = 4;
-grammar3rdParser.RULE_moduleDefinition = 5;
-grammar3rdParser.RULE_elmDefinition = 6;
-grammar3rdParser.RULE_edmDefinition = 7;
-grammar3rdParser.RULE_moduleIdentifier = 8;
-grammar3rdParser.RULE_definitiveIdentification = 9;
-grammar3rdParser.RULE_definitiveOid = 10;
-grammar3rdParser.RULE_definitiveObjIdComponentList = 11;
-grammar3rdParser.RULE_definitiveObjIdComponent = 12;
-grammar3rdParser.RULE_definitiveNameAndNumberForm = 13;
-grammar3rdParser.RULE_definitiveNumberForm = 14;
-grammar3rdParser.RULE_tagDefault = 15;
-grammar3rdParser.RULE_moduleBody = 16;
-grammar3rdParser.RULE_exports = 17;
-grammar3rdParser.RULE_symbolsExported = 18;
-grammar3rdParser.RULE_imports = 19;
-grammar3rdParser.RULE_symbolsImported = 20;
-grammar3rdParser.RULE_symbolsFromModuleList = 21;
-grammar3rdParser.RULE_symbolsFromModule = 22;
-grammar3rdParser.RULE_globalModuleReference = 23;
-grammar3rdParser.RULE_symbolList = 24;
-grammar3rdParser.RULE_symbol = 25;
-grammar3rdParser.RULE_reference = 26;
-grammar3rdParser.RULE_assignmentList = 27;
-grammar3rdParser.RULE_assignment = 28;
-grammar3rdParser.RULE_definedType = 29;
-grammar3rdParser.RULE_definedValue = 30;
-grammar3rdParser.RULE_externalTypeReference = 31;
-grammar3rdParser.RULE_externalValueReference = 32;
-grammar3rdParser.RULE_typeAssignment = 33;
-grammar3rdParser.RULE_valueAssignment = 34;
-grammar3rdParser.RULE_type = 35;
-grammar3rdParser.RULE_builtinType = 36;
-grammar3rdParser.RULE_referencedType = 37;
-grammar3rdParser.RULE_namedType = 38;
-grammar3rdParser.RULE_value = 39;
-grammar3rdParser.RULE_builtinValue = 40;
-grammar3rdParser.RULE_booleanType = 41;
-grammar3rdParser.RULE_integerType = 42;
-grammar3rdParser.RULE_namedNumberList = 43;
-grammar3rdParser.RULE_namedNumber = 44;
-grammar3rdParser.RULE_signedNumber = 45;
-grammar3rdParser.RULE_integerValue = 46;
-grammar3rdParser.RULE_enumeratedType = 47;
-grammar3rdParser.RULE_enumerations = 48;
-grammar3rdParser.RULE_rootEnumeration = 49;
-grammar3rdParser.RULE_additionalEnumeration = 50;
-grammar3rdParser.RULE_enumeration = 51;
-grammar3rdParser.RULE_enumerationItem = 52;
-grammar3rdParser.RULE_bitStringType = 53;
-grammar3rdParser.RULE_namedBitList = 54;
-grammar3rdParser.RULE_namedBit = 55;
-grammar3rdParser.RULE_bitStringValue = 56;
-grammar3rdParser.RULE_octetStringType = 57;
-grammar3rdParser.RULE_nullType = 58;
-grammar3rdParser.RULE_sequenceType = 59;
-grammar3rdParser.RULE_extensionAndException = 60;
-grammar3rdParser.RULE_optionalExtensionMarker = 61;
-grammar3rdParser.RULE_componentTypeLists = 62;
-grammar3rdParser.RULE_rootComponentTypeList = 63;
-grammar3rdParser.RULE_extensionEndMarker = 64;
-grammar3rdParser.RULE_extensionAdditions = 65;
-grammar3rdParser.RULE_extensionAdditionList = 66;
-grammar3rdParser.RULE_extensionAddition = 67;
-grammar3rdParser.RULE_extensionAdditionGroup = 68;
-grammar3rdParser.RULE_componentTypeList = 69;
-grammar3rdParser.RULE_componentType = 70;
-grammar3rdParser.RULE_sequenceOfType = 71;
-grammar3rdParser.RULE_choiceType = 72;
-grammar3rdParser.RULE_alternativeTypeLists = 73;
-grammar3rdParser.RULE_rootAlternativeTypeList = 74;
-grammar3rdParser.RULE_extensionAdditionAlternatives = 75;
-grammar3rdParser.RULE_extensionAdditionAlternativesList = 76;
-grammar3rdParser.RULE_extensionAdditionAlternative = 77;
-grammar3rdParser.RULE_extensionAdditionAlternativesGroup = 78;
-grammar3rdParser.RULE_alternativeTypeList = 79;
-grammar3rdParser.RULE_objectIdentifierType = 80;
-grammar3rdParser.RULE_characterStringType = 81;
-grammar3rdParser.RULE_restrictedCharacterStringType = 82;
-grammar3rdParser.RULE_usefulType = 83;
-grammar3rdParser.RULE_constrainedType = 84;
-grammar3rdParser.RULE_typeWithConstraint = 85;
-grammar3rdParser.RULE_constraint = 86;
-grammar3rdParser.RULE_constraintSpec = 87;
-grammar3rdParser.RULE_subtypeConstraint = 88;
-grammar3rdParser.RULE_elementSetSpecs = 89;
-grammar3rdParser.RULE_rootElementSetSpec = 90;
-grammar3rdParser.RULE_additionalElementSetSpec = 91;
-grammar3rdParser.RULE_elementSetSpec = 92;
-grammar3rdParser.RULE_unions = 93;
-grammar3rdParser.RULE_intersections = 94;
-grammar3rdParser.RULE_intersectionElements = 95;
-grammar3rdParser.RULE_unionMark = 96;
-grammar3rdParser.RULE_elements = 97;
-grammar3rdParser.RULE_subtypeElements = 98;
-grammar3rdParser.RULE_singleValue = 99;
-grammar3rdParser.RULE_valueRange = 100;
-grammar3rdParser.RULE_lowerEndpoint = 101;
-grammar3rdParser.RULE_upperEndpoint = 102;
-grammar3rdParser.RULE_lowerEndValue = 103;
-grammar3rdParser.RULE_upperEndValue = 104;
-grammar3rdParser.RULE_sizeConstraint = 105;
-grammar3rdParser.RULE_innerTypeConstraints = 106;
-grammar3rdParser.RULE_multipleTypeConstraints = 107;
-grammar3rdParser.RULE_partialSpecification = 108;
-grammar3rdParser.RULE_typeConstraints = 109;
-grammar3rdParser.RULE_namedConstraint = 110;
-grammar3rdParser.RULE_componentConstraint = 111;
-grammar3rdParser.RULE_valueConstraint = 112;
-grammar3rdParser.RULE_presenceConstraint = 113;
-grammar3rdParser.RULE_exceptionSpec = 114;
-grammar3rdParser.RULE_exceptionIdentification = 115;
-grammar3rdParser.RULE_objectClassReference = 116;
-grammar3rdParser.RULE_objectSetReference = 117;
-grammar3rdParser.RULE_objectReference = 118;
-grammar3rdParser.RULE_valueFieldReference = 119;
-grammar3rdParser.RULE_word = 120;
-grammar3rdParser.RULE_typeFieldReference = 121;
-grammar3rdParser.RULE_definedObjectClass = 122;
-grammar3rdParser.RULE_definedObjectSet = 123;
-grammar3rdParser.RULE_objectClassAssignment = 124;
-grammar3rdParser.RULE_objectClass = 125;
-grammar3rdParser.RULE_objectClassDefn = 126;
-grammar3rdParser.RULE_withSyntaxSpec = 127;
-grammar3rdParser.RULE_fieldSpec = 128;
-grammar3rdParser.RULE_typeFieldSpec = 129;
-grammar3rdParser.RULE_typeOptionalitySpec = 130;
-grammar3rdParser.RULE_fixedTypeValueFieldSpec = 131;
-grammar3rdParser.RULE_valueOptionalitySpec = 132;
-grammar3rdParser.RULE_primitiveFieldName = 133;
-grammar3rdParser.RULE_fieldName = 134;
-grammar3rdParser.RULE_syntaxList = 135;
-grammar3rdParser.RULE_tokenOrGroupSpec = 136;
-grammar3rdParser.RULE_optionalGroup = 137;
-grammar3rdParser.RULE_requiredToken = 138;
-grammar3rdParser.RULE_literal = 139;
-grammar3rdParser.RULE_objectAssignment = 140;
-grammar3rdParser.RULE_object = 141;
-grammar3rdParser.RULE_objectDefn = 142;
-grammar3rdParser.RULE_definedSyntax = 143;
-grammar3rdParser.RULE_definedSyntaxToken = 144;
-grammar3rdParser.RULE_setting = 145;
-grammar3rdParser.RULE_objectSetAssignment = 146;
-grammar3rdParser.RULE_objectSet = 147;
-grammar3rdParser.RULE_objectSetSpec = 148;
-grammar3rdParser.RULE_objectSetElements = 149;
-grammar3rdParser.RULE_objectClassFieldType = 150;
-grammar3rdParser.RULE_generalConstraint = 151;
-grammar3rdParser.RULE_tableConstraint = 152;
-grammar3rdParser.RULE_simpleTableConstraint = 153;
-grammar3rdParser.RULE_componentRelationConstraint = 154;
-grammar3rdParser.RULE_atNotation = 155;
-grammar3rdParser.RULE_componentIdList = 156;
-grammar3rdParser.RULE_contentsConstraint = 157;
-grammar3rdParser.RULE_parameterizedAssignment = 158;
-grammar3rdParser.RULE_parameterizedTypeAssignment = 159;
-grammar3rdParser.RULE_parameterList = 160;
-grammar3rdParser.RULE_parameter = 161;
-grammar3rdParser.RULE_paramGovernor = 162;
-grammar3rdParser.RULE_governor = 163;
-grammar3rdParser.RULE_dummyReference = 164;
-grammar3rdParser.RULE_parameterizedReference = 165;
-grammar3rdParser.RULE_parameterizedTypeAmbiguous = 166;
-grammar3rdParser.RULE_simpleDefinedType = 167;
-grammar3rdParser.RULE_actualParameterList = 168;
-grammar3rdParser.RULE_actualParameter = 169;
-grammar3rdParser.RULE_encodingObjectReference = 170;
-grammar3rdParser.RULE_encodingObjectSetReference = 171;
-grammar3rdParser.RULE_encodingClassReferenceVariant = 172;
-grammar3rdParser.RULE_definedOrBuiltinEncodingClass = 173;
-grammar3rdParser.RULE_definedEncodingObject = 174;
-grammar3rdParser.RULE_definedEncodingObjectSet = 175;
-grammar3rdParser.RULE_definedOrBuiltinEncodingObjectSet = 176;
-grammar3rdParser.RULE_elmModuleBody = 177;
-grammar3rdParser.RULE_encodingApplicationList = 178;
-grammar3rdParser.RULE_encodingApplication = 179;
-grammar3rdParser.RULE_combinedEncodings = 180;
-grammar3rdParser.RULE_completionClause = 181;
-grammar3rdParser.RULE_primaryEncodings = 182;
-grammar3rdParser.RULE_secondaryEncodings = 183;
-grammar3rdParser.RULE_edmModuleBody = 184;
-grammar3rdParser.RULE_edmAssignmentList = 185;
-grammar3rdParser.RULE_edmAssignment = 186;
-grammar3rdParser.RULE_builtinEncodingClassReference = 187;
-grammar3rdParser.RULE_encodingProcedureClassReference = 188;
-grammar3rdParser.RULE_encodingObjectAssignment = 189;
-grammar3rdParser.RULE_encodingObject = 190;
-grammar3rdParser.RULE_differentialEncodeDecodeObjectVariant = 191;
-grammar3rdParser.RULE_specForEncoding = 192;
-grammar3rdParser.RULE_specForDecoders = 193;
-grammar3rdParser.RULE_encodingObjectSetAssignment = 194;
-grammar3rdParser.RULE_encodingObjectSet = 195;
-grammar3rdParser.RULE_encodingObjectSetSpec = 196;
-grammar3rdParser.RULE_encodingObjects = 197;
-grammar3rdParser.RULE_builtinEncodingObjectSetReference = 198;
-grammar3rdParser.RULE_simpleDefinedEncodingClass = 199;
+asn1Parser.EOF = antlr4.Token.EOF;
+asn1Parser.ASSIGNMENT = 1;
+asn1Parser.ELLIPSIS = 2;
+asn1Parser.RANGE_SEPARATOR = 3;
+asn1Parser.L_VERSION_BRACKET = 4;
+asn1Parser.R_VERSION_BRACKET = 5;
+asn1Parser.L_BRACE = 6;
+asn1Parser.R_BRACE = 7;
+asn1Parser.COMMA = 8;
+asn1Parser.PERIOD = 9;
+asn1Parser.L_PAREN = 10;
+asn1Parser.R_PAREN = 11;
+asn1Parser.L_BRACKET = 12;
+asn1Parser.R_BRACKET = 13;
+asn1Parser.HYPHEN_MINUS = 14;
+asn1Parser.COLON = 15;
+asn1Parser.SEMICOLON_LITERAL = 16;
+asn1Parser.AT = 17;
+asn1Parser.PIPE = 18;
+asn1Parser.EXCLAM = 19;
+asn1Parser.AMP = 20;
+asn1Parser.NUMBER_SIGN = 21;
+asn1Parser.ABSENT_LITERAL = 22;
+asn1Parser.ENCODED_LITERAL = 23;
+asn1Parser.INTERSECTION_LITERAL = 24;
+asn1Parser.SEQUENCE_LITERAL = 25;
+asn1Parser.ABSTRACT_SYNTAX_LITERAL = 26;
+asn1Parser.ENCODING_CONTROL_LITERAL = 27;
+asn1Parser.ISO646String_LITERAL = 28;
+asn1Parser.SET_LITERAL = 29;
+asn1Parser.ALL_LITERAL = 30;
+asn1Parser.END_LITERAL = 31;
+asn1Parser.MAX_LITERAL = 32;
+asn1Parser.SETTINGS_LITERAL = 33;
+asn1Parser.APPLICATION_LITERAL = 34;
+asn1Parser.ENUMERATED_LITERAL = 35;
+asn1Parser.MIN_LITERAL = 36;
+asn1Parser.SIZE_LITERAL = 37;
+asn1Parser.AUTOMATIC_LITERAL = 38;
+asn1Parser.EXCEPT_LITERAL = 39;
+asn1Parser.MINUS_INFINITY_LITERAL = 40;
+asn1Parser.STRING_LITERAL = 41;
+asn1Parser.BEGIN_LITERAL = 42;
+asn1Parser.EXPLICIT_LITERAL = 43;
+asn1Parser.NOT_A_NUMBER_LITERAL = 44;
+asn1Parser.SYNTAX_LITERAL = 45;
+asn1Parser.BIT_LITERAL = 46;
+asn1Parser.EXPORTS_LITERAL = 47;
+asn1Parser.NULL_LITERAL = 48;
+asn1Parser.T61String_LITERAL = 49;
+asn1Parser.BMPString_LITERAL = 50;
+asn1Parser.EXTENSIBILITY_LITERAL = 51;
+asn1Parser.NumericString_LITERAL = 52;
+asn1Parser.TAGS_LITERAL = 53;
+asn1Parser.BOOLEAN_LITERAL = 54;
+asn1Parser.EXTERNAL_LITERAL = 55;
+asn1Parser.OBJECT_LITERAL = 56;
+asn1Parser.TeletexString_LITERAL = 57;
+asn1Parser.BY_LITERAL = 58;
+asn1Parser.FALSE_LITERAL = 59;
+asn1Parser.ObjectDescriptor_LITERAL = 60;
+asn1Parser.TIME_LITERAL = 61;
+asn1Parser.CHARACTER_LITERAL = 62;
+asn1Parser.FROM_LITERAL = 63;
+asn1Parser.OCTET_LITERAL = 64;
+asn1Parser.TIME_OF_DAY_LITERAL = 65;
+asn1Parser.CHOICE_LITERAL = 66;
+asn1Parser.GeneralizedTime_LITERAL = 67;
+asn1Parser.OF_LITERAL = 68;
+asn1Parser.TRUE_LITERAL = 69;
+asn1Parser.CLASS_LITERAL = 70;
+asn1Parser.GeneralString_LITERAL = 71;
+asn1Parser.OID_IRI_LITERAL = 72;
+asn1Parser.TYPE_IDENTIFIER_LITERAL = 73;
+asn1Parser.COMPONENT_LITERAL = 74;
+asn1Parser.GraphicString_LITERAL = 75;
+asn1Parser.OPTIONAL_LITERAL = 76;
+asn1Parser.UNION_LITERAL = 77;
+asn1Parser.COMPONENTS_LITERAL = 78;
+asn1Parser.IA5String_LITERAL = 79;
+asn1Parser.PATTERN_LITERAL = 80;
+asn1Parser.UNIQUE_LITERAL = 81;
+asn1Parser.CONSTRAINED_LITERAL = 82;
+asn1Parser.IDENTIFIER_LITERAL = 83;
+asn1Parser.PDV_LITERAL = 84;
+asn1Parser.UNIVERSAL_LITERAL = 85;
+asn1Parser.CONTAINING_LITERAL = 86;
+asn1Parser.IMPLICIT_LITERAL = 87;
+asn1Parser.PLUS_INFINITY_LITERAL = 88;
+asn1Parser.UniversalString_LITERAL = 89;
+asn1Parser.DATE_LITERAL = 90;
+asn1Parser.IMPLIED_LITERAL = 91;
+asn1Parser.PRESENT_LITERAL = 92;
+asn1Parser.UTCTime_LITERAL = 93;
+asn1Parser.DATE_TIME_LITERAL = 94;
+asn1Parser.IMPORTS_LITERAL = 95;
+asn1Parser.PrintableString_LITERAL = 96;
+asn1Parser.UTF8String_LITERAL = 97;
+asn1Parser.DEFAULT_LITERAL = 98;
+asn1Parser.INCLUDES_LITERAL = 99;
+asn1Parser.PRIVATE_LITERAL = 100;
+asn1Parser.VideotexString_LITERAL = 101;
+asn1Parser.DEFINITIONS_LITERAL = 102;
+asn1Parser.INSTANCE_LITERAL = 103;
+asn1Parser.REAL_LITERAL = 104;
+asn1Parser.VisibleString_LITERAL = 105;
+asn1Parser.DURATION_LITERAL = 106;
+asn1Parser.INSTRUCTIONS_LITERAL = 107;
+asn1Parser.RELATIVE_OID_LITERAL = 108;
+asn1Parser.WITH_LITERAL = 109;
+asn1Parser.EMBEDDED_LITERAL = 110;
+asn1Parser.INTEGER_LITERAL = 111;
+asn1Parser.RELATIVE_OID_IRI_LITERAL = 112;
+asn1Parser.AS_LITERAL = 113;
+asn1Parser.COMPLETED_LITERAL = 114;
+asn1Parser.ENCODE_LITERAL = 115;
+asn1Parser.ENCODE_DECODE_LITERAL = 116;
+asn1Parser.ENCODER_LITERAL = 117;
+asn1Parser.ENCODER_DECODER_LITERAL = 118;
+asn1Parser.DECODE_LITERAL = 119;
+asn1Parser.DECODER_LITERAL = 120;
+asn1Parser.ENCODING_DEFINITIONS_LITERAL = 121;
+asn1Parser.ENCODINGS_LITERAL = 122;
+asn1Parser.IF_LITERAL = 123;
+asn1Parser.LINK_DEFINITIONS_LITERAL = 124;
+asn1Parser.PER_BASIC_UNALIGNED_LITERAL = 125;
+asn1Parser.OUTER_LITERAL = 126;
+asn1Parser.WS = 127;
+asn1Parser.Tag = 128;
+asn1Parser.Comment = 129;
+asn1Parser.Word = 130;
+asn1Parser.ObjectClassReference = 131;
+asn1Parser.TypeReference = 132;
+asn1Parser.IdentifierL = 133;
+asn1Parser.Number = 134;
+asn1Parser.Bstring = 135;
+asn1Parser.RULE_moduleDefinitions = 0;
+asn1Parser.RULE_typeReference = 1;
+asn1Parser.RULE_identifier = 2;
+asn1Parser.RULE_valueReference = 3;
+asn1Parser.RULE_moduleReference = 4;
+asn1Parser.RULE_moduleDefinition = 5;
+asn1Parser.RULE_elmDefinition = 6;
+asn1Parser.RULE_edmDefinition = 7;
+asn1Parser.RULE_moduleIdentifier = 8;
+asn1Parser.RULE_definitiveIdentification = 9;
+asn1Parser.RULE_definitiveOid = 10;
+asn1Parser.RULE_definitiveObjIdComponentList = 11;
+asn1Parser.RULE_definitiveObjIdComponent = 12;
+asn1Parser.RULE_definitiveNameAndNumberForm = 13;
+asn1Parser.RULE_definitiveNumberForm = 14;
+asn1Parser.RULE_tagDefault = 15;
+asn1Parser.RULE_moduleBody = 16;
+asn1Parser.RULE_exports = 17;
+asn1Parser.RULE_symbolsExported = 18;
+asn1Parser.RULE_imports = 19;
+asn1Parser.RULE_symbolsImported = 20;
+asn1Parser.RULE_symbolsFromModuleList = 21;
+asn1Parser.RULE_symbolsFromModule = 22;
+asn1Parser.RULE_globalModuleReference = 23;
+asn1Parser.RULE_symbolList = 24;
+asn1Parser.RULE_symbol = 25;
+asn1Parser.RULE_reference = 26;
+asn1Parser.RULE_assignmentList = 27;
+asn1Parser.RULE_assignment = 28;
+asn1Parser.RULE_definedType = 29;
+asn1Parser.RULE_definedValue = 30;
+asn1Parser.RULE_externalTypeReference = 31;
+asn1Parser.RULE_externalValueReference = 32;
+asn1Parser.RULE_typeAssignment = 33;
+asn1Parser.RULE_valueAssignment = 34;
+asn1Parser.RULE_type = 35;
+asn1Parser.RULE_builtinType = 36;
+asn1Parser.RULE_referencedType = 37;
+asn1Parser.RULE_namedType = 38;
+asn1Parser.RULE_value = 39;
+asn1Parser.RULE_builtinValue = 40;
+asn1Parser.RULE_booleanType = 41;
+asn1Parser.RULE_integerType = 42;
+asn1Parser.RULE_namedNumberList = 43;
+asn1Parser.RULE_namedNumber = 44;
+asn1Parser.RULE_signedNumber = 45;
+asn1Parser.RULE_integerValue = 46;
+asn1Parser.RULE_enumeratedType = 47;
+asn1Parser.RULE_enumerations = 48;
+asn1Parser.RULE_rootEnumeration = 49;
+asn1Parser.RULE_additionalEnumeration = 50;
+asn1Parser.RULE_enumeration = 51;
+asn1Parser.RULE_enumerationItem = 52;
+asn1Parser.RULE_bitStringType = 53;
+asn1Parser.RULE_namedBitList = 54;
+asn1Parser.RULE_namedBit = 55;
+asn1Parser.RULE_bitStringValue = 56;
+asn1Parser.RULE_octetStringType = 57;
+asn1Parser.RULE_nullType = 58;
+asn1Parser.RULE_sequenceType = 59;
+asn1Parser.RULE_extensionAndException = 60;
+asn1Parser.RULE_optionalExtensionMarker = 61;
+asn1Parser.RULE_componentTypeLists = 62;
+asn1Parser.RULE_rootComponentTypeList = 63;
+asn1Parser.RULE_extensionEndMarker = 64;
+asn1Parser.RULE_extensionAdditions = 65;
+asn1Parser.RULE_extensionAdditionList = 66;
+asn1Parser.RULE_extensionAddition = 67;
+asn1Parser.RULE_extensionAdditionGroup = 68;
+asn1Parser.RULE_componentTypeList = 69;
+asn1Parser.RULE_componentType = 70;
+asn1Parser.RULE_sequenceOfType = 71;
+asn1Parser.RULE_choiceType = 72;
+asn1Parser.RULE_alternativeTypeLists = 73;
+asn1Parser.RULE_rootAlternativeTypeList = 74;
+asn1Parser.RULE_extensionAdditionAlternatives = 75;
+asn1Parser.RULE_extensionAdditionAlternativesList = 76;
+asn1Parser.RULE_extensionAdditionAlternative = 77;
+asn1Parser.RULE_extensionAdditionAlternativesGroup = 78;
+asn1Parser.RULE_alternativeTypeList = 79;
+asn1Parser.RULE_objectIdentifierType = 80;
+asn1Parser.RULE_characterStringType = 81;
+asn1Parser.RULE_restrictedCharacterStringType = 82;
+asn1Parser.RULE_usefulType = 83;
+asn1Parser.RULE_constrainedType = 84;
+asn1Parser.RULE_typeWithConstraint = 85;
+asn1Parser.RULE_constraint = 86;
+asn1Parser.RULE_constraintSpec = 87;
+asn1Parser.RULE_subtypeConstraint = 88;
+asn1Parser.RULE_elementSetSpecs = 89;
+asn1Parser.RULE_rootElementSetSpec = 90;
+asn1Parser.RULE_additionalElementSetSpec = 91;
+asn1Parser.RULE_elementSetSpec = 92;
+asn1Parser.RULE_unions = 93;
+asn1Parser.RULE_intersections = 94;
+asn1Parser.RULE_intersectionElements = 95;
+asn1Parser.RULE_unionMark = 96;
+asn1Parser.RULE_elements = 97;
+asn1Parser.RULE_subtypeElements = 98;
+asn1Parser.RULE_singleValue = 99;
+asn1Parser.RULE_valueRange = 100;
+asn1Parser.RULE_lowerEndpoint = 101;
+asn1Parser.RULE_upperEndpoint = 102;
+asn1Parser.RULE_lowerEndValue = 103;
+asn1Parser.RULE_upperEndValue = 104;
+asn1Parser.RULE_sizeConstraint = 105;
+asn1Parser.RULE_innerTypeConstraints = 106;
+asn1Parser.RULE_multipleTypeConstraints = 107;
+asn1Parser.RULE_partialSpecification = 108;
+asn1Parser.RULE_typeConstraints = 109;
+asn1Parser.RULE_namedConstraint = 110;
+asn1Parser.RULE_componentConstraint = 111;
+asn1Parser.RULE_valueConstraint = 112;
+asn1Parser.RULE_presenceConstraint = 113;
+asn1Parser.RULE_exceptionSpec = 114;
+asn1Parser.RULE_exceptionIdentification = 115;
+asn1Parser.RULE_objectClassReference = 116;
+asn1Parser.RULE_objectSetReference = 117;
+asn1Parser.RULE_objectReference = 118;
+asn1Parser.RULE_valueFieldReference = 119;
+asn1Parser.RULE_word = 120;
+asn1Parser.RULE_typeFieldReference = 121;
+asn1Parser.RULE_definedObjectClass = 122;
+asn1Parser.RULE_definedObjectSet = 123;
+asn1Parser.RULE_objectClassAssignment = 124;
+asn1Parser.RULE_objectClass = 125;
+asn1Parser.RULE_objectClassDefn = 126;
+asn1Parser.RULE_withSyntaxSpec = 127;
+asn1Parser.RULE_fieldSpec = 128;
+asn1Parser.RULE_typeFieldSpec = 129;
+asn1Parser.RULE_typeOptionalitySpec = 130;
+asn1Parser.RULE_fixedTypeValueFieldSpec = 131;
+asn1Parser.RULE_valueOptionalitySpec = 132;
+asn1Parser.RULE_primitiveFieldName = 133;
+asn1Parser.RULE_fieldName = 134;
+asn1Parser.RULE_syntaxList = 135;
+asn1Parser.RULE_tokenOrGroupSpec = 136;
+asn1Parser.RULE_optionalGroup = 137;
+asn1Parser.RULE_requiredToken = 138;
+asn1Parser.RULE_literal = 139;
+asn1Parser.RULE_objectAssignment = 140;
+asn1Parser.RULE_object = 141;
+asn1Parser.RULE_objectDefn = 142;
+asn1Parser.RULE_definedSyntax = 143;
+asn1Parser.RULE_definedSyntaxToken = 144;
+asn1Parser.RULE_setting = 145;
+asn1Parser.RULE_objectSetAssignment = 146;
+asn1Parser.RULE_objectSet = 147;
+asn1Parser.RULE_objectSetSpec = 148;
+asn1Parser.RULE_objectSetElements = 149;
+asn1Parser.RULE_objectClassFieldType = 150;
+asn1Parser.RULE_generalConstraint = 151;
+asn1Parser.RULE_tableConstraint = 152;
+asn1Parser.RULE_simpleTableConstraint = 153;
+asn1Parser.RULE_componentRelationConstraint = 154;
+asn1Parser.RULE_atNotation = 155;
+asn1Parser.RULE_componentIdList = 156;
+asn1Parser.RULE_contentsConstraint = 157;
+asn1Parser.RULE_parameterizedAssignment = 158;
+asn1Parser.RULE_parameterizedTypeAssignment = 159;
+asn1Parser.RULE_parameterList = 160;
+asn1Parser.RULE_parameter = 161;
+asn1Parser.RULE_paramGovernor = 162;
+asn1Parser.RULE_governor = 163;
+asn1Parser.RULE_dummyReference = 164;
+asn1Parser.RULE_parameterizedReference = 165;
+asn1Parser.RULE_parameterizedTypeAmbiguous = 166;
+asn1Parser.RULE_simpleDefinedType = 167;
+asn1Parser.RULE_actualParameterList = 168;
+asn1Parser.RULE_actualParameter = 169;
+asn1Parser.RULE_encodingObjectReference = 170;
+asn1Parser.RULE_encodingObjectSetReference = 171;
+asn1Parser.RULE_encodingClassReferenceVariant = 172;
+asn1Parser.RULE_definedOrBuiltinEncodingClass = 173;
+asn1Parser.RULE_definedEncodingObject = 174;
+asn1Parser.RULE_definedEncodingObjectSet = 175;
+asn1Parser.RULE_definedOrBuiltinEncodingObjectSet = 176;
+asn1Parser.RULE_elmModuleBody = 177;
+asn1Parser.RULE_encodingApplicationList = 178;
+asn1Parser.RULE_encodingApplication = 179;
+asn1Parser.RULE_combinedEncodings = 180;
+asn1Parser.RULE_completionClause = 181;
+asn1Parser.RULE_primaryEncodings = 182;
+asn1Parser.RULE_secondaryEncodings = 183;
+asn1Parser.RULE_edmModuleBody = 184;
+asn1Parser.RULE_edmAssignmentList = 185;
+asn1Parser.RULE_edmAssignment = 186;
+asn1Parser.RULE_builtinEncodingClassReference = 187;
+asn1Parser.RULE_encodingProcedureClassReference = 188;
+asn1Parser.RULE_encodingObjectAssignment = 189;
+asn1Parser.RULE_encodingObject = 190;
+asn1Parser.RULE_differentialEncodeDecodeObjectVariant = 191;
+asn1Parser.RULE_specForEncoding = 192;
+asn1Parser.RULE_specForDecoders = 193;
+asn1Parser.RULE_encodingObjectSetAssignment = 194;
+asn1Parser.RULE_encodingObjectSet = 195;
+asn1Parser.RULE_encodingObjectSetSpec = 196;
+asn1Parser.RULE_encodingObjects = 197;
+asn1Parser.RULE_builtinEncodingObjectSetReference = 198;
+asn1Parser.RULE_simpleDefinedEncodingClass = 199;
 export class ModuleDefinitionsContext extends antlr4.ParserRuleContext {
     constructor(parser, parent, invokingState) {
         if (parent === undefined) {
@@ -7593,15 +7593,15 @@ export class ModuleDefinitionsContext extends antlr4.ParserRuleContext {
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_moduleDefinitions;
+        this.ruleIndex = asn1Parser.RULE_moduleDefinitions;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterModuleDefinitions(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitModuleDefinitions(this);
         }
     }
@@ -7616,27 +7616,27 @@ class TypeReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_typeReference;
+        this.ruleIndex = asn1Parser.RULE_typeReference;
     }
     Word() {
-        return this.getToken(grammar3rdParser.Word, 0);
+        return this.getToken(asn1Parser.Word, 0);
     }
     ;
     ObjectClassReference() {
-        return this.getToken(grammar3rdParser.ObjectClassReference, 0);
+        return this.getToken(asn1Parser.ObjectClassReference, 0);
     }
     ;
     TypeReference() {
-        return this.getToken(grammar3rdParser.TypeReference, 0);
+        return this.getToken(asn1Parser.TypeReference, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterTypeReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitTypeReference(this);
         }
     }
@@ -7651,19 +7651,19 @@ class IdentifierContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_identifier;
+        this.ruleIndex = asn1Parser.RULE_identifier;
     }
     IdentifierL() {
-        return this.getToken(grammar3rdParser.IdentifierL, 0);
+        return this.getToken(asn1Parser.IdentifierL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterIdentifier(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitIdentifier(this);
         }
     }
@@ -7678,19 +7678,19 @@ class ValueReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_valueReference;
+        this.ruleIndex = asn1Parser.RULE_valueReference;
     }
     IdentifierL() {
-        return this.getToken(grammar3rdParser.IdentifierL, 0);
+        return this.getToken(asn1Parser.IdentifierL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterValueReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitValueReference(this);
         }
     }
@@ -7705,19 +7705,19 @@ class ModuleReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_moduleReference;
+        this.ruleIndex = asn1Parser.RULE_moduleReference;
     }
     typeReference() {
         return this.getTypedRuleContext(TypeReferenceContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterModuleReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitModuleReference(this);
         }
     }
@@ -7732,26 +7732,26 @@ class ModuleDefinitionContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_moduleDefinition;
+        this.ruleIndex = asn1Parser.RULE_moduleDefinition;
     }
     moduleIdentifier() {
         return this.getTypedRuleContext(ModuleIdentifierContext, 0);
     }
     ;
     DEFINITIONS_LITERAL() {
-        return this.getToken(grammar3rdParser.DEFINITIONS_LITERAL, 0);
+        return this.getToken(asn1Parser.DEFINITIONS_LITERAL, 0);
     }
     ;
     ASSIGNMENT() {
-        return this.getToken(grammar3rdParser.ASSIGNMENT, 0);
+        return this.getToken(asn1Parser.ASSIGNMENT, 0);
     }
     ;
     BEGIN_LITERAL() {
-        return this.getToken(grammar3rdParser.BEGIN_LITERAL, 0);
+        return this.getToken(asn1Parser.BEGIN_LITERAL, 0);
     }
     ;
     END_LITERAL() {
-        return this.getToken(grammar3rdParser.END_LITERAL, 0);
+        return this.getToken(asn1Parser.END_LITERAL, 0);
     }
     ;
     tagDefault() {
@@ -7763,12 +7763,12 @@ class ModuleDefinitionContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterModuleDefinition(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitModuleDefinition(this);
         }
     }
@@ -7783,22 +7783,22 @@ class ElmDefinitionContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_elmDefinition;
+        this.ruleIndex = asn1Parser.RULE_elmDefinition;
     }
     moduleIdentifier() {
         return this.getTypedRuleContext(ModuleIdentifierContext, 0);
     }
     ;
     LINK_DEFINITIONS_LITERAL() {
-        return this.getToken(grammar3rdParser.LINK_DEFINITIONS_LITERAL, 0);
+        return this.getToken(asn1Parser.LINK_DEFINITIONS_LITERAL, 0);
     }
     ;
     ASSIGNMENT() {
-        return this.getToken(grammar3rdParser.ASSIGNMENT, 0);
+        return this.getToken(asn1Parser.ASSIGNMENT, 0);
     }
     ;
     BEGIN_LITERAL() {
-        return this.getToken(grammar3rdParser.BEGIN_LITERAL, 0);
+        return this.getToken(asn1Parser.BEGIN_LITERAL, 0);
     }
     ;
     elmModuleBody() {
@@ -7806,16 +7806,16 @@ class ElmDefinitionContext extends antlr4.ParserRuleContext {
     }
     ;
     END_LITERAL() {
-        return this.getToken(grammar3rdParser.END_LITERAL, 0);
+        return this.getToken(asn1Parser.END_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterElmDefinition(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitElmDefinition(this);
         }
     }
@@ -7830,22 +7830,22 @@ class EdmDefinitionContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_edmDefinition;
+        this.ruleIndex = asn1Parser.RULE_edmDefinition;
     }
     moduleIdentifier() {
         return this.getTypedRuleContext(ModuleIdentifierContext, 0);
     }
     ;
     ENCODING_DEFINITIONS_LITERAL() {
-        return this.getToken(grammar3rdParser.ENCODING_DEFINITIONS_LITERAL, 0);
+        return this.getToken(asn1Parser.ENCODING_DEFINITIONS_LITERAL, 0);
     }
     ;
     ASSIGNMENT() {
-        return this.getToken(grammar3rdParser.ASSIGNMENT, 0);
+        return this.getToken(asn1Parser.ASSIGNMENT, 0);
     }
     ;
     BEGIN_LITERAL() {
-        return this.getToken(grammar3rdParser.BEGIN_LITERAL, 0);
+        return this.getToken(asn1Parser.BEGIN_LITERAL, 0);
     }
     ;
     edmModuleBody() {
@@ -7853,16 +7853,16 @@ class EdmDefinitionContext extends antlr4.ParserRuleContext {
     }
     ;
     END_LITERAL() {
-        return this.getToken(grammar3rdParser.END_LITERAL, 0);
+        return this.getToken(asn1Parser.END_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEdmDefinition(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEdmDefinition(this);
         }
     }
@@ -7877,7 +7877,7 @@ class ModuleIdentifierContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_moduleIdentifier;
+        this.ruleIndex = asn1Parser.RULE_moduleIdentifier;
     }
     moduleReference() {
         return this.getTypedRuleContext(ModuleReferenceContext, 0);
@@ -7888,12 +7888,12 @@ class ModuleIdentifierContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterModuleIdentifier(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitModuleIdentifier(this);
         }
     }
@@ -7908,19 +7908,19 @@ class DefinitiveIdentificationContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definitiveIdentification;
+        this.ruleIndex = asn1Parser.RULE_definitiveIdentification;
     }
     definitiveOid() {
         return this.getTypedRuleContext(DefinitiveOidContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinitiveIdentification(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinitiveIdentification(this);
         }
     }
@@ -7935,10 +7935,10 @@ class DefinitiveOidContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definitiveOid;
+        this.ruleIndex = asn1Parser.RULE_definitiveOid;
     }
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     definitiveObjIdComponentList() {
@@ -7946,16 +7946,16 @@ class DefinitiveOidContext extends antlr4.ParserRuleContext {
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinitiveOid(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinitiveOid(this);
         }
     }
@@ -7981,15 +7981,15 @@ class DefinitiveObjIdComponentListContext extends antlr4.ParserRuleContext {
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definitiveObjIdComponentList;
+        this.ruleIndex = asn1Parser.RULE_definitiveObjIdComponentList;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinitiveObjIdComponentList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinitiveObjIdComponentList(this);
         }
     }
@@ -8004,19 +8004,19 @@ class DefinitiveObjIdComponentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definitiveObjIdComponent;
+        this.ruleIndex = asn1Parser.RULE_definitiveObjIdComponent;
     }
     definitiveNameAndNumberForm() {
         return this.getTypedRuleContext(DefinitiveNameAndNumberFormContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinitiveObjIdComponent(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinitiveObjIdComponent(this);
         }
     }
@@ -8031,14 +8031,14 @@ class DefinitiveNameAndNumberFormContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definitiveNameAndNumberForm;
+        this.ruleIndex = asn1Parser.RULE_definitiveNameAndNumberForm;
     }
     identifier() {
         return this.getTypedRuleContext(IdentifierContext, 0);
     }
     ;
     L_PAREN() {
-        return this.getToken(grammar3rdParser.L_PAREN, 0);
+        return this.getToken(asn1Parser.L_PAREN, 0);
     }
     ;
     definitiveNumberForm() {
@@ -8046,16 +8046,16 @@ class DefinitiveNameAndNumberFormContext extends antlr4.ParserRuleContext {
     }
     ;
     R_PAREN() {
-        return this.getToken(grammar3rdParser.R_PAREN, 0);
+        return this.getToken(asn1Parser.R_PAREN, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinitiveNameAndNumberForm(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinitiveNameAndNumberForm(this);
         }
     }
@@ -8070,19 +8070,19 @@ class DefinitiveNumberFormContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definitiveNumberForm;
+        this.ruleIndex = asn1Parser.RULE_definitiveNumberForm;
     }
     Number() {
-        return this.getToken(grammar3rdParser.Number, 0);
+        return this.getToken(asn1Parser.Number, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinitiveNumberForm(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinitiveNumberForm(this);
         }
     }
@@ -8097,31 +8097,31 @@ class TagDefaultContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_tagDefault;
+        this.ruleIndex = asn1Parser.RULE_tagDefault;
     }
     EXPLICIT_LITERAL() {
-        return this.getToken(grammar3rdParser.EXPLICIT_LITERAL, 0);
+        return this.getToken(asn1Parser.EXPLICIT_LITERAL, 0);
     }
     ;
     TAGS_LITERAL() {
-        return this.getToken(grammar3rdParser.TAGS_LITERAL, 0);
+        return this.getToken(asn1Parser.TAGS_LITERAL, 0);
     }
     ;
     IMPLICIT_LITERAL() {
-        return this.getToken(grammar3rdParser.IMPLICIT_LITERAL, 0);
+        return this.getToken(asn1Parser.IMPLICIT_LITERAL, 0);
     }
     ;
     AUTOMATIC_LITERAL() {
-        return this.getToken(grammar3rdParser.AUTOMATIC_LITERAL, 0);
+        return this.getToken(asn1Parser.AUTOMATIC_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterTagDefault(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitTagDefault(this);
         }
     }
@@ -8136,7 +8136,7 @@ class ModuleBodyContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_moduleBody;
+        this.ruleIndex = asn1Parser.RULE_moduleBody;
     }
     assignmentList() {
         return this.getTypedRuleContext(AssignmentListContext, 0);
@@ -8151,12 +8151,12 @@ class ModuleBodyContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterModuleBody(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitModuleBody(this);
         }
     }
@@ -8171,14 +8171,14 @@ class ExportsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_exports;
+        this.ruleIndex = asn1Parser.RULE_exports;
     }
     EXPORTS_LITERAL() {
-        return this.getToken(grammar3rdParser.EXPORTS_LITERAL, 0);
+        return this.getToken(asn1Parser.EXPORTS_LITERAL, 0);
     }
     ;
     SEMICOLON_LITERAL() {
-        return this.getToken(grammar3rdParser.SEMICOLON_LITERAL, 0);
+        return this.getToken(asn1Parser.SEMICOLON_LITERAL, 0);
     }
     ;
     symbolsExported() {
@@ -8186,12 +8186,12 @@ class ExportsContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExports(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExports(this);
         }
     }
@@ -8206,19 +8206,19 @@ class SymbolsExportedContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_symbolsExported;
+        this.ruleIndex = asn1Parser.RULE_symbolsExported;
     }
     symbolList() {
         return this.getTypedRuleContext(SymbolListContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSymbolsExported(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSymbolsExported(this);
         }
     }
@@ -8233,14 +8233,14 @@ class ImportsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_imports;
+        this.ruleIndex = asn1Parser.RULE_imports;
     }
     IMPORTS_LITERAL() {
-        return this.getToken(grammar3rdParser.IMPORTS_LITERAL, 0);
+        return this.getToken(asn1Parser.IMPORTS_LITERAL, 0);
     }
     ;
     SEMICOLON_LITERAL() {
-        return this.getToken(grammar3rdParser.SEMICOLON_LITERAL, 0);
+        return this.getToken(asn1Parser.SEMICOLON_LITERAL, 0);
     }
     ;
     symbolsImported() {
@@ -8248,12 +8248,12 @@ class ImportsContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterImports(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitImports(this);
         }
     }
@@ -8268,19 +8268,19 @@ class SymbolsImportedContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_symbolsImported;
+        this.ruleIndex = asn1Parser.RULE_symbolsImported;
     }
     symbolsFromModuleList() {
         return this.getTypedRuleContext(SymbolsFromModuleListContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSymbolsImported(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSymbolsImported(this);
         }
     }
@@ -8306,15 +8306,15 @@ class SymbolsFromModuleListContext extends antlr4.ParserRuleContext {
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_symbolsFromModuleList;
+        this.ruleIndex = asn1Parser.RULE_symbolsFromModuleList;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSymbolsFromModuleList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSymbolsFromModuleList(this);
         }
     }
@@ -8329,14 +8329,14 @@ class SymbolsFromModuleContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_symbolsFromModule;
+        this.ruleIndex = asn1Parser.RULE_symbolsFromModule;
     }
     symbolList() {
         return this.getTypedRuleContext(SymbolListContext, 0);
     }
     ;
     FROM_LITERAL() {
-        return this.getToken(grammar3rdParser.FROM_LITERAL, 0);
+        return this.getToken(asn1Parser.FROM_LITERAL, 0);
     }
     ;
     globalModuleReference() {
@@ -8344,12 +8344,12 @@ class SymbolsFromModuleContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSymbolsFromModule(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSymbolsFromModule(this);
         }
     }
@@ -8364,19 +8364,19 @@ class GlobalModuleReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_globalModuleReference;
+        this.ruleIndex = asn1Parser.RULE_globalModuleReference;
     }
     moduleReference() {
         return this.getTypedRuleContext(ModuleReferenceContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterGlobalModuleReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitGlobalModuleReference(this);
         }
     }
@@ -8406,22 +8406,22 @@ class SymbolListContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_symbolList;
+        this.ruleIndex = asn1Parser.RULE_symbolList;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSymbolList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSymbolList(this);
         }
     }
@@ -8436,7 +8436,7 @@ class SymbolContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_symbol;
+        this.ruleIndex = asn1Parser.RULE_symbol;
     }
     reference() {
         return this.getTypedRuleContext(ReferenceContext, 0);
@@ -8447,12 +8447,12 @@ class SymbolContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSymbol(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSymbol(this);
         }
     }
@@ -8467,7 +8467,7 @@ class ReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_reference;
+        this.ruleIndex = asn1Parser.RULE_reference;
     }
     typeReference() {
         return this.getTypedRuleContext(TypeReferenceContext, 0);
@@ -8478,12 +8478,12 @@ class ReferenceContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitReference(this);
         }
     }
@@ -8509,15 +8509,15 @@ class AssignmentListContext extends antlr4.ParserRuleContext {
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_assignmentList;
+        this.ruleIndex = asn1Parser.RULE_assignmentList;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterAssignmentList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitAssignmentList(this);
         }
     }
@@ -8532,7 +8532,7 @@ class AssignmentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_assignment;
+        this.ruleIndex = asn1Parser.RULE_assignment;
     }
     typeAssignment() {
         return this.getTypedRuleContext(TypeAssignmentContext, 0);
@@ -8559,16 +8559,16 @@ class AssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     Tag() {
-        return this.getToken(grammar3rdParser.Tag, 0);
+        return this.getToken(asn1Parser.Tag, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterAssignment(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitAssignment(this);
         }
     }
@@ -8583,7 +8583,7 @@ class DefinedTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definedType;
+        this.ruleIndex = asn1Parser.RULE_definedType;
     }
     externalTypeReference() {
         return this.getTypedRuleContext(ExternalTypeReferenceContext, 0);
@@ -8598,12 +8598,12 @@ class DefinedTypeContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinedType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinedType(this);
         }
     }
@@ -8618,7 +8618,7 @@ class DefinedValueContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definedValue;
+        this.ruleIndex = asn1Parser.RULE_definedValue;
     }
     externalValueReference() {
         return this.getTypedRuleContext(ExternalValueReferenceContext, 0);
@@ -8629,12 +8629,12 @@ class DefinedValueContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinedValue(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinedValue(this);
         }
     }
@@ -8649,14 +8649,14 @@ class ExternalTypeReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_externalTypeReference;
+        this.ruleIndex = asn1Parser.RULE_externalTypeReference;
     }
     moduleReference() {
         return this.getTypedRuleContext(ModuleReferenceContext, 0);
     }
     ;
     PERIOD() {
-        return this.getToken(grammar3rdParser.PERIOD, 0);
+        return this.getToken(asn1Parser.PERIOD, 0);
     }
     ;
     typeReference() {
@@ -8664,12 +8664,12 @@ class ExternalTypeReferenceContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExternalTypeReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExternalTypeReference(this);
         }
     }
@@ -8684,14 +8684,14 @@ class ExternalValueReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_externalValueReference;
+        this.ruleIndex = asn1Parser.RULE_externalValueReference;
     }
     moduleReference() {
         return this.getTypedRuleContext(ModuleReferenceContext, 0);
     }
     ;
     PERIOD() {
-        return this.getToken(grammar3rdParser.PERIOD, 0);
+        return this.getToken(asn1Parser.PERIOD, 0);
     }
     ;
     valueReference() {
@@ -8699,12 +8699,12 @@ class ExternalValueReferenceContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExternalValueReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExternalValueReference(this);
         }
     }
@@ -8719,14 +8719,14 @@ class TypeAssignmentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_typeAssignment;
+        this.ruleIndex = asn1Parser.RULE_typeAssignment;
     }
     typeReference() {
         return this.getTypedRuleContext(TypeReferenceContext, 0);
     }
     ;
     ASSIGNMENT() {
-        return this.getToken(grammar3rdParser.ASSIGNMENT, 0);
+        return this.getToken(asn1Parser.ASSIGNMENT, 0);
     }
     ;
     type() {
@@ -8734,12 +8734,12 @@ class TypeAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterTypeAssignment(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitTypeAssignment(this);
         }
     }
@@ -8754,7 +8754,7 @@ class ValueAssignmentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_valueAssignment;
+        this.ruleIndex = asn1Parser.RULE_valueAssignment;
     }
     valueReference() {
         return this.getTypedRuleContext(ValueReferenceContext, 0);
@@ -8765,7 +8765,7 @@ class ValueAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     ASSIGNMENT() {
-        return this.getToken(grammar3rdParser.ASSIGNMENT, 0);
+        return this.getToken(asn1Parser.ASSIGNMENT, 0);
     }
     ;
     value() {
@@ -8773,12 +8773,12 @@ class ValueAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterValueAssignment(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitValueAssignment(this);
         }
     }
@@ -8793,7 +8793,7 @@ class TypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_type;
+        this.ruleIndex = asn1Parser.RULE_type;
     }
     builtinType() {
         return this.getTypedRuleContext(BuiltinTypeContext, 0);
@@ -8808,12 +8808,12 @@ class TypeContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitType(this);
         }
     }
@@ -8828,7 +8828,7 @@ class BuiltinTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_builtinType;
+        this.ruleIndex = asn1Parser.RULE_builtinType;
     }
     bitStringType() {
         return this.getTypedRuleContext(BitStringTypeContext, 0);
@@ -8879,12 +8879,12 @@ class BuiltinTypeContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterBuiltinType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitBuiltinType(this);
         }
     }
@@ -8899,7 +8899,7 @@ class ReferencedTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_referencedType;
+        this.ruleIndex = asn1Parser.RULE_referencedType;
     }
     definedType() {
         return this.getTypedRuleContext(DefinedTypeContext, 0);
@@ -8910,12 +8910,12 @@ class ReferencedTypeContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterReferencedType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitReferencedType(this);
         }
     }
@@ -8930,7 +8930,7 @@ class NamedTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_namedType;
+        this.ruleIndex = asn1Parser.RULE_namedType;
     }
     identifier() {
         return this.getTypedRuleContext(IdentifierContext, 0);
@@ -8941,12 +8941,12 @@ class NamedTypeContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterNamedType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitNamedType(this);
         }
     }
@@ -8961,19 +8961,19 @@ class ValueContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_value;
+        this.ruleIndex = asn1Parser.RULE_value;
     }
     builtinValue() {
         return this.getTypedRuleContext(BuiltinValueContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterValue(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitValue(this);
         }
     }
@@ -8988,7 +8988,7 @@ class BuiltinValueContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_builtinValue;
+        this.ruleIndex = asn1Parser.RULE_builtinValue;
     }
     bitStringValue() {
         return this.getTypedRuleContext(BitStringValueContext, 0);
@@ -8999,12 +8999,12 @@ class BuiltinValueContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterBuiltinValue(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitBuiltinValue(this);
         }
     }
@@ -9019,19 +9019,19 @@ class BooleanTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_booleanType;
+        this.ruleIndex = asn1Parser.RULE_booleanType;
     }
     BOOLEAN_LITERAL() {
-        return this.getToken(grammar3rdParser.BOOLEAN_LITERAL, 0);
+        return this.getToken(asn1Parser.BOOLEAN_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterBooleanType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitBooleanType(this);
         }
     }
@@ -9046,14 +9046,14 @@ class IntegerTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_integerType;
+        this.ruleIndex = asn1Parser.RULE_integerType;
     }
     INTEGER_LITERAL() {
-        return this.getToken(grammar3rdParser.INTEGER_LITERAL, 0);
+        return this.getToken(asn1Parser.INTEGER_LITERAL, 0);
     }
     ;
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     namedNumberList() {
@@ -9061,16 +9061,16 @@ class IntegerTypeContext extends antlr4.ParserRuleContext {
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterIntegerType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitIntegerType(this);
         }
     }
@@ -9100,22 +9100,22 @@ class NamedNumberListContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_namedNumberList;
+        this.ruleIndex = asn1Parser.RULE_namedNumberList;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterNamedNumberList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitNamedNumberList(this);
         }
     }
@@ -9130,14 +9130,14 @@ class NamedNumberContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_namedNumber;
+        this.ruleIndex = asn1Parser.RULE_namedNumber;
     }
     identifier() {
         return this.getTypedRuleContext(IdentifierContext, 0);
     }
     ;
     L_PAREN() {
-        return this.getToken(grammar3rdParser.L_PAREN, 0);
+        return this.getToken(asn1Parser.L_PAREN, 0);
     }
     ;
     signedNumber() {
@@ -9145,16 +9145,16 @@ class NamedNumberContext extends antlr4.ParserRuleContext {
     }
     ;
     R_PAREN() {
-        return this.getToken(grammar3rdParser.R_PAREN, 0);
+        return this.getToken(asn1Parser.R_PAREN, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterNamedNumber(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitNamedNumber(this);
         }
     }
@@ -9169,23 +9169,23 @@ class SignedNumberContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_signedNumber;
+        this.ruleIndex = asn1Parser.RULE_signedNumber;
     }
     Number() {
-        return this.getToken(grammar3rdParser.Number, 0);
+        return this.getToken(asn1Parser.Number, 0);
     }
     ;
     HYPHEN_MINUS() {
-        return this.getToken(grammar3rdParser.HYPHEN_MINUS, 0);
+        return this.getToken(asn1Parser.HYPHEN_MINUS, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSignedNumber(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSignedNumber(this);
         }
     }
@@ -9200,7 +9200,7 @@ class IntegerValueContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_integerValue;
+        this.ruleIndex = asn1Parser.RULE_integerValue;
     }
     signedNumber() {
         return this.getTypedRuleContext(SignedNumberContext, 0);
@@ -9211,12 +9211,12 @@ class IntegerValueContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterIntegerValue(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitIntegerValue(this);
         }
     }
@@ -9231,14 +9231,14 @@ class EnumeratedTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_enumeratedType;
+        this.ruleIndex = asn1Parser.RULE_enumeratedType;
     }
     ENUMERATED_LITERAL() {
-        return this.getToken(grammar3rdParser.ENUMERATED_LITERAL, 0);
+        return this.getToken(asn1Parser.ENUMERATED_LITERAL, 0);
     }
     ;
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     enumerations() {
@@ -9246,16 +9246,16 @@ class EnumeratedTypeContext extends antlr4.ParserRuleContext {
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEnumeratedType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEnumeratedType(this);
         }
     }
@@ -9274,21 +9274,21 @@ class EnumerationsContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_enumerations;
+        this.ruleIndex = asn1Parser.RULE_enumerations;
     }
     rootEnumeration() {
         return this.getTypedRuleContext(RootEnumerationContext, 0);
     }
     ;
     ELLIPSIS() {
-        return this.getToken(grammar3rdParser.ELLIPSIS, 0);
+        return this.getToken(asn1Parser.ELLIPSIS, 0);
     }
     ;
     exceptionSpec() {
@@ -9300,12 +9300,12 @@ class EnumerationsContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEnumerations(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEnumerations(this);
         }
     }
@@ -9320,19 +9320,19 @@ class RootEnumerationContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_rootEnumeration;
+        this.ruleIndex = asn1Parser.RULE_rootEnumeration;
     }
     enumeration() {
         return this.getTypedRuleContext(EnumerationContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterRootEnumeration(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitRootEnumeration(this);
         }
     }
@@ -9347,19 +9347,19 @@ class AdditionalEnumerationContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_additionalEnumeration;
+        this.ruleIndex = asn1Parser.RULE_additionalEnumeration;
     }
     enumeration() {
         return this.getTypedRuleContext(EnumerationContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterAdditionalEnumeration(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitAdditionalEnumeration(this);
         }
     }
@@ -9389,22 +9389,22 @@ class EnumerationContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_enumeration;
+        this.ruleIndex = asn1Parser.RULE_enumeration;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEnumeration(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEnumeration(this);
         }
     }
@@ -9419,7 +9419,7 @@ class EnumerationItemContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_enumerationItem;
+        this.ruleIndex = asn1Parser.RULE_enumerationItem;
     }
     identifier() {
         return this.getTypedRuleContext(IdentifierContext, 0);
@@ -9430,12 +9430,12 @@ class EnumerationItemContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEnumerationItem(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEnumerationItem(this);
         }
     }
@@ -9450,18 +9450,18 @@ class BitStringTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_bitStringType;
+        this.ruleIndex = asn1Parser.RULE_bitStringType;
     }
     BIT_LITERAL() {
-        return this.getToken(grammar3rdParser.BIT_LITERAL, 0);
+        return this.getToken(asn1Parser.BIT_LITERAL, 0);
     }
     ;
     STRING_LITERAL() {
-        return this.getToken(grammar3rdParser.STRING_LITERAL, 0);
+        return this.getToken(asn1Parser.STRING_LITERAL, 0);
     }
     ;
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     namedBitList() {
@@ -9469,16 +9469,16 @@ class BitStringTypeContext extends antlr4.ParserRuleContext {
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterBitStringType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitBitStringType(this);
         }
     }
@@ -9508,22 +9508,22 @@ class NamedBitListContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_namedBitList;
+        this.ruleIndex = asn1Parser.RULE_namedBitList;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterNamedBitList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitNamedBitList(this);
         }
     }
@@ -9538,31 +9538,31 @@ class NamedBitContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_namedBit;
+        this.ruleIndex = asn1Parser.RULE_namedBit;
     }
     identifier() {
         return this.getTypedRuleContext(IdentifierContext, 0);
     }
     ;
     L_PAREN() {
-        return this.getToken(grammar3rdParser.L_PAREN, 0);
+        return this.getToken(asn1Parser.L_PAREN, 0);
     }
     ;
     Number() {
-        return this.getToken(grammar3rdParser.Number, 0);
+        return this.getToken(asn1Parser.Number, 0);
     }
     ;
     R_PAREN() {
-        return this.getToken(grammar3rdParser.R_PAREN, 0);
+        return this.getToken(asn1Parser.R_PAREN, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterNamedBit(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitNamedBit(this);
         }
     }
@@ -9577,19 +9577,19 @@ class BitStringValueContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_bitStringValue;
+        this.ruleIndex = asn1Parser.RULE_bitStringValue;
     }
     Bstring() {
-        return this.getToken(grammar3rdParser.Bstring, 0);
+        return this.getToken(asn1Parser.Bstring, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterBitStringValue(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitBitStringValue(this);
         }
     }
@@ -9604,23 +9604,23 @@ class OctetStringTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_octetStringType;
+        this.ruleIndex = asn1Parser.RULE_octetStringType;
     }
     OCTET_LITERAL() {
-        return this.getToken(grammar3rdParser.OCTET_LITERAL, 0);
+        return this.getToken(asn1Parser.OCTET_LITERAL, 0);
     }
     ;
     STRING_LITERAL() {
-        return this.getToken(grammar3rdParser.STRING_LITERAL, 0);
+        return this.getToken(asn1Parser.STRING_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterOctetStringType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitOctetStringType(this);
         }
     }
@@ -9635,19 +9635,19 @@ class NullTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_nullType;
+        this.ruleIndex = asn1Parser.RULE_nullType;
     }
     NULL_LITERAL() {
-        return this.getToken(grammar3rdParser.NULL_LITERAL, 0);
+        return this.getToken(asn1Parser.NULL_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterNullType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitNullType(this);
         }
     }
@@ -9662,18 +9662,18 @@ class SequenceTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_sequenceType;
+        this.ruleIndex = asn1Parser.RULE_sequenceType;
     }
     SEQUENCE_LITERAL() {
-        return this.getToken(grammar3rdParser.SEQUENCE_LITERAL, 0);
+        return this.getToken(asn1Parser.SEQUENCE_LITERAL, 0);
     }
     ;
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     extensionAndException() {
@@ -9689,12 +9689,12 @@ class SequenceTypeContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSequenceType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSequenceType(this);
         }
     }
@@ -9709,10 +9709,10 @@ class ExtensionAndExceptionContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_extensionAndException;
+        this.ruleIndex = asn1Parser.RULE_extensionAndException;
     }
     ELLIPSIS() {
-        return this.getToken(grammar3rdParser.ELLIPSIS, 0);
+        return this.getToken(asn1Parser.ELLIPSIS, 0);
     }
     ;
     exceptionSpec() {
@@ -9720,12 +9720,12 @@ class ExtensionAndExceptionContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExtensionAndException(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExtensionAndException(this);
         }
     }
@@ -9740,23 +9740,23 @@ class OptionalExtensionMarkerContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_optionalExtensionMarker;
+        this.ruleIndex = asn1Parser.RULE_optionalExtensionMarker;
     }
     COMMA() {
-        return this.getToken(grammar3rdParser.COMMA, 0);
+        return this.getToken(asn1Parser.COMMA, 0);
     }
     ;
     ELLIPSIS() {
-        return this.getToken(grammar3rdParser.ELLIPSIS, 0);
+        return this.getToken(asn1Parser.ELLIPSIS, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterOptionalExtensionMarker(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitOptionalExtensionMarker(this);
         }
     }
@@ -9786,17 +9786,17 @@ class ComponentTypeListsContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_componentTypeLists;
+        this.ruleIndex = asn1Parser.RULE_componentTypeLists;
     }
     Tag() {
-        return this.getToken(grammar3rdParser.Tag, 0);
+        return this.getToken(asn1Parser.Tag, 0);
     }
     ;
     extensionAndException() {
@@ -9816,12 +9816,12 @@ class ComponentTypeListsContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterComponentTypeLists(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitComponentTypeLists(this);
         }
     }
@@ -9836,19 +9836,19 @@ class RootComponentTypeListContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_rootComponentTypeList;
+        this.ruleIndex = asn1Parser.RULE_rootComponentTypeList;
     }
     componentTypeList() {
         return this.getTypedRuleContext(ComponentTypeListContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterRootComponentTypeList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitRootComponentTypeList(this);
         }
     }
@@ -9863,23 +9863,23 @@ class ExtensionEndMarkerContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_extensionEndMarker;
+        this.ruleIndex = asn1Parser.RULE_extensionEndMarker;
     }
     COMMA() {
-        return this.getToken(grammar3rdParser.COMMA, 0);
+        return this.getToken(asn1Parser.COMMA, 0);
     }
     ;
     ELLIPSIS() {
-        return this.getToken(grammar3rdParser.ELLIPSIS, 0);
+        return this.getToken(asn1Parser.ELLIPSIS, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExtensionEndMarker(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExtensionEndMarker(this);
         }
     }
@@ -9894,10 +9894,10 @@ class ExtensionAdditionsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_extensionAdditions;
+        this.ruleIndex = asn1Parser.RULE_extensionAdditions;
     }
     COMMA() {
-        return this.getToken(grammar3rdParser.COMMA, 0);
+        return this.getToken(asn1Parser.COMMA, 0);
     }
     ;
     extensionAdditionList() {
@@ -9905,12 +9905,12 @@ class ExtensionAdditionsContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExtensionAdditions(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExtensionAdditions(this);
         }
     }
@@ -9940,22 +9940,22 @@ class ExtensionAdditionListContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_extensionAdditionList;
+        this.ruleIndex = asn1Parser.RULE_extensionAdditionList;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExtensionAdditionList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExtensionAdditionList(this);
         }
     }
@@ -9970,7 +9970,7 @@ class ExtensionAdditionContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_extensionAddition;
+        this.ruleIndex = asn1Parser.RULE_extensionAddition;
     }
     componentType() {
         return this.getTypedRuleContext(ComponentTypeContext, 0);
@@ -9981,12 +9981,12 @@ class ExtensionAdditionContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExtensionAddition(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExtensionAddition(this);
         }
     }
@@ -10001,10 +10001,10 @@ class ExtensionAdditionGroupContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_extensionAdditionGroup;
+        this.ruleIndex = asn1Parser.RULE_extensionAdditionGroup;
     }
     L_VERSION_BRACKET() {
-        return this.getToken(grammar3rdParser.L_VERSION_BRACKET, 0);
+        return this.getToken(asn1Parser.L_VERSION_BRACKET, 0);
     }
     ;
     componentTypeList() {
@@ -10012,20 +10012,20 @@ class ExtensionAdditionGroupContext extends antlr4.ParserRuleContext {
     }
     ;
     R_VERSION_BRACKET() {
-        return this.getToken(grammar3rdParser.R_VERSION_BRACKET, 0);
+        return this.getToken(asn1Parser.R_VERSION_BRACKET, 0);
     }
     ;
     Tag() {
-        return this.getToken(grammar3rdParser.Tag, 0);
+        return this.getToken(asn1Parser.Tag, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExtensionAdditionGroup(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExtensionAdditionGroup(this);
         }
     }
@@ -10055,10 +10055,10 @@ class ComponentTypeListContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.Tag = function (i) {
@@ -10066,22 +10066,22 @@ class ComponentTypeListContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.Tag);
+                return this.getTokens(asn1Parser.Tag);
             }
             else {
-                return this.getToken(grammar3rdParser.Tag, i);
+                return this.getToken(asn1Parser.Tag, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_componentTypeList;
+        this.ruleIndex = asn1Parser.RULE_componentTypeList;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterComponentTypeList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitComponentTypeList(this);
         }
     }
@@ -10096,18 +10096,18 @@ class ComponentTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_componentType;
+        this.ruleIndex = asn1Parser.RULE_componentType;
     }
     namedType() {
         return this.getTypedRuleContext(NamedTypeContext, 0);
     }
     ;
     OPTIONAL_LITERAL() {
-        return this.getToken(grammar3rdParser.OPTIONAL_LITERAL, 0);
+        return this.getToken(asn1Parser.OPTIONAL_LITERAL, 0);
     }
     ;
     DEFAULT_LITERAL() {
-        return this.getToken(grammar3rdParser.DEFAULT_LITERAL, 0);
+        return this.getToken(asn1Parser.DEFAULT_LITERAL, 0);
     }
     ;
     value() {
@@ -10115,12 +10115,12 @@ class ComponentTypeContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterComponentType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitComponentType(this);
         }
     }
@@ -10135,14 +10135,14 @@ class SequenceOfTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_sequenceOfType;
+        this.ruleIndex = asn1Parser.RULE_sequenceOfType;
     }
     SEQUENCE_LITERAL() {
-        return this.getToken(grammar3rdParser.SEQUENCE_LITERAL, 0);
+        return this.getToken(asn1Parser.SEQUENCE_LITERAL, 0);
     }
     ;
     OF_LITERAL() {
-        return this.getToken(grammar3rdParser.OF_LITERAL, 0);
+        return this.getToken(asn1Parser.OF_LITERAL, 0);
     }
     ;
     type() {
@@ -10154,12 +10154,12 @@ class SequenceOfTypeContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSequenceOfType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSequenceOfType(this);
         }
     }
@@ -10174,14 +10174,14 @@ class ChoiceTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_choiceType;
+        this.ruleIndex = asn1Parser.RULE_choiceType;
     }
     CHOICE_LITERAL() {
-        return this.getToken(grammar3rdParser.CHOICE_LITERAL, 0);
+        return this.getToken(asn1Parser.CHOICE_LITERAL, 0);
     }
     ;
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     alternativeTypeLists() {
@@ -10189,16 +10189,16 @@ class ChoiceTypeContext extends antlr4.ParserRuleContext {
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterChoiceType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitChoiceType(this);
         }
     }
@@ -10213,14 +10213,14 @@ class AlternativeTypeListsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_alternativeTypeLists;
+        this.ruleIndex = asn1Parser.RULE_alternativeTypeLists;
     }
     rootAlternativeTypeList() {
         return this.getTypedRuleContext(RootAlternativeTypeListContext, 0);
     }
     ;
     COMMA() {
-        return this.getToken(grammar3rdParser.COMMA, 0);
+        return this.getToken(asn1Parser.COMMA, 0);
     }
     ;
     extensionAndException() {
@@ -10236,12 +10236,12 @@ class AlternativeTypeListsContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterAlternativeTypeLists(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitAlternativeTypeLists(this);
         }
     }
@@ -10256,19 +10256,19 @@ class RootAlternativeTypeListContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_rootAlternativeTypeList;
+        this.ruleIndex = asn1Parser.RULE_rootAlternativeTypeList;
     }
     alternativeTypeList() {
         return this.getTypedRuleContext(AlternativeTypeListContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterRootAlternativeTypeList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitRootAlternativeTypeList(this);
         }
     }
@@ -10283,10 +10283,10 @@ class ExtensionAdditionAlternativesContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_extensionAdditionAlternatives;
+        this.ruleIndex = asn1Parser.RULE_extensionAdditionAlternatives;
     }
     COMMA() {
-        return this.getToken(grammar3rdParser.COMMA, 0);
+        return this.getToken(asn1Parser.COMMA, 0);
     }
     ;
     extensionAdditionAlternativesList() {
@@ -10294,12 +10294,12 @@ class ExtensionAdditionAlternativesContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExtensionAdditionAlternatives(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExtensionAdditionAlternatives(this);
         }
     }
@@ -10329,22 +10329,22 @@ class ExtensionAdditionAlternativesListContext extends antlr4.ParserRuleContext 
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_extensionAdditionAlternativesList;
+        this.ruleIndex = asn1Parser.RULE_extensionAdditionAlternativesList;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExtensionAdditionAlternativesList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExtensionAdditionAlternativesList(this);
         }
     }
@@ -10359,7 +10359,7 @@ class ExtensionAdditionAlternativeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_extensionAdditionAlternative;
+        this.ruleIndex = asn1Parser.RULE_extensionAdditionAlternative;
     }
     extensionAdditionAlternativesGroup() {
         return this.getTypedRuleContext(ExtensionAdditionAlternativesGroupContext, 0);
@@ -10370,12 +10370,12 @@ class ExtensionAdditionAlternativeContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExtensionAdditionAlternative(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExtensionAdditionAlternative(this);
         }
     }
@@ -10390,10 +10390,10 @@ class ExtensionAdditionAlternativesGroupContext extends antlr4.ParserRuleContext
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_extensionAdditionAlternativesGroup;
+        this.ruleIndex = asn1Parser.RULE_extensionAdditionAlternativesGroup;
     }
     L_VERSION_BRACKET() {
-        return this.getToken(grammar3rdParser.L_VERSION_BRACKET, 0);
+        return this.getToken(asn1Parser.L_VERSION_BRACKET, 0);
     }
     ;
     alternativeTypeList() {
@@ -10401,16 +10401,16 @@ class ExtensionAdditionAlternativesGroupContext extends antlr4.ParserRuleContext
     }
     ;
     R_VERSION_BRACKET() {
-        return this.getToken(grammar3rdParser.R_VERSION_BRACKET, 0);
+        return this.getToken(asn1Parser.R_VERSION_BRACKET, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExtensionAdditionAlternativesGroup(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExtensionAdditionAlternativesGroup(this);
         }
     }
@@ -10440,22 +10440,22 @@ class AlternativeTypeListContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_alternativeTypeList;
+        this.ruleIndex = asn1Parser.RULE_alternativeTypeList;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterAlternativeTypeList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitAlternativeTypeList(this);
         }
     }
@@ -10470,23 +10470,23 @@ class ObjectIdentifierTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectIdentifierType;
+        this.ruleIndex = asn1Parser.RULE_objectIdentifierType;
     }
     OBJECT_LITERAL() {
-        return this.getToken(grammar3rdParser.OBJECT_LITERAL, 0);
+        return this.getToken(asn1Parser.OBJECT_LITERAL, 0);
     }
     ;
     IDENTIFIER_LITERAL() {
-        return this.getToken(grammar3rdParser.IDENTIFIER_LITERAL, 0);
+        return this.getToken(asn1Parser.IDENTIFIER_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectIdentifierType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectIdentifierType(this);
         }
     }
@@ -10501,19 +10501,19 @@ class CharacterStringTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_characterStringType;
+        this.ruleIndex = asn1Parser.RULE_characterStringType;
     }
     restrictedCharacterStringType() {
         return this.getTypedRuleContext(RestrictedCharacterStringTypeContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterCharacterStringType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitCharacterStringType(this);
         }
     }
@@ -10528,27 +10528,27 @@ class RestrictedCharacterStringTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_restrictedCharacterStringType;
+        this.ruleIndex = asn1Parser.RULE_restrictedCharacterStringType;
     }
     PrintableString_LITERAL() {
-        return this.getToken(grammar3rdParser.PrintableString_LITERAL, 0);
+        return this.getToken(asn1Parser.PrintableString_LITERAL, 0);
     }
     ;
     UTF8String_LITERAL() {
-        return this.getToken(grammar3rdParser.UTF8String_LITERAL, 0);
+        return this.getToken(asn1Parser.UTF8String_LITERAL, 0);
     }
     ;
     VisibleString_LITERAL() {
-        return this.getToken(grammar3rdParser.VisibleString_LITERAL, 0);
+        return this.getToken(asn1Parser.VisibleString_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterRestrictedCharacterStringType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitRestrictedCharacterStringType(this);
         }
     }
@@ -10563,19 +10563,19 @@ class UsefulTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_usefulType;
+        this.ruleIndex = asn1Parser.RULE_usefulType;
     }
     UTCTime_LITERAL() {
-        return this.getToken(grammar3rdParser.UTCTime_LITERAL, 0);
+        return this.getToken(asn1Parser.UTCTime_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterUsefulType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitUsefulType(this);
         }
     }
@@ -10601,7 +10601,7 @@ class ConstrainedTypeContext extends antlr4.ParserRuleContext {
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_constrainedType;
+        this.ruleIndex = asn1Parser.RULE_constrainedType;
     }
     builtinType() {
         return this.getTypedRuleContext(BuiltinTypeContext, 0);
@@ -10616,12 +10616,12 @@ class ConstrainedTypeContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterConstrainedType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitConstrainedType(this);
         }
     }
@@ -10636,10 +10636,10 @@ class TypeWithConstraintContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_typeWithConstraint;
+        this.ruleIndex = asn1Parser.RULE_typeWithConstraint;
     }
     SEQUENCE_LITERAL() {
-        return this.getToken(grammar3rdParser.SEQUENCE_LITERAL, 0);
+        return this.getToken(asn1Parser.SEQUENCE_LITERAL, 0);
     }
     ;
     constraint() {
@@ -10647,7 +10647,7 @@ class TypeWithConstraintContext extends antlr4.ParserRuleContext {
     }
     ;
     OF_LITERAL() {
-        return this.getToken(grammar3rdParser.OF_LITERAL, 0);
+        return this.getToken(asn1Parser.OF_LITERAL, 0);
     }
     ;
     type() {
@@ -10655,12 +10655,12 @@ class TypeWithConstraintContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterTypeWithConstraint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitTypeWithConstraint(this);
         }
     }
@@ -10675,10 +10675,10 @@ class ConstraintContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_constraint;
+        this.ruleIndex = asn1Parser.RULE_constraint;
     }
     L_PAREN() {
-        return this.getToken(grammar3rdParser.L_PAREN, 0);
+        return this.getToken(asn1Parser.L_PAREN, 0);
     }
     ;
     constraintSpec() {
@@ -10686,7 +10686,7 @@ class ConstraintContext extends antlr4.ParserRuleContext {
     }
     ;
     R_PAREN() {
-        return this.getToken(grammar3rdParser.R_PAREN, 0);
+        return this.getToken(asn1Parser.R_PAREN, 0);
     }
     ;
     exceptionSpec() {
@@ -10694,12 +10694,12 @@ class ConstraintContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterConstraint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitConstraint(this);
         }
     }
@@ -10714,7 +10714,7 @@ class ConstraintSpecContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_constraintSpec;
+        this.ruleIndex = asn1Parser.RULE_constraintSpec;
     }
     subtypeConstraint() {
         return this.getTypedRuleContext(SubtypeConstraintContext, 0);
@@ -10725,12 +10725,12 @@ class ConstraintSpecContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterConstraintSpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitConstraintSpec(this);
         }
     }
@@ -10745,19 +10745,19 @@ class SubtypeConstraintContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_subtypeConstraint;
+        this.ruleIndex = asn1Parser.RULE_subtypeConstraint;
     }
     elementSetSpecs() {
         return this.getTypedRuleContext(ElementSetSpecsContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSubtypeConstraint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSubtypeConstraint(this);
         }
     }
@@ -10776,21 +10776,21 @@ class ElementSetSpecsContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_elementSetSpecs;
+        this.ruleIndex = asn1Parser.RULE_elementSetSpecs;
     }
     rootElementSetSpec() {
         return this.getTypedRuleContext(RootElementSetSpecContext, 0);
     }
     ;
     ELLIPSIS() {
-        return this.getToken(grammar3rdParser.ELLIPSIS, 0);
+        return this.getToken(asn1Parser.ELLIPSIS, 0);
     }
     ;
     additionalElementSetSpec() {
@@ -10798,12 +10798,12 @@ class ElementSetSpecsContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterElementSetSpecs(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitElementSetSpecs(this);
         }
     }
@@ -10818,19 +10818,19 @@ class RootElementSetSpecContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_rootElementSetSpec;
+        this.ruleIndex = asn1Parser.RULE_rootElementSetSpec;
     }
     elementSetSpec() {
         return this.getTypedRuleContext(ElementSetSpecContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterRootElementSetSpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitRootElementSetSpec(this);
         }
     }
@@ -10845,19 +10845,19 @@ class AdditionalElementSetSpecContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_additionalElementSetSpec;
+        this.ruleIndex = asn1Parser.RULE_additionalElementSetSpec;
     }
     elementSetSpec() {
         return this.getTypedRuleContext(ElementSetSpecContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterAdditionalElementSetSpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitAdditionalElementSetSpec(this);
         }
     }
@@ -10872,19 +10872,19 @@ class ElementSetSpecContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_elementSetSpec;
+        this.ruleIndex = asn1Parser.RULE_elementSetSpec;
     }
     unions() {
         return this.getTypedRuleContext(UnionsContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterElementSetSpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitElementSetSpec(this);
         }
     }
@@ -10921,15 +10921,15 @@ class UnionsContext extends antlr4.ParserRuleContext {
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_unions;
+        this.ruleIndex = asn1Parser.RULE_unions;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterUnions(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitUnions(this);
         }
     }
@@ -10944,19 +10944,19 @@ class IntersectionsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_intersections;
+        this.ruleIndex = asn1Parser.RULE_intersections;
     }
     intersectionElements() {
         return this.getTypedRuleContext(IntersectionElementsContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterIntersections(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitIntersections(this);
         }
     }
@@ -10971,19 +10971,19 @@ class IntersectionElementsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_intersectionElements;
+        this.ruleIndex = asn1Parser.RULE_intersectionElements;
     }
     elements() {
         return this.getTypedRuleContext(ElementsContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterIntersectionElements(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitIntersectionElements(this);
         }
     }
@@ -10998,19 +10998,19 @@ class UnionMarkContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_unionMark;
+        this.ruleIndex = asn1Parser.RULE_unionMark;
     }
     PIPE() {
-        return this.getToken(grammar3rdParser.PIPE, 0);
+        return this.getToken(asn1Parser.PIPE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterUnionMark(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitUnionMark(this);
         }
     }
@@ -11025,7 +11025,7 @@ class ElementsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_elements;
+        this.ruleIndex = asn1Parser.RULE_elements;
     }
     subtypeElements() {
         return this.getTypedRuleContext(SubtypeElementsContext, 0);
@@ -11036,7 +11036,7 @@ class ElementsContext extends antlr4.ParserRuleContext {
     }
     ;
     L_PAREN() {
-        return this.getToken(grammar3rdParser.L_PAREN, 0);
+        return this.getToken(asn1Parser.L_PAREN, 0);
     }
     ;
     elementSetSpec() {
@@ -11044,16 +11044,16 @@ class ElementsContext extends antlr4.ParserRuleContext {
     }
     ;
     R_PAREN() {
-        return this.getToken(grammar3rdParser.R_PAREN, 0);
+        return this.getToken(asn1Parser.R_PAREN, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterElements(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitElements(this);
         }
     }
@@ -11068,7 +11068,7 @@ class SubtypeElementsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_subtypeElements;
+        this.ruleIndex = asn1Parser.RULE_subtypeElements;
     }
     singleValue() {
         return this.getTypedRuleContext(SingleValueContext, 0);
@@ -11087,12 +11087,12 @@ class SubtypeElementsContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSubtypeElements(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSubtypeElements(this);
         }
     }
@@ -11107,19 +11107,19 @@ class SingleValueContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_singleValue;
+        this.ruleIndex = asn1Parser.RULE_singleValue;
     }
     value() {
         return this.getTypedRuleContext(ValueContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSingleValue(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSingleValue(this);
         }
     }
@@ -11134,14 +11134,14 @@ class ValueRangeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_valueRange;
+        this.ruleIndex = asn1Parser.RULE_valueRange;
     }
     lowerEndpoint() {
         return this.getTypedRuleContext(LowerEndpointContext, 0);
     }
     ;
     RANGE_SEPARATOR() {
-        return this.getToken(grammar3rdParser.RANGE_SEPARATOR, 0);
+        return this.getToken(asn1Parser.RANGE_SEPARATOR, 0);
     }
     ;
     upperEndpoint() {
@@ -11149,12 +11149,12 @@ class ValueRangeContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterValueRange(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitValueRange(this);
         }
     }
@@ -11169,19 +11169,19 @@ class LowerEndpointContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_lowerEndpoint;
+        this.ruleIndex = asn1Parser.RULE_lowerEndpoint;
     }
     lowerEndValue() {
         return this.getTypedRuleContext(LowerEndValueContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterLowerEndpoint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitLowerEndpoint(this);
         }
     }
@@ -11196,19 +11196,19 @@ class UpperEndpointContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_upperEndpoint;
+        this.ruleIndex = asn1Parser.RULE_upperEndpoint;
     }
     upperEndValue() {
         return this.getTypedRuleContext(UpperEndValueContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterUpperEndpoint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitUpperEndpoint(this);
         }
     }
@@ -11223,23 +11223,23 @@ class LowerEndValueContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_lowerEndValue;
+        this.ruleIndex = asn1Parser.RULE_lowerEndValue;
     }
     value() {
         return this.getTypedRuleContext(ValueContext, 0);
     }
     ;
     MIN_LITERAL() {
-        return this.getToken(grammar3rdParser.MIN_LITERAL, 0);
+        return this.getToken(asn1Parser.MIN_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterLowerEndValue(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitLowerEndValue(this);
         }
     }
@@ -11254,23 +11254,23 @@ class UpperEndValueContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_upperEndValue;
+        this.ruleIndex = asn1Parser.RULE_upperEndValue;
     }
     value() {
         return this.getTypedRuleContext(ValueContext, 0);
     }
     ;
     MAX_LITERAL() {
-        return this.getToken(grammar3rdParser.MAX_LITERAL, 0);
+        return this.getToken(asn1Parser.MAX_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterUpperEndValue(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitUpperEndValue(this);
         }
     }
@@ -11285,10 +11285,10 @@ class SizeConstraintContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_sizeConstraint;
+        this.ruleIndex = asn1Parser.RULE_sizeConstraint;
     }
     SIZE_LITERAL() {
-        return this.getToken(grammar3rdParser.SIZE_LITERAL, 0);
+        return this.getToken(asn1Parser.SIZE_LITERAL, 0);
     }
     ;
     constraint() {
@@ -11296,12 +11296,12 @@ class SizeConstraintContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSizeConstraint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSizeConstraint(this);
         }
     }
@@ -11316,14 +11316,14 @@ class InnerTypeConstraintsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_innerTypeConstraints;
+        this.ruleIndex = asn1Parser.RULE_innerTypeConstraints;
     }
     WITH_LITERAL() {
-        return this.getToken(grammar3rdParser.WITH_LITERAL, 0);
+        return this.getToken(asn1Parser.WITH_LITERAL, 0);
     }
     ;
     COMPONENTS_LITERAL() {
-        return this.getToken(grammar3rdParser.COMPONENTS_LITERAL, 0);
+        return this.getToken(asn1Parser.COMPONENTS_LITERAL, 0);
     }
     ;
     multipleTypeConstraints() {
@@ -11331,12 +11331,12 @@ class InnerTypeConstraintsContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterInnerTypeConstraints(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitInnerTypeConstraints(this);
         }
     }
@@ -11351,19 +11351,19 @@ class MultipleTypeConstraintsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_multipleTypeConstraints;
+        this.ruleIndex = asn1Parser.RULE_multipleTypeConstraints;
     }
     partialSpecification() {
         return this.getTypedRuleContext(PartialSpecificationContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterMultipleTypeConstraints(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitMultipleTypeConstraints(this);
         }
     }
@@ -11378,18 +11378,18 @@ class PartialSpecificationContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_partialSpecification;
+        this.ruleIndex = asn1Parser.RULE_partialSpecification;
     }
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     ELLIPSIS() {
-        return this.getToken(grammar3rdParser.ELLIPSIS, 0);
+        return this.getToken(asn1Parser.ELLIPSIS, 0);
     }
     ;
     COMMA() {
-        return this.getToken(grammar3rdParser.COMMA, 0);
+        return this.getToken(asn1Parser.COMMA, 0);
     }
     ;
     typeConstraints() {
@@ -11397,16 +11397,16 @@ class PartialSpecificationContext extends antlr4.ParserRuleContext {
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterPartialSpecification(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitPartialSpecification(this);
         }
     }
@@ -11436,22 +11436,22 @@ class TypeConstraintsContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_typeConstraints;
+        this.ruleIndex = asn1Parser.RULE_typeConstraints;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterTypeConstraints(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitTypeConstraints(this);
         }
     }
@@ -11466,7 +11466,7 @@ class NamedConstraintContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_namedConstraint;
+        this.ruleIndex = asn1Parser.RULE_namedConstraint;
     }
     identifier() {
         return this.getTypedRuleContext(IdentifierContext, 0);
@@ -11477,12 +11477,12 @@ class NamedConstraintContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterNamedConstraint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitNamedConstraint(this);
         }
     }
@@ -11497,7 +11497,7 @@ class ComponentConstraintContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_componentConstraint;
+        this.ruleIndex = asn1Parser.RULE_componentConstraint;
     }
     valueConstraint() {
         return this.getTypedRuleContext(ValueConstraintContext, 0);
@@ -11508,12 +11508,12 @@ class ComponentConstraintContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterComponentConstraint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitComponentConstraint(this);
         }
     }
@@ -11528,19 +11528,19 @@ class ValueConstraintContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_valueConstraint;
+        this.ruleIndex = asn1Parser.RULE_valueConstraint;
     }
     constraint() {
         return this.getTypedRuleContext(ConstraintContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterValueConstraint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitValueConstraint(this);
         }
     }
@@ -11555,27 +11555,27 @@ class PresenceConstraintContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_presenceConstraint;
+        this.ruleIndex = asn1Parser.RULE_presenceConstraint;
     }
     PRESENT_LITERAL() {
-        return this.getToken(grammar3rdParser.PRESENT_LITERAL, 0);
+        return this.getToken(asn1Parser.PRESENT_LITERAL, 0);
     }
     ;
     ABSENT_LITERAL() {
-        return this.getToken(grammar3rdParser.ABSENT_LITERAL, 0);
+        return this.getToken(asn1Parser.ABSENT_LITERAL, 0);
     }
     ;
     OPTIONAL_LITERAL() {
-        return this.getToken(grammar3rdParser.OPTIONAL_LITERAL, 0);
+        return this.getToken(asn1Parser.OPTIONAL_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterPresenceConstraint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitPresenceConstraint(this);
         }
     }
@@ -11590,10 +11590,10 @@ class ExceptionSpecContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_exceptionSpec;
+        this.ruleIndex = asn1Parser.RULE_exceptionSpec;
     }
     EXCLAM() {
-        return this.getToken(grammar3rdParser.EXCLAM, 0);
+        return this.getToken(asn1Parser.EXCLAM, 0);
     }
     ;
     exceptionIdentification() {
@@ -11601,12 +11601,12 @@ class ExceptionSpecContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExceptionSpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExceptionSpec(this);
         }
     }
@@ -11621,7 +11621,7 @@ class ExceptionIdentificationContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_exceptionIdentification;
+        this.ruleIndex = asn1Parser.RULE_exceptionIdentification;
     }
     signedNumber() {
         return this.getTypedRuleContext(SignedNumberContext, 0);
@@ -11636,7 +11636,7 @@ class ExceptionIdentificationContext extends antlr4.ParserRuleContext {
     }
     ;
     COLON() {
-        return this.getToken(grammar3rdParser.COLON, 0);
+        return this.getToken(asn1Parser.COLON, 0);
     }
     ;
     value() {
@@ -11644,12 +11644,12 @@ class ExceptionIdentificationContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterExceptionIdentification(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitExceptionIdentification(this);
         }
     }
@@ -11664,23 +11664,23 @@ class ObjectClassReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectClassReference;
+        this.ruleIndex = asn1Parser.RULE_objectClassReference;
     }
     Word() {
-        return this.getToken(grammar3rdParser.Word, 0);
+        return this.getToken(asn1Parser.Word, 0);
     }
     ;
     ObjectClassReference() {
-        return this.getToken(grammar3rdParser.ObjectClassReference, 0);
+        return this.getToken(asn1Parser.ObjectClassReference, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectClassReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectClassReference(this);
         }
     }
@@ -11695,19 +11695,19 @@ class ObjectSetReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectSetReference;
+        this.ruleIndex = asn1Parser.RULE_objectSetReference;
     }
     typeReference() {
         return this.getTypedRuleContext(TypeReferenceContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectSetReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectSetReference(this);
         }
     }
@@ -11722,19 +11722,19 @@ class ObjectReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectReference;
+        this.ruleIndex = asn1Parser.RULE_objectReference;
     }
     IdentifierL() {
-        return this.getToken(grammar3rdParser.IdentifierL, 0);
+        return this.getToken(asn1Parser.IdentifierL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectReference(this);
         }
     }
@@ -11749,23 +11749,23 @@ class ValueFieldReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_valueFieldReference;
+        this.ruleIndex = asn1Parser.RULE_valueFieldReference;
     }
     AMP() {
-        return this.getToken(grammar3rdParser.AMP, 0);
+        return this.getToken(asn1Parser.AMP, 0);
     }
     ;
     IdentifierL() {
-        return this.getToken(grammar3rdParser.IdentifierL, 0);
+        return this.getToken(asn1Parser.IdentifierL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterValueFieldReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitValueFieldReference(this);
         }
     }
@@ -11780,19 +11780,19 @@ class WordContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_word;
+        this.ruleIndex = asn1Parser.RULE_word;
     }
     Word() {
-        return this.getToken(grammar3rdParser.Word, 0);
+        return this.getToken(asn1Parser.Word, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterWord(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitWord(this);
         }
     }
@@ -11807,10 +11807,10 @@ class TypeFieldReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_typeFieldReference;
+        this.ruleIndex = asn1Parser.RULE_typeFieldReference;
     }
     AMP() {
-        return this.getToken(grammar3rdParser.AMP, 0);
+        return this.getToken(asn1Parser.AMP, 0);
     }
     ;
     typeReference() {
@@ -11818,12 +11818,12 @@ class TypeFieldReferenceContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterTypeFieldReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitTypeFieldReference(this);
         }
     }
@@ -11838,19 +11838,19 @@ class DefinedObjectClassContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definedObjectClass;
+        this.ruleIndex = asn1Parser.RULE_definedObjectClass;
     }
     objectClassReference() {
         return this.getTypedRuleContext(ObjectClassReferenceContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinedObjectClass(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinedObjectClass(this);
         }
     }
@@ -11865,19 +11865,19 @@ class DefinedObjectSetContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definedObjectSet;
+        this.ruleIndex = asn1Parser.RULE_definedObjectSet;
     }
     objectSetReference() {
         return this.getTypedRuleContext(ObjectSetReferenceContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinedObjectSet(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinedObjectSet(this);
         }
     }
@@ -11892,14 +11892,14 @@ class ObjectClassAssignmentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectClassAssignment;
+        this.ruleIndex = asn1Parser.RULE_objectClassAssignment;
     }
     objectClassReference() {
         return this.getTypedRuleContext(ObjectClassReferenceContext, 0);
     }
     ;
     ASSIGNMENT() {
-        return this.getToken(grammar3rdParser.ASSIGNMENT, 0);
+        return this.getToken(asn1Parser.ASSIGNMENT, 0);
     }
     ;
     objectClass() {
@@ -11907,12 +11907,12 @@ class ObjectClassAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectClassAssignment(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectClassAssignment(this);
         }
     }
@@ -11927,19 +11927,19 @@ class ObjectClassContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectClass;
+        this.ruleIndex = asn1Parser.RULE_objectClass;
     }
     objectClassDefn() {
         return this.getTypedRuleContext(ObjectClassDefnContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectClass(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectClass(this);
         }
     }
@@ -11969,25 +11969,25 @@ class ObjectClassDefnContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectClassDefn;
+        this.ruleIndex = asn1Parser.RULE_objectClassDefn;
     }
     CLASS_LITERAL() {
-        return this.getToken(grammar3rdParser.CLASS_LITERAL, 0);
+        return this.getToken(asn1Parser.CLASS_LITERAL, 0);
     }
     ;
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     withSyntaxSpec() {
@@ -11995,12 +11995,12 @@ class ObjectClassDefnContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectClassDefn(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectClassDefn(this);
         }
     }
@@ -12015,14 +12015,14 @@ class WithSyntaxSpecContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_withSyntaxSpec;
+        this.ruleIndex = asn1Parser.RULE_withSyntaxSpec;
     }
     WITH_LITERAL() {
-        return this.getToken(grammar3rdParser.WITH_LITERAL, 0);
+        return this.getToken(asn1Parser.WITH_LITERAL, 0);
     }
     ;
     SYNTAX_LITERAL() {
-        return this.getToken(grammar3rdParser.SYNTAX_LITERAL, 0);
+        return this.getToken(asn1Parser.SYNTAX_LITERAL, 0);
     }
     ;
     syntaxList() {
@@ -12030,12 +12030,12 @@ class WithSyntaxSpecContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterWithSyntaxSpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitWithSyntaxSpec(this);
         }
     }
@@ -12050,7 +12050,7 @@ class FieldSpecContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_fieldSpec;
+        this.ruleIndex = asn1Parser.RULE_fieldSpec;
     }
     typeFieldSpec() {
         return this.getTypedRuleContext(TypeFieldSpecContext, 0);
@@ -12061,12 +12061,12 @@ class FieldSpecContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterFieldSpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitFieldSpec(this);
         }
     }
@@ -12081,7 +12081,7 @@ class TypeFieldSpecContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_typeFieldSpec;
+        this.ruleIndex = asn1Parser.RULE_typeFieldSpec;
     }
     typeFieldReference() {
         return this.getTypedRuleContext(TypeFieldReferenceContext, 0);
@@ -12092,12 +12092,12 @@ class TypeFieldSpecContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterTypeFieldSpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitTypeFieldSpec(this);
         }
     }
@@ -12112,14 +12112,14 @@ class TypeOptionalitySpecContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_typeOptionalitySpec;
+        this.ruleIndex = asn1Parser.RULE_typeOptionalitySpec;
     }
     OPTIONAL_LITERAL() {
-        return this.getToken(grammar3rdParser.OPTIONAL_LITERAL, 0);
+        return this.getToken(asn1Parser.OPTIONAL_LITERAL, 0);
     }
     ;
     DEFAULT_LITERAL() {
-        return this.getToken(grammar3rdParser.DEFAULT_LITERAL, 0);
+        return this.getToken(asn1Parser.DEFAULT_LITERAL, 0);
     }
     ;
     type() {
@@ -12127,12 +12127,12 @@ class TypeOptionalitySpecContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterTypeOptionalitySpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitTypeOptionalitySpec(this);
         }
     }
@@ -12147,7 +12147,7 @@ class FixedTypeValueFieldSpecContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_fixedTypeValueFieldSpec;
+        this.ruleIndex = asn1Parser.RULE_fixedTypeValueFieldSpec;
     }
     valueFieldReference() {
         return this.getTypedRuleContext(ValueFieldReferenceContext, 0);
@@ -12158,7 +12158,7 @@ class FixedTypeValueFieldSpecContext extends antlr4.ParserRuleContext {
     }
     ;
     UNIQUE_LITERAL() {
-        return this.getToken(grammar3rdParser.UNIQUE_LITERAL, 0);
+        return this.getToken(asn1Parser.UNIQUE_LITERAL, 0);
     }
     ;
     valueOptionalitySpec() {
@@ -12166,12 +12166,12 @@ class FixedTypeValueFieldSpecContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterFixedTypeValueFieldSpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitFixedTypeValueFieldSpec(this);
         }
     }
@@ -12186,14 +12186,14 @@ class ValueOptionalitySpecContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_valueOptionalitySpec;
+        this.ruleIndex = asn1Parser.RULE_valueOptionalitySpec;
     }
     OPTIONAL_LITERAL() {
-        return this.getToken(grammar3rdParser.OPTIONAL_LITERAL, 0);
+        return this.getToken(asn1Parser.OPTIONAL_LITERAL, 0);
     }
     ;
     DEFAULT_LITERAL() {
-        return this.getToken(grammar3rdParser.DEFAULT_LITERAL, 0);
+        return this.getToken(asn1Parser.DEFAULT_LITERAL, 0);
     }
     ;
     value() {
@@ -12201,12 +12201,12 @@ class ValueOptionalitySpecContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterValueOptionalitySpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitValueOptionalitySpec(this);
         }
     }
@@ -12221,7 +12221,7 @@ class PrimitiveFieldNameContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_primitiveFieldName;
+        this.ruleIndex = asn1Parser.RULE_primitiveFieldName;
     }
     typeFieldReference() {
         return this.getTypedRuleContext(TypeFieldReferenceContext, 0);
@@ -12232,12 +12232,12 @@ class PrimitiveFieldNameContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterPrimitiveFieldName(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitPrimitiveFieldName(this);
         }
     }
@@ -12267,22 +12267,22 @@ class FieldNameContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.PERIOD);
+                return this.getTokens(asn1Parser.PERIOD);
             }
             else {
-                return this.getToken(grammar3rdParser.PERIOD, i);
+                return this.getToken(asn1Parser.PERIOD, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_fieldName;
+        this.ruleIndex = asn1Parser.RULE_fieldName;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterFieldName(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitFieldName(this);
         }
     }
@@ -12308,23 +12308,23 @@ class SyntaxListContext extends antlr4.ParserRuleContext {
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_syntaxList;
+        this.ruleIndex = asn1Parser.RULE_syntaxList;
     }
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSyntaxList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSyntaxList(this);
         }
     }
@@ -12339,7 +12339,7 @@ class TokenOrGroupSpecContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_tokenOrGroupSpec;
+        this.ruleIndex = asn1Parser.RULE_tokenOrGroupSpec;
     }
     requiredToken() {
         return this.getTypedRuleContext(RequiredTokenContext, 0);
@@ -12350,12 +12350,12 @@ class TokenOrGroupSpecContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterTokenOrGroupSpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitTokenOrGroupSpec(this);
         }
     }
@@ -12381,23 +12381,23 @@ class OptionalGroupContext extends antlr4.ParserRuleContext {
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_optionalGroup;
+        this.ruleIndex = asn1Parser.RULE_optionalGroup;
     }
     L_BRACKET() {
-        return this.getToken(grammar3rdParser.L_BRACKET, 0);
+        return this.getToken(asn1Parser.L_BRACKET, 0);
     }
     ;
     R_BRACKET() {
-        return this.getToken(grammar3rdParser.R_BRACKET, 0);
+        return this.getToken(asn1Parser.R_BRACKET, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterOptionalGroup(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitOptionalGroup(this);
         }
     }
@@ -12412,7 +12412,7 @@ class RequiredTokenContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_requiredToken;
+        this.ruleIndex = asn1Parser.RULE_requiredToken;
     }
     literal() {
         return this.getTypedRuleContext(LiteralContext, 0);
@@ -12423,12 +12423,12 @@ class RequiredTokenContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterRequiredToken(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitRequiredToken(this);
         }
     }
@@ -12443,19 +12443,19 @@ class LiteralContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_literal;
+        this.ruleIndex = asn1Parser.RULE_literal;
     }
     word() {
         return this.getTypedRuleContext(WordContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterLiteral(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitLiteral(this);
         }
     }
@@ -12470,7 +12470,7 @@ class ObjectAssignmentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectAssignment;
+        this.ruleIndex = asn1Parser.RULE_objectAssignment;
     }
     objectReference() {
         return this.getTypedRuleContext(ObjectReferenceContext, 0);
@@ -12481,7 +12481,7 @@ class ObjectAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     ASSIGNMENT() {
-        return this.getToken(grammar3rdParser.ASSIGNMENT, 0);
+        return this.getToken(asn1Parser.ASSIGNMENT, 0);
     }
     ;
     object() {
@@ -12489,12 +12489,12 @@ class ObjectAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectAssignment(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectAssignment(this);
         }
     }
@@ -12509,19 +12509,19 @@ class ObjectContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_object;
+        this.ruleIndex = asn1Parser.RULE_object;
     }
     objectDefn() {
         return this.getTypedRuleContext(ObjectDefnContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObject(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObject(this);
         }
     }
@@ -12536,19 +12536,19 @@ class ObjectDefnContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectDefn;
+        this.ruleIndex = asn1Parser.RULE_objectDefn;
     }
     definedSyntax() {
         return this.getTypedRuleContext(DefinedSyntaxContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectDefn(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectDefn(this);
         }
     }
@@ -12574,23 +12574,23 @@ class DefinedSyntaxContext extends antlr4.ParserRuleContext {
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definedSyntax;
+        this.ruleIndex = asn1Parser.RULE_definedSyntax;
     }
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinedSyntax(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinedSyntax(this);
         }
     }
@@ -12605,7 +12605,7 @@ class DefinedSyntaxTokenContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definedSyntaxToken;
+        this.ruleIndex = asn1Parser.RULE_definedSyntaxToken;
     }
     literal() {
         return this.getTypedRuleContext(LiteralContext, 0);
@@ -12616,12 +12616,12 @@ class DefinedSyntaxTokenContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinedSyntaxToken(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinedSyntaxToken(this);
         }
     }
@@ -12636,7 +12636,7 @@ class SettingContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_setting;
+        this.ruleIndex = asn1Parser.RULE_setting;
     }
     type() {
         return this.getTypedRuleContext(TypeContext, 0);
@@ -12647,12 +12647,12 @@ class SettingContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSetting(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSetting(this);
         }
     }
@@ -12667,7 +12667,7 @@ class ObjectSetAssignmentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectSetAssignment;
+        this.ruleIndex = asn1Parser.RULE_objectSetAssignment;
     }
     objectSetReference() {
         return this.getTypedRuleContext(ObjectSetReferenceContext, 0);
@@ -12678,7 +12678,7 @@ class ObjectSetAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     ASSIGNMENT() {
-        return this.getToken(grammar3rdParser.ASSIGNMENT, 0);
+        return this.getToken(asn1Parser.ASSIGNMENT, 0);
     }
     ;
     objectSet() {
@@ -12686,12 +12686,12 @@ class ObjectSetAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectSetAssignment(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectSetAssignment(this);
         }
     }
@@ -12706,10 +12706,10 @@ class ObjectSetContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectSet;
+        this.ruleIndex = asn1Parser.RULE_objectSet;
     }
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     objectSetSpec() {
@@ -12717,16 +12717,16 @@ class ObjectSetContext extends antlr4.ParserRuleContext {
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectSet(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectSet(this);
         }
     }
@@ -12745,21 +12745,21 @@ class ObjectSetSpecContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectSetSpec;
+        this.ruleIndex = asn1Parser.RULE_objectSetSpec;
     }
     rootElementSetSpec() {
         return this.getTypedRuleContext(RootElementSetSpecContext, 0);
     }
     ;
     ELLIPSIS() {
-        return this.getToken(grammar3rdParser.ELLIPSIS, 0);
+        return this.getToken(asn1Parser.ELLIPSIS, 0);
     }
     ;
     additionalElementSetSpec() {
@@ -12767,12 +12767,12 @@ class ObjectSetSpecContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectSetSpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectSetSpec(this);
         }
     }
@@ -12787,7 +12787,7 @@ class ObjectSetElementsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectSetElements;
+        this.ruleIndex = asn1Parser.RULE_objectSetElements;
     }
     object() {
         return this.getTypedRuleContext(ObjectContext, 0);
@@ -12798,12 +12798,12 @@ class ObjectSetElementsContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectSetElements(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectSetElements(this);
         }
     }
@@ -12818,14 +12818,14 @@ class ObjectClassFieldTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_objectClassFieldType;
+        this.ruleIndex = asn1Parser.RULE_objectClassFieldType;
     }
     definedObjectClass() {
         return this.getTypedRuleContext(DefinedObjectClassContext, 0);
     }
     ;
     PERIOD() {
-        return this.getToken(grammar3rdParser.PERIOD, 0);
+        return this.getToken(asn1Parser.PERIOD, 0);
     }
     ;
     fieldName() {
@@ -12833,12 +12833,12 @@ class ObjectClassFieldTypeContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterObjectClassFieldType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitObjectClassFieldType(this);
         }
     }
@@ -12853,7 +12853,7 @@ class GeneralConstraintContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_generalConstraint;
+        this.ruleIndex = asn1Parser.RULE_generalConstraint;
     }
     tableConstraint() {
         return this.getTypedRuleContext(TableConstraintContext, 0);
@@ -12864,12 +12864,12 @@ class GeneralConstraintContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterGeneralConstraint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitGeneralConstraint(this);
         }
     }
@@ -12884,7 +12884,7 @@ class TableConstraintContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_tableConstraint;
+        this.ruleIndex = asn1Parser.RULE_tableConstraint;
     }
     simpleTableConstraint() {
         return this.getTypedRuleContext(SimpleTableConstraintContext, 0);
@@ -12895,12 +12895,12 @@ class TableConstraintContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterTableConstraint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitTableConstraint(this);
         }
     }
@@ -12915,19 +12915,19 @@ class SimpleTableConstraintContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_simpleTableConstraint;
+        this.ruleIndex = asn1Parser.RULE_simpleTableConstraint;
     }
     objectSet() {
         return this.getTypedRuleContext(ObjectSetContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSimpleTableConstraint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSimpleTableConstraint(this);
         }
     }
@@ -12946,10 +12946,10 @@ class ComponentRelationConstraintContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.L_BRACE);
+                return this.getTokens(asn1Parser.L_BRACE);
             }
             else {
-                return this.getToken(grammar3rdParser.L_BRACE, i);
+                return this.getToken(asn1Parser.L_BRACE, i);
             }
         };
         this.R_BRACE = function (i) {
@@ -12957,10 +12957,10 @@ class ComponentRelationConstraintContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.R_BRACE);
+                return this.getTokens(asn1Parser.R_BRACE);
             }
             else {
-                return this.getToken(grammar3rdParser.R_BRACE, i);
+                return this.getToken(asn1Parser.R_BRACE, i);
             }
         };
         this.atNotation = function (i) {
@@ -12979,26 +12979,26 @@ class ComponentRelationConstraintContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_componentRelationConstraint;
+        this.ruleIndex = asn1Parser.RULE_componentRelationConstraint;
     }
     definedObjectSet() {
         return this.getTypedRuleContext(DefinedObjectSetContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterComponentRelationConstraint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitComponentRelationConstraint(this);
         }
     }
@@ -13013,10 +13013,10 @@ class AtNotationContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_atNotation;
+        this.ruleIndex = asn1Parser.RULE_atNotation;
     }
     AT() {
-        return this.getToken(grammar3rdParser.AT, 0);
+        return this.getToken(asn1Parser.AT, 0);
     }
     ;
     componentIdList() {
@@ -13024,12 +13024,12 @@ class AtNotationContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterAtNotation(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitAtNotation(this);
         }
     }
@@ -13059,22 +13059,22 @@ class ComponentIdListContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.PERIOD);
+                return this.getTokens(asn1Parser.PERIOD);
             }
             else {
-                return this.getToken(grammar3rdParser.PERIOD, i);
+                return this.getToken(asn1Parser.PERIOD, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_componentIdList;
+        this.ruleIndex = asn1Parser.RULE_componentIdList;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterComponentIdList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitComponentIdList(this);
         }
     }
@@ -13089,10 +13089,10 @@ class ContentsConstraintContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_contentsConstraint;
+        this.ruleIndex = asn1Parser.RULE_contentsConstraint;
     }
     CONTAINING_LITERAL() {
-        return this.getToken(grammar3rdParser.CONTAINING_LITERAL, 0);
+        return this.getToken(asn1Parser.CONTAINING_LITERAL, 0);
     }
     ;
     type() {
@@ -13100,12 +13100,12 @@ class ContentsConstraintContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterContentsConstraint(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitContentsConstraint(this);
         }
     }
@@ -13120,19 +13120,19 @@ class ParameterizedAssignmentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_parameterizedAssignment;
+        this.ruleIndex = asn1Parser.RULE_parameterizedAssignment;
     }
     parameterizedTypeAssignment() {
         return this.getTypedRuleContext(ParameterizedTypeAssignmentContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterParameterizedAssignment(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitParameterizedAssignment(this);
         }
     }
@@ -13147,7 +13147,7 @@ class ParameterizedTypeAssignmentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_parameterizedTypeAssignment;
+        this.ruleIndex = asn1Parser.RULE_parameterizedTypeAssignment;
     }
     typeReference() {
         return this.getTypedRuleContext(TypeReferenceContext, 0);
@@ -13158,7 +13158,7 @@ class ParameterizedTypeAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     ASSIGNMENT() {
-        return this.getToken(grammar3rdParser.ASSIGNMENT, 0);
+        return this.getToken(asn1Parser.ASSIGNMENT, 0);
     }
     ;
     type() {
@@ -13166,12 +13166,12 @@ class ParameterizedTypeAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterParameterizedTypeAssignment(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitParameterizedTypeAssignment(this);
         }
     }
@@ -13201,30 +13201,30 @@ class ParameterListContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_parameterList;
+        this.ruleIndex = asn1Parser.RULE_parameterList;
     }
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterParameterList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitParameterList(this);
         }
     }
@@ -13239,14 +13239,14 @@ class ParameterContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_parameter;
+        this.ruleIndex = asn1Parser.RULE_parameter;
     }
     paramGovernor() {
         return this.getTypedRuleContext(ParamGovernorContext, 0);
     }
     ;
     COLON() {
-        return this.getToken(grammar3rdParser.COLON, 0);
+        return this.getToken(asn1Parser.COLON, 0);
     }
     ;
     dummyReference() {
@@ -13254,12 +13254,12 @@ class ParameterContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterParameter(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitParameter(this);
         }
     }
@@ -13274,19 +13274,19 @@ class ParamGovernorContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_paramGovernor;
+        this.ruleIndex = asn1Parser.RULE_paramGovernor;
     }
     governor() {
         return this.getTypedRuleContext(GovernorContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterParamGovernor(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitParamGovernor(this);
         }
     }
@@ -13301,7 +13301,7 @@ class GovernorContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_governor;
+        this.ruleIndex = asn1Parser.RULE_governor;
     }
     type() {
         return this.getTypedRuleContext(TypeContext, 0);
@@ -13312,12 +13312,12 @@ class GovernorContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterGovernor(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitGovernor(this);
         }
     }
@@ -13332,19 +13332,19 @@ class DummyReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_dummyReference;
+        this.ruleIndex = asn1Parser.RULE_dummyReference;
     }
     reference() {
         return this.getTypedRuleContext(ReferenceContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDummyReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDummyReference(this);
         }
     }
@@ -13359,27 +13359,27 @@ class ParameterizedReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_parameterizedReference;
+        this.ruleIndex = asn1Parser.RULE_parameterizedReference;
     }
     reference() {
         return this.getTypedRuleContext(ReferenceContext, 0);
     }
     ;
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterParameterizedReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitParameterizedReference(this);
         }
     }
@@ -13394,7 +13394,7 @@ class ParameterizedTypeAmbiguousContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_parameterizedTypeAmbiguous;
+        this.ruleIndex = asn1Parser.RULE_parameterizedTypeAmbiguous;
     }
     simpleDefinedType() {
         return this.getTypedRuleContext(SimpleDefinedTypeContext, 0);
@@ -13405,12 +13405,12 @@ class ParameterizedTypeAmbiguousContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterParameterizedTypeAmbiguous(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitParameterizedTypeAmbiguous(this);
         }
     }
@@ -13425,19 +13425,19 @@ class SimpleDefinedTypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_simpleDefinedType;
+        this.ruleIndex = asn1Parser.RULE_simpleDefinedType;
     }
     typeReference() {
         return this.getTypedRuleContext(TypeReferenceContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSimpleDefinedType(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSimpleDefinedType(this);
         }
     }
@@ -13467,30 +13467,30 @@ class ActualParameterListContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_actualParameterList;
+        this.ruleIndex = asn1Parser.RULE_actualParameterList;
     }
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterActualParameterList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitActualParameterList(this);
         }
     }
@@ -13505,7 +13505,7 @@ class ActualParameterContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_actualParameter;
+        this.ruleIndex = asn1Parser.RULE_actualParameter;
     }
     type() {
         return this.getTypedRuleContext(TypeContext, 0);
@@ -13520,12 +13520,12 @@ class ActualParameterContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterActualParameter(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitActualParameter(this);
         }
     }
@@ -13540,19 +13540,19 @@ class EncodingObjectReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_encodingObjectReference;
+        this.ruleIndex = asn1Parser.RULE_encodingObjectReference;
     }
     IdentifierL() {
-        return this.getToken(grammar3rdParser.IdentifierL, 0);
+        return this.getToken(asn1Parser.IdentifierL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEncodingObjectReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEncodingObjectReference(this);
         }
     }
@@ -13567,19 +13567,19 @@ class EncodingObjectSetReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_encodingObjectSetReference;
+        this.ruleIndex = asn1Parser.RULE_encodingObjectSetReference;
     }
     typeReference() {
         return this.getTypedRuleContext(TypeReferenceContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEncodingObjectSetReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEncodingObjectSetReference(this);
         }
     }
@@ -13594,10 +13594,10 @@ class EncodingClassReferenceVariantContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_encodingClassReferenceVariant;
+        this.ruleIndex = asn1Parser.RULE_encodingClassReferenceVariant;
     }
     NUMBER_SIGN() {
-        return this.getToken(grammar3rdParser.NUMBER_SIGN, 0);
+        return this.getToken(asn1Parser.NUMBER_SIGN, 0);
     }
     ;
     typeReference() {
@@ -13605,12 +13605,12 @@ class EncodingClassReferenceVariantContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEncodingClassReferenceVariant(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEncodingClassReferenceVariant(this);
         }
     }
@@ -13625,19 +13625,19 @@ class DefinedOrBuiltinEncodingClassContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definedOrBuiltinEncodingClass;
+        this.ruleIndex = asn1Parser.RULE_definedOrBuiltinEncodingClass;
     }
     builtinEncodingClassReference() {
         return this.getTypedRuleContext(BuiltinEncodingClassReferenceContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinedOrBuiltinEncodingClass(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinedOrBuiltinEncodingClass(this);
         }
     }
@@ -13652,19 +13652,19 @@ class DefinedEncodingObjectContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definedEncodingObject;
+        this.ruleIndex = asn1Parser.RULE_definedEncodingObject;
     }
     encodingObjectReference() {
         return this.getTypedRuleContext(EncodingObjectReferenceContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinedEncodingObject(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinedEncodingObject(this);
         }
     }
@@ -13679,19 +13679,19 @@ class DefinedEncodingObjectSetContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definedEncodingObjectSet;
+        this.ruleIndex = asn1Parser.RULE_definedEncodingObjectSet;
     }
     encodingObjectSetReference() {
         return this.getTypedRuleContext(EncodingObjectSetReferenceContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinedEncodingObjectSet(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinedEncodingObjectSet(this);
         }
     }
@@ -13706,7 +13706,7 @@ class DefinedOrBuiltinEncodingObjectSetContext extends antlr4.ParserRuleContext 
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_definedOrBuiltinEncodingObjectSet;
+        this.ruleIndex = asn1Parser.RULE_definedOrBuiltinEncodingObjectSet;
     }
     definedEncodingObjectSet() {
         return this.getTypedRuleContext(DefinedEncodingObjectSetContext, 0);
@@ -13717,12 +13717,12 @@ class DefinedOrBuiltinEncodingObjectSetContext extends antlr4.ParserRuleContext 
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDefinedOrBuiltinEncodingObjectSet(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDefinedOrBuiltinEncodingObjectSet(this);
         }
     }
@@ -13737,7 +13737,7 @@ class ElmModuleBodyContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_elmModuleBody;
+        this.ruleIndex = asn1Parser.RULE_elmModuleBody;
     }
     encodingApplicationList() {
         return this.getTypedRuleContext(EncodingApplicationListContext, 0);
@@ -13748,12 +13748,12 @@ class ElmModuleBodyContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterElmModuleBody(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitElmModuleBody(this);
         }
     }
@@ -13779,15 +13779,15 @@ class EncodingApplicationListContext extends antlr4.ParserRuleContext {
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_encodingApplicationList;
+        this.ruleIndex = asn1Parser.RULE_encodingApplicationList;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEncodingApplicationList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEncodingApplicationList(this);
         }
     }
@@ -13817,17 +13817,17 @@ class EncodingApplicationContext extends antlr4.ParserRuleContext {
                 i = null;
             }
             if (i === null) {
-                return this.getTokens(grammar3rdParser.COMMA);
+                return this.getTokens(asn1Parser.COMMA);
             }
             else {
-                return this.getToken(grammar3rdParser.COMMA, i);
+                return this.getToken(asn1Parser.COMMA, i);
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_encodingApplication;
+        this.ruleIndex = asn1Parser.RULE_encodingApplication;
     }
     ENCODE_LITERAL() {
-        return this.getToken(grammar3rdParser.ENCODE_LITERAL, 0);
+        return this.getToken(asn1Parser.ENCODE_LITERAL, 0);
     }
     ;
     combinedEncodings() {
@@ -13835,12 +13835,12 @@ class EncodingApplicationContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEncodingApplication(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEncodingApplication(this);
         }
     }
@@ -13855,10 +13855,10 @@ class CombinedEncodingsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_combinedEncodings;
+        this.ruleIndex = asn1Parser.RULE_combinedEncodings;
     }
     WITH_LITERAL() {
-        return this.getToken(grammar3rdParser.WITH_LITERAL, 0);
+        return this.getToken(asn1Parser.WITH_LITERAL, 0);
     }
     ;
     primaryEncodings() {
@@ -13870,12 +13870,12 @@ class CombinedEncodingsContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterCombinedEncodings(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitCombinedEncodings(this);
         }
     }
@@ -13890,14 +13890,14 @@ class CompletionClauseContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_completionClause;
+        this.ruleIndex = asn1Parser.RULE_completionClause;
     }
     COMPLETED_LITERAL() {
-        return this.getToken(grammar3rdParser.COMPLETED_LITERAL, 0);
+        return this.getToken(asn1Parser.COMPLETED_LITERAL, 0);
     }
     ;
     BY_LITERAL() {
-        return this.getToken(grammar3rdParser.BY_LITERAL, 0);
+        return this.getToken(asn1Parser.BY_LITERAL, 0);
     }
     ;
     secondaryEncodings() {
@@ -13905,12 +13905,12 @@ class CompletionClauseContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterCompletionClause(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitCompletionClause(this);
         }
     }
@@ -13925,19 +13925,19 @@ class PrimaryEncodingsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_primaryEncodings;
+        this.ruleIndex = asn1Parser.RULE_primaryEncodings;
     }
     encodingObjectSet() {
         return this.getTypedRuleContext(EncodingObjectSetContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterPrimaryEncodings(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitPrimaryEncodings(this);
         }
     }
@@ -13952,19 +13952,19 @@ class SecondaryEncodingsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_secondaryEncodings;
+        this.ruleIndex = asn1Parser.RULE_secondaryEncodings;
     }
     encodingObjectSet() {
         return this.getTypedRuleContext(EncodingObjectSetContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSecondaryEncodings(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSecondaryEncodings(this);
         }
     }
@@ -13979,7 +13979,7 @@ class EdmModuleBodyContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_edmModuleBody;
+        this.ruleIndex = asn1Parser.RULE_edmModuleBody;
     }
     exports() {
         return this.getTypedRuleContext(ExportsContext, 0);
@@ -13994,12 +13994,12 @@ class EdmModuleBodyContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEdmModuleBody(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEdmModuleBody(this);
         }
     }
@@ -14025,15 +14025,15 @@ class EdmAssignmentListContext extends antlr4.ParserRuleContext {
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_edmAssignmentList;
+        this.ruleIndex = asn1Parser.RULE_edmAssignmentList;
     }
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEdmAssignmentList(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEdmAssignmentList(this);
         }
     }
@@ -14048,7 +14048,7 @@ class EdmAssignmentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_edmAssignment;
+        this.ruleIndex = asn1Parser.RULE_edmAssignment;
     }
     encodingObjectAssignment() {
         return this.getTypedRuleContext(EncodingObjectAssignmentContext, 0);
@@ -14059,12 +14059,12 @@ class EdmAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEdmAssignment(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEdmAssignment(this);
         }
     }
@@ -14079,19 +14079,19 @@ class BuiltinEncodingClassReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_builtinEncodingClassReference;
+        this.ruleIndex = asn1Parser.RULE_builtinEncodingClassReference;
     }
     encodingProcedureClassReference() {
         return this.getTypedRuleContext(EncodingProcedureClassReferenceContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterBuiltinEncodingClassReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitBuiltinEncodingClassReference(this);
         }
     }
@@ -14106,23 +14106,23 @@ class EncodingProcedureClassReferenceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_encodingProcedureClassReference;
+        this.ruleIndex = asn1Parser.RULE_encodingProcedureClassReference;
     }
     NUMBER_SIGN() {
-        return this.getToken(grammar3rdParser.NUMBER_SIGN, 0);
+        return this.getToken(asn1Parser.NUMBER_SIGN, 0);
     }
     ;
     OUTER_LITERAL() {
-        return this.getToken(grammar3rdParser.OUTER_LITERAL, 0);
+        return this.getToken(asn1Parser.OUTER_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEncodingProcedureClassReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEncodingProcedureClassReference(this);
         }
     }
@@ -14137,7 +14137,7 @@ class EncodingObjectAssignmentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_encodingObjectAssignment;
+        this.ruleIndex = asn1Parser.RULE_encodingObjectAssignment;
     }
     encodingObjectReference() {
         return this.getTypedRuleContext(EncodingObjectReferenceContext, 0);
@@ -14148,7 +14148,7 @@ class EncodingObjectAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     ASSIGNMENT() {
-        return this.getToken(grammar3rdParser.ASSIGNMENT, 0);
+        return this.getToken(asn1Parser.ASSIGNMENT, 0);
     }
     ;
     encodingObject() {
@@ -14156,12 +14156,12 @@ class EncodingObjectAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEncodingObjectAssignment(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEncodingObjectAssignment(this);
         }
     }
@@ -14176,7 +14176,7 @@ class EncodingObjectContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_encodingObject;
+        this.ruleIndex = asn1Parser.RULE_encodingObject;
     }
     differentialEncodeDecodeObjectVariant() {
         return this.getTypedRuleContext(DifferentialEncodeDecodeObjectVariantContext, 0);
@@ -14187,12 +14187,12 @@ class EncodingObjectContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEncodingObject(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEncodingObject(this);
         }
     }
@@ -14207,10 +14207,10 @@ class DifferentialEncodeDecodeObjectVariantContext extends antlr4.ParserRuleCont
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_differentialEncodeDecodeObjectVariant;
+        this.ruleIndex = asn1Parser.RULE_differentialEncodeDecodeObjectVariant;
     }
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     specForEncoding() {
@@ -14218,15 +14218,15 @@ class DifferentialEncodeDecodeObjectVariantContext extends antlr4.ParserRuleCont
     }
     ;
     DECODE_LITERAL() {
-        return this.getToken(grammar3rdParser.DECODE_LITERAL, 0);
+        return this.getToken(asn1Parser.DECODE_LITERAL, 0);
     }
     ;
     AS_LITERAL() {
-        return this.getToken(grammar3rdParser.AS_LITERAL, 0);
+        return this.getToken(asn1Parser.AS_LITERAL, 0);
     }
     ;
     IF_LITERAL() {
-        return this.getToken(grammar3rdParser.IF_LITERAL, 0);
+        return this.getToken(asn1Parser.IF_LITERAL, 0);
     }
     ;
     specForDecoders() {
@@ -14234,24 +14234,24 @@ class DifferentialEncodeDecodeObjectVariantContext extends antlr4.ParserRuleCont
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     ENCODE_DECODE_LITERAL() {
-        return this.getToken(grammar3rdParser.ENCODE_DECODE_LITERAL, 0);
+        return this.getToken(asn1Parser.ENCODE_DECODE_LITERAL, 0);
     }
     ;
     ENCODER_DECODER_LITERAL() {
-        return this.getToken(grammar3rdParser.ENCODER_DECODER_LITERAL, 0);
+        return this.getToken(asn1Parser.ENCODER_DECODER_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterDifferentialEncodeDecodeObjectVariant(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitDifferentialEncodeDecodeObjectVariant(this);
         }
     }
@@ -14266,19 +14266,19 @@ class SpecForEncodingContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_specForEncoding;
+        this.ruleIndex = asn1Parser.RULE_specForEncoding;
     }
     encodingObject() {
         return this.getTypedRuleContext(EncodingObjectContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSpecForEncoding(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSpecForEncoding(this);
         }
     }
@@ -14293,19 +14293,19 @@ class SpecForDecodersContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_specForDecoders;
+        this.ruleIndex = asn1Parser.RULE_specForDecoders;
     }
     encodingObject() {
         return this.getTypedRuleContext(EncodingObjectContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSpecForDecoders(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSpecForDecoders(this);
         }
     }
@@ -14320,22 +14320,22 @@ class EncodingObjectSetAssignmentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_encodingObjectSetAssignment;
+        this.ruleIndex = asn1Parser.RULE_encodingObjectSetAssignment;
     }
     encodingObjectSetReference() {
         return this.getTypedRuleContext(EncodingObjectSetReferenceContext, 0);
     }
     ;
     NUMBER_SIGN() {
-        return this.getToken(grammar3rdParser.NUMBER_SIGN, 0);
+        return this.getToken(asn1Parser.NUMBER_SIGN, 0);
     }
     ;
     ENCODINGS_LITERAL() {
-        return this.getToken(grammar3rdParser.ENCODINGS_LITERAL, 0);
+        return this.getToken(asn1Parser.ENCODINGS_LITERAL, 0);
     }
     ;
     ASSIGNMENT() {
-        return this.getToken(grammar3rdParser.ASSIGNMENT, 0);
+        return this.getToken(asn1Parser.ASSIGNMENT, 0);
     }
     ;
     encodingObjectSet() {
@@ -14347,12 +14347,12 @@ class EncodingObjectSetAssignmentContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEncodingObjectSetAssignment(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEncodingObjectSetAssignment(this);
         }
     }
@@ -14367,7 +14367,7 @@ class EncodingObjectSetContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_encodingObjectSet;
+        this.ruleIndex = asn1Parser.RULE_encodingObjectSet;
     }
     definedOrBuiltinEncodingObjectSet() {
         return this.getTypedRuleContext(DefinedOrBuiltinEncodingObjectSetContext, 0);
@@ -14378,12 +14378,12 @@ class EncodingObjectSetContext extends antlr4.ParserRuleContext {
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEncodingObjectSet(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEncodingObjectSet(this);
         }
     }
@@ -14420,23 +14420,23 @@ class EncodingObjectSetSpecContext extends antlr4.ParserRuleContext {
             }
         };
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_encodingObjectSetSpec;
+        this.ruleIndex = asn1Parser.RULE_encodingObjectSetSpec;
     }
     L_BRACE() {
-        return this.getToken(grammar3rdParser.L_BRACE, 0);
+        return this.getToken(asn1Parser.L_BRACE, 0);
     }
     ;
     R_BRACE() {
-        return this.getToken(grammar3rdParser.R_BRACE, 0);
+        return this.getToken(asn1Parser.R_BRACE, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEncodingObjectSetSpec(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEncodingObjectSetSpec(this);
         }
     }
@@ -14451,19 +14451,19 @@ class EncodingObjectsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_encodingObjects;
+        this.ruleIndex = asn1Parser.RULE_encodingObjects;
     }
     definedEncodingObject() {
         return this.getTypedRuleContext(DefinedEncodingObjectContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterEncodingObjects(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitEncodingObjects(this);
         }
     }
@@ -14478,19 +14478,19 @@ class BuiltinEncodingObjectSetReferenceContext extends antlr4.ParserRuleContext 
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_builtinEncodingObjectSetReference;
+        this.ruleIndex = asn1Parser.RULE_builtinEncodingObjectSetReference;
     }
     PER_BASIC_UNALIGNED_LITERAL() {
-        return this.getToken(grammar3rdParser.PER_BASIC_UNALIGNED_LITERAL, 0);
+        return this.getToken(asn1Parser.PER_BASIC_UNALIGNED_LITERAL, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterBuiltinEncodingObjectSetReference(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitBuiltinEncodingObjectSetReference(this);
         }
     }
@@ -14505,221 +14505,221 @@ class SimpleDefinedEncodingClassContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = grammar3rdParser.RULE_simpleDefinedEncodingClass;
+        this.ruleIndex = asn1Parser.RULE_simpleDefinedEncodingClass;
     }
     encodingClassReferenceVariant() {
         return this.getTypedRuleContext(EncodingClassReferenceVariantContext, 0);
     }
     ;
     enterRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.enterSimpleDefinedEncodingClass(this);
         }
     }
     exitRule(listener) {
-        if (listener instanceof grammar3rdListener) {
+        if (listener instanceof asn1Listener) {
             listener.exitSimpleDefinedEncodingClass(this);
         }
     }
 }
-grammar3rdParser.ModuleDefinitionsContext = ModuleDefinitionsContext;
-grammar3rdParser.TypeReferenceContext = TypeReferenceContext;
-grammar3rdParser.IdentifierContext = IdentifierContext;
-grammar3rdParser.ValueReferenceContext = ValueReferenceContext;
-grammar3rdParser.ModuleReferenceContext = ModuleReferenceContext;
-grammar3rdParser.ModuleDefinitionContext = ModuleDefinitionContext;
-grammar3rdParser.ElmDefinitionContext = ElmDefinitionContext;
-grammar3rdParser.EdmDefinitionContext = EdmDefinitionContext;
-grammar3rdParser.ModuleIdentifierContext = ModuleIdentifierContext;
-grammar3rdParser.DefinitiveIdentificationContext = DefinitiveIdentificationContext;
-grammar3rdParser.DefinitiveOidContext = DefinitiveOidContext;
-grammar3rdParser.DefinitiveObjIdComponentListContext = DefinitiveObjIdComponentListContext;
-grammar3rdParser.DefinitiveObjIdComponentContext = DefinitiveObjIdComponentContext;
-grammar3rdParser.DefinitiveNameAndNumberFormContext = DefinitiveNameAndNumberFormContext;
-grammar3rdParser.DefinitiveNumberFormContext = DefinitiveNumberFormContext;
-grammar3rdParser.TagDefaultContext = TagDefaultContext;
-grammar3rdParser.ModuleBodyContext = ModuleBodyContext;
-grammar3rdParser.ExportsContext = ExportsContext;
-grammar3rdParser.SymbolsExportedContext = SymbolsExportedContext;
-grammar3rdParser.ImportsContext = ImportsContext;
-grammar3rdParser.SymbolsImportedContext = SymbolsImportedContext;
-grammar3rdParser.SymbolsFromModuleListContext = SymbolsFromModuleListContext;
-grammar3rdParser.SymbolsFromModuleContext = SymbolsFromModuleContext;
-grammar3rdParser.GlobalModuleReferenceContext = GlobalModuleReferenceContext;
-grammar3rdParser.SymbolListContext = SymbolListContext;
-grammar3rdParser.SymbolContext = SymbolContext;
-grammar3rdParser.ReferenceContext = ReferenceContext;
-grammar3rdParser.AssignmentListContext = AssignmentListContext;
-grammar3rdParser.AssignmentContext = AssignmentContext;
-grammar3rdParser.DefinedTypeContext = DefinedTypeContext;
-grammar3rdParser.DefinedValueContext = DefinedValueContext;
-grammar3rdParser.ExternalTypeReferenceContext = ExternalTypeReferenceContext;
-grammar3rdParser.ExternalValueReferenceContext = ExternalValueReferenceContext;
-grammar3rdParser.TypeAssignmentContext = TypeAssignmentContext;
-grammar3rdParser.ValueAssignmentContext = ValueAssignmentContext;
-grammar3rdParser.TypeContext = TypeContext;
-grammar3rdParser.BuiltinTypeContext = BuiltinTypeContext;
-grammar3rdParser.ReferencedTypeContext = ReferencedTypeContext;
-grammar3rdParser.NamedTypeContext = NamedTypeContext;
-grammar3rdParser.ValueContext = ValueContext;
-grammar3rdParser.BuiltinValueContext = BuiltinValueContext;
-grammar3rdParser.BooleanTypeContext = BooleanTypeContext;
-grammar3rdParser.IntegerTypeContext = IntegerTypeContext;
-grammar3rdParser.NamedNumberListContext = NamedNumberListContext;
-grammar3rdParser.NamedNumberContext = NamedNumberContext;
-grammar3rdParser.SignedNumberContext = SignedNumberContext;
-grammar3rdParser.IntegerValueContext = IntegerValueContext;
-grammar3rdParser.EnumeratedTypeContext = EnumeratedTypeContext;
-grammar3rdParser.EnumerationsContext = EnumerationsContext;
-grammar3rdParser.RootEnumerationContext = RootEnumerationContext;
-grammar3rdParser.AdditionalEnumerationContext = AdditionalEnumerationContext;
-grammar3rdParser.EnumerationContext = EnumerationContext;
-grammar3rdParser.EnumerationItemContext = EnumerationItemContext;
-grammar3rdParser.BitStringTypeContext = BitStringTypeContext;
-grammar3rdParser.NamedBitListContext = NamedBitListContext;
-grammar3rdParser.NamedBitContext = NamedBitContext;
-grammar3rdParser.BitStringValueContext = BitStringValueContext;
-grammar3rdParser.OctetStringTypeContext = OctetStringTypeContext;
-grammar3rdParser.NullTypeContext = NullTypeContext;
-grammar3rdParser.SequenceTypeContext = SequenceTypeContext;
-grammar3rdParser.ExtensionAndExceptionContext = ExtensionAndExceptionContext;
-grammar3rdParser.OptionalExtensionMarkerContext = OptionalExtensionMarkerContext;
-grammar3rdParser.ComponentTypeListsContext = ComponentTypeListsContext;
-grammar3rdParser.RootComponentTypeListContext = RootComponentTypeListContext;
-grammar3rdParser.ExtensionEndMarkerContext = ExtensionEndMarkerContext;
-grammar3rdParser.ExtensionAdditionsContext = ExtensionAdditionsContext;
-grammar3rdParser.ExtensionAdditionListContext = ExtensionAdditionListContext;
-grammar3rdParser.ExtensionAdditionContext = ExtensionAdditionContext;
-grammar3rdParser.ExtensionAdditionGroupContext = ExtensionAdditionGroupContext;
-grammar3rdParser.ComponentTypeListContext = ComponentTypeListContext;
-grammar3rdParser.ComponentTypeContext = ComponentTypeContext;
-grammar3rdParser.SequenceOfTypeContext = SequenceOfTypeContext;
-grammar3rdParser.ChoiceTypeContext = ChoiceTypeContext;
-grammar3rdParser.AlternativeTypeListsContext = AlternativeTypeListsContext;
-grammar3rdParser.RootAlternativeTypeListContext = RootAlternativeTypeListContext;
-grammar3rdParser.ExtensionAdditionAlternativesContext = ExtensionAdditionAlternativesContext;
-grammar3rdParser.ExtensionAdditionAlternativesListContext = ExtensionAdditionAlternativesListContext;
-grammar3rdParser.ExtensionAdditionAlternativeContext = ExtensionAdditionAlternativeContext;
-grammar3rdParser.ExtensionAdditionAlternativesGroupContext = ExtensionAdditionAlternativesGroupContext;
-grammar3rdParser.AlternativeTypeListContext = AlternativeTypeListContext;
-grammar3rdParser.ObjectIdentifierTypeContext = ObjectIdentifierTypeContext;
-grammar3rdParser.CharacterStringTypeContext = CharacterStringTypeContext;
-grammar3rdParser.RestrictedCharacterStringTypeContext = RestrictedCharacterStringTypeContext;
-grammar3rdParser.UsefulTypeContext = UsefulTypeContext;
-grammar3rdParser.ConstrainedTypeContext = ConstrainedTypeContext;
-grammar3rdParser.TypeWithConstraintContext = TypeWithConstraintContext;
-grammar3rdParser.ConstraintContext = ConstraintContext;
-grammar3rdParser.ConstraintSpecContext = ConstraintSpecContext;
-grammar3rdParser.SubtypeConstraintContext = SubtypeConstraintContext;
-grammar3rdParser.ElementSetSpecsContext = ElementSetSpecsContext;
-grammar3rdParser.RootElementSetSpecContext = RootElementSetSpecContext;
-grammar3rdParser.AdditionalElementSetSpecContext = AdditionalElementSetSpecContext;
-grammar3rdParser.ElementSetSpecContext = ElementSetSpecContext;
-grammar3rdParser.UnionsContext = UnionsContext;
-grammar3rdParser.IntersectionsContext = IntersectionsContext;
-grammar3rdParser.IntersectionElementsContext = IntersectionElementsContext;
-grammar3rdParser.UnionMarkContext = UnionMarkContext;
-grammar3rdParser.ElementsContext = ElementsContext;
-grammar3rdParser.SubtypeElementsContext = SubtypeElementsContext;
-grammar3rdParser.SingleValueContext = SingleValueContext;
-grammar3rdParser.ValueRangeContext = ValueRangeContext;
-grammar3rdParser.LowerEndpointContext = LowerEndpointContext;
-grammar3rdParser.UpperEndpointContext = UpperEndpointContext;
-grammar3rdParser.LowerEndValueContext = LowerEndValueContext;
-grammar3rdParser.UpperEndValueContext = UpperEndValueContext;
-grammar3rdParser.SizeConstraintContext = SizeConstraintContext;
-grammar3rdParser.InnerTypeConstraintsContext = InnerTypeConstraintsContext;
-grammar3rdParser.MultipleTypeConstraintsContext = MultipleTypeConstraintsContext;
-grammar3rdParser.PartialSpecificationContext = PartialSpecificationContext;
-grammar3rdParser.TypeConstraintsContext = TypeConstraintsContext;
-grammar3rdParser.NamedConstraintContext = NamedConstraintContext;
-grammar3rdParser.ComponentConstraintContext = ComponentConstraintContext;
-grammar3rdParser.ValueConstraintContext = ValueConstraintContext;
-grammar3rdParser.PresenceConstraintContext = PresenceConstraintContext;
-grammar3rdParser.ExceptionSpecContext = ExceptionSpecContext;
-grammar3rdParser.ExceptionIdentificationContext = ExceptionIdentificationContext;
-grammar3rdParser.ObjectClassReferenceContext = ObjectClassReferenceContext;
-grammar3rdParser.ObjectSetReferenceContext = ObjectSetReferenceContext;
-grammar3rdParser.ObjectReferenceContext = ObjectReferenceContext;
-grammar3rdParser.ValueFieldReferenceContext = ValueFieldReferenceContext;
-grammar3rdParser.WordContext = WordContext;
-grammar3rdParser.TypeFieldReferenceContext = TypeFieldReferenceContext;
-grammar3rdParser.DefinedObjectClassContext = DefinedObjectClassContext;
-grammar3rdParser.DefinedObjectSetContext = DefinedObjectSetContext;
-grammar3rdParser.ObjectClassAssignmentContext = ObjectClassAssignmentContext;
-grammar3rdParser.ObjectClassContext = ObjectClassContext;
-grammar3rdParser.ObjectClassDefnContext = ObjectClassDefnContext;
-grammar3rdParser.WithSyntaxSpecContext = WithSyntaxSpecContext;
-grammar3rdParser.FieldSpecContext = FieldSpecContext;
-grammar3rdParser.TypeFieldSpecContext = TypeFieldSpecContext;
-grammar3rdParser.TypeOptionalitySpecContext = TypeOptionalitySpecContext;
-grammar3rdParser.FixedTypeValueFieldSpecContext = FixedTypeValueFieldSpecContext;
-grammar3rdParser.ValueOptionalitySpecContext = ValueOptionalitySpecContext;
-grammar3rdParser.PrimitiveFieldNameContext = PrimitiveFieldNameContext;
-grammar3rdParser.FieldNameContext = FieldNameContext;
-grammar3rdParser.SyntaxListContext = SyntaxListContext;
-grammar3rdParser.TokenOrGroupSpecContext = TokenOrGroupSpecContext;
-grammar3rdParser.OptionalGroupContext = OptionalGroupContext;
-grammar3rdParser.RequiredTokenContext = RequiredTokenContext;
-grammar3rdParser.LiteralContext = LiteralContext;
-grammar3rdParser.ObjectAssignmentContext = ObjectAssignmentContext;
-grammar3rdParser.ObjectContext = ObjectContext;
-grammar3rdParser.ObjectDefnContext = ObjectDefnContext;
-grammar3rdParser.DefinedSyntaxContext = DefinedSyntaxContext;
-grammar3rdParser.DefinedSyntaxTokenContext = DefinedSyntaxTokenContext;
-grammar3rdParser.SettingContext = SettingContext;
-grammar3rdParser.ObjectSetAssignmentContext = ObjectSetAssignmentContext;
-grammar3rdParser.ObjectSetContext = ObjectSetContext;
-grammar3rdParser.ObjectSetSpecContext = ObjectSetSpecContext;
-grammar3rdParser.ObjectSetElementsContext = ObjectSetElementsContext;
-grammar3rdParser.ObjectClassFieldTypeContext = ObjectClassFieldTypeContext;
-grammar3rdParser.GeneralConstraintContext = GeneralConstraintContext;
-grammar3rdParser.TableConstraintContext = TableConstraintContext;
-grammar3rdParser.SimpleTableConstraintContext = SimpleTableConstraintContext;
-grammar3rdParser.ComponentRelationConstraintContext = ComponentRelationConstraintContext;
-grammar3rdParser.AtNotationContext = AtNotationContext;
-grammar3rdParser.ComponentIdListContext = ComponentIdListContext;
-grammar3rdParser.ContentsConstraintContext = ContentsConstraintContext;
-grammar3rdParser.ParameterizedAssignmentContext = ParameterizedAssignmentContext;
-grammar3rdParser.ParameterizedTypeAssignmentContext = ParameterizedTypeAssignmentContext;
-grammar3rdParser.ParameterListContext = ParameterListContext;
-grammar3rdParser.ParameterContext = ParameterContext;
-grammar3rdParser.ParamGovernorContext = ParamGovernorContext;
-grammar3rdParser.GovernorContext = GovernorContext;
-grammar3rdParser.DummyReferenceContext = DummyReferenceContext;
-grammar3rdParser.ParameterizedReferenceContext = ParameterizedReferenceContext;
-grammar3rdParser.ParameterizedTypeAmbiguousContext = ParameterizedTypeAmbiguousContext;
-grammar3rdParser.SimpleDefinedTypeContext = SimpleDefinedTypeContext;
-grammar3rdParser.ActualParameterListContext = ActualParameterListContext;
-grammar3rdParser.ActualParameterContext = ActualParameterContext;
-grammar3rdParser.EncodingObjectReferenceContext = EncodingObjectReferenceContext;
-grammar3rdParser.EncodingObjectSetReferenceContext = EncodingObjectSetReferenceContext;
-grammar3rdParser.EncodingClassReferenceVariantContext = EncodingClassReferenceVariantContext;
-grammar3rdParser.DefinedOrBuiltinEncodingClassContext = DefinedOrBuiltinEncodingClassContext;
-grammar3rdParser.DefinedEncodingObjectContext = DefinedEncodingObjectContext;
-grammar3rdParser.DefinedEncodingObjectSetContext = DefinedEncodingObjectSetContext;
-grammar3rdParser.DefinedOrBuiltinEncodingObjectSetContext = DefinedOrBuiltinEncodingObjectSetContext;
-grammar3rdParser.ElmModuleBodyContext = ElmModuleBodyContext;
-grammar3rdParser.EncodingApplicationListContext = EncodingApplicationListContext;
-grammar3rdParser.EncodingApplicationContext = EncodingApplicationContext;
-grammar3rdParser.CombinedEncodingsContext = CombinedEncodingsContext;
-grammar3rdParser.CompletionClauseContext = CompletionClauseContext;
-grammar3rdParser.PrimaryEncodingsContext = PrimaryEncodingsContext;
-grammar3rdParser.SecondaryEncodingsContext = SecondaryEncodingsContext;
-grammar3rdParser.EdmModuleBodyContext = EdmModuleBodyContext;
-grammar3rdParser.EdmAssignmentListContext = EdmAssignmentListContext;
-grammar3rdParser.EdmAssignmentContext = EdmAssignmentContext;
-grammar3rdParser.BuiltinEncodingClassReferenceContext = BuiltinEncodingClassReferenceContext;
-grammar3rdParser.EncodingProcedureClassReferenceContext = EncodingProcedureClassReferenceContext;
-grammar3rdParser.EncodingObjectAssignmentContext = EncodingObjectAssignmentContext;
-grammar3rdParser.EncodingObjectContext = EncodingObjectContext;
-grammar3rdParser.DifferentialEncodeDecodeObjectVariantContext = DifferentialEncodeDecodeObjectVariantContext;
-grammar3rdParser.SpecForEncodingContext = SpecForEncodingContext;
-grammar3rdParser.SpecForDecodersContext = SpecForDecodersContext;
-grammar3rdParser.EncodingObjectSetAssignmentContext = EncodingObjectSetAssignmentContext;
-grammar3rdParser.EncodingObjectSetContext = EncodingObjectSetContext;
-grammar3rdParser.EncodingObjectSetSpecContext = EncodingObjectSetSpecContext;
-grammar3rdParser.EncodingObjectsContext = EncodingObjectsContext;
-grammar3rdParser.BuiltinEncodingObjectSetReferenceContext = BuiltinEncodingObjectSetReferenceContext;
-grammar3rdParser.SimpleDefinedEncodingClassContext = SimpleDefinedEncodingClassContext;
-//# sourceMappingURL=grammar3rdParser.js.map
+asn1Parser.ModuleDefinitionsContext = ModuleDefinitionsContext;
+asn1Parser.TypeReferenceContext = TypeReferenceContext;
+asn1Parser.IdentifierContext = IdentifierContext;
+asn1Parser.ValueReferenceContext = ValueReferenceContext;
+asn1Parser.ModuleReferenceContext = ModuleReferenceContext;
+asn1Parser.ModuleDefinitionContext = ModuleDefinitionContext;
+asn1Parser.ElmDefinitionContext = ElmDefinitionContext;
+asn1Parser.EdmDefinitionContext = EdmDefinitionContext;
+asn1Parser.ModuleIdentifierContext = ModuleIdentifierContext;
+asn1Parser.DefinitiveIdentificationContext = DefinitiveIdentificationContext;
+asn1Parser.DefinitiveOidContext = DefinitiveOidContext;
+asn1Parser.DefinitiveObjIdComponentListContext = DefinitiveObjIdComponentListContext;
+asn1Parser.DefinitiveObjIdComponentContext = DefinitiveObjIdComponentContext;
+asn1Parser.DefinitiveNameAndNumberFormContext = DefinitiveNameAndNumberFormContext;
+asn1Parser.DefinitiveNumberFormContext = DefinitiveNumberFormContext;
+asn1Parser.TagDefaultContext = TagDefaultContext;
+asn1Parser.ModuleBodyContext = ModuleBodyContext;
+asn1Parser.ExportsContext = ExportsContext;
+asn1Parser.SymbolsExportedContext = SymbolsExportedContext;
+asn1Parser.ImportsContext = ImportsContext;
+asn1Parser.SymbolsImportedContext = SymbolsImportedContext;
+asn1Parser.SymbolsFromModuleListContext = SymbolsFromModuleListContext;
+asn1Parser.SymbolsFromModuleContext = SymbolsFromModuleContext;
+asn1Parser.GlobalModuleReferenceContext = GlobalModuleReferenceContext;
+asn1Parser.SymbolListContext = SymbolListContext;
+asn1Parser.SymbolContext = SymbolContext;
+asn1Parser.ReferenceContext = ReferenceContext;
+asn1Parser.AssignmentListContext = AssignmentListContext;
+asn1Parser.AssignmentContext = AssignmentContext;
+asn1Parser.DefinedTypeContext = DefinedTypeContext;
+asn1Parser.DefinedValueContext = DefinedValueContext;
+asn1Parser.ExternalTypeReferenceContext = ExternalTypeReferenceContext;
+asn1Parser.ExternalValueReferenceContext = ExternalValueReferenceContext;
+asn1Parser.TypeAssignmentContext = TypeAssignmentContext;
+asn1Parser.ValueAssignmentContext = ValueAssignmentContext;
+asn1Parser.TypeContext = TypeContext;
+asn1Parser.BuiltinTypeContext = BuiltinTypeContext;
+asn1Parser.ReferencedTypeContext = ReferencedTypeContext;
+asn1Parser.NamedTypeContext = NamedTypeContext;
+asn1Parser.ValueContext = ValueContext;
+asn1Parser.BuiltinValueContext = BuiltinValueContext;
+asn1Parser.BooleanTypeContext = BooleanTypeContext;
+asn1Parser.IntegerTypeContext = IntegerTypeContext;
+asn1Parser.NamedNumberListContext = NamedNumberListContext;
+asn1Parser.NamedNumberContext = NamedNumberContext;
+asn1Parser.SignedNumberContext = SignedNumberContext;
+asn1Parser.IntegerValueContext = IntegerValueContext;
+asn1Parser.EnumeratedTypeContext = EnumeratedTypeContext;
+asn1Parser.EnumerationsContext = EnumerationsContext;
+asn1Parser.RootEnumerationContext = RootEnumerationContext;
+asn1Parser.AdditionalEnumerationContext = AdditionalEnumerationContext;
+asn1Parser.EnumerationContext = EnumerationContext;
+asn1Parser.EnumerationItemContext = EnumerationItemContext;
+asn1Parser.BitStringTypeContext = BitStringTypeContext;
+asn1Parser.NamedBitListContext = NamedBitListContext;
+asn1Parser.NamedBitContext = NamedBitContext;
+asn1Parser.BitStringValueContext = BitStringValueContext;
+asn1Parser.OctetStringTypeContext = OctetStringTypeContext;
+asn1Parser.NullTypeContext = NullTypeContext;
+asn1Parser.SequenceTypeContext = SequenceTypeContext;
+asn1Parser.ExtensionAndExceptionContext = ExtensionAndExceptionContext;
+asn1Parser.OptionalExtensionMarkerContext = OptionalExtensionMarkerContext;
+asn1Parser.ComponentTypeListsContext = ComponentTypeListsContext;
+asn1Parser.RootComponentTypeListContext = RootComponentTypeListContext;
+asn1Parser.ExtensionEndMarkerContext = ExtensionEndMarkerContext;
+asn1Parser.ExtensionAdditionsContext = ExtensionAdditionsContext;
+asn1Parser.ExtensionAdditionListContext = ExtensionAdditionListContext;
+asn1Parser.ExtensionAdditionContext = ExtensionAdditionContext;
+asn1Parser.ExtensionAdditionGroupContext = ExtensionAdditionGroupContext;
+asn1Parser.ComponentTypeListContext = ComponentTypeListContext;
+asn1Parser.ComponentTypeContext = ComponentTypeContext;
+asn1Parser.SequenceOfTypeContext = SequenceOfTypeContext;
+asn1Parser.ChoiceTypeContext = ChoiceTypeContext;
+asn1Parser.AlternativeTypeListsContext = AlternativeTypeListsContext;
+asn1Parser.RootAlternativeTypeListContext = RootAlternativeTypeListContext;
+asn1Parser.ExtensionAdditionAlternativesContext = ExtensionAdditionAlternativesContext;
+asn1Parser.ExtensionAdditionAlternativesListContext = ExtensionAdditionAlternativesListContext;
+asn1Parser.ExtensionAdditionAlternativeContext = ExtensionAdditionAlternativeContext;
+asn1Parser.ExtensionAdditionAlternativesGroupContext = ExtensionAdditionAlternativesGroupContext;
+asn1Parser.AlternativeTypeListContext = AlternativeTypeListContext;
+asn1Parser.ObjectIdentifierTypeContext = ObjectIdentifierTypeContext;
+asn1Parser.CharacterStringTypeContext = CharacterStringTypeContext;
+asn1Parser.RestrictedCharacterStringTypeContext = RestrictedCharacterStringTypeContext;
+asn1Parser.UsefulTypeContext = UsefulTypeContext;
+asn1Parser.ConstrainedTypeContext = ConstrainedTypeContext;
+asn1Parser.TypeWithConstraintContext = TypeWithConstraintContext;
+asn1Parser.ConstraintContext = ConstraintContext;
+asn1Parser.ConstraintSpecContext = ConstraintSpecContext;
+asn1Parser.SubtypeConstraintContext = SubtypeConstraintContext;
+asn1Parser.ElementSetSpecsContext = ElementSetSpecsContext;
+asn1Parser.RootElementSetSpecContext = RootElementSetSpecContext;
+asn1Parser.AdditionalElementSetSpecContext = AdditionalElementSetSpecContext;
+asn1Parser.ElementSetSpecContext = ElementSetSpecContext;
+asn1Parser.UnionsContext = UnionsContext;
+asn1Parser.IntersectionsContext = IntersectionsContext;
+asn1Parser.IntersectionElementsContext = IntersectionElementsContext;
+asn1Parser.UnionMarkContext = UnionMarkContext;
+asn1Parser.ElementsContext = ElementsContext;
+asn1Parser.SubtypeElementsContext = SubtypeElementsContext;
+asn1Parser.SingleValueContext = SingleValueContext;
+asn1Parser.ValueRangeContext = ValueRangeContext;
+asn1Parser.LowerEndpointContext = LowerEndpointContext;
+asn1Parser.UpperEndpointContext = UpperEndpointContext;
+asn1Parser.LowerEndValueContext = LowerEndValueContext;
+asn1Parser.UpperEndValueContext = UpperEndValueContext;
+asn1Parser.SizeConstraintContext = SizeConstraintContext;
+asn1Parser.InnerTypeConstraintsContext = InnerTypeConstraintsContext;
+asn1Parser.MultipleTypeConstraintsContext = MultipleTypeConstraintsContext;
+asn1Parser.PartialSpecificationContext = PartialSpecificationContext;
+asn1Parser.TypeConstraintsContext = TypeConstraintsContext;
+asn1Parser.NamedConstraintContext = NamedConstraintContext;
+asn1Parser.ComponentConstraintContext = ComponentConstraintContext;
+asn1Parser.ValueConstraintContext = ValueConstraintContext;
+asn1Parser.PresenceConstraintContext = PresenceConstraintContext;
+asn1Parser.ExceptionSpecContext = ExceptionSpecContext;
+asn1Parser.ExceptionIdentificationContext = ExceptionIdentificationContext;
+asn1Parser.ObjectClassReferenceContext = ObjectClassReferenceContext;
+asn1Parser.ObjectSetReferenceContext = ObjectSetReferenceContext;
+asn1Parser.ObjectReferenceContext = ObjectReferenceContext;
+asn1Parser.ValueFieldReferenceContext = ValueFieldReferenceContext;
+asn1Parser.WordContext = WordContext;
+asn1Parser.TypeFieldReferenceContext = TypeFieldReferenceContext;
+asn1Parser.DefinedObjectClassContext = DefinedObjectClassContext;
+asn1Parser.DefinedObjectSetContext = DefinedObjectSetContext;
+asn1Parser.ObjectClassAssignmentContext = ObjectClassAssignmentContext;
+asn1Parser.ObjectClassContext = ObjectClassContext;
+asn1Parser.ObjectClassDefnContext = ObjectClassDefnContext;
+asn1Parser.WithSyntaxSpecContext = WithSyntaxSpecContext;
+asn1Parser.FieldSpecContext = FieldSpecContext;
+asn1Parser.TypeFieldSpecContext = TypeFieldSpecContext;
+asn1Parser.TypeOptionalitySpecContext = TypeOptionalitySpecContext;
+asn1Parser.FixedTypeValueFieldSpecContext = FixedTypeValueFieldSpecContext;
+asn1Parser.ValueOptionalitySpecContext = ValueOptionalitySpecContext;
+asn1Parser.PrimitiveFieldNameContext = PrimitiveFieldNameContext;
+asn1Parser.FieldNameContext = FieldNameContext;
+asn1Parser.SyntaxListContext = SyntaxListContext;
+asn1Parser.TokenOrGroupSpecContext = TokenOrGroupSpecContext;
+asn1Parser.OptionalGroupContext = OptionalGroupContext;
+asn1Parser.RequiredTokenContext = RequiredTokenContext;
+asn1Parser.LiteralContext = LiteralContext;
+asn1Parser.ObjectAssignmentContext = ObjectAssignmentContext;
+asn1Parser.ObjectContext = ObjectContext;
+asn1Parser.ObjectDefnContext = ObjectDefnContext;
+asn1Parser.DefinedSyntaxContext = DefinedSyntaxContext;
+asn1Parser.DefinedSyntaxTokenContext = DefinedSyntaxTokenContext;
+asn1Parser.SettingContext = SettingContext;
+asn1Parser.ObjectSetAssignmentContext = ObjectSetAssignmentContext;
+asn1Parser.ObjectSetContext = ObjectSetContext;
+asn1Parser.ObjectSetSpecContext = ObjectSetSpecContext;
+asn1Parser.ObjectSetElementsContext = ObjectSetElementsContext;
+asn1Parser.ObjectClassFieldTypeContext = ObjectClassFieldTypeContext;
+asn1Parser.GeneralConstraintContext = GeneralConstraintContext;
+asn1Parser.TableConstraintContext = TableConstraintContext;
+asn1Parser.SimpleTableConstraintContext = SimpleTableConstraintContext;
+asn1Parser.ComponentRelationConstraintContext = ComponentRelationConstraintContext;
+asn1Parser.AtNotationContext = AtNotationContext;
+asn1Parser.ComponentIdListContext = ComponentIdListContext;
+asn1Parser.ContentsConstraintContext = ContentsConstraintContext;
+asn1Parser.ParameterizedAssignmentContext = ParameterizedAssignmentContext;
+asn1Parser.ParameterizedTypeAssignmentContext = ParameterizedTypeAssignmentContext;
+asn1Parser.ParameterListContext = ParameterListContext;
+asn1Parser.ParameterContext = ParameterContext;
+asn1Parser.ParamGovernorContext = ParamGovernorContext;
+asn1Parser.GovernorContext = GovernorContext;
+asn1Parser.DummyReferenceContext = DummyReferenceContext;
+asn1Parser.ParameterizedReferenceContext = ParameterizedReferenceContext;
+asn1Parser.ParameterizedTypeAmbiguousContext = ParameterizedTypeAmbiguousContext;
+asn1Parser.SimpleDefinedTypeContext = SimpleDefinedTypeContext;
+asn1Parser.ActualParameterListContext = ActualParameterListContext;
+asn1Parser.ActualParameterContext = ActualParameterContext;
+asn1Parser.EncodingObjectReferenceContext = EncodingObjectReferenceContext;
+asn1Parser.EncodingObjectSetReferenceContext = EncodingObjectSetReferenceContext;
+asn1Parser.EncodingClassReferenceVariantContext = EncodingClassReferenceVariantContext;
+asn1Parser.DefinedOrBuiltinEncodingClassContext = DefinedOrBuiltinEncodingClassContext;
+asn1Parser.DefinedEncodingObjectContext = DefinedEncodingObjectContext;
+asn1Parser.DefinedEncodingObjectSetContext = DefinedEncodingObjectSetContext;
+asn1Parser.DefinedOrBuiltinEncodingObjectSetContext = DefinedOrBuiltinEncodingObjectSetContext;
+asn1Parser.ElmModuleBodyContext = ElmModuleBodyContext;
+asn1Parser.EncodingApplicationListContext = EncodingApplicationListContext;
+asn1Parser.EncodingApplicationContext = EncodingApplicationContext;
+asn1Parser.CombinedEncodingsContext = CombinedEncodingsContext;
+asn1Parser.CompletionClauseContext = CompletionClauseContext;
+asn1Parser.PrimaryEncodingsContext = PrimaryEncodingsContext;
+asn1Parser.SecondaryEncodingsContext = SecondaryEncodingsContext;
+asn1Parser.EdmModuleBodyContext = EdmModuleBodyContext;
+asn1Parser.EdmAssignmentListContext = EdmAssignmentListContext;
+asn1Parser.EdmAssignmentContext = EdmAssignmentContext;
+asn1Parser.BuiltinEncodingClassReferenceContext = BuiltinEncodingClassReferenceContext;
+asn1Parser.EncodingProcedureClassReferenceContext = EncodingProcedureClassReferenceContext;
+asn1Parser.EncodingObjectAssignmentContext = EncodingObjectAssignmentContext;
+asn1Parser.EncodingObjectContext = EncodingObjectContext;
+asn1Parser.DifferentialEncodeDecodeObjectVariantContext = DifferentialEncodeDecodeObjectVariantContext;
+asn1Parser.SpecForEncodingContext = SpecForEncodingContext;
+asn1Parser.SpecForDecodersContext = SpecForDecodersContext;
+asn1Parser.EncodingObjectSetAssignmentContext = EncodingObjectSetAssignmentContext;
+asn1Parser.EncodingObjectSetContext = EncodingObjectSetContext;
+asn1Parser.EncodingObjectSetSpecContext = EncodingObjectSetSpecContext;
+asn1Parser.EncodingObjectsContext = EncodingObjectsContext;
+asn1Parser.BuiltinEncodingObjectSetReferenceContext = BuiltinEncodingObjectSetReferenceContext;
+asn1Parser.SimpleDefinedEncodingClassContext = SimpleDefinedEncodingClassContext;
+//# sourceMappingURL=asn1Parser.js.map

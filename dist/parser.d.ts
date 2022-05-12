@@ -1,4 +1,4 @@
-import { ModuleDefinitionsContext } from "./parser/grammar3rdParser.js";
+import { ModuleDefinitionsContext } from "./parser/asn1Parser.js";
 import { Result } from "./types.js";
 /**
  * Data structure to store syntax error reported from parsre
