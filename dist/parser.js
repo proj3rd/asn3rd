@@ -39,8 +39,8 @@ export function parse(text) {
     const moduleDefinitionsContext = parser.moduleDefinitions();
     const { errors } = errorListener;
     if (errors.length) {
-        return [new ParserError(errors), undefined];
+        return Promise.reject(new ParserError(errors));
     }
-    return [null, moduleDefinitionsContext];
+    return Promise.resolve(moduleDefinitionsContext);
 }
 //# sourceMappingURL=parser.js.map
