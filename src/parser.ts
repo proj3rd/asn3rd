@@ -1,7 +1,8 @@
 import antlr4 from "antlr4";
 import grammar3rdLexer from "./parser/asn1Lexer.js";
-import grammar3rdParser, { ModuleDefinitionsContext } from "./parser/asn1Parser.js";
-import { Result } from "./types.js";
+import grammar3rdParser, {
+  ModuleDefinitionsContext,
+} from "./parser/asn1Parser.js";
 
 /**
  * Data structure to store syntax error reported from parsre
@@ -74,7 +75,7 @@ class ParserError extends Error {
  * Parse ASN.1 definitino
  * @param text ASN.1 definition
  */
-export function parse(text: string): Result<ModuleDefinitionsContext, ParserError> {
+export function parse(text: string): Promise<ModuleDefinitionsContext> {
   const chars = new antlr4.InputStream(text);
   const lexer = new grammar3rdLexer(chars);
   const tokens = new antlr4.CommonTokenStream(lexer);
@@ -85,7 +86,7 @@ export function parse(text: string): Result<ModuleDefinitionsContext, ParserErro
   const moduleDefinitionsContext = parser.moduleDefinitions();
   const { errors } = errorListener;
   if (errors.length) {
-    return [new ParserError(errors), undefined];
+    return Promise.reject(new ParserError(errors));
   }
-  return [null, moduleDefinitionsContext];
+  return Promise.resolve(moduleDefinitionsContext);
 }
