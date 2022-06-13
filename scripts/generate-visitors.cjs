@@ -2,7 +2,7 @@ const { readFileSync, existsSync, writeFileSync } = require("fs");
 const { resolve } = require("path");
 
 if (require.main === module) {
-  const visitorSkeleton = (name) => `import antlr4 from "antlr4";
+  const visitorSkeleton = (name) => `import { ${name}Context } from "../parser/asn1Parser";
 
 /**
  * Grammar
@@ -10,7 +10,7 @@ if (require.main === module) {
  * \`\`\`
  */
 export class ${name}Visitor {
-  public visitChildren(ctx: antlr4.ParserRuleContext) {
+  public visitChildren(ctx: ${name}Context) {
   }
 }
 `;
@@ -28,7 +28,7 @@ export class ${name}Visitor {
 
   const visitorDirPath = resolve(__dirname, "../src/visitors");
   parserRuleNames.forEach((parserRuleName) => {
-    const visitorPath = resolve(visitorDirPath, `${parserRuleName}.ts`);
+    const visitorPath = resolve(visitorDirPath, `${parserRuleName}Visitor.ts`);
     if (existsSync(visitorPath)) {
       const visitor = readFileSync(visitorPath, "utf8");
       if (visitor) {
