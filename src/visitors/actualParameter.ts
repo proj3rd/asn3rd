@@ -1,5 +1,5 @@
-import antlr4 from "antlr4";
 import {
+  ActualParameterContext,
   ObjectSetContext,
   TypeContext,
   ValueContext,
@@ -12,7 +12,7 @@ import {
  * ```
  */
 export class ActualParameterVisitor {
-  public visitChildren(ctx: antlr4.ParserRuleContext) {
+  public visitChildren(ctx: ActualParameterContext) {
     const childCtx = ctx.getChild(0);
     if (childCtx instanceof TypeContext) {
       return childCtx.accept(new TypeVisitor());
