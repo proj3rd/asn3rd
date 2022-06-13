@@ -1,9 +1,4 @@
-import {
-  ActualParameterContext,
-  ObjectSetContext,
-  TypeContext,
-  ValueContext,
-} from "../parser/asn1Parser";
+import { ActualParameterContext } from "../parser/asn1Parser";
 
 /**
  * Grammar
@@ -13,16 +8,17 @@ import {
  */
 export class ActualParameterVisitor {
   public visitChildren(ctx: ActualParameterContext) {
-    const childCtx = ctx.getChild(0);
-    if (childCtx instanceof TypeContext) {
-      return childCtx.accept(new TypeVisitor());
+    const typeCtx = ctx.type();
+    if (typeCtx) {
+      return typeCtx.accept(new TypeVisitor());
     }
-    if (childCtx instanceof ValueContext) {
-      return childCtx.accept(new ValueVisitor());
+    const valueCtx = ctx.value();
+    if (valueCtx) {
+      return valueCtx.accept(new ValueVisitor());
     }
-    if (childCtx instanceof ObjectSetContext) {
-      return childCtx.accept(new ObjectSetVisitor());
+    const objectSetCtx = ctx.objectSet();
+    if (objectSetCtx) {
+      return objectSetCtx.accept(new ObjectSetVisitor());
     }
-    throw Error("Unexpected ");
   }
 }
