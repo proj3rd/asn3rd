@@ -64,7 +64,7 @@ export function extract(text, options = {}) {
             extractedList.push(text.substring(resultStart.index, resultEnd.index + resultEnd[0].length));
             start.lastIndex = resultEnd.index + resultEnd[0].length;
         }
-        const joined = extractedList.join("\n");
+        const joined = extractedList.join("\n").replace(/\uD63B/g, " ");
         const result = !excludeNonTagComment
             ? joined
             : joined
