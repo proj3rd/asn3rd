@@ -83,7 +83,7 @@ export async function extract(
 
     start.lastIndex = resultEnd.index + resultEnd[0].length;
   }
-  const joined = extractedList.join("\n");
+  const joined = extractedList.join("\n").replace(/\uD63B/g, " ");
   const result = !excludeNonTagComment
     ? joined
     : joined
